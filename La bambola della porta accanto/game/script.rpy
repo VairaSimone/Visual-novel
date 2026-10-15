@@ -426,7 +426,7 @@ label capitolo_4:
                 $ fiducia_genitori += 2
                 jump finale_rottura
 
-            "Nascondo il flacone e seguo Sophie per capire il suo piano." if flacone_con_mila:
+            "Tengo il flacone con me e seguo Sophie per capire il suo piano." if flacone_con_mila:
                 $ dubbi_di_mila += 1
                 jump capitolo_5
 
@@ -508,6 +508,10 @@ label finale_fuga:
     with fade
     play music audio.rain fadeout 1.0 fadein 1.5
     "Mila corre verso la quercia. Sophie l'aspetta con uno zaino troppo piccolo per una vita nuova."
+    if flacone_con_mila:
+        "Il flacone è ancora con me. Non so più se sia una prova o una promessa."
+    else:
+        "Il flacone è rimasto nella neve. Non torno indietro a riprenderlo."
     "Il treno parte prima dell'alba. Per qualche ora, la libertà ha il rumore dei binari."
     "Poi Sophie prende il telefono di Mila, lo spegne e dice che ora non serve più nessuno."
     "Mila guarda il vetro. Il suo riflesso sembra una bambola seduta accanto a una ragazza che non sbatte mai le palpebre."
