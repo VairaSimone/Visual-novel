@@ -6,6 +6,7 @@ define sophie = Character("Sophie", color="#e4b6bd")
 define kate = Character("Kate", color="#c9d7ef")
 define madre = Character("Mamma", color="#c6b59b")
 define padre = Character("Papà", color="#8f9aa8")
+define madre_sophie = Character("Madre di Sophie", color="#c6b59b")
 
 # Stato narrativo: le relazioni influenzano dialoghi, indizi e accesso alle scelte.
 # I valori possono crescere o diminuire: non sono punteggi morali.
@@ -49,6 +50,8 @@ default genitori_sedati = False
 default telefonata_registrata = False
 default sophie_smascherata = False
 default scelta_finale = ""
+default soldi_rubati = False
+default soldi_parziali = False
 
 label start:
     scene bg title night
@@ -123,7 +126,7 @@ label start:
     "Qui l'aria è diversa. Non è l'ossigeno pesante di casa mia: è un vuoto sterile, profumato di ammorbidente costoso."
     "I genitori di Sophie mi accolgono con la gentilezza distaccata riservata a chi svolge bene il proprio lavoro."
     "La madre si sistema il cappotto color cammello e mi rivolge un sorriso educato."
-    "MAMMA DI SOPHIE" "Sophie è di sopra. Ultimamente è stata difficile. Cerca di farla mangiare e niente schermi dopo le dieci, per favore."
+    madre_sophie "Sophie è di sopra. Ultimamente è stata difficile. Cerca di farla mangiare e niente schermi dopo le dieci, per favore."
     "La porta si chiude alle mie spalle. Il silenzio di lusso della casa mi avvolge. Salgo le scale fino alla porta coperta di adesivi di vecchi anime e scritte KEEP OUT."
     "Busso con il ritmo che ci siamo inventate tre anni prima, quando loro si sono trasferiti. Busso ogni volta: è l'unica porta al mondo su cui mi è concesso bussare invece di essere convocata."
     sophie "Entra, Mila. Lo sai che con me non devi bussare. Sei l'unica persona che non mi dà il mal di testa in questa casa."
@@ -298,6 +301,21 @@ label capitolo_3:
     "{i}Mia madre ripete quello che le dice la tua. Le donne come loro si passano le paure come le ricette. È tua madre che ha paura, Mila. Ha paura che tu ti svegli e capisca quanto lei sia piccola, fragile, inutile. Io non ho paura di te. Ci vediamo stanotte, alle 02:00. Sotto la quercia. Non mancare.{/i}"
     "{i}E scrivi. Tutto quello che ti fanno oggi, ogni parola. Ti servirà quando qualcuno finalmente ti chiederà com'era.{/i}"
     "Scrivo da mesi, da quando Sophie me lo ha chiesto per la prima volta, in ottobre. Scrivi tutto, Mila. Altrimenti domani ti convinceranno che non è successo. Ho un quaderno nero nascosto sotto la rete del materasso, e dentro c'è la mia anima, o quello che ne hanno lasciato."
+    menu:
+        "Il quaderno nero è aperto sulle mie ginocchia. Che cosa ci scrivo?"
+        "Annotazioni precise: soltanto ciò che ho visto e sentito.":
+            $ quaderno_fedele = True
+            $ indizi_reali += 1
+            $ dubbi_di_mila += 1
+            "Scrivo date, frasi esatte e gesti che posso descrivere senza interpretare. La pagina sembra fredda, impersonale, ma almeno le parole sono mie."
+        "Scrivo quello che Sophie dice che è successo.":
+            $ quaderno_manipolato = True
+            $ fiducia_sophie += 2
+            "Sophie detta piano, senza guardarmi. Quando finisco, corregge una parola e mi chiede di riscrivere la frase. La sua grafia e la mia cominciano a sembrare la stessa voce."
+        "Chiudo il quaderno e lascio le pagine vuote.":
+            $ quaderno_vuoto = True
+            $ dubbi_di_mila += 1
+            "Non voglio scrivere qualcosa che domani potrebbe sembrare una prova. Chiudo la copertina, ma il quaderno resta sul letto come una domanda senza risposta."
     "In quarta ora il professore di filosofia spiega il carcere perfetto: un luogo in cui i prigionieri non sanno mai quando la guardia li sta osservando e, nel dubbio, cominciano a sorvegliarsi da soli. Sento un sorriso amaro tirarmi le labbra. Mia madre, nella mia testa, applica questa tortura da diciotto anni senza aver mai letto il libro."
     "A pranzo Kate tenta di sedersi accanto a me sui gradini."
     kate "Se hai bisogno di un posto dove stare per qualche giorno, i miei sarebbero felici di ospitarti. Davvero."
@@ -432,10 +450,14 @@ label capitolo_5:
     menu:
         "La mia mano è sospesa sopra le banconote."
         "Le prendo tutte e cinque le mazzette.":
+            $ soldi_rubati = True
+            $ soldi_parziali = False
             $ fiducia_sophie += 2
             $ promessa_a_sophie = True
             "Le infilo sul fondo dello zaino, sotto il libro di chimica. Il peso fisico è minimo, eppure mi sembra di trascinare un cadavere caldo."
-        "Prendo i soldi, ma lascio un biglietto a papà.":
+        "Prendo una parte dei soldi, ma lascio un biglietto a papà.":
+            $ soldi_rubati = True
+            $ soldi_parziali = True
             $ fiducia_sophie += 1
             $ dubbi_di_mila += 1
             $ indizi_reali += 1
@@ -458,7 +480,7 @@ label capitolo_5:
         "La fotografo con il telefono segreto.":
             $ fotografia_digitalizzata = True
             $ indizi_reali += 1
-            "Scatto una foto al fronte e al retro. La copia non spiega la frase, ma non può essere strappata nello stesso modo."
+            "Scatto una foto al fronte e al retro. La copia non spiega la frase, ma non può essere strappata nello stesso modo. Rimetto l'originale nella busta azzurra e la busta al suo posto."
         "La strappo, poi mi pento e raccolgo i pezzi.":
             $ fotografia_distrutta = True
             $ fiducia_sophie += 1
@@ -470,9 +492,20 @@ label capitolo_5:
     "Mi accarezza i capelli, un gesto insolito. Il tocco mi brucia come acido. Lo zaino abbandonato in camera sembra urlare la verità attraverso i muri."
     "Vorrei restituire le mazzette, chiederle perché ha smesso di sorridere come nella fotografia. So che non riuscirei a farlo."
     "Più tardi accendo il telefono sotto le coperte."
-    "{i}M: Ho preso i soldi. Tutti. Cinquemila.{/i}"
-    "{i}S: Sapevo che avresti scelto noi. Brava ragazza. Ora sei veramente sveglia. Stanotte porta il pacco alla quercia.{/i}"
-    "Fisso lo schermo. Scegliere noi. Sfilo le banconote dagli elastici: odorano di cassetti chiusi e di mani che hanno lavorato troppo. Per la prima volta l'orrore lascia spazio a un brivido di onnipotenza. Ho il loro futuro in mano."
+    if soldi_rubati:
+        if soldi_parziali:
+            "{i}M: Ho preso una parte. Non potevo prendere tutto.{/i}"
+            "{i}S: Una parte basta per cominciare. Stanotte porta quello che hai alla quercia.{/i}"
+        else:
+            "{i}M: Ho preso i soldi. Tutti. Cinquemila.{/i}"
+            "{i}S: Sapevo che avresti scelto noi. Brava ragazza. Ora sei veramente sveglia. Stanotte porta il pacco alla quercia.{/i}"
+    else:
+        "{i}M: Non li ho presi. Non riesco a farlo.{/i}"
+        "{i}S: Non è il denaro che mi interessa, Mila. È sapere se farai quello che serve quando te lo chiederò.{/i}"
+    if soldi_rubati:
+        "Fisso lo schermo. Scegliere noi. Sfilo le banconote dagli elastici: odorano di cassetti chiusi e di mani che hanno lavorato troppo. Per la prima volta l'orrore lascia spazio a un brivido di onnipotenza. Ho il loro futuro in mano."
+    else:
+        "Fisso lo schermo. Non ho preso i soldi. Il messaggio di Sophie arriva dopo pochi secondi: una sola parola, Scegli. Non so se sto difendendo i miei genitori o soltanto rimandando il momento in cui dovrò affrontarla."
     "Non sono più soltanto la vittima. Sono una complice. E la cenere che ho ingoiato per diciott'anni comincia a trasformarsi in un incendio."
     jump capitolo_6
 
@@ -488,14 +521,21 @@ label capitolo_6:
     "Sotto la quercia, Sophie è in piedi nell'ombra del tronco, le braccia conserte e lo sguardo sulla finestra della mia camera. Sembra un piccolo generale davanti a una fortezza che ha già deciso di radere al suolo."
     sophie "Li hai?"
     "Non mi chiede come sto. Non mi tocca. È una transazione."
-    if promessa_a_sophie:
+    if soldi_rubati and not soldi_parziali:
         mila "Eccoli."
+    elif soldi_parziali:
+        mila "Ne ho presa soltanto una parte."
     else:
-        mila "Non li ho presi tutti." 
+        mila "Non li ho presi. Non posso farlo." 
     if fotografia_distrutta:
         "Le racconto anche della fotografia strappata. Non so perché lo faccio: forse sto cercando un'assoluzione da chi non ha intenzione di darmela."
     "Sophie apre la busta e conta le banconote alla luce bluastra del telefono."
-    sophie "Cinquemila. Meno di quanto sperassi, ma per cominciare basterà."
+    if soldi_rubati and not soldi_parziali:
+        sophie "Cinquemila euro. Per cominciare basterà."
+    elif soldi_parziali:
+        sophie "Una parte soltanto. È meno di quanto mi aspettassi, ma per cominciare può bastare."
+    else:
+        sophie "Quindi hai disobbedito. Pensavi che ti avrei lasciata tornare a mani vuote? Il denaro era solo il primo passo, Mila. Non fingere che adesso tu sia fuori dal piano."
     mila "Cominciare cosa? Possiamo prendere un autobus per la città, cambiare nome, sparire."
     sophie "Sparire? Se scappiamo adesso ci trovano in dodici ore. Tuo padre chiama la polizia; tua madre sguinzaglia l'inferno intero pur di riaverti nella gabbia. Noi non vogliamo soltanto scappare. Vogliamo che loro non abbiano più il potere di cercarci."
     "Si siede sulle radici e mi fa cenno di avvicinarmi. Mi siedo accanto a lei, improvvisamente piccolissima, un guscio pronto a essere riempito dalla sua volontà."
@@ -533,15 +573,29 @@ label capitolo_6:
     sophie "Tuo padre tiene le gocce per dormire sul comodino, dietro la sveglia. Le prende da mesi. Vedi che ti ascolto quando parli?"
     "Mi sfiora la guancia e torna a baciarmi. Non so più distinguere la paura dal bisogno di essere amata."
     sophie "Fallo per noi, Mila. Fallo per me."
-    "Rientro barcollando. Nella cucina è accesa la luce cruda del neon. Mia madre è seduta al tavolo. Davanti a lei c'è la busta azzurra. La fotografia è stata strappata in due."
+    "Rientro barcollando. Nella cucina è accesa la luce cruda del neon. Mia madre è seduta al tavolo. Davanti a lei c'è la busta azzurra."
+    if fotografia_digitalizzata:
+        "La fotografia è stata tirata fuori e strappata in due. La copia digitale è ancora nascosta nel telefono."
+    elif fotografia_conservata:
+        "La busta è vuota. Mia madre si è accorta che l'originale non è più al suo posto."
+    elif fotografia_distrutta:
+        "La busta è vuota e sgualcita. Non c'è più una fotografia da strappare: ho già distrutto l'originale."
+    else:
+        "La fotografia è stata tirata fuori e strappata in due."
     madre "Dov'è il resto, Mila?"
     mila "Mamma, io..."
-    madre "Il cassetto dello studio è vuoto."
+    if soldi_rubati:
+        madre "Il cassetto dello studio è vuoto."
+    else:
+        madre "La busta azzurra è sparita dal suo posto. Che cosa hai fatto, Mila?"
     "Si alza lentamente. Per un istante sembra più alta, un'ombra che occupa ogni centimetro della stanza."
     madre "Pensavi di essere l'unica a saper giocare a nascondino? Io ho inventato questo gioco tra queste pareti. Ogni respiro che fai mi appartiene. Ogni centesimo che hai preso è stato pagato con la mia pazienza."
-    mila "Non li ho più."
+    if soldi_rubati:
+        mila "Non li ho più."
+    else:
+        mila "Non so come spiegartelo."
     "La mia voce, per una volta, non trema."
-    mila "E se provi a bloccarmi, Sophie pubblicherà i documenti. Sappiamo delle società all'estero. Delle transazioni."
+    mila "Sophie dice di avere documenti su di voi. Dice che li pubblicherà se proverete a fermarci."
     "Il silenzio è assoluto. La furia scompare dal volto di mia madre, sostituita da una comprensione disperata."
     madre "Ah. La ragazzina ti ha dato una voce."
     "Si siede e si copre il viso per qualche secondo."
@@ -795,7 +849,7 @@ label finale_verita:
         "La fotografia originale o la copia digitale viene conservata, senza attribuirle un significato che da sola non può dimostrare."
     "Sophie continua a sorridere. Kate le pone una domanda semplice, poi aspetta. Nessuno riempie il silenzio al posto suo."
     "Racconto quello che ricordo. Quando arrivo a un punto che non so spiegare, mi fermo. Nessuno mi suggerisce le parole successive."
-    centered "{size=42}{color=#e6d4db}FINALE: LA VERITÀ HA UNA VOCE{/size}{/color}"
+    centered "{size=42}{color=#e6d4db}FINALE: LA VERITÀ HA UNA VOCE{/color}{/size}"
     return
 
 
