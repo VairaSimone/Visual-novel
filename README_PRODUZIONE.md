@@ -1,66 +1,107 @@
 # La Bambola della Porta Accanto
 
+Visual novel thriller psicologica realizzata con Ren'Py. La storia segue Mila, diciottenne che cerca di interpretare la propria famiglia, il rapporto ambiguo con Sophie e una serie di elementi che possono essere letti come prove oppure come sospetti. Le scelte registrano relazioni, oggetti, fonti consultate e disponibilità a chiedere aiuto.
+
 ## Stato dello sviluppo
 
-Il progetto è stato convertito dal modello Ren'Py predefinito a una visual novel interattiva completa nella sua prima versione testuale. Il menu, il testo informativo, l'avviso contenuti, il prologo, cinque capitoli e quattro finali sono pronti per ricevere grafica, suono, transizioni e una fase di revisione narrativa.
+**Stato: prototipo narrativo avanzato / pre-alpha, non ancora release-ready.**
 
-## Lettura della storia
+Il progetto non è più una struttura da cinque capitoli: lo script corrente contiene un prologo giocabile, **nove capitoli numerati**, un epilogo incorporato nel percorso conclusivo e **quattro finali nominati**. Sono presenti variabili persistenti, scelte investigative, documenti consultabili, archivio degli indizi, fondali, audio e segnaposto sprite sostituibili.
 
-La storia ha un nucleo forte: Mila, diciottenne fragile e isolata, interpreta la propria casa come una prigione. Sophie, quindicenne brillante e manipolatoria, trasforma quell'interpretazione in una dipendenza e poi in un piano criminale. Il colpo di scena centrale è che i genitori non erano gli aguzzini che Mila credeva: Sophie ha orientato ricordi, scrittura e percezione fino a renderla lo strumento del proprio crimine.
+Questa descrizione deriva da una revisione statica dei file su `main`. Non equivale a una sessione di gioco completa: prima di distribuire una build sono ancora necessari Ren'Py Lint, test runtime e verifica manuale di tutte le diramazioni.
 
-I suoi punti più adatti a una visual novel sono l'atmosfera claustrofobica, il rapporto ambiguo tra le due protagoniste, Kate come possibile ancora alla realtà e gli indizi che acquistano un secondo significato dopo la rivelazione.
+## Struttura narrativa attuale
 
-## Sistema di relazioni, indizi e stato degli oggetti
+| Sezione | Titolo | Funzione narrativa |
+|---|---|---|
+| Prologo | — | Routine di Mila, dinamiche familiari, Kate e primo incontro con Sophie |
+| Capitolo 1 | Come sanguina un robot | Dipendenza emotiva e primi segnali ambigui |
+| Capitolo 2 | La geometria del silenzio | Isolamento, telefono e quaderno |
+| Capitolo 3 | Frequenze d'ombra | Ricordi contraddittori e prime scelte investigative |
+| Capitolo 4 | Radici di notte | Incontro notturno e aumento della tensione |
+| Capitolo 5 | L'incisione profonda | Denaro, fotografia di famiglia e conseguenze delle scelte |
+| Capitolo 6 | Il prezzo dell'argilla | Pressione, sospetti e costo delle decisioni |
+| Capitolo 7 | Anatomia di un assedio | Conflitto familiare e possibilità di ascolto |
+| Capitolo 8 | Natura morta con sedativi | Il flacone, il rischio immediato e la decisione di chiedere aiuto |
+| Capitolo 9 | Il diorama di porcellana | Rivelazione, rilettura degli indizi e scelta conclusiva |
 
-Le scelte non sono un test di moralità: registrano come Mila interpreta ciò che accade e a chi è disposta a chiedere aiuto. Lo script mantiene cinque variabili narrative, ciascuna con conseguenze nel gioco:
+I titoli descrivono la struttura individuata nello script; l'ordine effettivo di alcune scene dipende dalle scelte e dai salti fra etichette. La revisione dei percorsi non deve ridurre la lunghezza del testo originale: gli interventi editoriali devono aggiungere raccordi o chiarimenti, non eliminare descrizioni e passaggi.
 
-- `fiducia_sophie`: modifica la lettura dei comportamenti di Sophie nel capitolo della quercia, il monologo prima della scelta conclusiva e l'interpretazione dei finali della fuga e del fascicolo.
-- `legame_kate`: influenza se Kate cerca Mila dopo il messaggio del telefono, il modo in cui Mila riesce a chiederle aiuto e la risposta nel finale della verità.
-- `dubbi_di_mila`: se è abbastanza alto, permette a Mila di riconoscere un'ulteriore incongruenza nell'immagine e ottenere un indizio concreto; insieme al legame con Kate può aprire la richiesta di aiuto.
-- `indizi_reali`: rappresenta i dettagli e le prove che Mila ha riconosciuto o conservato. La soglia di 3 cambia la lettura degli appunti; la soglia di 4 offre un percorso basato su prove più solide e cambia la descrizione del finale della verità.
-- `fiducia_genitori`: modifica il modo in cui Mila interpreta la proposta d'aiuto, può aprire una via per chiedere aiuto anche senza avere prove complete e cambia le opzioni e il dialogo del finale con i genitori.
+## Variabili narrative e conseguenze
 
-Il flacone è gestito separatamente dalla variabile di relazione con lo stato oggetto `flacone_con_mila`. Quando Mila lo lascia nella neve, le opzioni successive e i finali rispettano quella posizione.
+Le variabili non sono punteggi morali. Registrano come Mila interpreta gli eventi e quali canali di supporto ha mantenuto.
 
-### Tre categorie di scelte
+- `fiducia_sophie`: influenza la lettura dei comportamenti di Sophie e alcuni dialoghi.
+- `legame_kate`: influenza la disponibilità di Kate a intervenire e alcuni esiti.
+- `dubbi_di_mila`: indica quanto Mila mette in discussione la propria interpretazione.
+- `indizi_reali`: conteggia gli indizi riconosciuti o conservati; il numero da solo non garantisce che una teoria sia vera.
+- `fiducia_genitori` e `prontezza_aiuto`: distinguono fiducia e disponibilità a chiedere aiuto.
+- `flacone_con_mila`: tiene traccia della posizione dell'oggetto, con conseguenze sulle scelte successive.
+- Flag investigativi: registrano la gestione del telefono, della fotografia, del quaderno e delle immagini mostrate da Sophie.
+- Flag irreversibili: registrano promesse, decisioni sul flacone, denaro, richiesta d'aiuto e conseguenze finali.
 
-Le scelte sono progettate per avere conseguenze riconoscibili, senza trasformare ogni singola battuta in un ramo narrativo enorme:
+## Archivio investigativo: progressione e ipotesi
 
-- **Caratterizzazione**: il tono con cui Mila tratta Kate, Sophie e suo padre cambia la fiducia, i dialoghi successivi e il modo in cui interpreta il loro comportamento.
-- **Investigazione**: il telefono segreto può essere condiviso con Kate, usato per rispondere a Sophie oppure nascosto. La fotografia può essere conservata, strappata o digitalizzata. Il quaderno può contenere fatti, frasi suggerite da Sophie oppure restare vuoto. Le immagini possono essere verificate, credute o condivise. Queste azioni vengono registrate con flag persistenti e modificano gli indizi, le scene successive e il modo in cui i finali vengono raccontati.
-- **Scelte irreversibili**: lasciare il flacone nella neve, promettere di aiutare Sophie, distruggere una prova o condividere copie con Kate sono decisioni che non vengono annullate automaticamente quando la scena si chiude. Lo stato degli oggetti e delle prove viene controllato nei capitoli successivi.
+L'archivio è accessibile con il tasto **I** e dal pulsante a schermo. Oltre al registro delle prove, ora presenta:
 
-La scelta di chiedere aiuto può quindi essere raggiunta attraverso prove sufficienti (`indizi_reali >= 4`), un legame con Kate insieme a dubbi concreti (`legame_kate >= 2` e `dubbi_di_mila >= 2`), fiducia nei genitori (`fiducia_genitori >= 2`) oppure la condivisione con Kate sia del messaggio sia di una delle immagini (`telefono_condiviso_kate` e `immagini_condivise_kate`). Nessuna soglia è una valutazione morale del giocatore: sono percorsi diversi e con conseguenze diverse, non risposte giuste o sbagliate.
+- **Collegamenti sbloccati** quando il giocatore conserva o condivide più fonti compatibili, per esempio il messaggio affidato a Kate e un'immagine ricevuta da Sophie.
+- **Stati epistemici distinti**: osservato, riscontro esterno, ipotesi, sospetto non verificato, elemento mancante o perduto.
+- **Ipotesi selezionabili**: manipolazione del racconto da parte di Sophie, sospetto sui genitori e rischio legato al flacone.
+- **Solidità graduata**: una teoria sostenuta da fonti confrontabili è distinta da un'intuizione o da una versione accettata senza verifica.
+- **Conseguenza narrativa**: nel capitolo 9, se il giocatore ha scelto l'ipotesi sulla manipolazione e dispone di riscontri sufficienti, si apre un'opzione per collegare le fonti e chiedere aiuto. La deduzione non trasforma automaticamente ogni dettaglio della storia in un fatto provato.
 
+Le ipotesi sono interpretazioni del giocatore, non prove aggiuntive. Il contenuto del flacone, l'autenticità e il significato delle immagini e l'intera responsabilità dei personaggi non vanno presentati come scientificamente verificati solo perché Mila li sospetta.
 
-## Struttura implementata
+## Prove e limiti interpretativi
 
-1. Prologo: la routine di Mila e il primo incontro giocabile con Sophie.
-2. Come sanguina un robot: primo isolamento, Kate, la casa di Sophie e le reazioni emotive di Mila.
-3. La geometria del silenzio: telefono segreto, quaderno e primo ricordo che contraddice Sophie.
-4. Frequenze d'ombra: prove falsificate, richiesta di aiuto e possibilità di fidarsi del padre.
-5. La quercia: il flacone, il piano di Sophie e il primo bivio irreversibile.
-6. Il diorama: scelta conclusiva e quattro finali.
+- **Telefono e messaggio**: provano che esiste una comunicazione e, se condivisa, una copia esterna. Non provano da soli chi sia davvero il mittente né che ogni affermazione sia vera.
+- **Fotografia di famiglia**: può essere conservata o digitalizzata. La frase sul retro ha un significato ambiguo; la testimonianza del padre, se raccolta, è un riscontro distinto, non un sostituto materiale dell'originale.
+- **Quaderno nero**: gli appunti diretti sono diversi dalle parole dettate o corrette da Sophie. Un quaderno manipolato non è una fonte indipendente.
+- **Immagini e documenti mostrati da Sophie**: il rifiuto di consentire un controllo è osservabile; non dimostra da solo una falsificazione. Se Mila accetta le immagini senza esaminarle, l'archivio le classifica come non verificate.
+- **Flacone**: la domanda sulla provenienza è un fatto narrativo; contenuto e intenzione restano da accertare e richiederebbero analisi competente nel mondo della storia.
 
-## Finali implementati
+## Percorsi e finali
 
-- **La verità ha una voce**: Mila chiede aiuto a Kate, le prove vengono preservate e Sophie non può più controllare il racconto.
-- **La porta aperta**: Mila consegna il flacone ai genitori, spezzando il piano prima della tragedia.
-- **La fuga illusoria**: Mila scappa con Sophie e scopre che la libertà promessa è un nuovo controllo.
-- **Il fascicolo**: Mila segue il piano; il quaderno viene usato come una falsa confessione e Sophie resta invisibile.
+I quattro finali presenti nello script sono:
+
+- **La verità ha una voce** (`finale_verita`): Mila chiede aiuto e apre la possibilità di confrontare fonti con Kate.
+- **La porta aperta** (`finale_rottura`): Mila chiede aiuto ai genitori e tenta di fermare il piano prima della tragedia.
+- **La fuga illusoria** (`finale_fuga`): Mila fugge con Sophie e scopre che la libertà promessa è un'altra forma di controllo.
+- **Il fascicolo** (`finale_fascicolo`): la versione costruita da Sophie prevale e il quaderno può diventare una falsa confessione.
+
+Le condizioni di accesso ai finali dipendono da combinazioni di scelte, relazioni, prove e disponibilità a chiedere aiuto. Il controllo statico può confermare l'esistenza delle etichette e dei salti nel codice, ma non dimostra che ogni combinazione sia giocabile: ogni percorso deve essere provato dal launcher Ren'Py.
+
+## Cronologia: punti di controllo
+
+Lo script contiene riferimenti orari precisi, tra cui il rientro alle **23:18** (tre minuti oltre un limite implicito delle 23:15), l'appuntamento sotto la quercia alle **02:00**, un riferimento alle **01:47**, un altro alle **01:55**, l'attraversamento del prato alle **02:40** e una scena conclusiva datata **8 maggio 2026, ore 03:30**.
+
+Questi orari sono indizi utili ma, da soli, non fissano il calendario completo: alcuni appartengono a notti o giornate diverse. La revisione narrativa deve chiarire i passaggi di giorno/notte e il tempo trascorso tra capitoli senza inventare date che il testo originale non stabilisce. È stato preparato un registro separato con le verifiche statiche e le questioni da provare.
 
 ## Direzione artistica e interfaccia
 
-Palette: nero prugna, grigio fumo, rosa spento e giallo da luce domestica. L'interfaccia di dialogo usa ora un pannello scuro dedicato, una fascia d'accento e una gerarchia più netta tra nome del personaggio e testo. Le scelte sono raccolte in un pannello separato con pulsanti leggibili, spaziatura più ampia e stati hover/focus chiari. I bivi investigativi e irreversibili della quercia e del finale adottano una variante rosso-prugna più intensa; le transizioni dei menu e della finestra di dialogo usano dissolvenze brevi e coordinate. Il progetto ora usa sette fondali originali: menu notturno, camera e cucina di Mila, scuola, quercia con le due villette, cucina e camera di Sophie. Sono illustrazioni atmosferiche progettate per dare ritmo alla prima versione giocabile; gli sprite espressivi, gli oggetti-indizio e le varianti temporali restano la prossima produzione grafica.
+La palette usa nero prugna, grigio fumo, rosa spento e luce domestica gialla. Le schermate di dialogo e scelta hanno pannelli dedicati e una variante più intensa per i momenti critici. I fondali sono definiti nel progetto Ren'Py e includono ambienti interni ed esterni, varianti giorno/notte e luoghi legati all'indagine.
 
-### Riferimenti personaggi
+Il file `characters.rpy` contiene **segnaposto grafici provvisori**, con espressioni per Mila, Sophie e Kate e altri personaggi. Non sono sprite artistici definitivi. La guida `SPRITE_PLACEHOLDER.md` spiega come sostituirli mantenendo i nomi immagine e le trasformazioni, senza riscrivere le scene.
 
-Le immagini di riferimento ricevute restano fuori dalla cartella del gioco e non saranno incluse nella distribuzione. Orientano soltanto due silhouette originali: Mila sarà una ragazza maggiorenne dai capelli castano scuro, postura chiusa e occhi segnati; Sophie sarà una quindicenne bionda, abbigliamento scuro, espressione calma e presenza controllante. Gli sprite finali saranno disegnati ex novo, con pose ed espressioni pensate per la visual novel.
+## Audio
 
-## Audio implementato
+L'audio del prototipo è generato da script Python del progetto e include musica, ambienti e brevi effetti. Prima della distribuzione vanno verificati bilanciamento, transizioni, loop, volume e riferimenti a tutti gli asset in una sessione reale.
 
-L'audio è generato da `tools/generate_prototype_audio.py` usando soltanto la libreria standard di Python: non richiede campioni o brani esterni. Il generatore produce un tema per il menu con motivo melodico e movimento armonico, un sottotesto più riflessivo per le indagini e una traccia tesa con impulsi irregolari per le decisioni irreversibili. Pioggia e ronzio domestico hanno un canale d'ambiente indipendente dalla musica, con dissolvenze tra luoghi e brevi crossfade alle estremità dei loop. I sei effetti sono stati riequilibrati e rifiniti con transienti, inviluppi e limitazione morbida: accendino, colpi alla finestra, telefono, battito cardiaco, vetro e porta. La generazione è deterministica: rieseguendo lo script si ricreano gli stessi asset. Il mixer Voce resta disattivato finché non saranno aggiunte battute doppiate.
+## Avviso contenuti
 
-## Contenuti sensibili
+La storia affronta manipolazione psicologica, gaslighting, abusi emotivi, autolesionismo, violenza, lutto e suicidio. L'avviso contenuti deve restare accessibile prima dell'avvio della storia.
 
-La storia contiene manipolazione psicologica, violenza e autolesionismo. La versione interattiva manterrà l'impatto del thriller evitando di trasformare le scene più dure in immagini grafiche o in meccaniche di gioco.
+## Checklist prima della release
+
+1. Eseguire **Check Script (Lint)** nel launcher Ren'Py e risolvere tutti gli errori e gli avvisi rilevanti.
+2. Giocare dall'inizio a ciascuno dei quattro finali, provando le combinazioni principali di telefono, fotografia, quaderno, immagini, flacone e relazioni.
+3. Verificare archivio, documenti, hotkey **I**, salvataggio/caricamento, rollback, skip, menu, audio e transizioni.
+4. Controllare la cronologia completa in una tabella giorno/ora e chiarire ogni passaggio che possa sembrare simultaneo o contraddittorio.
+5. Verificare ogni affermazione trattata come prova e distinguere esplicitamente osservazione, testimonianza, inferenza e sospetto.
+6. Sostituire i segnaposto con sprite definitivi e controllare le sovrapposizioni con dialoghi, scelte e fondali.
+7. Generare build desktop pulite, avviarle fuori dall'ambiente di sviluppo e verificare la persistenza dei salvataggi.
+8. Controllare licenze, crediti, documenti originali e immagini di riferimento presenti nel repository prima della distribuzione pubblica.
+
+## Nota sul testo originale
+
+La revisione deve preservare la lunghezza e le descrizioni della storia originale. Correzioni di continuità, raccordi temporali e chiarimenti sulle prove vanno realizzati con modifiche mirate e senza tagliare i passaggi narrativi.
