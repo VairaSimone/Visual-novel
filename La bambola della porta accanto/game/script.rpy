@@ -859,7 +859,7 @@ init python:
 screen archivio_hotkey():
     zorder 190
     key "i" action If(renpy.get_screen("archivio_indizi"), Hide("archivio_indizi"), Show("archivio_indizi"))
-    textbutton "ARCHIVIO  [I]":
+    textbutton "ARCHIVIO  ·  I":
         xalign 0.985
         yalign 0.965
         action If(renpy.get_screen("archivio_indizi"), Hide("archivio_indizi"), Show("archivio_indizi"))
@@ -893,7 +893,7 @@ screen archivio_indizi():
                     text "ARCHIVIO INVESTIGATIVO" size 32 color "#e6d4db"
                     text "Quello che so, quello che sospetto, quello che manca." size 17 color "#c2b4c5"
                 null width 20
-                textbutton "CHIUDI  [I]" action Hide("archivio_indizi") text_size 18
+                textbutton "CHIUDI  ·  I" action Hide("archivio_indizi") text_size 18
 
             frame:
                 xfill True
