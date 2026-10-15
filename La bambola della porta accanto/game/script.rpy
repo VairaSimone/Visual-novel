@@ -326,7 +326,6 @@ label capitolo_2:
 
         "La nascondo. Voglio ricordarla.":
             $ fotografia_conservata = True
-            $ fiducia_genitori += 1
             $ indizi_reali += 1
             "La infilo tra le pagine di un libro. Per tutto il resto della sera mi sembra di sentire il bordo rigido contro il palmo, anche quando ho le mani vuote."
 
