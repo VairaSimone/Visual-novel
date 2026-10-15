@@ -59,7 +59,7 @@ Le immagini di riferimento ricevute restano fuori dalla cartella del gioco e non
 
 ## Audio implementato
 
-Il gioco dispone ora di un tema per il menu, due ambienti in loop e sei effetti sonori originali. La pioggia collega scuola, quercia e villette; il ronzio interno accompagna le scene domestiche. Accendino, finestra, telefono, porta, vetro e battito cardiaco evidenziano soltanto gli snodi narrativi. I file sono generati localmente e non impiegano campioni o brani esterni.
+L'audio è generato da `tools/generate_prototype_audio.py` usando soltanto la libreria standard di Python: non richiede campioni o brani esterni. Il generatore produce un tema per il menu con motivo melodico e movimento armonico, un sottotesto più riflessivo per le indagini e una traccia tesa con impulsi irregolari per le decisioni irreversibili. Pioggia e ronzio domestico hanno un canale d'ambiente indipendente dalla musica, con dissolvenze tra luoghi e brevi crossfade alle estremità dei loop. I sei effetti sono stati riequilibrati e rifiniti con transienti, inviluppi e limitazione morbida: accendino, colpi alla finestra, telefono, battito cardiaco, vetro e porta. La generazione è deterministica: rieseguendo lo script si ricreano gli stessi asset. Il mixer Voce resta disattivato finché non saranno aggiunte battute doppiate.
 
 ## Contenuti sensibili
 
