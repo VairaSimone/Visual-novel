@@ -422,6 +422,12 @@ label capitolo_4:
             $ prontezza_aiuto += 1
             sophie "Non sai ancora cosa significa scegliere, Mila."
             "Il sorriso le resta sulle labbra, ma le dita mi lasciano andare."
+        "Le propongo di partire subito, senza rubare.":
+            $ dubbi_di_mila += 1
+            $ scelta_finale = "fuga_immediata"
+            sophie "Senza preparare niente? Senza essere sicure?"
+            "Sophie sorride, ma i suoi occhi diventano immobili. Vuole una fuga che abbia deciso lei, non una decisione presa da me."
+            jump finale_fuga
     "Rientrare è un'asfissia. Ogni ombra nel corridoio sembra avere il corpo di mia madre. Mi infilo sotto le coperte vestita; le labbra bruciano ancora e il sapore dolciastro del lecca-lecca ha lasciato un retrogusto metallico."
     "Sophie mi ha promesso la salvezza. Ma mi ha chiesto di diventare una ladra."
     jump capitolo_5
@@ -677,6 +683,23 @@ label capitolo_7:
     sophie "Quando torni, lascia la porta sul retro accostata. Io devo poter entrare."
     mila "Perché, se poi ci vediamo sotto la quercia?"
     sophie "Perché da sola ti spaventi. Ti spaventi sempre. Scegli, Mila. Vuoi essere il coltello o la carne?"
+    menu:
+        "Il flacone è freddo nel mio palmo. Una parte di me vuole ancora una risposta."
+        "Le chiedo da dove vengono davvero le gocce.":
+            $ flacone_indagato = True
+            $ dubbi_di_mila += 1
+            $ indizi_reali += 1
+            mila "Da dove le hai prese? E come fai a sapere cosa faranno?"
+            sophie "Ti sto chiedendo di fidarti di me. Perché vuoi rovinare tutto con le domande?"
+            "Non mi dà una risposta. Mi restituisce la domanda come se la colpa fosse mia."
+        "Accetto la sua spiegazione, anche se ho paura.":
+            $ fiducia_sophie += 1
+            "Mi dico che insistere significherebbe perderla. Per ora, scelgo di non guardare oltre il bordo della sua promessa."
+        "Le dico che non le prometto niente.":
+            $ dubbi_di_mila += 2
+            $ prontezza_aiuto += 1
+            sophie "Allora vedremo quanto vali quando arriva il momento."
+            "Mi lascia andare. Per un secondo provo sollievo; subito dopo mi accorgo che sto aspettando di essere punita."
     "Torno a casa con il flacone nascosto, proprio sopra il cuore. Il vetro freddo mi morde la pelle a ogni respiro."
     scene bg mila kitchen
     with dissolve
@@ -700,7 +723,6 @@ label capitolo_7:
             $ genitori_salvati = True
             $ prontezza_aiuto += 2
             $ fiducia_genitori += 2
-            $ flacone_indagato = True
             "La mia voce si spezza. Non riesco a raccontare tutto, ma pronuncio la frase essenziale: Sophie mi ha chiesto di farvi dormire e io ho paura di quello che c'è nel flacone."
             jump finale_rottura
         "Chiamo Kate dalla dispensa e le mando la posizione.":
@@ -1244,7 +1266,7 @@ screen archivio_indizi():
                         text "MANCANTE · Le immagini non sono state esaminate." size 17 color "#c2b4c5"
                     text "5. FLACONE" size 22 color "#e4b6bd"
                     if flacone_indagato:
-                        text "DOMANDA APERTA · Mila ha chiesto da dove venisse il flacone." size 17
+                        text "DOMANDA APERTA · Mila ha chiesto da dove venissero le gocce; Sophie ha evitato di dare una spiegazione verificabile." size 17
                     if genitori_salvati:
                         text "STATO · Mila ha consegnato il flacone e chiesto aiuto. Il contenuto deve essere esaminato da persone competenti." size 17
                     elif genitori_sedati:
