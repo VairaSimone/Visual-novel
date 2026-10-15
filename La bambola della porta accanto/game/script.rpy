@@ -52,7 +52,6 @@ default promessa_a_sophie = False
 default flacone_indagato = False
 default genitori_salvati = False
 default genitori_sedati = False
-default telefonata_registrata = False
 default sophie_smascherata = False
 default scelta_finale = ""
 default soldi_rubati = False
@@ -452,6 +451,15 @@ label capitolo_4:
     sophie "Allora devi smettere di essere la brava Mila. Devi sporcarti le mani per davvero. Non si esce dall'inferno senza portarsi dietro un po' di fumo."
     "Si china e mi bacia. Non c'è la tenerezza ingenua che ho letto nei libri. È un gesto che mi sorprende e mi invade; le dita tra i capelli stringono finché il dolore mi mozza il fiato. Quando si stacca, il buio torna tra noi come acqua gelida."
     sophie "Ora sei mia, Mila. Non di altri. Mia."
+    if telefono_condiviso_kate:
+        sophie "Hai mandato il messaggio a Kate, vero? Non importa. Una fotografia non racconta una storia intera."
+        "Sophie stringe le mie dita un istante più del necessario. Ha capito che una parte di ciò che mi dice potrebbe uscire dalla nostra bolla."
+    elif telefono_nascosto:
+        sophie "Non hai risposto al messaggio. Ma sei venuta lo stesso."
+        "Non so se abbia intuito il mio silenzio o se si aspettasse comunque di vedermi. La sua sicurezza mi inquieta più di un rimprovero."
+    elif telefono_risposto_sophie:
+        sophie "Mi hai risposto. Sapevo che non mi avresti lasciata sola."
+        "Il sollievo che provo sembra amore, ma so che ora Sophie può usare la mia promessa come una catena."
     "Ho diciotto anni. L'ho vista arrivare con le valigie quando ne aveva dodici. Le ho tagliato le crostate e l'ho aiutata con le versioni di matematica. E ora, sotto un albero, ringrazio per essere stata scelta."
     sophie "Domani iniziamo il fondo per la fuga. Tuo padre tiene i contanti delle consulenze nel cassetto della scrivania. Devi prenderli."
     mila "Come fai a saperlo?"
@@ -832,6 +840,10 @@ label capitolo_8:
     mila "Mamma! Mamma, svegliati!"
     "La testa scivola di lato. Le pupille sono opache e fisse. Non c'è respiro, non c'è battito. Le parole di Sophie tornano nella mia testa: non li uccideranno, dormiranno soltanto."
     "Un urlo mi sale dallo stomaco e si spezza in un rantolo. Ho ucciso i miei genitori."
+    if flacone_indagato:
+        "La domanda sulla provenienza delle gocce torna con una chiarezza crudele. Sophie non aveva risposto: avevo scambiato la sua evasione per una certezza."
+    else:
+        "Non le avevo mai chiesto da dove venissero le gocce. Avevo preferito la sicurezza di Sophie alla possibilità di scoprire che non sapeva ciò che prometteva."
     play sound audio.door
     "La porta sul retro — quella che ho lasciato accostata — si apre. Passi leggeri attraversano il corridoio."
     "Sophie entra in cucina con un impermeabile giallo trasparente e guanti azzurri in lattice. Guarda i corpi, poi me. Sorride come se stesse valutando un esperimento riuscito."
@@ -932,6 +944,16 @@ label capitolo_9:
     sophie "Chiudi il sipario, Mila. Fai vedere a tutti come sanguina un robot. Così il caso sarà chiuso e nessuno farà domande a una povera orfana."
     "Guardo il frammento e i suoi occhi. La prigione non era la mia casa. La prigione è questa ragazzina bionda con le lentiggini e il lecca-lecca alla ciliegia. Ho ucciso le uniche due persone che avrebbero potuto salvarmi da lei."
     "Ho diciotto anni. Lei ne ha quindici. Le ho tagliato la torta di compleanno tre volte."
+    if quaderno_fedele:
+        "Nel quaderno ho scritto frasi esatte e gesti, non diagnosi. Non dimostra da solo ciò che è successo, ma potrebbe aiutarmi a separare i ricordi dalle parole che Sophie mi ha messo in bocca."
+    elif quaderno_manipolato:
+        "Le frasi del quaderno tornano una dopo l'altra: alcune le ho scritte io, altre sono state corrette da Sophie finché non ho più saputo distinguere la mia memoria dalla sua versione."
+    elif quaderno_vuoto:
+        "Il quaderno è rimasto vuoto. Non ho una cronologia da consultare; restano soltanto ricordi confusi e le copie che potrei aver affidato a Kate."
+    if prontezza_aiuto >= 2:
+        "Una frase semplice riaffiora dalla voce di papà: non devi spiegare tutto in una volta. Posso chiedere aiuto anche senza ricostruire ogni minuto."
+    elif padre_evitato and not padre_ascoltato and not padre_confrontato:
+        "Non ho mai risposto davvero a papà. Adesso il silenzio pesa come una porta che non posso più riaprire."
     "Non voglio prendere il vetro, ma la colpa è enorme e la mia mente è esausta. Sophie aspetta, con il respiro leggero e le labbra socchiuse. Vuole vedere lo spettacolo."
     # L'ipotesi è utile soltanto se Mila distingue le osservazioni dalle conclusioni.
     if ipotesi_attiva == "sophie_manipola":
@@ -1098,7 +1120,13 @@ label finale_fascicolo:
     play sound audio.heartbeat
     "La storia si spezza in rumori, sirene e pagine scritte con una grafia ordinata. Il fascicolo verrà chiuso in undici settimane. La ricostruzione sarà definita, in conferenza stampa, di rara linearità."
     "La versione ufficiale dirà che Mila B., diciottenne, ha sedato e ucciso i propri genitori, ha attraversato il giardino con un cuscino, ha ucciso i vicini e si è tolta la vita. Cinque corpi. Una sola colpevole."
-    "Le fibre sul cuscino combaciano. Le impronte sul flacone combaciano. Il quaderno recuperato sotto il materasso — centoquaranta pagine di calligrafia ordinatissima che descrivono abusi mai riscontrati — viene allegato integralmente. Il perito lo definisce un documento di eccezionale valore clinico."
+    "Le fibre sul cuscino combaciano. Le impronte sul flacone combaciano."
+    if quaderno_manipolato:
+        "Il quaderno recuperato sotto il materasso contiene centoquaranta pagine di calligrafia ordinatissima, con descrizioni degli abusi suggerite da Sophie. Viene allegato integralmente e il perito lo definisce un documento di eccezionale valore clinico: la manipolazione diventa, agli occhi degli investigatori, una falsa conferma."
+    elif quaderno_fedele:
+        "Il quaderno contiene date, frasi e gesti osservati, ma non la confessione ordinata che il caso richiede. Alcune discrepanze vengono annotate e poi considerate dettagli secondari: senza copie esterne, nessuno ricostruisce la pressione esercitata da Sophie."
+    elif quaderno_vuoto:
+        "Non esistono centoquaranta pagine da allegare. Il fascicolo si regge sulle impronte, sul flacone e sulla ricostruzione di una sopravvissuta traumatizzata; l'assenza del diario viene interpretata come un dettaglio, non come una ragione per riaprire il caso."
     "Ci sono tre anomalie."
     "La prima: il consulente medico-legale annota su un corpo un pattern di pressione compatibile con una forza superiore a quella esprimibile da Mila nelle sue condizioni. Resta una nota a piè di pagina. Nessuno costruisce un secondo colpevole quando il primo sembra aver confessato per centoquaranta pagine."
     "Anche la concentrazione di sedativi nel sangue di Mila viene liquidata rapidamente. La relazione finale parla di una finestra di latenza, una spiegazione accomodante per i minuti che non tornano. Di fronte a un diario pieno di rabbia e a un corpo che stringe ancora un frammento di vetro, nessuno cerca discrepanze."
@@ -1108,8 +1136,14 @@ label finale_fascicolo:
     "La spiegazione si scrive da sola, e la scrivono gli adulti per lei: la bambina ha tentato di fermare Mila, si è divincolata, è scappata a nascondersi. Nel verbale, le tracce sono compatibili con una colluttazione difensiva."
     "È, in un certo senso, la firma più bella che Sophie abbia mai messo in fondo a un documento: qualcun altro l'ha scritta per lei."
     "I quotidiani parlano del Massacro della Porta Accanto per settimane. Il sabato pubblicano la fotografia della villetta con la quercia recintata dal nastro giallo. La domenica un editoriale molto letto parla dell'inconoscibilità dei figli."
-    "Una sola voce stona. Una compagna di classe, K., diciotto anni, rilascia due dichiarazioni e scrive una lettera di quattro pagine alla Procura. Dice che Mila era cambiata, che aveva provato a offrirle ospitalità e che i genitori di Mila l'avevano chiamata tre volte in primavera per chiedere aiuto."
-    "La lettera viene protocollata e archiviata. Il cronista non la cita: non c'è spazio, e comunque non aggiunge nulla. K. compare in sei parole: Non era lei. Non era lei."
+    if telefono_condiviso_kate or immagini_condivise_kate:
+        "Una sola voce stona. Kate consegna alla Procura anche le copie che Mila le aveva affidato: il messaggio e l'immagine non dimostrano da soli chi fosse Sophie, ma fissano una traccia esterna che il fascicolo non riesce a spiegare."
+        "La lettera di Kate viene protocollata e archiviata. Il cronista non la cita: non c'è spazio, e comunque non aggiunge nulla. K. compare in sei parole: Non era lei. Non era lei."
+    elif legame_kate >= 2:
+        "Una sola voce stona. Kate, che aveva provato a offrire ospitalità a Mila, rilascia due dichiarazioni e scrive una lettera di quattro pagine alla Procura. Dice che Mila era cambiata e che i genitori l'avevano chiamata tre volte in primavera per chiedere aiuto."
+        "La lettera viene protocollata e archiviata. Il cronista non la cita: non c'è spazio, e comunque non aggiunge nulla. K. compare in sei parole: Non era lei. Non era lei."
+    else:
+        "Nessuno porta alla Procura una copia indipendente dei messaggi. Kate ricorda che Mila era cambiata, ma non riesce a dimostrare quanto Sophie fosse presente nella sua vita; la sua preoccupazione resta una testimonianza fragile, archiviata insieme alle altre anomalie."
     "Il pubblico ministero rilegge la lettera. Poi guarda la fotografia della superstite: una bambina bionda con le lentiggini, un braccio segnato da cicatrici allineate, e gli occhi di chi ha visto qualcosa di troppo grande."
     "Firma."
     "Tre mesi dopo, un treno attraversa la campagna."
