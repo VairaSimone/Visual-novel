@@ -468,7 +468,7 @@ label capitolo_3:
 
     if fotografia_distrutta and not fotografia_digitalizzata:
         menu:
-            "La fotografia non c'è più. Posso lasciare che resti solo un ricordo o chiedere a papà di confermare la frase.":
+            "La fotografia non c'è più. Posso lasciare che resti solo un ricordo o chiedere a papà di confermare la frase."
 
             "Gli chiedo se ha scritto quelle parole.":
                 $ testimonianza_padre = True
@@ -510,7 +510,9 @@ label capitolo_4:
     "Ha un flacone scuro nella tasca dell'impermeabile."
     sophie "Dormiranno. Prenderemo i soldi e andremo al mare. Solo noi due."
     play sound audio.glass
-    if fotografia_distrutta and not fotografia_digitalizzata:
+    if fotografia_distrutta and not fotografia_digitalizzata and testimonianza_padre:
+        "La fotografia non c'è più. Papà ha confermato di aver scritto la frase, ma la sua testimonianza non può sostituire il retro che ho distrutto."
+    elif fotografia_distrutta and not fotografia_digitalizzata:
         "La fotografia non c'è più. Posso riferire la frase che ho letto, ma non mostrare il retro a nessuno."
     elif fotografia_digitalizzata:
         "Ho ancora la copia digitale della fotografia: posso mostrare la grafia e il contesto, anche se non so da soli cosa dimostrino."
@@ -593,7 +595,7 @@ label capitolo_4:
                     "Le spiego anche che il flacone è rimasto nella neve, sotto la quercia."
                 jump finale_verita
 
-            "Mi fido di mio padre: entro e gli mostro il flacone." if flacone_con_mila and prontezza_aiuto >= 1:
+            "Mi fido di mio padre: entro e gli mostro il flacone." if flacone_con_mila and prontezza_aiuto >= 1 and fiducia_genitori >= 2:
                 $ fiducia_genitori += 1
                 jump finale_rottura
 
@@ -601,7 +603,7 @@ label capitolo_4:
                 $ fiducia_genitori += 1
                 jump finale_rottura
 
-            "Mi fido di mio padre e gli dico dov'è il flacone." if not flacone_con_mila and prontezza_aiuto >= 1:
+            "Mi fido di mio padre e gli dico dov'è il flacone." if not flacone_con_mila and prontezza_aiuto >= 1 and fiducia_genitori >= 2:
                 $ fiducia_genitori += 1
                 jump finale_rottura
 
@@ -699,6 +701,9 @@ label capitolo_5:
 
         "Chiamo Kate e le dico di usare le copie che ha conservato." if telefono_condiviso_kate and immagini_condivise_kate:
             $ legame_kate += 1
+            jump finale_verita
+
+        "Chiamo Kate e le racconto ciò che ricordo, anche senza copie." if not (telefono_condiviso_kate and immagini_condivise_kate):
             jump finale_verita
 
         "Dico tutto ai miei genitori, che ora so di poter chiedere aiuto." if flacone_con_mila and prontezza_aiuto >= 1 and fiducia_genitori >= 2:
