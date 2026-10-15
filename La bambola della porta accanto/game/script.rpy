@@ -107,7 +107,7 @@ label start:
     sophie "Entra, Mila. Lo sai che con me non devi bussare."
     "Busso lo stesso. È l'unica porta su cui mi è concesso farlo."
     sophie "Pensavo che fossi scappata. Mi sei mancata."
-    "Sophie mi guarda come se fosse l'unica persona capace di vedermi davvero."
+    "Mi sistema il colletto, piegato sotto la giacca. Lo fa con una cura quasi materna; quando ha finito, lascia le dita lì un secondo più del necessario."
 
     menu:
         "Sophie mi prende il mento con due dita."
@@ -115,12 +115,12 @@ label start:
         "Mi scosto e preparo la cena.":
             $ dubbi_di_mila += 1
             mila "Sono qui per i compiti e la cena. Nient'altro."
-            sophie "Certo. Recitiamo pure la parte."
+            sophie "Certo." 
+            "Sophie sorride e mi passa il grembiule. Ha già preparato quello con il mio nome scritto sull'etichetta."
 
         "Resto immobile e lascio che mi guardi.":
             $ fiducia_sophie += 1
-            "Il suo pollice sfiora la cicatrice sotto il mio zigomo."
-            sophie "Solo io mi accorgo di quanto tremi."
+            "Il suo pollice sfiora la cicatrice sotto il mio zigomo. Per un istante il gesto sembra una carezza; poi il pollice si ferma proprio dove la pelle tira."
 
     "Sotto la quercia, più tardi, ci sarà un messaggio."
     "E da qualche parte, dentro di me, una voce comincerà a fare domande."
@@ -145,8 +145,9 @@ label capitolo_1:
     sophie "Sai che i miei ti usano come esempio?"
     "Sophie è seduta sul bancone. Le sue gambe dondolano sopra il pavimento lucido."
     mila "I tuoi sono gentili."
-    sophie "No. Sono pigri. Ti guardano e pensano: ecco una ragazza che non darà mai problemi."
-    sophie "Ma io vedo come stringi quel coltello."
+    sophie "Dicono sempre che con te è facile. Che non fai storie."
+    "Sophie mi spinge verso il gomito una fetta di mela, già tagliata in pezzi uguali."
+    sophie "Ti ricordi ancora come ti piace mangiarla."
 
     menu:
         "Le mie nocche sono bianche attorno al manico."
@@ -177,12 +178,12 @@ label capitolo_1:
         "Chiedo chi le ha scritto.":
             $ dubbi_di_mila += 1
             mila "Chi era?"
-            sophie "Nessuno. Una pubblicità."
-            "La risposta è troppo rapida. Sophie, però, non distoglie lo sguardo."
+            sophie "Una cosa noiosa."
+            "Sophie gira il telefono a faccia in giù e mi offre l'ultimo pezzo di mela. Aspetta che lo prenda prima di riprendere a parlare."
 
         "Non chiedo nulla.":
             $ fiducia_sophie += 1
-            "Non sono affari miei. O almeno, è quello che mi ripeto."
+            "Il silenzio ci rimette al suo posto. Quando torno a guardarla, Sophie sta già parlando d'altro."
 
     scene bg sophie room
     with dissolve
@@ -229,13 +230,13 @@ label capitolo_1:
     "Non so ancora che basterà quella distanza per perdermi."
 
     if dubbi_di_mila >= 2:
-        "Però qualcosa stona. Un gesto troppo misurato. Una risposta troppo pronta."
-        "Per la prima volta, penso che il pericolo possa avere una voce gentile."
+        "Ripenso al telefono girato sul marmo e al modo in cui Sophie ha aspettato che prendessi la mela."
+        "Non riesco a decidere quale dei due gesti mi abbia disturbata di più."
     elif fiducia_sophie >= 2:
-        "Con Sophie, per qualche minuto, mi sento meno invisibile."
-        "È una sensazione così rara che non mi accorgo di quanto costa."
+        "La mela era tagliata esattamente come piace a me. Mi sorprendo a volerle raccontare una cosa che non ho detto a nessuno."
+        "Per qualche minuto, la sua stanza sembra il posto più semplice del mondo."
     else:
-        "Non so a chi credere. Forse non l'ho mai saputo."
+        "La pioggia ha cancellato le impronte tra le due case. Domani non saprò dire da quale porta sono passata per prima."
 
     jump capitolo_2
 
@@ -298,8 +299,8 @@ label capitolo_2:
         "Lo tengo e rispondo a Sophie.":
             $ telefono_risposto_sophie = True
             $ fiducia_sophie += 2
-            sophie "Brava ragazza. Adesso siamo connesse."
-            "Mi sento scelta. È una sensazione che assomiglia troppo alla pace."
+            sophie "Sapevo che avresti capito."
+            "La risposta arriva prima che io abbia finito di digitare. Subito dopo, lo schermo si illumina di nuovo: un cuoricino, poi niente."
 
         "Lo spengo e lo nascondo senza rispondere.":
             $ telefono_nascosto = True
@@ -326,12 +327,12 @@ label capitolo_2:
             $ fotografia_conservata = True
             $ fiducia_genitori += 1
             $ indizi_reali += 1
-            "Non cancella il dolore, ma rende più difficile chiamarlo odio."
+            "La infilo tra le pagine di un libro. Per tutto il resto della sera mi sembra di sentire il bordo rigido contro il palmo, anche quando ho le mani vuote."
 
         "La strappo e la butto via.":
             $ fotografia_distrutta = True
             $ fiducia_sophie += 1
-            "Le prove non valgono niente. Sophie dice che le famiglie sanno recitare."
+            "La carta si rompe più facilmente di quanto pensassi. Resto a fissare i frammenti nel cestino, cercando di ricordare se la grafia di papà inclinasse davvero a destra."
 
         "La fotografo con il telefono segreto.":
             $ fotografia_digitalizzata = True
@@ -380,7 +381,7 @@ label capitolo_3:
         "Scrivo la versione che Sophie mi suggerisce.":
             $ quaderno_manipolato = True
             $ fiducia_sophie += 2
-            "Scrivo che mia madre vuole cancellarmi. La frase non mi appartiene, ma la grafia è la mia."
+            "Sophie detta piano, senza guardarmi. Quando finisco, passa un dito sotto la frase e corregge una parola. La sua grafia e la mia restano sulla stessa riga."
 
         "Non scrivo nulla.":
             $ quaderno_vuoto = True
@@ -411,7 +412,7 @@ label capitolo_3:
             $ dubbi_di_mila += 1
             $ indizi_reali += 1
             sophie "Non ti fidi di me?"
-            "Ingrandendo l'immagine, noto che una cifra è sfocata in modo diverso dalle altre."
+            "Sophie non ritira il telefono. Avvicina invece la sedia alla mia, finché le nostre spalle si toccano. Ingrandisco l'immagine: una cifra è sfocata in modo diverso dalle altre."
             if dubbi_di_mila >= 3:
                 "Confronto i bordi della cifra con quelli del resto del documento: anche l'ombra del testo non coincide. Non è una prova definitiva, ma è una seconda anomalia concreta."
                 $ indizi_reali += 1
@@ -421,7 +422,7 @@ label capitolo_3:
         "Le credo senza guardare meglio.":
             $ immagini_credute = True
             $ fiducia_sophie += 2
-            "Il terrore è più semplice di un dubbio."
+            "Sophie abbassa la luminosità e aspetta. Sullo schermo, le cifre sembrano più nette quando smetto di guardarle da vicino."
 
         "Mando una foto a Kate.":
             $ immagini_condivise_kate = True
@@ -533,19 +534,19 @@ label capitolo_4:
             $ dubbi_di_mila += 1
             $ indizi_reali += 1
             sophie "Perché fai sempre domande quando finalmente possiamo essere libere?"
-            "Non risponde. Stringe soltanto le mie dita attorno al vetro."
+            "Mi chiude le dita attorno al vetro, una per una. Il flacone è freddo. Le sue mani no."
 
         "Lo prendo e le prometto che farò la mia parte.":
             $ promessa_a_sophie = True
             $ fiducia_sophie += 2
-            "La sua espressione si addolcisce. È il momento in cui avrei dovuto avere più paura."
+            "Sophie lascia uscire il fiato e mi sfiora la manica, togliendo un filo chiaro dal tessuto. Poi torna a guardare la quercia."
 
         "Lascio cadere il flacone nella neve.":
             $ flacone_con_mila = False
             $ fiducia_sophie -= 2
             $ dubbi_di_mila += 1
             sophie "Non farmi diventare cattiva, Mila."
-            "Le sue parole sono leggere. Il suo sguardo no."
+            "Sophie raccoglie un fiocco di neve dal polsino e lo lascia sciogliere sulla punta del dito. Quando rialza gli occhi, sorride di nuovo."
 
     $ tensione_scena = False
 
@@ -652,11 +653,11 @@ label capitolo_5:
         "Non ho verificato le immagini. Adesso devo ammettere che una parte della mia certezza viene dalla fiducia che ho riposto in Sophie."
 
     if fiducia_sophie >= 3:
-        "La promessa di una vita con Sophie conserva ancora un potere su di me. È proprio questo che rende difficile distinguere il desiderio dalla paura."
+        "Sophie mi sistema il colletto, come aveva fatto all'ingresso. Il gesto mi è familiare; non riesco a ricordare se gliel'ho mai chiesto."
     elif fiducia_sophie <= 0:
-        "Non riesco più a confondere la dolcezza di Sophie con la sicurezza: so quanto può cambiare tono quando la contraddico."
+        "Quando Sophie mi guarda, conto i secondi prima che parli. Lei aspetta un poco più del necessario, poi mi domanda se ho freddo."
     else:
-        "Una parte di me le crede ancora; un'altra ha imparato a non scambiare il sollievo per una prova."
+        "Sophie mi sfiora la manica e sorride. Per un istante mi rilasso; subito dopo mi accorgo che sto aspettando il momento in cui smetterà."
 
     if indizi_reali >= 4:
         "Ho conservato abbastanza dettagli da raccontare una sequenza precisa, non soltanto la mia paura."
@@ -724,8 +725,8 @@ label finale_verita:
     elif fotografia_conservata or fotografia_digitalizzata:
         "La fotografia originale o la sua copia digitale viene conservata insieme agli altri elementi, senza attribuirle un significato che da sola non può dimostrare."
 
-    "Sophie continua a sorridere. Per la prima volta, però, nessuno le lascia decidere quale storia raccontare."
-    "Mila non guarisce come in una favola. Comincia a parlare, ed è più difficile. È anche più vero."
+    "Sophie continua a sorridere. Kate le fa una domanda semplice, poi aspetta la risposta senza riempire il silenzio."
+    "Mila racconta quello che ricorda. Quando arriva a un punto che non sa spiegare, si ferma. Nessuno le suggerisce le parole successive."
     centered "{size=42}{color=#e6d4db}FINALE: LA VERITÀ HA UNA VOCE{/color}{/size}"
     return
 
