@@ -46,7 +46,8 @@ default flacone_indagato = False
 label start:
     scene bg title night
     with fade
-    play music audio.room fadein 1.5
+    play ambience audio.room fadein 1.5
+    play music audio.investigation fadein 1.8
 
     centered "{size=32}{color=#e6d4db}AVVISO CONTENUTI{/color}{/size}\n\n{size=23}Questa storia contiene manipolazione psicologica,\nviolenza non grafica e riferimenti all'autolesionismo.{/size}"
 
@@ -76,7 +77,7 @@ label start:
 
     scene bg school
     with dissolve
-    play music audio.rain fadeout 1.0 fadein 1.5
+    play ambience audio.rain fadeout 1.0 fadein 1.5
 
     "A scuola, Kate mi raggiunge davanti al cancello."
     kate "Stasera festa da Leo. Devi venire, almeno per un'ora."
@@ -135,7 +136,7 @@ label capitolo_1:
 
     scene bg sophie kitchen
     with dissolve
-    play music audio.room fadeout 1.0 fadein 1.5
+    play ambience audio.room fadeout 1.0 fadein 1.5
 
     "Preparo il pollo con movimenti automatici. Taglio, soffriggo, mescolo."
     "È una coreografia che potrei eseguire bendata. Mia madre la chiamerebbe efficienza."
@@ -221,7 +222,7 @@ label capitolo_1:
 
     scene bg oak houses
     with dissolve
-    play music audio.rain fadeout 1.0 fadein 1.5
+    play ambience audio.rain fadeout 1.0 fadein 1.5
 
     "Fuori, la quercia graffia il vetro con i suoi rami."
     "Tra la mia casa e la sua c'è una distanza di pochi metri."
@@ -242,7 +243,7 @@ label capitolo_1:
 label capitolo_2:
     scene bg mila kitchen
     with fade
-    play music audio.room fadeout 1.0 fadein 1.5
+    play ambience audio.room fadeout 1.0 fadein 1.5
 
     centered "{size=42}{color=#e6d4db}CAPITOLO 2{/color}{/size}\n\n{size=28}{color=#aa97a3}La geometria del silenzio{/color}{/size}"
 
@@ -352,7 +353,8 @@ label capitolo_3:
     $ tensione_scena = False
     scene bg oak houses
     with fade
-    play music audio.rain fadeout 1.0 fadein 1.5
+    play ambience audio.rain fadeout 1.0 fadein 1.5
+    play music audio.investigation fadeout 1.0 fadein 1.4
 
     centered "{size=42}{color=#e6d4db}CAPITOLO 3{/color}{/size}\n\n{size=28}{color=#aa97a3}Frequenze d'ombra{/color}{/size}"
 
@@ -363,6 +365,7 @@ label capitolo_3:
     "Mi porge un quaderno nero. Sulla prima pagina ha già segnato una data."
 
     # SCELTA INVESTIGATIVA IRREVERSIBILE: il quaderno potrà sostenere oppure compromettere Mila.
+    play music audio.tension fadeout 0.8 fadein 1.2
     $ tensione_scena = True
     menu:
         "Il quaderno è aperto tra le mie mani."
@@ -386,6 +389,7 @@ label capitolo_3:
             "La domanda ha il peso di un ricatto."
 
     $ tensione_scena = False
+    play music audio.investigation fadeout 0.8 fadein 1.0
 
     if telefono_condiviso_kate:
         "Kate mi ha chiesto di non decidere sulla base di uno screenshot isolato. Mi torna in mente il suo consiglio prima che Sophie mostri le immagini."
@@ -397,6 +401,7 @@ label capitolo_3:
     "Sophie mi mostra una serie di fotografie sul suo telefono: ricevute, estratti conto, messaggi incompleti."
     sophie "Vedi? I tuoi pagano qualcuno. Vogliono liberarsi di te."
 
+    play music audio.tension fadeout 0.8 fadein 1.2
     $ tensione_scena = True
     menu:
         "Le cifre sullo schermo scorrono troppo in fretta."
@@ -425,6 +430,7 @@ label capitolo_3:
             kate "Mila, sembra un'immagine modificata. Non decidere nulla stanotte."
 
     $ tensione_scena = False
+    play music audio.investigation fadeout 0.8 fadein 1.0
 
     if immagini_verificate:
         "La verifica non mi dà una risposta completa, ma mi ha impedito di prendere lo screenshot per un fatto incontestabile."
@@ -475,6 +481,8 @@ label capitolo_4:
     $ tensione_scena = False
     scene bg oak houses
     with fade
+    play ambience audio.rain fadein 1.4
+    play music audio.tension fadeout 1.0 fadein 1.6
     play sound audio.heartbeat
 
     centered "{size=42}{color=#e6d4db}CAPITOLO 4{/color}{/size}\n\n{size=28}{color=#aa97a3}La quercia{/color}{/size}"
@@ -606,7 +614,8 @@ label capitolo_5:
     $ tensione_scena = False
     scene bg mila kitchen
     with fade
-    play music audio.room fadeout 1.0 fadein 1.5
+    play ambience audio.room fadeout 1.0 fadein 1.5
+    play music audio.tension fadeout 1.0 fadein 1.5
     play sound audio.heartbeat
 
     centered "{size=42}{color=#e6d4db}CAPITOLO 5{/color}{/size}\n\n{size=28}{color=#aa97a3}Il diorama{/color}{/size}"
@@ -755,7 +764,8 @@ label finale_fuga:
     $ tensione_scena = False
     scene bg oak houses
     with fade
-    play music audio.rain fadeout 1.0 fadein 1.5
+    play ambience audio.rain fadeout 1.0 fadein 1.5
+    play music audio.investigation fadeout 1.2 fadein 1.6
     "Mila corre verso la quercia. Sophie l'aspetta con uno zaino troppo piccolo per una vita nuova."
     if flacone_con_mila:
         "Il flacone è ancora con me. Non so più se sia una prova o una promessa."
