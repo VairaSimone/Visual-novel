@@ -1024,8 +1024,12 @@ label finale_verita:
         "La mia voce raggiunge il corridoio. Sophie mi strappa il polso, ma il gesto ha lasciato segni che non può cancellare. Kate conserva una copia dei messaggi; le immagini sono state condivise e alcuni passaggi del piano non esistono soltanto nella mia memoria."
         "La polizia non ricostruisce tutto in una notte. Ci sono quattro morti e domande a cui nessuna spiegazione rapida può rispondere. Ma la versione di Sophie non è più l'unica."
         "Per la prima volta le chiedono di ripetere la storia senza suggerirle le parole. Il suo sorriso resta fermo per qualche secondo, poi si incrina."
+        if fiducia_genitori >= 2:
+            "Ricordo che, prima di tutto questo, avevo provato almeno una volta a parlare con papà. Quel gesto non cancella ciò che è successo, ma mi aiuta a non confondere il suo silenzio con una confessione."
+        else:
+            "Mi torna in mente quante volte ho evitato di rispondere a papà. Non potrò più chiedergli che cosa avrebbe detto, e questa domanda resta aperta accanto alle prove."
         "Io non posso riportare indietro nessuno. Posso soltanto dire ciò che ricordo, ammettere ciò che ho fatto e smettere di riempire i vuoti con la voce di un'altra persona."
-        centered "{size=42}{color=#e6d4db}FINALE: LA VERITÀ HA TESTIMONI{/color}{/size}"
+        centered "{size=42}{color=#e6d4db}FINALE: LA VERITÀ HA TESTIMONI{/size}{/color}"
         return
     "Kate esita quando sente la mia voce, ma resta in linea. Le do la posizione e le chiedo di conservare ciò che ha ricevuto."
     if telefono_condiviso_kate and immagini_condivise_kate:
@@ -1133,7 +1137,10 @@ label finale_fascicolo:
     "La seconda anomalia sono i tabulati. Nella tasca dei jeans viene trovato un vecchio cellulare con decine di SMS scambiati con un'utenza anonima, firmati soltanto S. L'analisi dei dispositivi ufficiali della villetta vicina non trova contatti tra Sophie e la vittima. La SIM è una prepagata estera con dati falsi."
     "La Procura conclude che S. sia una figura conosciuta da Mila su un forum, un interlocutore mai identificato, oppure una personificazione nata dal suo stato dissociativo."
     "La terza: sotto le unghie di Mila viene isolato materiale epiteliale non suo. Il profilo corrisponde alla superstite di quindici anni, rinvenuta dodici ore dopo in un ripostiglio, disidratata e incapace di formulare frasi complete."
-    "La spiegazione si scrive da sola, e la scrivono gli adulti per lei: la bambina ha tentato di fermare Mila, si è divincolata, è scappata a nascondersi. Nel verbale, le tracce sono compatibili con una colluttazione difensiva."
+    if ipotesi_genitori_sospetto:
+        "Nei suoi appunti Mila aveva continuato a chiamare i genitori colpevoli, anche quando non disponeva di un riscontro indipendente. Nel fascicolo, quel sospetto viene letto come prova di un rancore premeditato."
+    else:
+        "La spiegazione si scrive da sola, e la scrivono gli adulti per lei: la bambina ha tentato di fermare Mila, si è divincolata, è scappata a nascondersi. Nel verbale, le tracce sono compatibili con una colluttazione difensiva."
     "È, in un certo senso, la firma più bella che Sophie abbia mai messo in fondo a un documento: qualcun altro l'ha scritta per lei."
     "I quotidiani parlano del Massacro della Porta Accanto per settimane. Il sabato pubblicano la fotografia della villetta con la quercia recintata dal nastro giallo. La domenica un editoriale molto letto parla dell'inconoscibilità dei figli."
     if telefono_condiviso_kate or immagini_condivise_kate:
