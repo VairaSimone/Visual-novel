@@ -10,15 +10,19 @@ La storia ha un nucleo forte: Mila, diciottenne fragile e isolata, interpreta la
 
 I suoi punti più adatti a una visual novel sono l'atmosfera claustrofobica, il rapporto ambiguo tra le due protagoniste, Kate come possibile ancora alla realtà e gli indizi che acquistano un secondo significato dopo la rivelazione.
 
-## Adattamento interattivo
+## Sistema di relazioni, indizi e stato degli oggetti
 
-La visual novel non tratterà le scelte come un test di moralità. Ogni scelta modificherà una di tre variabili nascoste:
+Le scelte non sono un test di moralità: registrano come Mila interpreta ciò che accade e a chi è disposta a chiedere aiuto. Lo script mantiene cinque variabili narrative, ciascuna con conseguenze nel gioco:
 
-- `fiducia_sophie`: disponibilità di Mila a credere a Sophie.
-- `legame_kate`: apertura verso un rapporto esterno e più sano.
-- `dubbi_di_mila`: capacità di riconoscere contraddizioni e recuperare ricordi.
+- `fiducia_sophie`: modifica la lettura dei comportamenti di Sophie nel capitolo della quercia, il monologo prima della scelta conclusiva e l'interpretazione dei finali della fuga e del fascicolo.
+- `legame_kate`: influenza se Kate cerca Mila dopo il messaggio del telefono, il modo in cui Mila riesce a chiederle aiuto e la risposta nel finale della verità.
+- `dubbi_di_mila`: se è abbastanza alto, permette a Mila di riconoscere un'ulteriore incongruenza nell'immagine e ottenere un indizio concreto; insieme al legame con Kate può aprire la richiesta di aiuto.
+- `indizi_reali`: rappresenta i dettagli e le prove che Mila ha riconosciuto o conservato. La soglia di 3 cambia la lettura degli appunti; la soglia di 4 offre un percorso basato su prove più solide e cambia la descrizione del finale della verità.
+- `fiducia_genitori`: modifica il modo in cui Mila interpreta la proposta d'aiuto, può aprire una via per chiedere aiuto anche senza avere prove complete e cambia le opzioni e il dialogo del finale con i genitori.
 
-Queste variabili consentiranno finali diversi senza tradire la premessa del thriller: finale della verità, finale della fuga illusoria, finale del fascicolo e finale di Sophie.
+Il flacone è gestito separatamente dalla variabile di relazione con lo stato oggetto `flacone_con_mila`. Quando Mila lo lascia nella neve, le opzioni successive e i finali rispettano quella posizione: non può versarne il contenuto se non lo possiede, può dire ai genitori dove recuperarlo e anche gli altri finali descrivono correttamente dove si trova.
+
+La scelta di chiedere aiuto può quindi essere raggiunta in tre modi: prove sufficienti (`indizi_reali >= 4`), un legame con Kate insieme a dubbi concreti (`legame_kate >= 2` e `dubbi_di_mila >= 2`) oppure una fiducia nei genitori sufficiente (`fiducia_genitori >= 2`). Nessuna soglia è una valutazione morale del giocatore: sono tre ragioni narrative diverse per interrompere il piano di Sophie.
 
 ## Struttura implementata
 
