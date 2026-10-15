@@ -21,7 +21,6 @@ default fiducia_genitori = 0 # Quanto Mila è disposta a chiedere aiuto ai genit
 default flacone_con_mila = False
 
 # Attiva la variante visiva delle scelte decisive; è salvata insieme alla partita.
-default tensione_scena = False
 
 # Ipotesi formulate nell'archivio: interpretazioni da confrontare, non fatti.
 default ipotesi_attiva = ""
@@ -53,7 +52,6 @@ default flacone_indagato = False
 default genitori_salvati = False
 default genitori_sedati = False
 default sophie_smascherata = False
-default scelta_finale = ""
 default soldi_rubati = False
 default soldi_parziali = False
 
@@ -69,7 +67,7 @@ label start:
 
     scene bg mila room
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense at sprite_stage_left
     else:
         show sprite_mila_neutral at sprite_stage_left
@@ -86,7 +84,7 @@ label start:
     "Una vecchia cicatrice. Non ricordo sempre da dove venga. So soltanto che, quando la sfioro, sento paura; e in questa casa la paura sembra sempre una prova a carico di qualcuno."
     scene bg mila kitchen
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried at sprite_stage_left
         show sprite_madre_cold at sprite_stage_right
     else:
@@ -138,7 +136,7 @@ label start:
             "Vorrei crederle. Ma l'idea che qualcuno possa davvero aiutarmi mi sembra più irreale di qualunque punizione."
     scene bg oak houses
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense at sprite_stage_left
         show sprite_sophie_cold at sprite_stage_right
     else:
@@ -153,7 +151,7 @@ label start:
     sophie "Entra, Mila. Lo sai che con me non devi bussare. Sei l'unica persona che non mi dà il mal di testa in questa casa."
     scene bg sophie room
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried at sprite_stage_left
         show sprite_sophie_tense at sprite_stage_right
     else:
@@ -180,7 +178,7 @@ label start:
     sophie "Va bene. Prepariamo il pollo. Recitiamo la parte. Fai la brava ospite. Ma non sei brava a fingere, Mila. Accumula pure tutta questa rabbia. Un giorno la useremo insieme contro di lei. Ora vai."
     scene bg sophie kitchen
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried at sprite_stage_left
         show sprite_sophie_cold at sprite_stage_right
     else:
@@ -227,7 +225,7 @@ label capitolo_1:
     sophie "Vai a casa, Mila. Corri dal tuo mostro. Fatti fare tutto quello che deve. Così capirai che l'unico posto sicuro è qui. Ricorda: la mia porta non è mai chiusa a chiave per te."
     scene bg oak houses
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense at sprite_stage_left
         show sprite_sophie_cold at sprite_stage_right
     else:
@@ -236,7 +234,7 @@ label capitolo_1:
     "Infilo la chiave nella toppa. La porta si apre. E basta. Non è chiusa dall'interno. Mi fermo sulla soglia, con la chiave ancora in mano. Mi dico che è stata una dimenticanza, che sono fortunata, che la prossima volta sarà diverso."
     scene bg mila kitchen
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried at sprite_stage_left
         show sprite_madre_cold at sprite_stage_right
     else:
@@ -260,7 +258,7 @@ label capitolo_1:
     madre "Sparisci dalla mia vista. Vai in camera tua e non uscire prima di domattina."
     scene bg mila room
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense at sprite_stage_left
     else:
         show sprite_mila_neutral at sprite_stage_left
@@ -483,7 +481,6 @@ label capitolo_4:
             "Il sorriso le resta sulle labbra, ma le dita mi lasciano andare."
         "Le propongo di partire subito, senza rubare.":
             $ dubbi_di_mila += 1
-            $ scelta_finale = "fuga_immediata"
             sophie "Senza preparare niente? Senza essere sicure?"
             "Sophie sorride, ma i suoi occhi diventano immobili. Vuole una fuga che abbia deciso lei, non una decisione presa da me."
             jump finale_fuga
@@ -501,7 +498,7 @@ label capitolo_5:
     "Mi alzo e vado allo specchio. Sfioro la cicatrice sotto lo zigomo, dove la notte prima Sophie ha premuto il pollice. Cerco un segno visibile del suo possesso, ma il riflesso mi restituisce la solita Mila: camicia stirata, colletto simmetrico, occhi spenti."
     scene bg mila kitchen
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried at sprite_stage_left
         show sprite_madre_cold at sprite_stage_right
     else:
@@ -511,7 +508,7 @@ label capitolo_5:
     "I miei genitori escono alle dieci e trenta per la spesa e la lavanderia. Quando sento il motore allontanarsi, il silenzio della casa cambia frequenza: non è più protettivo, ma accusatorio. Ogni mobile sembra guardarmi."
     scene bg mila room
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense at sprite_stage_left
     else:
         show sprite_mila_neutral at sprite_stage_left
@@ -562,7 +559,7 @@ label capitolo_5:
             "La carta si rompe più facilmente di quanto pensassi. Raccolgo ogni frammento, ma so che non potrò ricostruirla senza lasciare tracce."
     scene bg mila kitchen
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried at sprite_stage_left
         show sprite_madre_cold at sprite_stage_right
     else:
@@ -778,7 +775,7 @@ label capitolo_7:
     "Torno a casa con il flacone nascosto, proprio sopra il cuore. Il vetro freddo mi morde la pelle a ogni respiro."
     scene bg mila kitchen
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried at sprite_stage_left
         show sprite_madre_cold at sprite_stage_right
     else:
@@ -820,8 +817,7 @@ label capitolo_7:
 label capitolo_8:
     scene bg mila kitchen
     with fade
-    $ tensione_scena = False
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried at sprite_stage_left
         show sprite_madre_cold at sprite_stage_right
     else:
@@ -871,7 +867,7 @@ label capitolo_8:
     "Attraversiamo il prato alle 02:40. Il fango mi si attacca ai piedi nudi, ma non sento freddo. Il cuscino pesa come un neonato di pietra."
     scene bg sophie kitchen
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried at sprite_stage_left
         show sprite_sophie_cold at sprite_stage_right
     else:
@@ -901,7 +897,7 @@ label capitolo_8:
 label capitolo_9:
     scene bg sophie kitchen
     with fade
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried at sprite_stage_left
         show sprite_sophie_cold at sprite_stage_right
     else:
@@ -977,14 +973,12 @@ label capitolo_9:
         "Collego il messaggio e le immagini, poi chiamo aiuto." if ipotesi_attiva == "sophie_manipola" and ipotesi_sophie_solida:
             $ sophie_smascherata = True
             $ indizi_reali += 1
-            $ scelta_finale = "deduzione_condivisa"
             "Non provo a dimostrare da sola ogni dettaglio. Indico le tracce che Kate può verificare e chiedo aiuto prima che Sophie imponga un'altra versione."
             mila "Kate! Ho bisogno di te. Conserva tutto e chiama un adulto, non entrare da sola."
             jump finale_verita
         "Non prendo il vetro. Le afferro il polso e chiamo aiuto." if indizi_reali >= 3 or telefono_condiviso_kate or immagini_condivise_kate or legame_kate >= 2 or padre_ascoltato:
             $ sophie_smascherata = True
             $ indizi_reali += 1
-            $ scelta_finale = "richiesta_aiuto"
             "Le afferro il polso. Le unghie affondano nella pelle sotto le cicatrici e non lascio andare."
             "Per la prima volta il suo viso cambia. Non è paura: è fastidio, come una piega storta sul vestito."
             mila "Kate! Aiuto!"
@@ -992,13 +986,11 @@ label capitolo_9:
             jump finale_verita
         "Le dico che so la verità, ma non riesco a chiedere aiuto.":
             $ dubbi_di_mila += 1
-            $ scelta_finale = "silenzio"
             sophie "Non hai più niente. Nessuna madre, nessun padre, nessuna Kate, nessuna casa. Hai solo me."
             "Penso a mio padre in corridoio, quando mi chiedeva dov'era il punto. Il punto non eri tu, papà. Il punto ero io. Il punto era lei."
             "Chiudo gli occhi."
             jump finale_fascicolo
         "Chiudo gli occhi e lascio che Sophie decida il finale.":
-            $ scelta_finale = "finale_imposto"
             "Non prendo il vetro. Ma non riesco a muovermi, né a chiamare nessuno. Sophie mi chiude le dita intorno al frammento con la pazienza di chi veste una bambola."
             "La colpa è un peso troppo grande per le mie giunture di metallo. Sotto la colpa c'è il ricordo di mia madre seduta accanto al letto d'ospedale per un'intera notte, e non riesco a guardarlo."
             "Sophie aspetta. Io non trovo una voce."
@@ -1006,7 +998,6 @@ label capitolo_9:
 
 
 label finale_verita:
-    $ tensione_scena = False
     scene bg school
     with fade
     show sprite_mila_neutral at sprite_stage_left
@@ -1051,10 +1042,9 @@ label finale_verita:
 
 
 label finale_rottura:
-    $ tensione_scena = False
     scene bg mila kitchen
     with fade
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried at sprite_stage_left
         show sprite_madre_cold at sprite_stage_right
     else:
@@ -1082,10 +1072,9 @@ label finale_rottura:
 
 
 label finale_fuga:
-    $ tensione_scena = False
     scene bg oak houses
     with fade
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense at sprite_stage_left
         show sprite_sophie_cold at sprite_stage_right
     else:
@@ -1115,7 +1104,6 @@ label finale_fuga:
 
 
 label finale_fascicolo:
-    $ tensione_scena = False
     scene bg title night
     with fade
     "8 maggio 2026, ore 03:30. La notte è finita, ma la versione ufficiale comincia proprio adesso."
@@ -1156,7 +1144,7 @@ label finale_fascicolo:
     "Tre mesi dopo, un treno attraversa la campagna."
     scene bg oak houses
     with dissolve
-    if tensione_scena or dubbi_di_mila >= 2 or indizi_reali >= 2:
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense at sprite_stage_left
         show sprite_sophie_cold at sprite_stage_right
     else:
