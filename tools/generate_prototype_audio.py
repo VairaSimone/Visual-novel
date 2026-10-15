@@ -263,13 +263,11 @@ def window_knock():
         for start, strength, frequency in knocks:
             elapsed = t - start
             if 0 <= elapsed < 0.34:
-                tone += (sin(2 * pi * frequency * elapsed)
-                         + 0.30 * sin(2 * pi * frequency * 2.04 * elapsed))
-                tone *= 1.0 if elapsed < 0 else 1.0
+                impulse = (sin(2 * pi * frequency * elapsed)
+                           + 0.30 * sin(2 * pi * frequency * 2.04 * elapsed))
+                tone += impulse * strength * exp(-elapsed * 12)
                 tone += RNG.uniform() * 0.02 * exp(-elapsed * 35) * strength
-                tone -= RNG.uniform() * 0.002
-                # Scale each impulse independently, without flattening earlier knocks.
-        samples.append(tone * 0.14 * edge_fade(t, seconds, 0.012))
+        samples.append(tone * 0.20 * edge_fade(t, seconds, 0.012))
     write("sfx_window_knock.wav", samples)
 
 
