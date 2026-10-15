@@ -20,7 +20,9 @@ default fiducia_genitori = 0 # Quanto Mila è disposta a chiedere aiuto ai genit
 # Se lo lascia cadere nella neve, le opzioni successive devono rispettarlo.
 default flacone_con_mila = False
 
-# Attiva la variante visiva delle scelte decisive; è salvata insieme alla partita.
+# Controlla l'accento visivo della finestra di dialogo e delle scelte.
+# La variabile deve essere inizializzata prima che Ren'Py mostri la prima schermata say.
+default tensione_scena = False
 
 # Ipotesi formulate nell'archivio: interpretazioni da confrontare, non fatti.
 default ipotesi_attiva = ""
