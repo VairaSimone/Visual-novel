@@ -1029,7 +1029,7 @@ label finale_verita:
         else:
             "Mi torna in mente quante volte ho evitato di rispondere a papà. Non potrò più chiedergli che cosa avrebbe detto, e questa domanda resta aperta accanto alle prove."
         "Io non posso riportare indietro nessuno. Posso soltanto dire ciò che ricordo, ammettere ciò che ho fatto e smettere di riempire i vuoti con la voce di un'altra persona."
-        centered "{size=42}{color=#e6d4db}FINALE: LA VERITÀ HA TESTIMONI{/size}{/color}"
+        centered "{size=42}{color=#e6d4db}FINALE: LA VERITÀ HA TESTIMONI{/color}{/size}"
         return
     "Kate esita quando sente la mia voce, ma resta in linea. Le do la posizione e le chiedo di conservare ciò che ha ricevuto."
     if telefono_condiviso_kate and immagini_condivise_kate:
