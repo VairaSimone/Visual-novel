@@ -847,3 +847,124 @@ label finale_fascicolo:
     "Da qualche parte, Kate rileggerà un messaggio rimasto senza risposta e capirà troppo tardi che Mila aveva provato a parlarle."
     centered "{size=42}{color=#e6d4db}FINALE: IL FASCICOLO{/color}{/size}"
     return
+
+
+# ARCHIVIO INVESTIGATIVO
+# Overlay leggero: si apre con I e distingue i fatti raccolti dalle interpretazioni.
+init python:
+    if "archivio_hotkey" not in config.overlay_screens:
+        config.overlay_screens.append("archivio_hotkey")
+
+
+screen archivio_hotkey():
+    zorder 190
+    key "i" action If(renpy.get_screen("archivio_indizi"), Hide("archivio_indizi"), Show("archivio_indizi"))
+
+
+screen archivio_indizi():
+    modal True
+    zorder 200
+    key "K_ESCAPE" action Hide("archivio_indizi")
+    add Solid("#100d14e8")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 1040
+        ysize 700
+        background Solid("#211a25")
+        padding (30, 24)
+
+        vbox:
+            spacing 12
+            hbox:
+                xfill True
+                vbox:
+                    spacing 3
+                    text "ARCHIVIO INVESTIGATIVO" size 32 color "#e6d4db"
+                    text "Quello che so, quello che sospetto, quello che manca." size 17 color "#c2b4c5"
+                null width 20
+                textbutton "CHIUDI  [I]" action Hide("archivio_indizi") text_size 18
+
+            frame:
+                xfill True
+                background Solid("#352a3a")
+                padding (14, 10)
+                vbox:
+                    spacing 4
+                    text "LEGENDA" size 16 color "#e4b6bd"
+                    text "CONFERMATO: un oggetto, un messaggio o un'azione che Mila ha davvero conservato o verificato." size 15
+                    text "IPOTESI: un'interpretazione ancora da dimostrare. Un sospetto non è una prova." size 15
+                    text "MANCANTE: una prova persa, non raccolta o non ancora confrontata." size 15
+
+            viewport:
+                xfill True
+                ysize 515
+                mousewheel True
+                draggable True
+                scrollbars "vertical"
+                vbox:
+                    spacing 14
+
+                    text "1. TELEFONO ANONIMO" size 22 color "#e4b6bd"
+                    if telefono_condiviso_kate:
+                        text "CONFERMATO · Kate ha ricevuto il messaggio e ne conserva una copia con l'orario. È una traccia indipendente dalla memoria di Mila." size 17
+                    elif telefono_nascosto:
+                        text "CONFERMATO · Il telefono è stato nascosto e il messaggio è ancora disponibile sul dispositivo. Nessun'altra persona ne ha una copia." size 17
+                    elif telefono_risposto_sophie:
+                        text "CONFERMATO · Mila ha risposto a Sophie. La risposta prova che c'è stato un contatto, non che il contenuto del messaggio sia vero." size 17
+                    else:
+                        text "MANCANTE · Mila non ha ancora scelto come gestire il telefono." size 17 color "#c2b4c5"
+
+                    text "2. FOTOGRAFIA DI FAMIGLIA" size 22 color "#e4b6bd"
+                    if fotografia_conservata:
+                        text "CONFERMATO · L'originale è stato conservato. La frase sul retro può essere mostrata e controllata da un'altra persona." size 17
+                    elif fotografia_digitalizzata:
+                        text "CONFERMATO · Esiste una copia digitale. Va preservata nella sua forma originale; la frase da sola non dimostra un piano." size 17
+                    elif fotografia_distrutta and testimonianza_padre:
+                        text "RISCONTRO ALTERNATIVO · L'originale è perduto. Papà ha confermato la frase, ma la sua testimonianza non permette di controllare la fotografia." size 17
+                    elif fotografia_distrutta:
+                        text "MANCANTE · L'originale è stato distrutto e non esiste una copia digitale. Resta soltanto il ricordo della frase." size 17 color "#d7a6a6"
+                    else:
+                        text "MANCANTE · La fotografia non è ancora stata esaminata." size 17 color "#c2b4c5"
+
+                    text "3. QUADERNO NERO" size 22 color "#e4b6bd"
+                    if quaderno_fedele:
+                        text "CONFERMATO · Il quaderno contiene osservazioni concrete. Le annotazioni sono utili, ma vanno confrontate con altre fonti." size 17
+                    elif quaderno_manipolato:
+                        text "ATTENZIONE · Il quaderno contiene parole suggerite da Sophie e corrette da lei. Non è una testimonianza indipendente." size 17 color "#d7a6a6"
+                    elif quaderno_vuoto:
+                        text "MANCANTE · Il quaderno non contiene una ricostruzione utile." size 17 color "#c2b4c5"
+                    else:
+                        text "MANCANTE · Mila non ha ancora deciso cosa scrivere." size 17 color "#c2b4c5"
+
+                    text "4. IMMAGINI MOSTRATE DA SOPHIE" size 22 color "#e4b6bd"
+                    if immagini_verificate:
+                        text "OSSERVAZIONE VERIFICATA · Mila ha notato una cifra e un'ombra del testo incoerenti. È un'anomalia concreta, non ancora la prova di chi abbia modificato l'immagine." size 17
+                    elif immagini_condivise_kate:
+                        text "CONFRONTO ESTERNO · Kate ha ricevuto una copia e sospetta una modifica. La sua valutazione va considerata un riscontro, non una conclusione definitiva." size 17
+                    elif immagini_credute:
+                        text "NON VERIFICATO · Mila ha accettato le immagini senza controllarle. La convinzione che i genitori la tradiscano non è stata dimostrata." size 17 color "#d7c2a0"
+                    else:
+                        text "MANCANTE · Le immagini non sono ancora state esaminate." size 17 color "#c2b4c5"
+
+                    text "5. FLACONE SOTTO LA QUERCIA" size 22 color "#e4b6bd"
+                    if flacone_indagato:
+                        text "DOMANDA APERTA · Mila ha chiesto a Sophie da dove proviene il flacone, ma non ha ottenuto una risposta." size 17
+                    if flacone_con_mila:
+                        text "STATO ATTUALE · Il flacone è con Mila. La sua presenza è un oggetto concreto; il contenuto e l'intenzione di Sophie restano da accertare." size 17
+                    else:
+                        text "STATO ATTUALE · Il flacone è stato lasciato nella neve. Mila può indicare dove si trova, ma non lo ha più con sé." size 17
+
+                    text "CONFRONTI E IPOTESI" size 22 color "#e4b6bd"
+                    if telefono_condiviso_kate and immagini_condivise_kate:
+                        text "CONFRONTO DISPONIBILE · Kate conserva sia il messaggio sia l'immagine sospetta. Due tracce possono essere confrontate; non dimostrano automaticamente che ogni accusa di Sophie sia falsa." size 17
+                    elif fotografia_conservata or fotografia_digitalizzata:
+                        text "CONFRONTO POSSIBILE · La frase sulla fotografia può essere controllata da un'altra persona. Per ora il suo significato resta ambiguo." size 17
+                    else:
+                        text "IPOTESI APERTA · Non c'è ancora una catena di prove sufficiente per stabilire cosa stia facendo Sophie o cosa significhino i gesti dei genitori." size 17
+
+                    if indizi_reali >= 4:
+                        text "VALUTAZIONE DI MILA · Ha raccolto diversi elementi, ma quantità e certezza non sono la stessa cosa." size 17 color "#c7dfc8"
+                    else:
+                        text "VALUTAZIONE DI MILA · La ricostruzione è incompleta. Segna ciò che hai osservato e non trasformare automaticamente un sospetto in un fatto." size 17 color "#d7c2a0"
