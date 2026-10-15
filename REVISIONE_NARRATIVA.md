@@ -60,3 +60,35 @@ La matrice sotto serve a pianificare il collaudo; non afferma che le prove siano
 ## Limiti di questa revisione
 
 Questa passata aggiorna l'archivio, introduce una conseguenza narrativa per una deduzione sostenuta e allinea la documentazione alla struttura attuale. Non dichiara completata la revisione definitiva della cronologia: gli orari sopra elencati sono i punti da controllare nel playtest, perché lo script non ancora ancora ogni segmento a una data di calendario esplicita.
+
+
+## Audit delle conseguenze delle variabili — 15 ottobre 2026
+
+La revisione è stata concentrata sulle variabili già esistenti. Non sono stati aggiunti nuovi flag narrativi; sono stati riutilizzati stati esistenti e rimossi tre flag che non producevano effetti osservabili (`tensione_scena`, `scelta_finale`, `telefonata_registrata`). La tensione visiva dipende ora dai dubbi e dagli indizi già accumulati, anziché da un booleano che non diventava mai vero.
+
+### Conseguenze collegate
+
+| Scelta/stato già presente | Conseguenza aggiunta o resa più esplicita |
+|---|---|
+| `telefono_condiviso_kate`, `telefono_nascosto`, `telefono_risposto_sophie` | Incontro sotto la quercia nel capitolo 4: Sophie reagisce diversamente al messaggio condiviso, al silenzio o alla risposta ricevuta. |
+| `flacone_indagato` | Nel capitolo 8 Mila ricorda se aveva chiesto la provenienza delle gocce e se Sophie aveva evitato la domanda. |
+| `quaderno_fedele`, `quaderno_manipolato`, `quaderno_vuoto` | Il capitolo 9 richiama la qualità del proprio resoconto; la gestione delle note cambia inoltre la ricostruzione del finale della verità e il peso attribuito al diario nel finale del fascicolo. |
+| `prontezza_aiuto` | Se Mila ha già compiuto passi concreti verso l'aiuto, nel capitolo 9 riesce a ricordare che può chiedere aiuto senza avere ogni dettaglio in ordine. |
+| `fiducia_genitori`, `padre_evitato`, `padre_ascoltato`, `padre_confrontato` | Il ricordo del padre e il dialogo conclusivo cambiano in base a come Mila ha gestito le occasioni precedenti di ascolto o confronto. |
+| `telefono_condiviso_kate`, `immagini_condivise_kate`, `legame_kate` | Il finale del fascicolo distingue tra copie esterne conservate da Kate, una relazione che le permette di testimoniare e una preoccupazione che resta più fragile. |
+| `ipotesi_genitori_sospetto` | Nel finale del fascicolo, il sospetto non verificato di Mila può essere reinterpretato dagli investigatori come prova di rancore, rendendo visibile il rischio di confondere convinzioni e fatti. |
+
+### Flag rimossi
+
+- `tensione_scena`: era inizializzata a `False` e non veniva mai impostata a `True`. Le condizioni di presentazione sono state semplificate usando `dubbi_di_mila` e `indizi_reali`, che già esprimono lo stato narrativo.
+- `scelta_finale`: veniva assegnata in vari punti ma non veniva mai letta per determinare una scena o un finale.
+- `telefonata_registrata`: era dichiarata ma non veniva né impostata né letta.
+
+Dopo questa pulizia, lo script dichiara 33 variabili `default` invece delle 36 precedenti. L'obiettivo non è ridurre il sistema a un unico punteggio: i flag di oggetti e fonti restano distinti perché descrivono stati narrativi irreversibili diversi.
+
+### Verifiche statiche dopo la modifica
+
+- I label dei nove capitoli e dei quattro finali sono ancora presenti.
+- I salti `jump` del file continuano a puntare a label esistenti nel controllo statico.
+- Le nuove conseguenze si appoggiano a flag già presenti; non sono stati aggiunti nuovi `default`.
+- La revisione non è ancora un collaudo runtime: **Ren'Py Lint e il playtest di ogni combinazione restano da eseguire**. In particolare, verificare i rami del finale del fascicolo con quaderno fedele/manipolato/vuoto e con/senza copie condivise con Kate.
