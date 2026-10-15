@@ -15,6 +15,10 @@ default dubbi_di_mila = 0
 default indizi_reali = 0
 default fiducia_genitori = 0
 
+# True quando Mila ha fisicamente con sé il flacone ricevuto da Sophie.
+# Se lo lascia cadere nella neve, le opzioni successive devono rispettarlo.
+default flacone_con_mila = False
+
 label start:
     scene bg title night
     with fade
@@ -380,6 +384,9 @@ label capitolo_4:
     "Mi ricordo di una frase scritta sul retro della fotografia: Perché tutto sia perfetto."
     "Mi ricordo di Kate che dice: non decidere nulla stanotte."
 
+    # Sophie passa il flacone a Mila prima che lei scelga cosa farne.
+    $ flacone_con_mila = True
+
     menu:
         "Sophie mi mette il flacone nel palmo."
 
@@ -394,6 +401,7 @@ label capitolo_4:
             "La sua espressione si addolcisce. È il momento in cui avrei dovuto avere più paura."
 
         "Lascio cadere il flacone nella neve.":
+            $ flacone_con_mila = False
             $ fiducia_sophie -= 2
             $ dubbi_di_mila += 1
             sophie "Non farmi diventare cattiva, Mila."
@@ -406,13 +414,23 @@ label capitolo_4:
 
             "Chiamo Kate e le mando la posizione.":
                 $ legame_kate += 2
+                if not flacone_con_mila:
+                    "Le spiego anche che il flacone è rimasto nella neve, sotto la quercia."
                 jump finale_verita
 
-            "Entro in casa e consegno il flacone ai miei genitori.":
+            "Entro in casa con il flacone e racconto tutto ai miei genitori." if flacone_con_mila:
                 $ fiducia_genitori += 2
                 jump finale_rottura
 
-            "Nascondo il flacone e seguo Sophie per capire il suo piano.":
+            "Entro in casa e dico ai miei genitori dove ho lasciato il flacone." if not flacone_con_mila:
+                $ fiducia_genitori += 2
+                jump finale_rottura
+
+            "Nascondo il flacone e seguo Sophie per capire il suo piano." if flacone_con_mila:
+                $ dubbi_di_mila += 1
+                jump capitolo_5
+
+            "Lascio il flacone nella neve e seguo Sophie per capire il suo piano." if not flacone_con_mila:
                 $ dubbi_di_mila += 1
                 jump capitolo_5
     else:
@@ -430,16 +448,23 @@ label capitolo_5:
 
     "La tavola è apparecchiata. Mia madre ha cucinato lasagne. Papà ha scelto il vino che piaceva a mia nonna."
     "Ogni gesto può essere amore. Ogni gesto può essere una menzogna."
-    "Il flacone pesa nella mia tasca. Sophie aspetta nella finestra della villetta accanto."
+    if flacone_con_mila:
+        "Il flacone pesa nella mia tasca. Sophie aspetta nella finestra della villetta accanto."
+    else:
+        "Il flacone è rimasto nella neve, sotto la quercia. Sophie aspetta nella finestra della villetta accanto."
 
     menu:
         "Questa è l'ultima scelta prima che la storia si chiuda."
 
-        "Verso le gocce nei bicchieri.":
+        "Verso le gocce nei bicchieri." if flacone_con_mila:
             $ fiducia_sophie += 2
             jump finale_fascicolo
 
-        "Dico tutto ai miei genitori.":
+        "Dico tutto ai miei genitori." if flacone_con_mila:
+            $ fiducia_genitori += 2
+            jump finale_rottura
+
+        "Dico tutto ai miei genitori e spiego dove ho lasciato il flacone." if not flacone_con_mila:
             $ fiducia_genitori += 2
             jump finale_rottura
 
@@ -462,10 +487,16 @@ label finale_verita:
 label finale_rottura:
     scene bg mila kitchen
     with fade
-    play sound audio.glass
     stop music fadeout 2.0
-    "Mila rovescia il flacone nel lavandino. Il vetro batte contro l'acciaio."
-    "Suo padre chiama aiuto. Sua madre resta accanto a lei, senza tentare di spiegare via il suo terrore."
+
+    if flacone_con_mila:
+        play sound audio.glass
+        "Mila rovescia il contenuto del flacone nel lavandino. Il vetro batte contro l'acciaio."
+        "Suo padre chiama aiuto. Sua madre resta accanto a lei, senza tentare di spiegare via il suo terrore."
+    else:
+        "Mila racconta ai genitori quanto è successo e indica il punto sotto la quercia in cui ha lasciato il flacone."
+        "Suo padre esce a recuperarlo e poi chiama aiuto. Sua madre resta accanto a Mila, senza tentare di spiegare via il suo terrore."
+
     "Fuori, Sophie comprende che il suo copione non funzionerà. La sua voce diventa fredda, finalmente priva di carezze."
     "Non è una riconciliazione perfetta. È una porta che resta aperta."
     centered "{size=42}{color=#e6d4db}FINALE: LA PORTA APERTA{/color}{/size}"
