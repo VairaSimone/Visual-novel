@@ -193,9 +193,6 @@ label start:
 label capitolo_1:
     scene bg sophie kitchen
     with fade
-    else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_sophie_neutral at sprite_stage_right
     play ambience audio.room fadeout 1.0 fadein 1.2
     centered "{size=42}{color=#e6d4db}CAPITOLO 1{/color}{/size}\n\n{size=28}{color=#aa97a3}Come sanguina un robot{/color}{/size}"
     "Preparo il pollo con movimenti automatici, quasi ipnotici. Taglio, soffriggo, mescolo: una coreografia che potrei eseguire bendata. Mia madre dice che sono efficiente. In realtà sono terrorizzata dall'errore."
@@ -273,9 +270,6 @@ label capitolo_1:
 label capitolo_2:
     scene bg mila kitchen
     with fade
-    else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_madre_neutral at sprite_stage_right
     play ambience audio.room fadeout 1.0 fadein 1.5
     centered "{size=42}{color=#e6d4db}CAPITOLO 2{/color}{/size}\n\n{size=28}{color=#aa97a3}La geometria del silenzio{/color}{/size}"
     "Il taglio sulla mano brucia sotto l'acqua fredda. È un dolore netto, a differenza delle parole di mia madre, che cercano sempre di convincermi che ogni cosa sia per il mio bene."
@@ -334,8 +328,6 @@ label capitolo_2:
 label capitolo_3:
     scene bg mila room
     with fade
-    else:
-        show sprite_mila_neutral at sprite_stage_left
     play ambience audio.room fadeout 1.0 fadein 1.5
     centered "{size=42}{color=#e6d4db}CAPITOLO 3{/color}{/size}\n\n{size=28}{color=#aa97a3}Frequenze d'ombra{/color}{/size}"
     "La mattina ha un colore giallastro, come la bile. Mi sveglio con il sapore metallico della paura in gola, reduce da un sogno in cui cercavo di gridare ma dalla bocca uscivano cocci di vetro."
@@ -419,8 +411,6 @@ label capitolo_3:
 label capitolo_4:
     scene bg oak houses
     with fade
-    else:
-        show sprite_mila_neutral at sprite_stage_left
     play ambience audio.rain fadeout 1.0 fadein 1.5
     play music audio.tension fadeout 1.0 fadein 1.4
     centered "{size=42}{color=#e6d4db}CAPITOLO 4{/color}{/size}\n\n{size=28}{color=#aa97a3}Radici di notte{/color}{/size}"
@@ -492,8 +482,6 @@ label capitolo_4:
 label capitolo_5:
     scene bg mila room
     with fade
-    else:
-        show sprite_mila_neutral at sprite_stage_left
     play ambience audio.room fadeout 1.0 fadein 1.5
     centered "{size=42}{color=#e6d4db}CAPITOLO 5{/color}{/size}\n\n{size=28}{color=#aa97a3}L'incisione profonda{/color}{/size}"
     "La luce del mattino filtra dalle tapparelle come una serie di sbarre dorate. Mi sento sporca, schiacciata dal peso di un segreto che pulsa come piombo caldo nelle viscere."
@@ -593,8 +581,6 @@ label capitolo_5:
 label capitolo_6:
     scene bg oak houses
     with fade
-    else:
-        show sprite_mila_neutral at sprite_stage_left
     play ambience audio.rain fadeout 1.0 fadein 1.4
     play music audio.tension fadeout 1.0 fadein 1.5
     centered "{size=42}{color=#e6d4db}CAPITOLO 6{/color}{/size}\n\n{size=28}{color=#aa97a3}Il prezzo dell'argilla{/color}{/size}"
