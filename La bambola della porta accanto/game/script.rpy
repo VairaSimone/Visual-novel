@@ -193,9 +193,6 @@ label start:
 label capitolo_1:
     scene bg sophie kitchen
     with fade
-    if tensione_scena:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_sophie_cold at sprite_stage_right
     else:
         show sprite_mila_neutral at sprite_stage_left
         show sprite_sophie_neutral at sprite_stage_right
@@ -276,9 +273,6 @@ label capitolo_1:
 label capitolo_2:
     scene bg mila kitchen
     with fade
-    if tensione_scena:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_madre_cold at sprite_stage_right
     else:
         show sprite_mila_neutral at sprite_stage_left
         show sprite_madre_neutral at sprite_stage_right
@@ -340,8 +334,6 @@ label capitolo_2:
 label capitolo_3:
     scene bg mila room
     with fade
-    if tensione_scena:
-        show sprite_mila_tense at sprite_stage_left
     else:
         show sprite_mila_neutral at sprite_stage_left
     play ambience audio.room fadeout 1.0 fadein 1.5
@@ -427,9 +419,6 @@ label capitolo_3:
 label capitolo_4:
     scene bg oak houses
     with fade
-    if tensione_scena:
-        show sprite_mila_tense at sprite_stage_left
-        show sprite_sophie_cold at sprite_stage_right
     else:
         show sprite_mila_neutral at sprite_stage_left
     play ambience audio.rain fadeout 1.0 fadein 1.5
@@ -503,8 +492,6 @@ label capitolo_4:
 label capitolo_5:
     scene bg mila room
     with fade
-    if tensione_scena:
-        show sprite_mila_tense at sprite_stage_left
     else:
         show sprite_mila_neutral at sprite_stage_left
     play ambience audio.room fadeout 1.0 fadein 1.5
@@ -606,9 +593,6 @@ label capitolo_5:
 label capitolo_6:
     scene bg oak houses
     with fade
-    if tensione_scena:
-        show sprite_mila_tense at sprite_stage_left
-        show sprite_sophie_cold at sprite_stage_right
     else:
         show sprite_mila_neutral at sprite_stage_left
     play ambience audio.rain fadeout 1.0 fadein 1.4
