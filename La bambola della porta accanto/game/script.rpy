@@ -809,6 +809,7 @@ label capitolo_7:
 label capitolo_8:
     scene bg mila kitchen
     with fade
+    $ tensione_scena = False
     if tensione_scena:
         show sprite_mila_worried at sprite_stage_left
         show sprite_madre_cold at sprite_stage_right
