@@ -40,6 +40,8 @@ default quaderno_vuoto = False
 default padre_ascoltato = False
 default padre_confrontato = False
 default padre_evitato = False
+default prontezza_aiuto = 0  # Disponibilità emotiva a chiedere aiuto, distinta dalla fiducia.
+default testimonianza_padre = False  # Riscontro alternativo se la fotografia è stata distrutta.
 default promessa_a_sophie = False
 default flacone_indagato = False
 
@@ -263,6 +265,7 @@ label capitolo_2:
 
         "Accetto di parlarne con lei.":
             $ fiducia_genitori += 1
+            $ prontezza_aiuto += 1
             mila "Va bene. Ma voglio sapere tutto prima."
             "Mia madre abbassa gli occhi. Sembra sollevata, non vittoriosa."
 
@@ -292,7 +295,6 @@ label capitolo_2:
         "Lo porto a Kate e le chiedo aiuto.":
             $ telefono_condiviso_kate = True
             $ legame_kate += 2
-            $ indizi_reali += 1
             kate "Non lo tocchiamo. Facciamo delle foto e parliamo con qualcuno di grande."
             "Kate non ride, non minimizza e non mi chiede di scegliere subito una versione dei fatti."
 
@@ -305,7 +307,6 @@ label capitolo_2:
         "Lo spengo e lo nascondo senza rispondere.":
             $ telefono_nascosto = True
             $ dubbi_di_mila += 1
-            $ indizi_reali += 1
             "Per la prima volta, tengo qualcosa che Sophie non sa di possedere."
 
     if telefono_condiviso_kate:
@@ -450,10 +451,12 @@ label capitolo_3:
         "Mi siedo con lui.":
             $ padre_ascoltato = True
             $ fiducia_genitori += 2
+            $ prontezza_aiuto += 1
             "Non parla per un po'. In quel silenzio, non mi sento intrappolata."
 
         "Gli chiedo perché è rimasto zitto per anni.":
             $ padre_confrontato = True
+            $ prontezza_aiuto += 1
             $ dubbi_di_mila += 1
             padre "Perché ho avuto paura di dire la cosa sbagliata. E ho sbagliato lo stesso."
             "Non è una difesa. È una confessione imperfetta."
@@ -462,6 +465,21 @@ label capitolo_3:
             $ padre_evitato = True
             $ fiducia_sophie += 1
             "Chiudo la porta. Poi controllo due volte la finestra."
+
+    if fotografia_distrutta and not fotografia_digitalizzata:
+        menu:
+            "La fotografia non c'è più. Posso lasciare che resti solo un ricordo o chiedere a papà di confermare la frase.":
+
+            "Gli chiedo se ha scritto quelle parole.":
+                $ testimonianza_padre = True
+                $ indizi_reali += 1
+                if padre_ascoltato or padre_confrontato:
+                    "Papà riconosce la frase. Dice di averla scritta lui, anni fa, quando cercava di tenere tutto sotto controllo. Non può restituirmi la fotografia, ma la sua ammissione è un riscontro che posso annotare."
+                else:
+                    "Papà si irrigidisce, poi ammette di aver scritto quella frase. Non mi spiega tutto e non posso verificare la sua memoria: è una testimonianza, non l'originale che ho distrutto."
+
+            "Non gliene parlo. Per ora ho soltanto ciò che ricordo.":
+                "L'originale è perduto e non ho chiesto conferma. Se vorrò dimostrare quella parte della storia, dovrò trovare un'altra strada."
 
     if indizi_reali >= 3:
         "Rileggo gli appunti: fotografia, messaggi e dettagli fuori posto cominciano a formare una sequenza, non soltanto una sensazione."
@@ -551,7 +569,7 @@ label capitolo_4:
     $ tensione_scena = False
 
     # SCELTA IRREVERSIBILE: qui le prove o le relazioni possono aprire una via d'uscita.
-    if indizi_reali >= 4 or (legame_kate >= 2 and dubbi_di_mila >= 2) or fiducia_genitori >= 2 or (telefono_condiviso_kate and immagini_condivise_kate):
+    if indizi_reali >= 4 or (legame_kate >= 2 and dubbi_di_mila >= 2) or prontezza_aiuto >= 1 or (telefono_condiviso_kate and immagini_condivise_kate):
         if telefono_condiviso_kate and immagini_condivise_kate:
             "Kate ha già due frammenti distinti: il messaggio e l'immagine sospetta. Non dimostrano tutto, ma si possono confrontare senza dipendere soltanto dal mio ricordo."
         elif indizi_reali >= 4:
@@ -575,19 +593,19 @@ label capitolo_4:
                     "Le spiego anche che il flacone è rimasto nella neve, sotto la quercia."
                 jump finale_verita
 
-            "Mi fido di mio padre: entro e gli mostro il flacone." if flacone_con_mila and fiducia_genitori >= 2:
+            "Mi fido di mio padre: entro e gli mostro il flacone." if flacone_con_mila and prontezza_aiuto >= 1:
                 $ fiducia_genitori += 1
                 jump finale_rottura
 
-            "Entro con il flacone, anche se temo che non mi crederanno." if flacone_con_mila and fiducia_genitori < 2:
+            "Entro con il flacone, anche se temo che non mi crederanno." if flacone_con_mila and prontezza_aiuto >= 1 and fiducia_genitori < 2:
                 $ fiducia_genitori += 1
                 jump finale_rottura
 
-            "Mi fido di mio padre e gli dico dov'è il flacone." if not flacone_con_mila and fiducia_genitori >= 2:
+            "Mi fido di mio padre e gli dico dov'è il flacone." if not flacone_con_mila and prontezza_aiuto >= 1:
                 $ fiducia_genitori += 1
                 jump finale_rottura
 
-            "Dico ai miei genitori dove ho lasciato il flacone, senza sapere se mi crederanno." if not flacone_con_mila and fiducia_genitori < 2:
+            "Dico ai miei genitori dove ho lasciato il flacone, senza sapere se mi crederanno." if not flacone_con_mila and prontezza_aiuto >= 1 and fiducia_genitori < 2:
                 $ fiducia_genitori += 1
                 jump finale_rottura
 
@@ -646,6 +664,8 @@ label capitolo_5:
         "La fotografia strappata non può essere recuperata come prova. Resta soltanto la mia memoria della frase."
     elif fotografia_conservata or fotografia_digitalizzata:
         "La frase sul retro della fotografia può ancora essere controllata da qualcun altro, non soltanto da me."
+    elif testimonianza_padre:
+        "Ho perso l'originale, ma ho chiesto a papà di confermare la frase. La sua testimonianza è un appiglio più fragile di una fotografia, non una prova equivalente."
 
     if immagini_verificate:
         "Ho controllato le immagini prima di fidarmi di loro: so che contengono un'anomalia, anche se non conosco ancora la spiegazione completa."
@@ -681,19 +701,19 @@ label capitolo_5:
             $ legame_kate += 1
             jump finale_verita
 
-        "Dico tutto ai miei genitori, che ora so di poter ascoltare." if flacone_con_mila and fiducia_genitori >= 2:
+        "Dico tutto ai miei genitori, che ora so di poter chiedere aiuto." if flacone_con_mila and prontezza_aiuto >= 1 and fiducia_genitori >= 2:
             $ fiducia_genitori += 1
             jump finale_rottura
 
-        "Dico tutto ai miei genitori, anche se temo che non mi crederanno." if flacone_con_mila and fiducia_genitori < 2:
+        "Dico tutto ai miei genitori, anche se temo che non mi crederanno." if flacone_con_mila and prontezza_aiuto >= 1 and fiducia_genitori < 2:
             $ fiducia_genitori += 1
             jump finale_rottura
 
-        "Dico tutto ai miei genitori e spiego dove ho lasciato il flacone." if not flacone_con_mila and fiducia_genitori >= 2:
+        "Dico tutto ai miei genitori e spiego dove ho lasciato il flacone." if not flacone_con_mila and prontezza_aiuto >= 1 and fiducia_genitori >= 2:
             $ fiducia_genitori += 1
             jump finale_rottura
 
-        "Dico ai miei genitori dove ho lasciato il flacone, anche se temo che non mi crederanno." if not flacone_con_mila and fiducia_genitori < 2:
+        "Dico ai miei genitori dove ho lasciato il flacone, anche se temo che non mi crederanno." if not flacone_con_mila and prontezza_aiuto >= 1 and fiducia_genitori < 2:
             $ fiducia_genitori += 1
             jump finale_rottura
 
@@ -720,7 +740,9 @@ label finale_verita:
     else:
         "Le prove sono frammentarie e alcune domande restano aperte. Kate e sua madre aiutano Mila a conservarle e a raccontare ciò che sa senza inventare ciò che non sa."
 
-    if fotografia_distrutta and not fotografia_digitalizzata:
+    if fotografia_distrutta and not fotografia_digitalizzata and testimonianza_padre:
+        "La fotografia non può essere aggiunta al fascicolo. Mila riferisce la frase ricordata e la conferma di suo padre, specificando che la testimonianza non sostituisce l'originale."
+    elif fotografia_distrutta and not fotografia_digitalizzata:
         "La fotografia non può essere aggiunta al fascicolo: Mila riferisce la frase che ricorda e chiarisce che non ha più l'originale."
     elif fotografia_conservata or fotografia_digitalizzata:
         "La fotografia originale o la sua copia digitale viene conservata insieme agli altri elementi, senza attribuirle un significato che da sola non può dimostrare."
@@ -813,7 +835,9 @@ label finale_fascicolo:
         "Mila ha creduto così a lungo alla versione di Sophie che alcune frasi false le sembrano ancora ricordi propri."
     else:
         "Mila aveva già intravisto le crepe, ma non è riuscita a trasformare i sospetti in una prova condivisa prima che fosse troppo tardi."
-    if fotografia_distrutta and not fotografia_digitalizzata:
+    if fotografia_distrutta and not fotografia_digitalizzata and testimonianza_padre:
+        "La fotografia strappata lascia un vuoto nel fascicolo. La conferma di suo padre offre un riscontro, ma non permette di controllare l'originale."
+    elif fotografia_distrutta and not fotografia_digitalizzata:
         "La fotografia strappata lascia un vuoto nel fascicolo: Mila ricorda la frase, ma non può più mostrare l'originale."
     "Sophie sarà la superstite perfetta: spaventata, silenziosa, impossibile da accusare."
     "Da qualche parte, Kate rileggerà un messaggio rimasto senza risposta e capirà troppo tardi che Mila aveva provato a parlarle."
