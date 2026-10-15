@@ -99,29 +99,36 @@ screen say(who, what):
 
     window:
         id "window"
+        style "say_window"
+
+        # Bordo d'accento, più acceso nelle scene tese.
+        if tensione_scena:
+            add Solid("#c65a72") xpos 0 ypos 0 xsize 6 ysize gui.textbox_height
+            add Solid("#6e3548") xpos 6 ypos 0 xsize 1914 ysize 2
+        else:
+            add Solid("#b78396") xpos 0 ypos 0 xsize 4 ysize gui.textbox_height
+            add Solid("#493442") xpos 4 ypos 0 xsize 1916 ysize 1
 
         if who is not None:
-
             window:
                 id "namebox"
                 style "namebox"
-                text who id "who"
+                text who id "who" style "say_label"
 
-        text what id "what"
+        text what id "what" style "say_dialogue"
 
-
-    ## Se c'è una side image, mostrala sopra al testo. Non mostrarla nella
-    ## variante 'phone' - non c'è posto.
+    # Le side image restano abilitate su desktop per non rompere eventuali sprite futuri.
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
 
 
-## Rendi la casella dei nomi disponibile per lo styling attraverso l'oggetto
-## Character.
 init python:
-    config.character_id_prefixes.append('namebox')
+    if 'namebox' not in config.character_id_prefixes:
+        config.character_id_prefixes.append('namebox')
+
 
 style window is default
+style say_window is window
 style say_label is default
 style say_dialogue is default
 style say_thought is say_dialogue
@@ -130,36 +137,51 @@ style namebox is default
 style namebox_label is say_label
 
 
+# Stile generico conservato per le altre schermate che utilizzano "window".
 style window:
     xalign 0.5
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
-
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+
+
+style say_window:
+    xalign 0.5
+    xfill True
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height
+    padding (0, 0, 0, 0)
+    background Solid("#130e18ed")
+
 
 style namebox:
     xpos gui.name_xpos
     xanchor gui.name_xalign
     xsize gui.namebox_width
     ypos gui.name_ypos
-    ysize gui.namebox_height
+    yminimum 58
+    padding (22, 9, 22, 9)
+    background Solid("#302131")
 
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
-    padding gui.namebox_borders.padding
 
 style say_label:
     properties gui.text_properties("name", accent=True)
     xalign gui.name_xalign
     yalign 0.5
+    size 34
+    bold True
+    outlines [(1, "#08060caa", 0, 1)]
+
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
-
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
-
+    size 32
+    color "#f3e9ef"
+    line_spacing 5
     adjust_spacing False
 
 ## Schermata di inserimento ####################################################
@@ -206,29 +228,128 @@ style input:
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
 screen choice(items):
-    style_prefix "choice"
 
-    vbox:
-        for i in items:
-            textbutton i.caption action i.action
+    modal True
+    zorder 200
+
+    # Scura lo sfondo per dare priorità al testo e alle opzioni.
+    add Solid("#06040a88")
+    if tensione_scena:
+        add Solid("#3a07151e")
+
+    frame:
+        style "choice_panel"
+        xalign 0.5
+        yalign 0.52
+
+        vbox:
+            xfill True
+            spacing 14
+
+            hbox:
+                spacing 12
+                yalign 0.5
+                if tensione_scena:
+                    add Solid("#c65a72") xsize 30 ysize 4 yalign 0.5
+                    text "SCELTA CRITICA" style "choice_kicker_tense"
+                else:
+                    add Solid("#b78396") xsize 30 ysize 3 yalign 0.5
+                    text "DECISIONE" style "choice_kicker"
+
+            null height 2
+
+            for i in items:
+                if i.action is None:
+                    text i.caption style "choice_prompt"
+                elif tensione_scena:
+                    textbutton i.caption action i.action style "choice_button_tense"
+                else:
+                    textbutton i.caption action i.action style "choice_button"
 
 
-style choice_vbox is vbox
-style choice_button is button
-style choice_button_text is button_text
+style choice_panel is frame:
+    xsize 1360
+    padding (42, 36, 42, 40)
+    background Solid("#17111bf2")
 
-style choice_vbox:
-    xalign 0.5
-    ypos 405
-    yanchor 0.5
+style choice_kicker is default:
+    size 18
+    bold True
+    color "#b78396"
+    yalign 0.5
 
-    spacing gui.choice_spacing
+style choice_kicker_tense is choice_kicker:
+    color "#df7185"
 
-style choice_button is default:
-    properties gui.button_properties("choice_button")
+style choice_prompt is default:
+    size 30
+    bold True
+    color "#f4e9ef"
+    xmaximum 1260
+    line_spacing 5
+    bottom_margin 8
+
+style choice_button is button:
+    xfill True
+    yminimum 68
+    padding (24, 17, 24, 17)
+    background Solid("#251b29ed")
+    hover_background Solid("#533448")
+    selected_background Solid("#3c283b")
+    insensitive_background Solid("#1b151e")
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
+    size 27
+    color "#e8dbe3"
+    hover_color "#fff6fa"
+    selected_color "#ffffff"
+    xalign 0.0
+    yalign 0.5
+    text_align 0.0
+    line_spacing 4
+
+style choice_button_tense is choice_button:
+    background Solid("#2b171fee")
+    hover_background Solid("#702b40")
+    selected_background Solid("#572137")
+
+style choice_button_tense_text is choice_button_text:
+    color "#f2dfe5"
+    hover_color "#ffffff"
+
+style choice_panel:
+    variant "small"
+    xsize 1840
+    padding (26, 26, 26, 30)
+
+style choice_prompt:
+    variant "small"
+    size 38
+
+style choice_kicker:
+    variant "small"
+    size 23
+
+style choice_button:
+    variant "small"
+    yminimum 82
+    padding (24, 22, 24, 22)
+
+style choice_button_text:
+    variant "small"
+    size 35
+    line_spacing 7
+
+style choice_kicker_tense:
+    variant "small"
+    size 23
+
+style choice_button_tense_text:
+    variant "small"
+    size 35
+    line_spacing 7
+
 
 
 ## Schermata del Menu Rapido ###################################################
