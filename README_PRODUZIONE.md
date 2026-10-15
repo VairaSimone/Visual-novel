@@ -20,9 +20,18 @@ Le scelte non sono un test di moralità: registrano come Mila interpreta ciò ch
 - `indizi_reali`: rappresenta i dettagli e le prove che Mila ha riconosciuto o conservato. La soglia di 3 cambia la lettura degli appunti; la soglia di 4 offre un percorso basato su prove più solide e cambia la descrizione del finale della verità.
 - `fiducia_genitori`: modifica il modo in cui Mila interpreta la proposta d'aiuto, può aprire una via per chiedere aiuto anche senza avere prove complete e cambia le opzioni e il dialogo del finale con i genitori.
 
-Il flacone è gestito separatamente dalla variabile di relazione con lo stato oggetto `flacone_con_mila`. Quando Mila lo lascia nella neve, le opzioni successive e i finali rispettano quella posizione: non può versarne il contenuto se non lo possiede, può dire ai genitori dove recuperarlo e anche gli altri finali descrivono correttamente dove si trova.
+Il flacone è gestito separatamente dalla variabile di relazione con lo stato oggetto `flacone_con_mila`. Quando Mila lo lascia nella neve, le opzioni successive e i finali rispettano quella posizione.
 
-La scelta di chiedere aiuto può quindi essere raggiunta in tre modi: prove sufficienti (`indizi_reali >= 4`), un legame con Kate insieme a dubbi concreti (`legame_kate >= 2` e `dubbi_di_mila >= 2`) oppure una fiducia nei genitori sufficiente (`fiducia_genitori >= 2`). Nessuna soglia è una valutazione morale del giocatore: sono tre ragioni narrative diverse per interrompere il piano di Sophie.
+### Tre categorie di scelte
+
+Le scelte sono progettate per avere conseguenze riconoscibili, senza trasformare ogni singola battuta in un ramo narrativo enorme:
+
+- **Caratterizzazione**: il tono con cui Mila tratta Kate, Sophie e suo padre cambia la fiducia, i dialoghi successivi e il modo in cui interpreta il loro comportamento.
+- **Investigazione**: il telefono segreto può essere condiviso con Kate, usato per rispondere a Sophie oppure nascosto. La fotografia può essere conservata, strappata o digitalizzata. Il quaderno può contenere fatti, frasi suggerite da Sophie oppure restare vuoto. Le immagini possono essere verificate, credute o condivise. Queste azioni vengono registrate con flag persistenti e modificano gli indizi, le scene successive e il modo in cui i finali vengono raccontati.
+- **Scelte irreversibili**: lasciare il flacone nella neve, promettere di aiutare Sophie, distruggere una prova o condividere copie con Kate sono decisioni che non vengono annullate automaticamente quando la scena si chiude. Lo stato degli oggetti e delle prove viene controllato nei capitoli successivi.
+
+La scelta di chiedere aiuto può quindi essere raggiunta attraverso prove sufficienti (`indizi_reali >= 4`), un legame con Kate insieme a dubbi concreti (`legame_kate >= 2` e `dubbi_di_mila >= 2`), fiducia nei genitori (`fiducia_genitori >= 2`) oppure la condivisione con Kate sia del messaggio sia di una delle immagini (`telefono_condiviso_kate` e `immagini_condivise_kate`). Nessuna soglia è una valutazione morale del giocatore: sono percorsi diversi e con conseguenze diverse, non risposte giuste o sbagliate.
+
 
 ## Struttura implementata
 
