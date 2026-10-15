@@ -54,7 +54,8 @@ define build.name = "Labamboladellaportaaccanto"
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = True
+# Non esistono ancora battute doppiate: evita un mixer Voce vuoto nelle impostazioni.
+define config.has_voice = False
 
 
 ## Per consentire al giocatore di eseguire un test sonoro sui canali Suono o
