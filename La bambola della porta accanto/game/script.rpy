@@ -641,7 +641,7 @@ label capitolo_7:
     "Infila una mano nella tasca e tira fuori un flacone di vetro scuro con un contagocce."
     sophie "Sono gocce prese dalla casa di tuo padre, un po' alla volta. Non li uccideranno, tranquilla. Li faranno soltanto dormire profondamente. Abbastanza a lungo perché prendiamo quello che resta e spariamo prima che possano muovere un dito."
     "Mi preme il flacone contro il palmo. Pesa come un pianeta intero."
-    sophie "Falllo stasera. Domani ti portano dalla dottoressa. È questione di ore. Sai cosa succede quando una madre come la tua porta una figlia come te da un medico? Ti fanno firmare un foglio, e quel foglio dice che non sei più una persona."
+    sophie "Fallo stasera. Domani ti portano dalla dottoressa. È questione di ore. Sai cosa succede quando una madre come la tua porta una figlia come te da un medico? Ti fanno firmare un foglio, e quel foglio dice che non sei più una persona."
     "Si avvicina al mio orecchio."
     sophie "Quando torni, lascia la porta sul retro accostata. Io devo poter entrare."
     mila "Perché, se poi ci vediamo sotto la quercia?"
@@ -902,7 +902,7 @@ label finale_fuga:
     elif telefono_nascosto:
         "Il telefono che ho nascosto resta l'unico frammento non controllato da Sophie. Non basta a fermarla, ma non è scomparso."
     "Guardo il vetro. Il mio riflesso sembra una bambola seduta accanto a una ragazza che non sbatte mai le palpebre."
-    centered "{size=42}{color=#e6d4db}FINALE: LA FUGA ILLUSORIA{/size}{/color}"
+    centered "{size=42}{color=#e6d4db}FINALE: LA FUGA ILLUSORIA{/color}{/size}"
     return
 
 
