@@ -1351,7 +1351,7 @@ screen archivio_indizi():
         xalign 0.5
         yalign 0.5
         xsize 1120
-        ysize 760
+        ysize 820
         background Solid("#211a25")
         padding (26, 20)
         vbox:
@@ -1377,7 +1377,7 @@ screen archivio_indizi():
                     text "OSSERVATO = ciò che Mila ha visto o fatto. RISCONTRO = una fonte confrontabile. IPOTESI = spiegazione ancora da verificare." size 14
             viewport:
                 xfill True
-                ysize 620
+                ysize 675
                 mousewheel True
                 draggable True
                 scrollbars "vertical"
