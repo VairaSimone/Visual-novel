@@ -79,23 +79,23 @@ define config.main_menu_music = "audio/music_menu.wav"
 
 ## Entrare o uscire dal game menu.
 
-define config.enter_transition = dissolve
-define config.exit_transition = dissolve
+define config.enter_transition = Dissolve(0.20)
+define config.exit_transition = Dissolve(0.16)
 
 
 ## Tra le schermate del menu di gioco.
 
-define config.intra_transition = dissolve
+define config.intra_transition = Dissolve(0.18)
 
 
 ## Transizione usata dopo che una partita viene caricata.
 
-define config.after_load_transition = None
+define config.after_load_transition = Dissolve(0.22)
 
 
 ## Usata quando si torna al main menu dopo che è finita una partita.
 
-define config.end_game_transition = None
+define config.end_game_transition = Dissolve(0.30)
 
 
 ## Non esiste una variabile per impostare la transizione da usare quando inizia
@@ -117,8 +117,8 @@ define config.window = "auto"
 
 ## Transizioni usate per mostrare e nascondere la finestra dei dialoghi
 
-define config.window_show_transition = Dissolve(.2)
-define config.window_hide_transition = Dissolve(.2)
+define config.window_show_transition = Dissolve(0.18)
+define config.window_hide_transition = Dissolve(0.14)
 
 
 ## Opzioni predefinite #########################################################
