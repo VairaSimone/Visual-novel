@@ -184,6 +184,17 @@ style say_dialogue:
     line_spacing 5
     adjust_spacing False
 
+# Dimensioni più comode sulle varianti piccole/touch.
+style say_label:
+    variant "small"
+    size 40
+
+style say_dialogue:
+    variant "small"
+    size 38
+    line_spacing 7
+
+
 ## Schermata di inserimento ####################################################
 ##
 ## Questa schermata si usa per mostrare renpy.input. Il parametro prompt è usato
