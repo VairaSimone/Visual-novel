@@ -555,7 +555,7 @@ label finale_verita:
     with fade
     stop music fadeout 2.0
 
-    if legame_kate >= 3:
+    if legame_kate >= 4:
         "Kate risponde quasi subito. Il filo che Mila ha tenuto aperto con lei basta a farle capire che questa volta non si tratta di un litigio."
     else:
         "Kate esita quando sente la voce di Mila, ma resta in linea. Mila le dà la posizione e chiede che le prove vengano conservate prima che qualcuno le tocchi."
