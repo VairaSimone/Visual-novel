@@ -59,7 +59,7 @@ label start:
     scene bg title night
     with fade
     play ambience audio.room fadein 1.5
-    play music audio.investigation fadein 1.8
+    play music audio.memory fadein 2.4
 
     centered "{size=32}{color=#e6d4db}AVVISO CONTENUTI{/color}{/size}\n\n{size=21}Thriller psicologico con manipolazione, gaslighting, abusi emotivi, autolesionismo e violenza. La storia affronta anche lutto e suicidio. Alcune scene sono intense.{/size}"
 
@@ -273,6 +273,7 @@ label capitolo_2:
     scene bg mila kitchen
     with fade
     play ambience audio.room fadeout 1.0 fadein 1.5
+    play music audio.investigation fadeout 1.6 fadein 2.2
     centered "{size=42}{color=#e6d4db}CAPITOLO 2{/color}{/size}\n\n{size=28}{color=#aa97a3}La geometria del silenzio{/color}{/size}"
     "Il taglio sulla mano brucia sotto l'acqua fredda. È un dolore netto, a differenza delle parole di mia madre, che cercano sempre di convincermi che ogni cosa sia per il mio bene."
     "Mi asciugo con cura, tamponando la pelle per non macchiare l'asciugamano bianco. In questa casa le macchie diventano prove, e ogni prova può trasformarsi in un'accusa."
@@ -493,6 +494,7 @@ label capitolo_5:
     scene bg mila room
     with fade
     play ambience audio.room fadeout 1.0 fadein 1.5
+    play music audio.memory fadeout 1.5 fadein 2.2
     centered "{size=42}{color=#e6d4db}CAPITOLO 5{/color}{/size}\n\n{size=28}{color=#aa97a3}L'incisione profonda{/color}{/size}"
     "La luce del mattino filtra dalle tapparelle come una serie di sbarre dorate. Mi sento sporca, schiacciata dal peso di un segreto che pulsa come piombo caldo nelle viscere."
     "Mi alzo e vado allo specchio. Sfioro la cicatrice sotto lo zigomo, dove la notte prima Sophie ha premuto il pollice. Cerco un segno visibile del suo possesso, ma il riflesso mi restituisce la solita Mila: camicia stirata, colletto simmetrico, occhi spenti."
@@ -539,6 +541,10 @@ label capitolo_5:
             $ prontezza_aiuto += 1
             "Rimetto la chiave al suo posto. Per un istante la paura di Sophie è meno forte della certezza che sto per fare qualcosa di irreparabile."
             "Esco dallo studio. Non ho preso i soldi, ma Sophie si aspetta che lo faccia. So che questa scelta avrà un prezzo."
+    if soldi_rubati:
+        play music audio.tension fadeout 1.2 fadein 2.0
+    else:
+        play music audio.memory fadeout 1.2 fadein 2.0
     "Prima di richiudere il cassetto noto una busta azzurra, sgualcita, nascosta sotto vecchie fatture. Dentro c'è una fotografia di mia madre da giovane, con i capelli lunghi e liberi, mentre tiene in braccio una neonata avvolta in una copertina azzurra. Sorride, davvero. C'è una luce che non le vedo più da anni."
     "Sul retro, con la grafia tremolante ma dolcissima, una data di diciotto anni prima e una frase: Perché tutto sia perfetto."
     "Quella bambina sono io. È la prova che forse sono esistita prima di questa casa, e mio padre l'ha tenuta in fondo a un cassetto chiuso a chiave, sotto le bollette, come si conserva una cosa che fa troppo male da guardare."
@@ -698,7 +704,10 @@ label capitolo_7:
     scene bg school
     with fade
     play ambience audio.rain fadeout 1.0 fadein 1.3
-    play music audio.tension fadeout 1.0 fadein 1.3
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
+        play music audio.tension fadeout 1.2 fadein 2.0
+    else:
+        play music audio.investigation fadeout 1.2 fadein 2.0
     centered "{size=42}{color=#e6d4db}CAPITOLO 7{/color}{/size}\n\n{size=28}{color=#aa97a3}Anatomia di un assedio{/color}{/size}"
     "L'aria in casa è densa, immobile, chimica. Mia madre ha smesso di urlare. È questa la sua nuova tortura, almeno così la interpreto: il silenzio assoluto."
     "A colazione posa tre tazze sul tavolo con una precisione geometrica, poi fissa un punto pochi centimetri sopra la mia testa. Mio padre è diventato cenere fredda nella mia immaginazione. Interpreto ogni suo gesto come una prova che sa del ricatto."
@@ -1005,7 +1014,7 @@ label finale_verita:
     with fade
     show sprite_mila_neutral at sprite_stage_left
     show sprite_kate_neutral at sprite_stage_right
-    stop music fadeout 2.0
+    play music audio.ending fadeout 1.8 fadein 2.4
     play ambience audio.rain fadeout 1.0 fadein 1.4
     if genitori_salvati:
         "Kate risponde quasi subito. Quando sente la mia voce, non mi chiede di raccontare tutto in ordine. Mi dice di restare dove sono e di raggiungere un adulto."
@@ -1076,7 +1085,7 @@ label finale_rottura:
     else:
         show sprite_mila_neutral at sprite_stage_left
         show sprite_madre_neutral at sprite_stage_right
-    stop music fadeout 2.0
+    play music audio.memory fadeout 1.8 fadein 2.4
     play ambience audio.room fadeout 1.0 fadein 1.3
     "Poso il flacone sul tavolo. Le parole mi escono a pezzi, senza la forma ordinata che Sophie mi ha insegnato a dare al dolore."
     if genitori_salvati:
@@ -1106,7 +1115,7 @@ label finale_fuga:
     else:
         show sprite_mila_neutral at sprite_stage_left
     play ambience audio.rain fadeout 1.0 fadein 1.5
-    play music audio.investigation fadeout 1.2 fadein 1.6
+    play music audio.tension fadeout 1.4 fadein 2.2
     "Mila corre verso la quercia. Sophie l'aspetta con uno zaino troppo piccolo per una vita nuova."
     if flacone_con_mila:
         "Il flacone è ancora con me. Non so più se sia una prova o una promessa."
@@ -1134,7 +1143,7 @@ label finale_fascicolo:
     with fade
     "8 maggio 2026, ore 03:30. La notte è finita, ma la versione ufficiale comincia proprio adesso."
     stop ambience fadeout 1.5
-    stop music fadeout 2.0
+    play music audio.tension fadeout 1.2 fadein 2.0
     play sound audio.heartbeat
     "La storia si spezza in rumori, sirene e pagine scritte con una grafia ordinata. Il fascicolo verrà chiuso in undici settimane. La ricostruzione sarà definita, in conferenza stampa, di rara linearità."
     "La versione ufficiale dirà che Mila B., diciottenne, ha sedato e ucciso i propri genitori, ha attraversato il giardino con un cuscino, ha ucciso i vicini e si è tolta la vita. Cinque corpi. Una sola colpevole."
