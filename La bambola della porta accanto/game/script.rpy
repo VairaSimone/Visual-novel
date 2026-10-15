@@ -584,8 +584,10 @@ label capitolo_6:
         "La fotografia è stata tirata fuori e strappata in due."
     madre "Dov'è il resto, Mila?"
     mila "Mamma, io..."
-    if soldi_rubati:
+    if soldi_rubati and not soldi_parziali:
         madre "Il cassetto dello studio è vuoto."
+    elif soldi_parziali:
+        madre "Hai preso i soldi dal cassetto."
     else:
         madre "La busta azzurra è sparita dal suo posto. Che cosa hai fatto, Mila?"
     "Si alza lentamente. Per un istante sembra più alta, un'ombra che occupa ogni centimetro della stanza."
@@ -627,6 +629,34 @@ label capitolo_7:
     "Non dice altro per dieci secondi. Ha le unghie consumate, mangiate fino alla carne."
     padre "Non so cosa ti abbiamo fatto. Ci ho pensato ogni notte e ho ripercorso tutto. Non trovo il punto. Ma se c'è, dimmelo e provo ad aggiustarlo. Dimmi solo dov'è il punto."
     "Lo guardo e vedo un criminale che cerca un patto. Non riesco ad ascoltare la domanda come una domanda."
+    menu:
+        "Papà aspetta una risposta. Per una volta, posso scegliere che cosa fare del suo silenzio."
+        "Mi siedo con lui e provo ad ascoltarlo.":
+            $ padre_ascoltato = True
+            $ fiducia_genitori += 1
+            $ prontezza_aiuto += 1
+            padre "Non devi spiegarmi tutto in una volta."
+            "Non parliamo del passato come se potesse essere risolto in una frase. Ma papà non mi chiede di dimostrare subito niente."
+        "Gli chiedo perché è rimasto zitto per anni.":
+            $ padre_confrontato = True
+            $ dubbi_di_mila += 1
+            $ prontezza_aiuto += 1
+            padre "Perché avevo paura di dire la cosa sbagliata. E ho sbagliato lo stesso."
+            "Non è una difesa. È una confessione imperfetta."
+        "Salgo in camera senza rispondere.":
+            $ padre_evitato = True
+            $ fiducia_sophie += 1
+            "Papà annuisce come se avesse ricevuto una risposta, poi va al lavoro."
+    if fotografia_distrutta and not fotografia_digitalizzata:
+        menu:
+            "L'originale è perduto. Posso chiedere a papà di confermare almeno la frase che ricordo."
+            "Gli chiedo se ha scritto quelle parole sul retro.":
+                $ testimonianza_padre = True
+                $ indizi_reali += 1
+                padre "Sì. L'ho scritta quando eri appena nata. Volevo che tutto fosse perfetto perché avevo paura di non saperti proteggere."
+                "La sua voce trema. La testimonianza non restituisce la fotografia, ma mi offre un riscontro che non viene da Sophie."
+            "Non gli chiedo nulla.":
+                "Lascio la domanda dove si trova. Per ora, la fotografia è perduta e la frase esiste soltanto nella mia memoria."
     "A scuola cerco Sophie sul telefono segreto. Non risponde. Durante la ricreazione mi rifugio nel vecchio bagno del secondo piano. Lo schermo è l'unica luce nel grigio della cabina."
     sophie "Cercavi me, Mila?"
     "Sussulto. Sophie è appoggiata allo stipite. Ha saltato le lezioni ed è arrivata fin qui. Indossa grandi occhiali scuri; quando li toglie, vedo un ematoma violaceo lungo la mandibola."
@@ -640,7 +670,8 @@ label capitolo_7:
     sophie "Certo che ti sto usando, Mila. Proprio come tu usi me per non affogare in quella cucina perfetta. Siamo due parassiti che hanno trovato l'ospite ideale. È la forma più pura, brutale e onesta di legame che avrai."
     "Infila una mano nella tasca e tira fuori un flacone di vetro scuro con un contagocce."
     sophie "Sono gocce prese dalla casa di tuo padre, un po' alla volta. Non li uccideranno, tranquilla. Li faranno soltanto dormire profondamente. Abbastanza a lungo perché prendiamo quello che resta e spariamo prima che possano muovere un dito."
-    "Mi preme il flacone contro il palmo. Pesa come un pianeta intero."
+    "Mi preme il flacone contro il palmo. Pesa come un pianeta intero. Il vetro è freddo e l'etichetta è stata staccata. Per la prima volta mi chiedo da quanto tempo Sophie abbia preparato questa scena."
+    $ flacone_con_mila = True
     sophie "Fallo stasera. Domani ti portano dalla dottoressa. È questione di ore. Sai cosa succede quando una madre come la tua porta una figlia come te da un medico? Ti fanno firmare un foglio, e quel foglio dice che non sei più una persona."
     "Si avvicina al mio orecchio."
     sophie "Quando torni, lascia la porta sul retro accostata. Io devo poter entrare."
@@ -760,7 +791,7 @@ label capitolo_9:
     "Non era un colpo. Era lo stesso movimento, disperato, ruvido, spaventato. L'odore del liquore sul tappeto si mescola alla ciliegia chimica dello shampoo di Sophie. D'un tratto quel profumo non sa più di salvezza. Sa di disinfettante e cappio."
     mila "Cosa fai, Sophie?"
     "Si avvicina alla credenza, prende il flacone vuoto e mi costringe ad avvolgerci le dita attorno prima di lasciarlo cadere sul pavimento."
-    sophie "Faccio in modo che tutto sia coerente. La polizia troverà cinque corpi e te. La babysitter psicotica."
+    sophie "Faccio in modo che tutto sia coerente. La polizia troverà quattro corpi e te. La babysitter psicotica."
     mila "Noi dovevamo scappare. I documenti di tuo padre..."
     "Sophie ride piano, poi sblocca il telefono e mi mostra le immagini con la luce accesa, questa volta senza fretta."
     sophie "Guarda bene, Mila."
