@@ -963,6 +963,7 @@ label finale_fascicolo:
     $ tensione_scena = False
     scene bg title night
     with fade
+    "8 maggio 2026, ore 03:30. La notte è finita, ma la versione ufficiale comincia proprio adesso."
     stop ambience fadeout 1.5
     stop music fadeout 2.0
     play sound audio.heartbeat
