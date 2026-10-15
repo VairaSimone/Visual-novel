@@ -1016,6 +1016,12 @@ label finale_verita:
         return
     if sophie_smascherata:
         "La mia voce raggiunge il corridoio. Sophie mi strappa il polso, ma il gesto ha lasciato segni che non può cancellare. Kate conserva una copia dei messaggi; le immagini sono state condivise e alcuni passaggi del piano non esistono soltanto nella mia memoria."
+        if quaderno_fedele:
+            "Gli appunti con date e frasi precise vengono acquisiti insieme alle copie. Non provano ogni accusa, ma permettono di controllare la sequenza e individuare i punti in cui il racconto di Sophie cambia."
+        elif quaderno_manipolato:
+            "Il quaderno viene acquisito, ma dichiaro che Sophie mi ha dettato e corretto alcune frasi. Non lo presento come un diario neutrale: anche la sua apparente precisione dovrà essere verificata."
+        elif quaderno_vuoto:
+            "Non c'è un diario da consegnare. La ricostruzione dipende dalle copie esterne e dalle testimonianze; alcune lacune restano aperte e non vengono riempite inventando ricordi."
         "La polizia non ricostruisce tutto in una notte. Ci sono quattro morti e domande a cui nessuna spiegazione rapida può rispondere. Ma la versione di Sophie non è più l'unica."
         "Per la prima volta le chiedono di ripetere la storia senza suggerirle le parole. Il suo sorriso resta fermo per qualche secondo, poi si incrina."
         if fiducia_genitori >= 2:
@@ -1038,6 +1044,12 @@ label finale_verita:
         "La fotografia non può essere aggiunta al fascicolo. Riferisco la frase che ricordo e chiarisco che non ho più l'originale."
     elif fotografia_conservata or fotografia_digitalizzata:
         "La fotografia originale o la copia digitale viene conservata, senza attribuirle un significato che da sola non può dimostrare."
+    if quaderno_fedele:
+        "Il quaderno contiene osservazioni datate e frasi dirette. Lo consegno come una traccia da confrontare, non come una prova che la mia interpretazione fosse sempre corretta."
+    elif quaderno_manipolato:
+        "Avverto Kate che alcune frasi del quaderno sono state dettate o corrette da Sophie: consegnarlo senza questa precisazione avrebbe potuto trasformare la manipolazione in una falsa conferma."
+    elif quaderno_vuoto:
+        "Non ho un quaderno utile da consegnare. Kate annota le mie parole senza completare le parti che non ricordo."
     "Sophie continua a sorridere. Kate le pone una domanda semplice, poi aspetta. Nessuno riempie il silenzio al posto suo."
     "Racconto quello che ricordo. Quando arrivo a un punto che non so spiegare, mi fermo. Nessuno mi suggerisce le parole successive."
     centered "{size=42}{color=#e6d4db}FINALE: LA VERITÀ HA UNA VOCE{/color}{/size}"
