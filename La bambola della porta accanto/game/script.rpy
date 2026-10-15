@@ -945,7 +945,10 @@ label capitolo_9:
     elif quaderno_manipolato:
         "Le frasi del quaderno tornano una dopo l'altra: alcune le ho scritte io, altre sono state corrette da Sophie finché non ho più saputo distinguere la mia memoria dalla sua versione."
     elif quaderno_vuoto:
-        "Il quaderno è rimasto vuoto. Non ho una cronologia da consultare; restano soltanto ricordi confusi e le copie che potrei aver affidato a Kate."
+        if telefono_condiviso_kate or immagini_condivise_kate:
+            "Il quaderno è rimasto vuoto. Non ho una cronologia personale da consultare; restano però le copie che ho affidato a Kate."
+        else:
+            "Il quaderno è rimasto vuoto. Non ho una cronologia personale né copie esterne da consultare: restano soltanto ricordi confusi."
     if prontezza_aiuto >= 2:
         "Una frase semplice riaffiora dalla voce di papà: non devi spiegare tutto in una volta. Posso chiedere aiuto anche senza ricostruire ogni minuto."
     elif padre_evitato and not padre_ascoltato and not padre_confrontato:
