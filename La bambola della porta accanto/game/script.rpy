@@ -661,12 +661,12 @@ label capitolo_5:
     elif telefono_nascosto:
         "Ho scelto di tenere il telefono lontano da tutti. Questo mi protegge da Sophie per il momento, ma mi lascia senza una testimone."
 
-    if fotografia_distrutta and not fotografia_digitalizzata:
+    if fotografia_distrutta and not fotografia_digitalizzata and testimonianza_padre:
+        "Ho perso l'originale, ma papà ha confermato la frase. La sua testimonianza è un appiglio più fragile di una fotografia, non una prova equivalente."
+    elif fotografia_distrutta and not fotografia_digitalizzata:
         "La fotografia strappata non può essere recuperata come prova. Resta soltanto la mia memoria della frase."
     elif fotografia_conservata or fotografia_digitalizzata:
         "La frase sul retro della fotografia può ancora essere controllata da qualcun altro, non soltanto da me."
-    elif testimonianza_padre:
-        "Ho perso l'originale, ma ho chiesto a papà di confermare la frase. La sua testimonianza è un appiglio più fragile di una fotografia, non una prova equivalente."
 
     if immagini_verificate:
         "Ho controllato le immagini prima di fidarmi di loro: so che contengono un'anomalia, anche se non conosco ancora la spiegazione completa."
@@ -859,6 +859,15 @@ init python:
 screen archivio_hotkey():
     zorder 190
     key "i" action If(renpy.get_screen("archivio_indizi"), Hide("archivio_indizi"), Show("archivio_indizi"))
+    textbutton "ARCHIVIO  [I]":
+        xalign 0.985
+        yalign 0.965
+        action If(renpy.get_screen("archivio_indizi"), Hide("archivio_indizi"), Show("archivio_indizi"))
+        text_size 16
+        text_color "#e6d4db"
+        text_hover_color "#ffffff"
+        background Solid("#211a25dd")
+        padding (14, 8)
 
 
 screen archivio_indizi():
