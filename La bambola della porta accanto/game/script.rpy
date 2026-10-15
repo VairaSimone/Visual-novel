@@ -1015,13 +1015,24 @@ label finale_verita:
         centered "{size=42}{color=#e6d4db}FINALE: LA PORTA APERTA{/color}{/size}"
         return
     if sophie_smascherata:
-        "La mia voce raggiunge il corridoio. Sophie mi strappa il polso, ma il gesto ha lasciato segni che non può cancellare. Kate conserva una copia dei messaggi; le immagini sono state condivise e alcuni passaggi del piano non esistono soltanto nella mia memoria."
+        "La mia voce raggiunge il corridoio. Sophie mi strappa il polso, ma il gesto ha lasciato segni che non può cancellare."
+        if telefono_condiviso_kate and immagini_condivise_kate:
+            "Kate conserva sia il messaggio sia un'immagine. Le due tracce non provano ogni accusa, ma una parte del racconto può essere controllata fuori dalla memoria di Mila."
+        elif telefono_condiviso_kate:
+            "Kate conserva una copia del messaggio. Non ha ricevuto le immagini sospette, quindi l'identità del mittente e il significato dei documenti restano da verificare."
+        elif immagini_condivise_kate:
+            "Kate conserva un'immagine ricevuta da Sophie, ma non il messaggio anonimo. È una traccia indipendente, non una ricostruzione completa."
+        else:
+            "Non ho affidato a Kate copie del telefono o delle immagini. La mia richiesta d'aiuto resta importante, ma non posso presentare come prova esterna ciò che nessuno ha conservato."
         if quaderno_fedele:
-            "Gli appunti con date e frasi precise vengono acquisiti insieme alle copie. Non provano ogni accusa, ma permettono di controllare la sequenza e individuare i punti in cui il racconto di Sophie cambia."
+            "Gli appunti con date e frasi precise vengono esaminati come una traccia da confrontare. Non provano ogni accusa, ma possono aiutare a controllare la sequenza e individuare i punti in cui il racconto di Sophie cambia."
         elif quaderno_manipolato:
             "Il quaderno viene acquisito, ma dichiaro che Sophie mi ha dettato e corretto alcune frasi. Non lo presento come un diario neutrale: anche la sua apparente precisione dovrà essere verificata."
         elif quaderno_vuoto:
-            "Non c'è un diario da consegnare. La ricostruzione dipende dalle copie esterne e dalle testimonianze; alcune lacune restano aperte e non vengono riempite inventando ricordi."
+            if telefono_condiviso_kate or immagini_condivise_kate:
+                "Non c'è un diario da consegnare. La ricostruzione dipende dalle copie esterne e dalle testimonianze; alcune lacune restano aperte."
+            else:
+                "Non c'è un diario né una copia esterna da consegnare. Alcune lacune restano aperte e nessuno dovrebbe riempirle inventando ricordi."
         "La polizia non ricostruisce tutto in una notte. Ci sono quattro morti e domande a cui nessuna spiegazione rapida può rispondere. Ma la versione di Sophie non è più l'unica."
         "Per la prima volta le chiedono di ripetere la storia senza suggerirle le parole. Il suo sorriso resta fermo per qualche secondo, poi si incrina."
         if fiducia_genitori >= 2:
