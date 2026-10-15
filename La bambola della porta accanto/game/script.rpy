@@ -687,8 +687,6 @@ label capitolo_6:
 label capitolo_7:
     scene bg school
     with fade
-    show sprite_mila_neutral at sprite_stage_left
-    show sprite_kate_neutral at sprite_stage_right
     play ambience audio.rain fadeout 1.0 fadein 1.3
     play music audio.tension fadeout 1.0 fadein 1.3
     centered "{size=42}{color=#e6d4db}CAPITOLO 7{/color}{/size}\n\n{size=28}{color=#aa97a3}Anatomia di un assedio{/color}{/size}"
