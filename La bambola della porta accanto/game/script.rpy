@@ -7,13 +7,13 @@ define kate = Character("Kate", color="#c9d7ef")
 define madre = Character("Mamma", color="#c6b59b")
 define padre = Character("Papà", color="#8f9aa8")
 
-# Queste variabili non giudicano il giocatore: ricordano che tipo di fiducia
-# Mila ripone nelle persone che la circondano. Serviranno ai percorsi futuri.
-default fiducia_sophie = 0
-default legame_kate = 0
-default dubbi_di_mila = 0
-default indizi_reali = 0
-default fiducia_genitori = 0
+# Stato narrativo: le relazioni influenzano dialoghi, indizi e accesso alle scelte.
+# I valori possono crescere o diminuire: non sono punteggi morali.
+default fiducia_sophie = 0   # Quanto Mila crede alla versione di Sophie.
+default legame_kate = 0      # Quanto è rimasto aperto il canale con Kate.
+default dubbi_di_mila = 0    # Quanto Mila mette in discussione la propria interpretazione.
+default indizi_reali = 0     # Indizi concreti riconosciuti o conservati.
+default fiducia_genitori = 0 # Quanto Mila è disposta a chiedere aiuto ai genitori.
 
 # True quando Mila ha fisicamente con sé il flacone ricevuto da Sophie.
 # Se lo lascia cadere nella neve, le opzioni successive devono rispettarlo.
@@ -244,6 +244,11 @@ label capitolo_2:
             mila "Non mi farai rinchiudere."
             "Il viso di mia madre si svuota. Mio padre posa il giornale, ma non trova parole."
 
+    if fiducia_genitori >= 1:
+        "Non mi fido ancora del tutto, ma il pensiero della dottoressa non sembra più soltanto una minaccia."
+    else:
+        "Continuo a sentire ogni proposta dei miei genitori come un tentativo di chiudermi in una stanza."
+
     "A scuola, un piccolo sasso colpisce la finestra dell'aula."
     play sound audio.window_knock
     "Sul davanzale trovo un foglietto, piegato in quattro."
@@ -271,6 +276,11 @@ label capitolo_2:
             $ dubbi_di_mila += 1
             $ indizi_reali += 1
             "Per la prima volta, tengo qualcosa che Sophie non sa di possedere."
+
+    if legame_kate >= 2:
+        "Poco dopo, il telefono vibra: Kate mi scrive che è ancora disponibile ad aiutarmi, senza chiedermi di scegliere subito a chi credere."
+    else:
+        "Il telefono resta in silenzio. Mi accorgo che, per ora, ho tenuto Kate fuori da tutto questo."
 
     "Quella sera, prima di dormire, apro il cassetto di mio padre cercando le batterie."
     "Trovo una fotografia azzurra: ho sette anni, la febbre alta, mia madre mi stringe avvolta in una coperta."
@@ -338,6 +348,11 @@ label capitolo_3:
             $ indizi_reali += 1
             sophie "Non ti fidi di me?"
             "Ingrandendo l'immagine, noto che una cifra è sfocata in modo diverso dalle altre."
+            if dubbi_di_mila >= 3:
+                "Confronto i bordi della cifra con quelli del resto del documento: anche l'ombra del testo non coincide. Non è una prova definitiva, ma è una seconda anomalia concreta."
+                $ indizi_reali += 1
+            else:
+                "Non riesco a capire se sia un errore, una fotografia venuta male o qualcosa di deliberato."
 
         "Le credo senza guardare meglio.":
             $ fiducia_sophie += 2
@@ -367,6 +382,11 @@ label capitolo_3:
             $ fiducia_sophie += 1
             "Chiudo la porta. Poi controllo due volte la finestra."
 
+    if indizi_reali >= 3:
+        "Rileggo gli appunti: fotografia, messaggi e dettagli fuori posto cominciano a formare una sequenza, non soltanto una sensazione."
+    else:
+        "Ho qualche frammento, ma non ancora una sequenza verificabile. Dovrò decidere quanto rischio correre senza prove complete."
+
     jump capitolo_4
 
 
@@ -383,6 +403,13 @@ label capitolo_4:
     play sound audio.glass
     "Mi ricordo di una frase scritta sul retro della fotografia: Perché tutto sia perfetto."
     "Mi ricordo di Kate che dice: non decidere nulla stanotte."
+
+    if fiducia_sophie >= 3:
+        "Sophie mi guarda con la stessa tenerezza di sempre. Una parte di me vuole credere che il flacone sia soltanto il prezzo di una fuga."
+    elif fiducia_sophie <= 0:
+        "Per la prima volta noto che Sophie controlla il mio viso prima ancora della mia risposta, come se stesse aspettando una battuta precisa."
+    else:
+        "Non so se la dolcezza di Sophie sia sincera o soltanto il modo più efficace per farmi esitare."
 
     # Sophie passa il flacone a Mila prima che lei scelga cosa farne.
     $ flacone_con_mila = True
@@ -407,30 +434,56 @@ label capitolo_4:
             sophie "Non farmi diventare cattiva, Mila."
             "Le sue parole sono leggere. Il suo sguardo no."
 
-    if indizi_reali >= 4 or (legame_kate >= 2 and dubbi_di_mila >= 2):
-        "Tengo il telefono tra le dita. Ho abbastanza frammenti per capire che la storia di Sophie non sta in piedi."
+    if indizi_reali >= 4 or (legame_kate >= 2 and dubbi_di_mila >= 2) or fiducia_genitori >= 2:
+        if indizi_reali >= 4:
+            "Tengo il telefono tra le dita. Ho abbastanza frammenti per vedere che la storia di Sophie non sta in piedi."
+        elif legame_kate >= 2 and dubbi_di_mila >= 2:
+            "Non ho prove complete, ma Kate è ancora raggiungibile e ormai riconosco troppe contraddizioni per restare in silenzio."
+        else:
+            "Non ho prove sufficienti. Mi resta però la memoria di mio padre che ha provato ad ascoltarmi: posso chiedere aiuto senza dover risolvere tutto da sola."
+
         menu:
             "Posso chiedere aiuto prima che sia troppo tardi."
 
             "Chiamo Kate e le mando la posizione.":
+                if legame_kate >= 2:
+                    "Non devo convincerla che ho paura: Kate riconosce subito che le sto chiedendo aiuto."
+                else:
+                    "Esito prima di chiamare Kate. Non so se si fiderà ancora di me, ma le mando la posizione e le dico soltanto ciò che ho visto."
                 $ legame_kate += 2
                 if not flacone_con_mila:
                     "Le spiego anche che il flacone è rimasto nella neve, sotto la quercia."
                 jump finale_verita
 
-            "Entro in casa con il flacone e racconto tutto ai miei genitori." if flacone_con_mila:
-                $ fiducia_genitori += 2
+            "Mi fido di mio padre: entro e gli mostro il flacone." if flacone_con_mila and fiducia_genitori >= 2:
+                $ fiducia_genitori += 1
                 jump finale_rottura
 
-            "Entro in casa e dico ai miei genitori dove ho lasciato il flacone." if not flacone_con_mila:
-                $ fiducia_genitori += 2
+            "Entro con il flacone, anche se temo che non mi crederanno." if flacone_con_mila and fiducia_genitori < 2:
+                $ fiducia_genitori += 1
                 jump finale_rottura
 
-            "Tengo il flacone con me e seguo Sophie per capire il suo piano." if flacone_con_mila:
+            "Mi fido di mio padre e gli dico dov'è il flacone." if not flacone_con_mila and fiducia_genitori >= 2:
+                $ fiducia_genitori += 1
+                jump finale_rottura
+
+            "Dico ai miei genitori dove ho lasciato il flacone, senza sapere se mi crederanno." if not flacone_con_mila and fiducia_genitori < 2:
+                $ fiducia_genitori += 1
+                jump finale_rottura
+
+            "Le dico che voglio seguirla e tengo il flacone con me." if flacone_con_mila and fiducia_sophie >= 3:
                 $ dubbi_di_mila += 1
                 jump capitolo_5
 
-            "Lascio il flacone nella neve e seguo Sophie per capire il suo piano." if not flacone_con_mila:
+            "Fingo di seguirla e tengo il flacone con me." if flacone_con_mila and fiducia_sophie < 3:
+                $ dubbi_di_mila += 1
+                jump capitolo_5
+
+            "Seguo Sophie senza recuperare il flacone." if not flacone_con_mila and fiducia_sophie >= 3:
+                $ dubbi_di_mila += 1
+                jump capitolo_5
+
+            "Fingo di seguire Sophie e lascio il flacone nella neve." if not flacone_con_mila and fiducia_sophie < 3:
                 $ dubbi_di_mila += 1
                 jump capitolo_5
     else:
@@ -453,6 +506,23 @@ label capitolo_5:
     else:
         "Il flacone è rimasto nella neve, sotto la quercia. Sophie aspetta nella finestra della villetta accanto."
 
+    if fiducia_sophie >= 3:
+        "La promessa di una vita con Sophie conserva ancora un potere su di me. È proprio questo che rende difficile distinguere il desiderio dalla paura."
+    elif fiducia_sophie <= 0:
+        "Non riesco più a confondere la dolcezza di Sophie con la sicurezza: so quanto può cambiare tono quando la contraddico."
+    else:
+        "Una parte di me le crede ancora; un'altra ha imparato a non scambiare il sollievo per una prova."
+
+    if indizi_reali >= 4:
+        "Ho conservato abbastanza dettagli da raccontare una sequenza precisa, non soltanto la mia paura."
+    else:
+        "I miei ricordi sono reali, ma alcune prove sono incomplete. Dovrò chiedere aiuto senza fingere di sapere tutto."
+
+    if fiducia_genitori >= 2:
+        "Penso a mio padre: forse posso cominciare da una sola verità e lasciare che mi ascolti."
+    else:
+        "Non so come reagiranno i miei genitori. So soltanto che tacere non renderà questa scelta più sicura."
+
     menu:
         "Questa è l'ultima scelta prima che la storia si chiuda."
 
@@ -460,12 +530,20 @@ label capitolo_5:
             $ fiducia_sophie += 2
             jump finale_fascicolo
 
-        "Dico tutto ai miei genitori." if flacone_con_mila:
-            $ fiducia_genitori += 2
+        "Dico tutto ai miei genitori, che ora so di poter ascoltare." if flacone_con_mila and fiducia_genitori >= 2:
+            $ fiducia_genitori += 1
             jump finale_rottura
 
-        "Dico tutto ai miei genitori e spiego dove ho lasciato il flacone." if not flacone_con_mila:
-            $ fiducia_genitori += 2
+        "Dico tutto ai miei genitori, anche se temo che non mi crederanno." if flacone_con_mila and fiducia_genitori < 2:
+            $ fiducia_genitori += 1
+            jump finale_rottura
+
+        "Dico tutto ai miei genitori e spiego dove ho lasciato il flacone." if not flacone_con_mila and fiducia_genitori >= 2:
+            $ fiducia_genitori += 1
+            jump finale_rottura
+
+        "Dico ai miei genitori dove ho lasciato il flacone, anche se temo che non mi crederanno." if not flacone_con_mila and fiducia_genitori < 2:
+            $ fiducia_genitori += 1
             jump finale_rottura
 
         "Scappo da casa e raggiungo Sophie.":
@@ -476,8 +554,17 @@ label finale_verita:
     scene bg school
     with fade
     stop music fadeout 2.0
-    "Kate arriva con sua madre e con la polizia. Non risolve tutto in una notte."
-    "Ma il telefono, il flacone, le immagini modificate e il quaderno smettono di essere soltanto segreti."
+
+    if legame_kate >= 3:
+        "Kate risponde quasi subito. Il filo che Mila ha tenuto aperto con lei basta a farle capire che questa volta non si tratta di un litigio."
+    else:
+        "Kate esita quando sente la voce di Mila, ma resta in linea. Mila le dà la posizione e chiede che le prove vengano conservate prima che qualcuno le tocchi."
+
+    if indizi_reali >= 4:
+        "Telefono, immagini e appunti permettono di ricostruire una sequenza verificabile. Non risolvono tutto in una notte, ma non sono più soltanto ricordi isolati."
+    else:
+        "Le prove sono frammentarie e alcune domande restano aperte. Kate e sua madre aiutano Mila a conservarle e a raccontare ciò che sa senza inventare ciò che non sa."
+
     "Sophie continua a sorridere. Per la prima volta, però, nessuno le lascia decidere quale storia raccontare."
     "Mila non guarisce come in una favola. Comincia a parlare, ed è più difficile. È anche più vero."
     centered "{size=42}{color=#e6d4db}FINALE: LA VERITÀ HA UNA VOCE{/color}{/size}"
@@ -497,6 +584,11 @@ label finale_rottura:
         "Mila racconta ai genitori quanto è successo e indica il punto sotto la quercia in cui ha lasciato il flacone."
         "Suo padre esce a recuperarlo e poi chiama aiuto. Sua madre resta accanto a Mila, senza tentare di spiegare via il suo terrore."
 
+    if fiducia_genitori >= 2:
+        "Mio padre non mi chiede di mettere in ordine ogni ricordo prima di credermi. Gli basta che io gli dica dove cominciare."
+    else:
+        "Le parole mi escono a pezzi. Non so se i miei genitori capiscano tutto, ma per la prima volta non torno indietro per proteggerli dal mio racconto."
+
     "Fuori, Sophie comprende che il suo copione non funzionerà. La sua voce diventa fredda, finalmente priva di carezze."
     "Non è una riconciliazione perfetta. È una porta che resta aperta."
     centered "{size=42}{color=#e6d4db}FINALE: LA PORTA APERTA{/color}{/size}"
@@ -514,6 +606,10 @@ label finale_fuga:
         "Il flacone è rimasto nella neve. Non torno indietro a riprenderlo."
     "Il treno parte prima dell'alba. Per qualche ora, la libertà ha il rumore dei binari."
     "Poi Sophie prende il telefono di Mila, lo spegne e dice che ora non serve più nessuno."
+    if fiducia_sophie >= 3:
+        "Voglio credere che lo faccia per proteggerci. Per qualche secondo, trasformo anche questo gesto in una prova d'amore."
+    else:
+        "Questa volta riconosco il gesto per quello che è: Sophie decide chi posso sentire e quando posso parlare."
     "Mila guarda il vetro. Il suo riflesso sembra una bambola seduta accanto a una ragazza che non sbatte mai le palpebre."
     centered "{size=42}{color=#e6d4db}FINALE: LA FUGA ILLUSORIA{/color}{/size}"
     return
@@ -526,6 +622,10 @@ label finale_fascicolo:
     stop music fadeout 2.0
     "La storia si spezza in rumori, sirene e pagine scritte con una grafia ordinata."
     "Nei giorni successivi, gli adulti troveranno il quaderno e lo chiameranno confessione."
+    if fiducia_sophie >= 3:
+        "Mila ha creduto così a lungo alla versione di Sophie che alcune frasi false le sembrano ancora ricordi propri."
+    else:
+        "Mila aveva già intravisto le crepe, ma non è riuscita a trasformare i sospetti in una prova condivisa prima che fosse troppo tardi."
     "Sophie sarà la superstite perfetta: spaventata, silenziosa, impossibile da accusare."
     "Da qualche parte, Kate rileggerà un messaggio rimasto senza risposta e capirà troppo tardi che Mila aveva provato a parlarle."
     centered "{size=42}{color=#e6d4db}FINALE: IL FASCICOLO{/color}{/size}"
