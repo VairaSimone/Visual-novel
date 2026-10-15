@@ -1147,18 +1147,26 @@ label finale_fascicolo:
         "Non esistono centoquaranta pagine da allegare. Il fascicolo si regge sulle impronte, sul flacone e sulla ricostruzione di una sopravvissuta traumatizzata; l'assenza del diario viene interpretata come un dettaglio, non come una ragione per riaprire il caso."
     "Ci sono tre anomalie."
     "La prima: il consulente medico-legale annota su un corpo un pattern di pressione compatibile con una forza superiore a quella esprimibile da Mila nelle sue condizioni. Resta una nota a piè di pagina. Nessuno costruisce un secondo colpevole quando il primo sembra aver confessato per centoquaranta pagine."
-    "Anche la concentrazione di sedativi nel sangue di Mila viene liquidata rapidamente. La relazione finale parla di una finestra di latenza, una spiegazione accomodante per i minuti che non tornano. Di fronte a un diario pieno di rabbia e a un corpo che stringe ancora un frammento di vetro, nessuno cerca discrepanze."
+    if quaderno_manipolato:
+        "Anche la concentrazione di sedativi nel sangue di Mila viene liquidata rapidamente. La relazione finale parla di una finestra di latenza, una spiegazione accomodante per i minuti che non tornano. Di fronte a un diario pieno di rabbia e a un corpo che stringe ancora un frammento di vetro, nessuno cerca discrepanze."
+    else:
+        "Anche la concentrazione di sedativi nel sangue di Mila viene liquidata rapidamente. La relazione finale parla di una finestra di latenza, una spiegazione accomodante per i minuti che non tornano. Gli investigatori hanno già scelto una ricostruzione e trattano le incongruenze come dettagli secondari."
     "La seconda anomalia sono i tabulati. Nella tasca dei jeans viene trovato un vecchio cellulare con decine di SMS scambiati con un'utenza anonima, firmati soltanto S. L'analisi dei dispositivi ufficiali della villetta vicina non trova contatti tra Sophie e la vittima. La SIM è una prepagata estera con dati falsi."
     "La Procura conclude che S. sia una figura conosciuta da Mila su un forum, un interlocutore mai identificato, oppure una personificazione nata dal suo stato dissociativo."
     "La terza: sotto le unghie di Mila viene isolato materiale epiteliale non suo. Il profilo corrisponde alla superstite di quindici anni, rinvenuta dodici ore dopo in un ripostiglio, disidratata e incapace di formulare frasi complete."
     if ipotesi_genitori_sospetto:
         "Nei suoi appunti Mila aveva continuato a chiamare i genitori colpevoli, anche quando non disponeva di un riscontro indipendente. Nel fascicolo, quel sospetto viene letto come prova di un rancore premeditato."
-    else:
-        "La spiegazione si scrive da sola, e la scrivono gli adulti per lei: la bambina ha tentato di fermare Mila, si è divincolata, è scappata a nascondersi. Nel verbale, le tracce sono compatibili con una colluttazione difensiva."
+    "La spiegazione si scrive da sola, e la scrivono gli adulti per lei: la bambina ha tentato di fermare Mila, si è divincolata, è scappata a nascondersi. Nel verbale, le tracce sono compatibili con una colluttazione difensiva."
     "È, in un certo senso, la firma più bella che Sophie abbia mai messo in fondo a un documento: qualcun altro l'ha scritta per lei."
     "I quotidiani parlano del Massacro della Porta Accanto per settimane. Il sabato pubblicano la fotografia della villetta con la quercia recintata dal nastro giallo. La domenica un editoriale molto letto parla dell'inconoscibilità dei figli."
     if telefono_condiviso_kate or immagini_condivise_kate:
-        "Una sola voce stona. Kate consegna alla Procura anche le copie che Mila le aveva affidato: il messaggio e l'immagine non dimostrano da soli chi fosse Sophie, ma fissano una traccia esterna che il fascicolo non riesce a spiegare."
+        "Una sola voce stona. Kate consegna alla Procura le copie che Mila le aveva affidato."
+        if telefono_condiviso_kate and immagini_condivise_kate:
+            "Il fascicolo contiene sia il messaggio anonimo sia un'immagine mostrata da Sophie. Nessuna delle due prove identifica da sola Sophie, ma insieme fissano due tracce esterne che il rapporto ufficiale non riesce a spiegare."
+        elif telefono_condiviso_kate:
+            "Il fascicolo contiene una copia del messaggio anonimo, ma non l'immagine mostrata da Sophie. Il mittente resta da identificare."
+        else:
+            "Il fascicolo contiene un'immagine mostrata da Sophie, ma non il messaggio anonimo. Il contesto e l'origine del file restano da verificare."
         "La lettera di Kate viene protocollata e archiviata. Il cronista non la cita: non c'è spazio, e comunque non aggiunge nulla. K. compare in sei parole: Non era lei. Non era lei."
     elif legame_kate >= 2:
         "Una sola voce stona. Kate, che aveva provato a offrire ospitalità a Mila, rilascia due dichiarazioni e scrive una lettera di quattro pagine alla Procura. Dice che Mila era cambiata e che i genitori l'avevano chiamata tre volte in primavera per chiedere aiuto."
