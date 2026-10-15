@@ -1416,7 +1416,7 @@ screen archivio_indizi():
 
                     text "FORMULA UN'IPOTESI" size 21 color "#e4b6bd"
                     text "Puoi cambiare idea. La scelta registra la tua interpretazione, non altera retroattivamente i fatti raccolti." size 14 color "#c2b4c5"
-                    if (telefono_condiviso_kate or immagini_condivise_kate or immagini_verificate) and (quaderno_manipolato or fotografia_digitalizzata or telefono_condiviso_kate):
+                    if (telefono_condiviso_kate and immagini_condivise_kate) or (immagini_verificate and (quaderno_manipolato or fotografia_digitalizzata or telefono_condiviso_kate)):
                         textbutton "IPOTESI · Sophie ha manipolato il racconto" action SetVariable("ipotesi_attiva", "sophie_manipola") text_size 16
                     else:
                         text "BLOCCATA · Manipolazione del racconto: servono almeno due tracce confrontabili." size 15 color "#c2b4c5"
