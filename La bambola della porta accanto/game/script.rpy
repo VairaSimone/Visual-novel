@@ -1005,163 +1005,187 @@ define diario_mila = """
 QUADERNO DI MILA
 Dal fascicolo d'indagine 4082/2026 — Allegato C
 
-Nota della Procura: il seguente materiale è estratto dal quaderno a righe con copertina rigida nera rinvenuto nella stanza di Mila B., occultato tra le maglie della rete del letto. Alcune pagine presentano sbavature d'inchiostro, parole depennate violentemente e frasi incomplete.
+Nota della Procura: il seguente materiale è estratto dal quaderno a righe con copertina rigida nera reperito nella stanza di Mila B., occultato tra le maglie della rete del letto. Alcune pagine presentano sbavature d'inchiostro, parole violentemente depennate o frasi incomplete.
 
-14 ottobre 2025
+14 Ottobre 2025
 
 Sei minuti e undici secondi. Li ho contati anche stamattina.
 
-Il rumore dell'accendino di mia madre nell'altra stanza è come uno sparo silenzioso. Ogni volta che lo sento, mi si stringe lo stomaco in un nodo così stretto che stento a respirare. Questa casa non è un posto dove si vive, è un posto dove si trattiene il fiato sperando che nessuno si accorga che occupi spazio.
+Il rumore dell’accendino di mia madre nell’altra stanza è come uno sparo silenzioso. Ogni volta che lo sento, mi si stringe lo stomaco in un nodo così stretto che stento a respirare. Questa casa non è un posto dove si vive, è un posto dove si trattiene il fiato sperando che nessuno si accorga che occupi dello spazio.
 
-Mia madre mi ha guardata mentre le posavo il caffè. Non ha detto niente per due minuti interi. Mi ha solo fissata con quegli occhi grigi, stanchi, cercandomi addosso una colpa che non ho ancora commesso. Mi sento sporca solo a stare sotto il suo sguardo. Mio padre era dietro il giornale, come sempre. Una sagoma di cartone. Se sparissi adesso, lui girerebbe pagina lo stesso.
+Mia madre mi ha guardata mentre le posavo il caffè. Non ha detto niente per due minuti interi. Mi ha solo fissata con quegli occhi grigi, stanchi, cercandomi addosso una colpa che non ho ancora commesso. Mi sento sporca solo a stare sotto il suo sguardo. Mio padre era dietro il suo giornale, come sempre. Una sagoma di cartone. Se io sparissi adesso, se diventassi invisibile, lui girerebbe la pagina lo stesso.
 
-Li odio. Li odio così tanto che a volte la gola mi brucia come se avessi ingoiato del vetro. Vorrei che succedesse qualcosa: un terremoto, un incendio, qualunque cosa che spezzi la prigione.
+Li odio. Li odio così tanto che a volte la gola mi brucia come se avessi ingoiato del vetro. Sono due mostri che mi divorano un pezzo alla volta, con le buone maniere e le tazze di ceramica pulite.
 
-2 novembre 2025
+Vorrei solo che succedesse qualcosa. Un terremoto, un incendio. Qualsiasi cosa che spacchi questa prigione e mi porti via.
 
-Stasera S. mi ha detto una cosa che non riesco a togliermi dalla testa. Ero al buio e tremavo. S. mi ha preso le mani. Erano calde.
+2 Novembre 2025
 
-«Devi scrivere tutto, Mila. Ogni singola cosa che ti fanno. Altrimenti un giorno ti convinceranno che te lo sei inventato. Ti convinceranno che la pazza sei tu.»
+Stasera S. mi ha detto una cosa che non riesco a togliermi dalla testa.
 
-Ho preso questo quaderno per custodire la verità. È il nostro segreto. Per la prima volta dopo anni, quando sono tornata a casa e ho visto la luce gialla del corridoio, non ho avuto soltanto paura. Ho pensato a S. C'è qualcuno che vede attraverso la maschera da brava figlia. L'unica presenza reale in mezzo a un mondo di fantocci.
+Ero al buio e tremavo — non so nemmeno perché tremavo, forse per il modo in cui mia madre mi aveva urlato dietro prima che uscissi solo perché ho fatto cadere uno strofinaccio. S. mi ha preso le mani. Erano così calde.
 
-18 dicembre 2025
+«Devi scrivere tutto, Mila,» mi ha detto. «Ogni singola cosa che ti fanno. Altrimenti un giorno ti convinceranno che te lo sei inventato. Ti convinceranno che la pazza sei tu.»
 
-Abbiamo parlato di come sarà quando andremo via. C'era neve fresca sul prato. S. mi ha descritto una casa piccola vicino al mare, senza orari e senza nessuno che controlli se mi sono truccata o se sono in ritardo.
+Ho preso questo quaderno per custodire la verità. È il nostro segreto.
+
+Per la prima volta dopo anni, stasera quando sono tornata a casa e ho visto la luce gialla del corridoio, non ho avuto soltanto paura. Ho pensato a S. Ho pensato che c’è qualcuno nel mondo che sa cosa provo, qualcuno che vede attraverso la maschera da brava figlia che devo indossare ogni giorno. L'unica presenza reale in mezzo a un mondo di fantocci.
+
+18 Dicembre 2025
+
+Abbiamo parlato di come sarà quando andremo via.
+
+Era buio e c'era la neve fresca sul prato. Eravamo sotto la quercia, vicinissime per non fare rumore. S. mi ha descritto una casa piccola, vicino al mare, dove non ci sono orari, dove nessuno controlla se ti sei truccata o se hai tre minuti di ritardo.
 
 «Niente genitori, Mila. Niente regole. Solo noi due.»
 
 A volte mi chiedo se sono abbastanza forte per farlo.
 
-Non devo scriverlo. Devo essere forte. Quando sono con S., l'aria di casa mia sembra meno velenosa. S. dice che sono la sua persona preferita al mondo. Nessuno me l'aveva mai detto. Mia madre mi dice solo che sono un impegno; S. mi guarda come se fossi preziosa.
+Non devo scriverlo. Devo essere forte.
 
-3 gennaio 2026
+Quando sono con S., l'aria di casa mia sembra meno velenosa. Mi sembra quasi di poter resistere fino al giorno in cui ce ne andremo. S. dice che sono la sua persona preferita al mondo. Nessuno me l'aveva mai detto. Mia madre mi dice solo che sono un impegno. S. invece mi guarda come se io fossi preziosa.
+
+3 Gennaio 2026
 
 Oggi mia madre mi ha fatto pulire lo specchio del bagno tre volte perché diceva che ci si vedevano le ditate. Mi tremavano le dita. Ho pensato di prendere una forbice e... no. Non devo pensarci.
 
-Sono corsa da S. Lei non mi ha detto passerà, come fa Kate. S. mi ha stretto il mento finché ho smesso di piangere.
+Sono corsa via appena possibile. Ho raccontato tutto a S. Lei non mi ha detto «passerà» come fa Kate a scuola. Kate non capisce niente, Kate vive nel mondo di ovatta. S. mi ha stretto il mento, fortissimo, finché non ho smesso di piangere.
 
-«Lasciali fare, Mila. Lascia che si consumino nella loro cattiveria. Tu sei mia. Io ti salverò da loro.»
+«Lasciali fare, Mila. Lascia che si consumino nella loro cattiveria. Tu sei mia, ricordatelo. Io ti salverò da loro.»
 
-Mi ha baciata sulla guancia, vicino alla cicatrice. Mi farei fare qualsiasi cosa pur di non perdere quel calore.
+Mi ha baciata sulla guancia, vicino alla cicatrice. Sento ancora il calore della sua pelle. Mi farei fare qualsiasi cosa pur di non perdere questo calore.
 
-20 febbraio 2026
+20 Febbraio 2026
 
-Ho sognato che mia madre murava la porta della mia camera lasciando solo un buco per far passare lo yogurt. Mi sono svegliata col cuore a cento. Ho guardato fuori dalla finestra. La luce era accesa. Sapevo che dall'altra parte c'era S.
+Ho sognato che mia madre murava la porta della mia camera lasciando solo un piccolo buco per far passare lo yogurt. Mi sono svegliata con il cuore che batteva a cento.
 
-Siamo sole contro di loro. I suoi genitori sono rigidi e finti; i miei sono mostri travestiti da persone perbene. Se non ci fossimo trovate, sarei già morta dentro. S. è la mia unica via d'uscita.
+Ho guardato fuori dalla finestra. La luce nell'oscurità della notte era accesa. Ho messo la mano sul vetro freddo, sapendo che dall'altra parte c'era S.
 
-12 aprile 2026
+Siamo sole contro di loro. I suoi genitori sono rigidi, finti, sempre pronti a giudicare. I miei sono mostri travestiti da persone perbene. Se non ci fossimo trovate, io sarei già morta dentro. S. è la mia unica via d'uscita.
 
-La tensione è insopportabile. Sento gli sguardi di mia madre piantati sulla schiena anche quando sono di spalle. Controlla ogni movimento, ogni respiro.
+12 Aprile 2026
 
-Oggi ho parlato con S. della fuga. Dobbiamo accelerare i tempi.
+La tensione in questa casa sta diventando insopportabile. Sento gli sguardi di mia madre piantati sulla mia schiena anche quando sono di spalle. Controlla ogni mio movimento, ogni respiro.
+
+Oggi ho parlato con S. della fuga. Dobbiamo accelerare i tempi. Non posso più aspettare.
 
 «Le cose si fanno con precisione, Mila. Quando sarà il momento giusto, saremo libere.»
 
-Ha ragione. Devo fidarmi, smettere di avere paura e preparare il terreno. S. è l'unica che sa guidarmi fuori dall'inferno.
+Ha ragione. Devo fidarmi. Devo smettere di avere paura e iniziare a preparare il terreno. Se mi faccio prendere dal panico adesso, rischio di rovinare tutto. S. è l'unica che sa come guidarmi fuori da questo inferno. Io devo solo essere pronta a fare la mia parte.
 
-28 aprile 2026
+28 Aprile 2026
 
-Mia madre continua a ripetermi che sono paranoica, che mi invento le cose, che ho sguardi strani. Cerca di farmi credere che la malata sia io, ma so qual è la verità.
+Mia madre continua a ripetermi che sono paranoica, che mi invento le cose nella testa, che ho degli sguardi strani. Cerca di farmi credere che la malata sono io, ma io so qual è la verità.
 
-Mio padre mi ha fissata senza dire una parola. Hanno paura perché ho capito chi sono veramente. Sotto le maschere da famiglia perfetta c'è marciume.
+Ieri mio padre è entrato in cucina con quella sua camminata lenta, da ombra, e mi ha fissata senza dire una parola. Hanno paura di me perché sanno che ho capito chi sono veramente. Sotto le loro maschere da famiglia perfetta c'è solo marciume.
 
-Quando parlo con S., la sua voce è l'unica cosa che mi tiene ancorata alla realtà. Mi ricorda che loro sono finzioni, marionette scricchiolanti, e noi le uniche persone vive.
+Quando ne parlo con S., la sua voce è l'unica cosa che mi tiene ancorata alla realtà. Mi ricorda che loro sono finzioni, marionette scricchiolanti, e che noi siamo le uniche persone vive. Manca poco. Sento che il momento si sta avvicinando.
 
-5 maggio 2026
+5 Maggio 2026
 
-Non dormo più. Il veleno di questa casa mi soffoca. Ogni stanza puzza di trappola. Mia madre mi guarda come se stesse decidendo dove riporre il mio cadavere.
+Non sto dormendo più. Il veleno di questa casa mi sta soffocando. Ogni stanza puzza di trappola. Mia madre mi guarda come se stesse decidendo dove riporre il mio cadavere.
 
-Ieri ho guardato S. negli occhi e ho visto la stessa determinazione. Nessun dubbio, nessuna esitazione.
+Ieri ho guardato S. negli occhi e ho visto la stessa determinazione che sento bruciare dentro di me. Nessun dubbio, nessuna esitazione.
 
-«Niente più catene. Presto sarà tutto finito.»
+«Niente più catene, Mila. Presto sarà tutto finito.»
 
-Vorrei che fosse già domani. Vorrei non dover più respirare la stessa aria di questi due mostri.
+Mi viene da piangere se penso a quanto sono stata vicina a crollare, ma S. non mi ha mai lasciata cadere. Voglio solo che andiamo via. Vorrei che fosse già domani. Vorrei non dover più respirare la stessa aria di questi due mostri.
 
-7 maggio 2026
+7 Maggio 2026
 
-Non so cosa succederà stasera. Mia madre mi ha perquisito la stanza e ha detto che venerdì mi porta da una dottoressa. Vuole togliermi anche l'aria. Nascondo questo quaderno sotto il materasso, nell'unico posto dove le sue mani non possono arrivare a stroppiarlo.
+Non so cosa succederà stasera.
+
+Mia madre mi ha perquisito la stanza. Ha trovato le mie cose, ha detto che venerdì mi porta da una dottoressa. Vuole chiudermi in una stanza. Vuole togliermi anche l'aria. Vuole distruggermi prima che io possa scappare.
+
+Mi tremano le mani mentre scrivo queste righe. Nascondo questo quaderno sotto il materasso, nell'unico posto dove le sue mani non possono arrivare a stroppiarlo.
 
 Stasera si chiuderà tutto. Non ho più paura.
 
-Se domani saremo lontane da qui, vicino al mare con S., forse riuscirò a dimenticare il rumore dell'accendino. Forse riuscirò finalmente a respirare.
+Se domani saremo lontane da qui, se saremo davvero vicino al mare con S., forse riuscirò a dimenticare il rumore dell'accendino in cucina. Forse riuscirò finalmente a respirare.
 
-Nota di chiusura del fascicolo: il quaderno si interrompe a pagina 84. Le ultime pagine risultano bianche. Alcune pagine sono state strappate e non sono presenti.
+Note di chiusura del fascicolo: il quaderno si interrompe a pagina 84. Le ultime pagine del volume risultano bianche. Alcune pagine del quaderno risultano essere strappate e non presenti.
 """
 
 define frammenti_mila = """
 FRAMMENTI DEL QUADERNO
+
 Nota: sono tuttora nascosti in un luogo che solo Mila conosceva e che nessuno ha mai perquisito.
 
-14 novembre
+14 Novembre
 
-Mamma oggi mi ha guardato per dieci minuti interi mentre mi allacciavo le scarpe. Non ha detto una parola. Poi ha sospirato e si è avvicinata per sistemarmi il colletto della camicia. L'ha fatto con una ruvidezza strana, ma senza farmi male.
+Mamma oggi mi ha guardato per dieci minuti interi mentre mi allacciavo le scarpe. Non ha detto una parola. Poi ha fatto un sospiro lungo, pesante, e si è avvicinata per sistemarmi il colletto della camicia. Lo ha fatto con una ruvidezza strana, ma senza farmi male.
 
-Sophie dice che quando mamma fa così cerca di soffocarmi, che vuole cancellare ogni segno della mia personalità per farmi diventare come lei. Io le ho creduto. L'ho scritto anche nella pagina prima, come voleva Sophie.
+Sophie dice che quando mamma fa così sta cercando di soffocarmi, che vuole cancellare ogni segno della mia personalità per farmi diventare come lei. E io le ho creduto. L'ho scritto anche nella pagina prima, come voleva Sophie.
 
-Ma stasera mi è tornato in mente un ricordo di quando avevo sette anni. Avevo la polmonite e la febbre non scendeva. Mamma è rimasta seduta al bordo del letto per tre notti. Mi metteva pezze bagnate sulla fronte e piangeva piano, convinta che dormissi.
+Ma stasera, mentre ero a letto al buio, mi è tornato in mente un ricordo di quando avevo sette anni. Avevo la polmonite, la febbre non scendeva. Mamma è rimasta seduta sul bordo del mio letto per tre notti di fila. Mi metteva le pezze bagnate sulla fronte e piangeva piano, in silenzio, convinta che dormissi. Continuava a sussurrare nel buio:
 
 «Prendi me, Dio. Fai stare male me, ma lascia respirare lei.»
 
-Perché adesso quel ricordo mi sembra un delitto? Perché quando sono con Sophie la voce di mia madre diventa fredda nella mia testa? Vorrei appoggiare la testa sul suo grembo e chiederle scusa per come la guardo. Ma Sophie direbbe che sono debole, che sono ancora un robot.
+Perché adesso quel ricordo mi sembra un delitto? Perché quando sono con Sophie la voce di mia madre diventa fredda nella mia testa? A volte vorrei solo appoggiare la testa sul suo grembo e chiederle scusa per come la guardo. Ma se lo facessi, Sophie direbbe che sono debole. Che sono ancora un robot.
 
-Ho così tanta paura che Sophie smetta di guardarmi.
+E io ho così tanta paura che Sophie smetta di guardarmi.
 
-19 aprile
+19 Aprile
 
-Sophie mi ha baciato stasera sotto la quercia. Aveva le labbra fredde, che sapevano di lecca-lecca alla ciliegia e di qualcosa di amaro, come il ferro.
+Sophie mi ha baciato stasera sotto la quercia. Aveva le labbra fredde, che sapevano di lecca-lecca alla ciliegia e di qualcosa di amaro, come il ferro. Mi ha detto:
 
 «Sei la mia bambola preferita, Mila.»
 
-Quando lo dice, per un secondo mi sento viva. Mi sento vista, scelta, importante.
+Quando lo dice lei, per un secondo mi sento viva. Mi sento vista, scelta, importante.
 
-Poi torno a casa e trovo mia madre seduta al buio con la sigaretta accesa. Capisco cosa sto diventando. Non sono più la figlia di nessuno: sono un'ombra. Sophie vuole che odi questa casa con tutta me stessa. Io mi sforzo di vedere veleno in ogni gesto.
+Ma poi torno a casa e trovo mia madre seduta al buio con la sigaretta accesa, e capisco cosa sto diventando. Non sono più la figlia di nessuno. Sono un'ombra. Sophie vuole che io odi questa casa con tutta me stessa. Io ci provo. Mi sforzo di vedere il veleno in ogni loro gesto.
 
-Eppure ho trovato un mio vecchio disegno delle elementari dietro la porta della dispensa. C'eravamo noi tre, disegnati con pennarelli spuntati, una casa gialla e un sole enorme. Mamma l'ha plastificato con il nastro adesivo per non farlo rovinare dall'umidità. Lo conserva da dieci anni.
+Eppure stasera ho trovato un mio vecchio disegno delle elementari nascosto dietro la porta della dispensa. C'eravamo noi tre, disegnati con i pennarelli spuntati, con una casa gialla e un sole enorme. Mamma lo ha plastificato con il nastro adesivo per non farlo rovinare dall'umidità. Lo tiene lì da dieci anni.
 
-Se mi odiano così tanto come dice Sophie, perché mamma conserva ancora il disegno di quando la amavo?
+Se mi odiano così tanto come dice Sophie... perché mamma conserva ancora il disegno di quando la amavo?
 
 Forse la casa non è una prigione. Forse sono io che sono rotta dentro.
 
-7 maggio
+7 Maggio
 
-Ho visto la fotografia azzurra, nascosta sul fondo del cassetto di papà. Mamma era così giovane. Teneva me tra le braccia come se fossi la cosa più preziosa e fragile dell'universo. Sul retro, papà aveva scritto: «Perché tutto sia perfetto.»
+Ho visto la fotografia. Quella azzurra, nascosta sul fondo del cassetto di papà.
 
-Non era l'ossessione per il giudizio dei vicini. Era amore: terrorizzato, maldestro, incapace di trovare le parole giuste. Mamma voleva che la mia vita fosse perfetta perché la sua era stata troppo dura. Voleva costruirmi un guscio per non farmi del male.
+Mamma era così giovane. Aveva un sorriso lungo, bellissimo, che non le ho mai visto in faccia da quando sono grande. Teneva me tra le braccia come se fossi la cosa più preziosa e fragile dell'universo. Sul retro, papà aveva scritto con la sua solita grafia precisa:
 
-E io l'ho scambiato per una prigione.
+«Perché tutto sia perfetto.»
 
-Sophie mi ha dato le gocce. Il flacone scuro mi morde la pelle attraverso la tasca. Mi ha promesso che dormiranno soltanto, che sarà un sonno lungo per permetterci di scappare insieme. Ma il cuore martella così forte che ho paura mi si spacchi il petto.
+Non era l'ossessione per il giudizio dei vicini. Era amore. Un amore terrorizzato, maldestro, incapace di trovare le parole giuste, ma purissimo. Mamma voleva che la mia vita fosse perfetta perché la sua era stata troppo dura. Voleva costruirmi un guscio per non farmi del male.
 
-Stasera mamma ha cucinato le lasagne. Si è messa il vestito verde scuro che usa solo per le feste. Le tremavano le mani mentre versava l'acqua.
+E io l'ho scambiata per una prigione.
+
+Sophie mi ha dato le gocce. Ce le ho in tasca. Il flacone di vetro scuro mi morde la pelle attraverso la stoffa. Mi ha promesso che dormiranno e basta, che sarà solo un sonno lungo per permetterci di scappare insieme. Ma il mio cuore sta martellando così forte che ho paura mi si spacchi il petto.
+
+Stasera mamma ha cucinato le lasagne. Le ha fatte per me. Si è messa il vestito verde scuro, quello elegante che usa solo per le feste. Le tremavano le mani mentre mi versava l'acqua. Mi ha detto:
 
 «Ho preparato tutto questo solo per te, Mila.»
 
-Vorrei rovesciare il tavolo, buttare i bicchieri nel lavandino, correre da papà e dirgli che mi dispiace. Ma dalla finestra vedo la luce di Sophie nel sottotetto. È lì. Mi fissa.
+Vorrei rovesciare il tavolo. Vorrei buttare i bicchieri nel lavandino. Vorrei correre da papà, abbracciarlo forte e dirgli che mi dispiace per tutti i silenzi, per tutti gli sguardi cattivi, per le cose orribili che ho scritto su di loro in quel quaderno.
 
-Se non lo faccio, Sophie mi abbandonerà. Se non lo faccio, tornerò invisibile nel buio. Ho diciotto anni e mi sento morta da sempre.
+Ma mi sono girata verso la finestra e ho visto la luce di Sophie. È lì, nel sottotetto. Mi fissa.
 
-Mamma, papà, se sto per fare quello che penso, vi prego: non credete a quello che troveranno scritto. Sappiate che non ero io.
+Se non lo faccio, Sophie mi abbandonerà. Se non lo faccio, tornerò a essere invisibile nel buio. Sono così stanca. Sono così spaventata. Ho diciotto anni e mi sento morta da sempre.
+
+Mamma... papà... se sto per fare quello che penso... vi prego, non credete a quello che troveranno scritto. Vi prego, sappiate che non ero io.
 
 Era la bambola.
 
-Senza data
+Senza Data
 
 A chiunque trovi questo foglio.
 
-Non credete al quaderno sotto il materasso. Le parole scritte lì non sono mie. Sophie le ha dettate mese dopo mese, frase dopo frase. Mi faceva ripetere tutto finché non lo scrivevo esattamente. Voleva costruire una storia. Voleva che odiassi le due persone che mi hanno voluto bene davvero.
+Non credete al quaderno sotto il materasso. Le parole scritte lì dentro non sono le mie. Le ha dettate Sophie, mese dopo mese, frase dopo frase. Me le faceva ripetere finché non le scrivevo esatte. Voleva costruire una storia. Voleva che odiassi le uniche due persone che mi abbiano mai voluto bene davvero.
 
 I miei genitori non mi hanno mai abusata. Mio padre era un uomo buono e silenzioso. Mia madre piangeva la notte perché vedeva che mi stavo spegnendo e non sapeva come salvarmi da se stessa e dal mondo.
 
-Se questo foglio è tra le vostre mani e loro non ci sono più, significa che avrò ceduto. Avrò versato quelle gocce nei loro bicchieri perché sono troppo spaventata per dire di no a una ragazzina che mi faceva sentire speciale mentre mi scavava la fossa.
+Se questo foglio è tra le vostre mani e loro non ci sono più, significa che stasera avrò ceduto. Che avrò versato quelle gocce nei loro bicchieri perché sono troppo debole, troppo codarda per dire di no a una ragazzina di quindici anni che mi faceva sentire speciale mentre mi scavava la fossa.
 
-Se state leggendo, forse sarò già morta insieme a loro. Non abbiate pietà di me: sono un mostro per aver creduto alle sue bugie invece che agli occhi di mia madre.
+Se state leggendo questo, significa anche che io sarò già morta insieme a loro. Non abbiate pietà di me: sono un mostro per aver creduto alle sue bugie invece che agli occhi di mia madre.
 
-Ma vi prego, guardate Sophie. Guardatela negli occhi quando vi sorride. Guardate come vi tocca. Guardate le sue mani pulite mentre tutti gli altri sanguinano. Non lasciatela avvicinare a nessun altro.
+Ma vi prego... guardate Sophie. Guardatela negli occhi quando vi sorride. Guardate come vi tocca. Guardate le sue mani pulite mentre tutti gli altri sanguinano. Non lasciatela avvicinare a nessun altro.
 
-Mamma, papà, sto arrivando. Stasera la casa è buia, ma non ho più paura del buio. Ho solo tanto, tanto freddo.
+Mamma, papà... sto arrivando. Stasera la casa è buia, ma non ho più paura del buio. Ho solo tanto, tanto freddo.
 """
+
 
 # ARCHIVIO INVESTIGATIVO
 init python:
