@@ -49,9 +49,9 @@ La scelta di chiedere aiuto può quindi essere raggiunta attraverso prove suffic
 - **La fuga illusoria**: Mila scappa con Sophie e scopre che la libertà promessa è un nuovo controllo.
 - **Il fascicolo**: Mila segue il piano; il quaderno viene usato come una falsa confessione e Sophie resta invisibile.
 
-## Direzione artistica
+## Direzione artistica e interfaccia
 
-Palette: nero prugna, grigio fumo, rosa spento e giallo da luce domestica. Il progetto ora usa sette fondali originali: menu notturno, camera e cucina di Mila, scuola, quercia con le due villette, cucina e camera di Sophie. Sono illustrazioni atmosferiche progettate per dare ritmo alla prima versione giocabile; gli sprite espressivi, gli oggetti-indizio e le varianti temporali restano la prossima produzione grafica.
+Palette: nero prugna, grigio fumo, rosa spento e giallo da luce domestica. L'interfaccia di dialogo usa ora un pannello scuro dedicato, una fascia d'accento e una gerarchia più netta tra nome del personaggio e testo. Le scelte sono raccolte in un pannello separato con pulsanti leggibili, spaziatura più ampia e stati hover/focus chiari. I bivi investigativi e irreversibili della quercia e del finale adottano una variante rosso-prugna più intensa; le transizioni dei menu e della finestra di dialogo usano dissolvenze brevi e coordinate. Il progetto ora usa sette fondali originali: menu notturno, camera e cucina di Mila, scuola, quercia con le due villette, cucina e camera di Sophie. Sono illustrazioni atmosferiche progettate per dare ritmo alla prima versione giocabile; gli sprite espressivi, gli oggetti-indizio e le varianti temporali restano la prossima produzione grafica.
 
 ### Riferimenti personaggi
 
