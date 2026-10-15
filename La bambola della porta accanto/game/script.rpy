@@ -705,6 +705,7 @@ label finale_verita:
     scene bg school
     with fade
     stop music fadeout 2.0
+    play ambience audio.rain fadeout 1.0 fadein 1.4
 
     if legame_kate >= 4:
         "Kate risponde quasi subito. Il filo che Mila ha tenuto aperto con lei basta a farle capire che questa volta non si tratta di un litigio."
@@ -734,6 +735,7 @@ label finale_rottura:
     scene bg mila kitchen
     with fade
     stop music fadeout 2.0
+    play ambience audio.room fadeout 1.0 fadein 1.3
 
     if flacone_con_mila:
         play sound audio.glass
@@ -793,6 +795,7 @@ label finale_fascicolo:
     $ tensione_scena = False
     scene bg title night
     with fade
+    stop ambience fadeout 1.5
     play sound audio.heartbeat
     stop music fadeout 2.0
     "La storia si spezza in rumori, sirene e pagine scritte con una grafia ordinata."
