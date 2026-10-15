@@ -27,7 +27,7 @@ init python:
             Transform(Text(name.upper(), size=31, color="#fff2f5", outlines=[(2, "#201923", 0, 0)]), xpos=115, ypos=680),
             Transform(Text("SPRITE PROVVISORIO", size=16, color=accent), xpos=118, ypos=724),
             Transform(Text(subtitle.upper(), size=17, color="#d6c4d0"), xpos=118, ypos=752),
-            xysize=(520, 820)
+            xsize=520, ysize=820
         )
 
 # Posizionamento coerente sullo schermo; sostituibile senza toccare le scene.
@@ -40,8 +40,7 @@ transform sprite_stage_right:
     xalign 0.92
     yalign 1.0
     zoom 0.72
-    xzoom -1.0
-
+    
 transform sprite_stage_center:
     xalign 0.5
     yalign 1.0
