@@ -19,6 +19,9 @@ default fiducia_genitori = 0 # Quanto Mila è disposta a chiedere aiuto ai genit
 # Se lo lascia cadere nella neve, le opzioni successive devono rispettarlo.
 default flacone_con_mila = False
 
+# Attiva la variante visiva delle scelte decisive; è salvata insieme alla partita.
+default tensione_scena = False
+
 # SCELTE INVESTIGATIVE: registrano cosa Mila ha fatto davvero con ogni prova.
 default telefono_condiviso_kate = False
 default telefono_risposto_sophie = False
@@ -346,6 +349,7 @@ label capitolo_2:
 
 
 label capitolo_3:
+    $ tensione_scena = False
     scene bg oak houses
     with fade
     play music audio.rain fadeout 1.0 fadein 1.5
@@ -359,6 +363,7 @@ label capitolo_3:
     "Mi porge un quaderno nero. Sulla prima pagina ha già segnato una data."
 
     # SCELTA INVESTIGATIVA IRREVERSIBILE: il quaderno potrà sostenere oppure compromettere Mila.
+    $ tensione_scena = True
     menu:
         "Il quaderno è aperto tra le mie mani."
 
@@ -380,6 +385,8 @@ label capitolo_3:
             sophie "Stai scegliendo loro?"
             "La domanda ha il peso di un ricatto."
 
+    $ tensione_scena = False
+
     if telefono_condiviso_kate:
         "Kate mi ha chiesto di non decidere sulla base di uno screenshot isolato. Mi torna in mente il suo consiglio prima che Sophie mostri le immagini."
     elif telefono_risposto_sophie:
@@ -390,6 +397,7 @@ label capitolo_3:
     "Sophie mi mostra una serie di fotografie sul suo telefono: ricevute, estratti conto, messaggi incompleti."
     sophie "Vedi? I tuoi pagano qualcuno. Vogliono liberarsi di te."
 
+    $ tensione_scena = True
     menu:
         "Le cifre sullo schermo scorrono troppo in fretta."
 
@@ -415,6 +423,8 @@ label capitolo_3:
             $ legame_kate += 1
             $ indizi_reali += 1
             kate "Mila, sembra un'immagine modificata. Non decidere nulla stanotte."
+
+    $ tensione_scena = False
 
     if immagini_verificate:
         "La verifica non mi dà una risposta completa, ma mi ha impedito di prendere lo screenshot per un fatto incontestabile."
@@ -462,6 +472,7 @@ label capitolo_3:
 
 
 label capitolo_4:
+    $ tensione_scena = False
     scene bg oak houses
     with fade
     play sound audio.heartbeat
@@ -504,6 +515,7 @@ label capitolo_4:
 
     # Sophie passa il flacone a Mila prima che lei scelga cosa farne.
     $ flacone_con_mila = True
+    $ tensione_scena = True
 
     menu:
         "Sophie mi mette il flacone nel palmo."
@@ -527,6 +539,8 @@ label capitolo_4:
             sophie "Non farmi diventare cattiva, Mila."
             "Le sue parole sono leggere. Il suo sguardo no."
 
+    $ tensione_scena = False
+
     # SCELTA IRREVERSIBILE: qui le prove o le relazioni possono aprire una via d'uscita.
     if indizi_reali >= 4 or (legame_kate >= 2 and dubbi_di_mila >= 2) or fiducia_genitori >= 2 or (telefono_condiviso_kate and immagini_condivise_kate):
         if telefono_condiviso_kate and immagini_condivise_kate:
@@ -538,6 +552,7 @@ label capitolo_4:
         else:
             "Non ho prove sufficienti. Mi resta però la memoria di mio padre che ha provato ad ascoltarmi: posso chiedere aiuto senza dover risolvere tutto da sola."
 
+        $ tensione_scena = True
         menu:
             "Posso chiedere aiuto prima che sia troppo tardi."
 
@@ -588,6 +603,7 @@ label capitolo_4:
 
 
 label capitolo_5:
+    $ tensione_scena = False
     scene bg mila kitchen
     with fade
     play music audio.room fadeout 1.0 fadein 1.5
@@ -643,6 +659,7 @@ label capitolo_5:
     else:
         "Non so come reagiranno i miei genitori. So soltanto che tacere non renderà questa scelta più sicura."
 
+    $ tensione_scena = True
     menu:
         "Questa è l'ultima scelta prima che la storia si chiuda."
 
@@ -675,6 +692,7 @@ label capitolo_5:
 
 
 label finale_verita:
+    $ tensione_scena = False
     scene bg school
     with fade
     stop music fadeout 2.0
@@ -703,6 +721,7 @@ label finale_verita:
 
 
 label finale_rottura:
+    $ tensione_scena = False
     scene bg mila kitchen
     with fade
     stop music fadeout 2.0
@@ -733,6 +752,7 @@ label finale_rottura:
 
 
 label finale_fuga:
+    $ tensione_scena = False
     scene bg oak houses
     with fade
     play music audio.rain fadeout 1.0 fadein 1.5
@@ -760,6 +780,7 @@ label finale_fuga:
 
 
 label finale_fascicolo:
+    $ tensione_scena = False
     scene bg title night
     with fade
     play sound audio.heartbeat
