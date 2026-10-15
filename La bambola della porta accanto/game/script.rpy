@@ -19,6 +19,27 @@ default fiducia_genitori = 0 # Quanto Mila è disposta a chiedere aiuto ai genit
 # Se lo lascia cadere nella neve, le opzioni successive devono rispettarlo.
 default flacone_con_mila = False
 
+# SCELTE INVESTIGATIVE: registrano cosa Mila ha fatto davvero con ogni prova.
+default telefono_condiviso_kate = False
+default telefono_risposto_sophie = False
+default telefono_nascosto = False
+default fotografia_conservata = False
+default fotografia_distrutta = False
+default fotografia_digitalizzata = False
+default immagini_verificate = False
+default immagini_credute = False
+default immagini_condivise_kate = False
+default quaderno_fedele = False
+default quaderno_manipolato = False
+default quaderno_vuoto = False
+
+# SCELTE DI RELAZIONE / CONSEGUENZE IRREVERSIBILI.
+default padre_ascoltato = False
+default padre_confrontato = False
+default padre_evitato = False
+default promessa_a_sophie = False
+default flacone_indagato = False
+
 label start:
     scene bg title night
     with fade
@@ -57,6 +78,7 @@ label start:
     "A scuola, Kate mi raggiunge davanti al cancello."
     kate "Stasera festa da Leo. Devi venire, almeno per un'ora."
 
+    # SCELTA DI CARATTERIZZAZIONE: cambia il modo in cui Mila tratta Kate.
     menu:
         "Come rispondo a Kate?"
 
@@ -258,50 +280,67 @@ label capitolo_2:
     "Lo accendo nel bagno della scuola. C'è un solo messaggio."
     "{i}Scrivi tutto. Ogni parola che ti fanno. Ti servirà quando nessuno ti crederà.{/i}"
 
+    # SCELTA INVESTIGATIVA: condividere, usare o nascondere il telefono cambia le prove disponibili.
     menu:
         "Il telefono pesa poco, ma mi sembra impossibile nasconderlo."
 
         "Lo porto a Kate e le chiedo aiuto.":
+            $ telefono_condiviso_kate = True
             $ legame_kate += 2
             $ indizi_reali += 1
             kate "Non lo tocchiamo. Facciamo delle foto e parliamo con qualcuno di grande."
             "Kate non ride, non minimizza e non mi chiede di scegliere subito una versione dei fatti."
 
         "Lo tengo e rispondo a Sophie.":
+            $ telefono_risposto_sophie = True
             $ fiducia_sophie += 2
             sophie "Brava ragazza. Adesso siamo connesse."
             "Mi sento scelta. È una sensazione che assomiglia troppo alla pace."
 
         "Lo spengo e lo nascondo senza rispondere.":
+            $ telefono_nascosto = True
             $ dubbi_di_mila += 1
             $ indizi_reali += 1
             "Per la prima volta, tengo qualcosa che Sophie non sa di possedere."
 
-    if legame_kate >= 2:
-        "Poco dopo, il telefono vibra: Kate mi scrive che è ancora disponibile ad aiutarmi, senza chiedermi di scegliere subito a chi credere."
-    else:
-        "Il telefono resta in silenzio. Mi accorgo che, per ora, ho tenuto Kate fuori da tutto questo."
+    if telefono_condiviso_kate:
+        "Kate mi scrive di aver conservato una copia del messaggio e l'ora in cui è arrivato. Non è ancora una prova del piano di Sophie, ma è un punto fermo che non dipende dalla mia memoria."
+    elif telefono_risposto_sophie:
+        "Il telefono vibra di nuovo: Sophie scrive che adesso siamo le uniche due persone a sapere la verità. Rileggo la frase e mi chiedo chi abbia deciso quale verità."
+    elif telefono_nascosto:
+        "Tengo il telefono spento e nascosto. Non ho nessuno con cui confrontare il messaggio, ma Sophie non sa che l'ho conservato."
 
     "Quella sera, prima di dormire, apro il cassetto di mio padre cercando le batterie."
     "Trovo una fotografia azzurra: ho sette anni, la febbre alta, mia madre mi stringe avvolta in una coperta."
     "Sul retro, la grafia precisa di papà: {i}Perché tutto sia perfetto.{/i}"
 
+    # SCELTA INVESTIGATIVA: conserva, distrugge o duplica una possibile prova.
     menu:
         "Guardo quella frase finché le lettere non tremano."
 
         "La nascondo. Voglio ricordarla.":
+            $ fotografia_conservata = True
             $ fiducia_genitori += 1
             $ indizi_reali += 1
             "Non cancella il dolore, ma rende più difficile chiamarlo odio."
 
         "La strappo e la butto via.":
+            $ fotografia_distrutta = True
             $ fiducia_sophie += 1
             "Le prove non valgono niente. Sophie dice che le famiglie sanno recitare."
 
         "La fotografo con il telefono segreto.":
+            $ fotografia_digitalizzata = True
             $ dubbi_di_mila += 1
             $ indizi_reali += 1
             "Voglio una prova, anche se non so ancora di cosa."
+
+    if fotografia_conservata:
+        "Ripongo la fotografia in un libro, al riparo dagli occhi degli altri."
+    elif fotografia_distrutta:
+        "Raccolgo i frammenti della fotografia. Ho eliminato la prova materiale, ma non posso cancellare ciò che ho letto."
+    elif fotografia_digitalizzata:
+        "Controllo che la fotografia digitale sia leggibile. La copia non spiega la frase, ma almeno non può essere strappata nello stesso modo."
 
     jump capitolo_3
 
@@ -319,23 +358,34 @@ label capitolo_3:
     sophie "Allora loro vinceranno. La memoria è una cosa che gli adulti riscrivono benissimo."
     "Mi porge un quaderno nero. Sulla prima pagina ha già segnato una data."
 
+    # SCELTA INVESTIGATIVA IRREVERSIBILE: il quaderno potrà sostenere oppure compromettere Mila.
     menu:
         "Il quaderno è aperto tra le mie mani."
 
         "Scrivo solo fatti concreti.":
+            $ quaderno_fedele = True
             $ dubbi_di_mila += 1
             $ indizi_reali += 1
             "Scrivo: mamma ha chiesto della dottoressa. Papà ha lasciato una fotografia."
             "Sophie non sorride."
 
         "Scrivo la versione che Sophie mi suggerisce.":
+            $ quaderno_manipolato = True
             $ fiducia_sophie += 2
             "Scrivo che mia madre vuole cancellarmi. La frase non mi appartiene, ma la grafia è la mia."
 
         "Non scrivo nulla.":
+            $ quaderno_vuoto = True
             $ fiducia_sophie -= 1
             sophie "Stai scegliendo loro?"
             "La domanda ha il peso di un ricatto."
+
+    if telefono_condiviso_kate:
+        "Kate mi ha chiesto di non decidere sulla base di uno screenshot isolato. Mi torna in mente il suo consiglio prima che Sophie mostri le immagini."
+    elif telefono_risposto_sophie:
+        "Prima di mostrarmi le immagini, Sophie controlla il telefono segreto. Sa che le ho risposto e sembra aspettarsi che io le creda."
+    elif telefono_nascosto:
+        "Tengo il telefono segreto in tasca, spento. È l'unica parte di questa storia che Sophie non può ancora commentare."
 
     "Sophie mi mostra una serie di fotografie sul suo telefono: ricevute, estratti conto, messaggi incompleti."
     sophie "Vedi? I tuoi pagano qualcuno. Vogliono liberarsi di te."
@@ -344,6 +394,7 @@ label capitolo_3:
         "Le cifre sullo schermo scorrono troppo in fretta."
 
         "Chiedo di vedere il file originale.":
+            $ immagini_verificate = True
             $ dubbi_di_mila += 1
             $ indizi_reali += 1
             sophie "Non ti fidi di me?"
@@ -355,30 +406,43 @@ label capitolo_3:
                 "Non riesco a capire se sia un errore, una fotografia venuta male o qualcosa di deliberato."
 
         "Le credo senza guardare meglio.":
+            $ immagini_credute = True
             $ fiducia_sophie += 2
             "Il terrore è più semplice di un dubbio."
 
         "Mando una foto a Kate.":
+            $ immagini_condivise_kate = True
             $ legame_kate += 1
             $ indizi_reali += 1
             kate "Mila, sembra un'immagine modificata. Non decidere nulla stanotte."
 
+    if immagini_verificate:
+        "La verifica non mi dà una risposta completa, ma mi ha impedito di prendere lo screenshot per un fatto incontestabile."
+    elif immagini_credute:
+        "Ho accettato la versione di Sophie senza controllarla. Adesso ogni dettaglio mi sembra una conferma, anche se non l'ho verificato."
+    elif immagini_condivise_kate:
+        "Kate conserva una copia dell'immagine e può confrontarla con il messaggio che le ho mostrato. Non siamo ancora certe di cosa significhi."
+    
     "Quando torno a casa, mio padre è seduto sul divano con due tazze di tè."
     padre "Non devi spiegarmi tutto. Però non devi affrontarlo da sola."
 
+    # SCELTA DI RELAZIONE: il rapporto con il padre cambia il tipo di aiuto possibile.
     menu:
         "Le sue mani tremano mentre porge la tazza."
 
         "Mi siedo con lui.":
+            $ padre_ascoltato = True
             $ fiducia_genitori += 2
             "Non parla per un po'. In quel silenzio, non mi sento intrappolata."
 
         "Gli chiedo perché è rimasto zitto per anni.":
+            $ padre_confrontato = True
             $ dubbi_di_mila += 1
             padre "Perché ho avuto paura di dire la cosa sbagliata. E ho sbagliato lo stesso."
             "Non è una difesa. È una confessione imperfetta."
 
         "Salgo in camera senza rispondere.":
+            $ padre_evitato = True
             $ fiducia_sophie += 1
             "Chiudo la porta. Poi controllo due volte la finestra."
 
@@ -386,6 +450,13 @@ label capitolo_3:
         "Rileggo gli appunti: fotografia, messaggi e dettagli fuori posto cominciano a formare una sequenza, non soltanto una sensazione."
     else:
         "Ho qualche frammento, ma non ancora una sequenza verificabile. Dovrò decidere quanto rischio correre senza prove complete."
+
+    if padre_ascoltato:
+        "Prima di salire, mio padre mi lascia la tazza sul tavolo e dice che posso tornare a parlargli anche se cambio idea."
+    elif padre_confrontato:
+        "La risposta di mio padre non risolve il passato, ma almeno non ha provato a negarlo."
+    else:
+        "Non so cosa avrebbe detto mio padre se fossi rimasta un minuto in più."
 
     jump capitolo_4
 
@@ -401,8 +472,28 @@ label capitolo_4:
     "Ha un flacone scuro nella tasca dell'impermeabile."
     sophie "Dormiranno. Prenderemo i soldi e andremo al mare. Solo noi due."
     play sound audio.glass
-    "Mi ricordo di una frase scritta sul retro della fotografia: Perché tutto sia perfetto."
-    "Mi ricordo di Kate che dice: non decidere nulla stanotte."
+    if fotografia_distrutta and not fotografia_digitalizzata:
+        "La fotografia non c'è più. Posso riferire la frase che ho letto, ma non mostrare il retro a nessuno."
+    elif fotografia_digitalizzata:
+        "Ho ancora la copia digitale della fotografia: posso mostrare la grafia e il contesto, anche se non so da soli cosa dimostrino."
+    elif fotografia_conservata:
+        "Ho conservato la fotografia originale. La frase sul retro continua a sembrarmi una minaccia, ma adesso è anche qualcosa che posso mostrare."
+    else:
+        "La frase sul retro della fotografia continua a tornarmi in mente, ma non so quanto saprei ricostruirla parola per parola."
+
+    if telefono_condiviso_kate and immagini_condivise_kate:
+        "Kate possiede già una copia del messaggio e una delle immagini sospette: per la prima volta, non sono prove che esistono soltanto nella mia testa."
+    elif telefono_risposto_sophie:
+        "Sophie conosce il messaggio che ho ricevuto. Se la contraddico, potrebbe aver già preparato una spiegazione per ogni mia parola."
+    elif telefono_nascosto:
+        "Il telefono segreto è ancora spento e nascosto. Nessuno ha una copia del messaggio, ma almeno io posso tornare a leggerlo."
+
+    if quaderno_manipolato:
+        "Il quaderno contiene già una frase che non era mia. Se qualcuno lo leggerà senza contesto, potrebbe usarla contro di me."
+    elif quaderno_fedele:
+        "Il quaderno contiene fatti e date, non accuse. È meno spettacolare di una confessione, ma più difficile da confondere con una fantasia."
+    elif quaderno_vuoto:
+        "Il quaderno è quasi vuoto. Non può parlare al posto mio, nel bene e nel male."
 
     if fiducia_sophie >= 3:
         "Sophie mi guarda con la stessa tenerezza di sempre. Una parte di me vuole credere che il flacone sia soltanto il prezzo di una fuga."
@@ -418,12 +509,14 @@ label capitolo_4:
         "Sophie mi mette il flacone nel palmo."
 
         "Le chiedo da dove viene davvero.":
+            $ flacone_indagato = True
             $ dubbi_di_mila += 1
             $ indizi_reali += 1
             sophie "Perché fai sempre domande quando finalmente possiamo essere libere?"
             "Non risponde. Stringe soltanto le mie dita attorno al vetro."
 
         "Lo prendo e le prometto che farò la mia parte.":
+            $ promessa_a_sophie = True
             $ fiducia_sophie += 2
             "La sua espressione si addolcisce. È il momento in cui avrei dovuto avere più paura."
 
@@ -434,8 +527,11 @@ label capitolo_4:
             sophie "Non farmi diventare cattiva, Mila."
             "Le sue parole sono leggere. Il suo sguardo no."
 
-    if indizi_reali >= 4 or (legame_kate >= 2 and dubbi_di_mila >= 2) or fiducia_genitori >= 2:
-        if indizi_reali >= 4:
+    # SCELTA IRREVERSIBILE: qui le prove o le relazioni possono aprire una via d'uscita.
+    if indizi_reali >= 4 or (legame_kate >= 2 and dubbi_di_mila >= 2) or fiducia_genitori >= 2 or (telefono_condiviso_kate and immagini_condivise_kate):
+        if telefono_condiviso_kate and immagini_condivise_kate:
+            "Kate ha già due frammenti distinti: il messaggio e l'immagine sospetta. Non dimostrano tutto, ma si possono confrontare senza dipendere soltanto dal mio ricordo."
+        elif indizi_reali >= 4:
             "Tengo il telefono tra le dita. Ho abbastanza frammenti per vedere che la storia di Sophie non sta in piedi."
         elif legame_kate >= 2 and dubbi_di_mila >= 2:
             "Non ho prove complete, ma Kate è ancora raggiungibile e ormai riconosco troppe contraddizioni per restare in silenzio."
@@ -506,6 +602,30 @@ label capitolo_5:
     else:
         "Il flacone è rimasto nella neve, sotto la quercia. Sophie aspetta nella finestra della villetta accanto."
 
+    if promessa_a_sophie:
+        "Le ho promesso che l'avrei aiutata. La promessa non mi lega le mani, ma so che Sophie la userà come se fosse un contratto."
+    elif flacone_indagato:
+        "Le ho fatto una domanda a cui Sophie non ha risposto. Ora so che posso rifiutare una risposta incompleta, anche se ho paura."
+    elif not flacone_con_mila:
+        "Lasciare il flacone è stato un gesto che non posso cancellare. Ora devo decidere cosa fare sapendo che la prova è fuori dalla mia portata immediata."
+
+    if telefono_condiviso_kate and immagini_condivise_kate:
+        "Kate conserva già due copie. Anche se provo a convincermi che non sia successo niente, questa decisione investigativa non può essere disfatta."
+    elif telefono_risposto_sophie:
+        "Sophie può usare la mia risposta per convincermi che siamo dalla stessa parte. Non le ho però promesso di obbedirle."
+    elif telefono_nascosto:
+        "Ho scelto di tenere il telefono lontano da tutti. Questo mi protegge da Sophie per il momento, ma mi lascia senza una testimone."
+
+    if fotografia_distrutta and not fotografia_digitalizzata:
+        "La fotografia strappata non può essere recuperata come prova. Resta soltanto la mia memoria della frase."
+    elif fotografia_conservata or fotografia_digitalizzata:
+        "La frase sul retro della fotografia può ancora essere controllata da qualcun altro, non soltanto da me."
+
+    if immagini_verificate:
+        "Ho controllato le immagini prima di fidarmi di loro: so che contengono un'anomalia, anche se non conosco ancora la spiegazione completa."
+    elif immagini_credute:
+        "Non ho verificato le immagini. Adesso devo ammettere che una parte della mia certezza viene dalla fiducia che ho riposto in Sophie."
+
     if fiducia_sophie >= 3:
         "La promessa di una vita con Sophie conserva ancora un potere su di me. È proprio questo che rende difficile distinguere il desiderio dalla paura."
     elif fiducia_sophie <= 0:
@@ -529,6 +649,10 @@ label capitolo_5:
         "Verso le gocce nei bicchieri." if flacone_con_mila:
             $ fiducia_sophie += 2
             jump finale_fascicolo
+
+        "Chiamo Kate e le dico di usare le copie che ha conservato." if telefono_condiviso_kate and immagini_condivise_kate:
+            $ legame_kate += 1
+            jump finale_verita
 
         "Dico tutto ai miei genitori, che ora so di poter ascoltare." if flacone_con_mila and fiducia_genitori >= 2:
             $ fiducia_genitori += 1
@@ -560,10 +684,17 @@ label finale_verita:
     else:
         "Kate esita quando sente la voce di Mila, ma resta in linea. Mila le dà la posizione e chiede che le prove vengano conservate prima che qualcuno le tocchi."
 
-    if indizi_reali >= 4:
+    if telefono_condiviso_kate and immagini_condivise_kate:
+        "Kate apre le copie che ha conservato e confronta il messaggio con l'immagine sospetta. La corrispondenza non spiega ogni dettaglio, ma offre un punto di partenza verificabile."
+    elif indizi_reali >= 4:
         "Telefono, immagini e appunti permettono di ricostruire una sequenza verificabile. Non risolvono tutto in una notte, ma non sono più soltanto ricordi isolati."
     else:
         "Le prove sono frammentarie e alcune domande restano aperte. Kate e sua madre aiutano Mila a conservarle e a raccontare ciò che sa senza inventare ciò che non sa."
+
+    if fotografia_distrutta and not fotografia_digitalizzata:
+        "La fotografia non può essere aggiunta al fascicolo: Mila riferisce la frase che ricorda e chiarisce che non ha più l'originale."
+    elif fotografia_conservata or fotografia_digitalizzata:
+        "La fotografia originale o la sua copia digitale viene conservata insieme agli altri elementi, senza attribuirle un significato che da sola non può dimostrare."
 
     "Sophie continua a sorridere. Per la prima volta, però, nessuno le lascia decidere quale storia raccontare."
     "Mila non guarisce come in una favola. Comincia a parlare, ed è più difficile. È anche più vero."
@@ -584,7 +715,13 @@ label finale_rottura:
         "Mila racconta ai genitori quanto è successo e indica il punto sotto la quercia in cui ha lasciato il flacone."
         "Suo padre esce a recuperarlo e poi chiama aiuto. Sua madre resta accanto a Mila, senza tentare di spiegare via il suo terrore."
 
-    if fiducia_genitori >= 2:
+    if padre_ascoltato:
+        "Mio padre non mi chiede di mettere in ordine ogni ricordo prima di credermi. Si siede accanto a me come aveva fatto con la tazza di tè."
+    elif padre_confrontato:
+        "Gli ricordo che il suo silenzio mi ha ferita. Non lo perdono in un istante, ma questa volta la conversazione non viene interrotta."
+    elif padre_evitato:
+        "Mi costa parlare con mio padre dopo averlo evitato. Gli racconto comunque ciò che so, senza fingere che il rapporto sia già riparato."
+    elif fiducia_genitori >= 2:
         "Mio padre non mi chiede di mettere in ordine ogni ricordo prima di credermi. Gli basta che io gli dica dove cominciare."
     else:
         "Le parole mi escono a pezzi. Non so se i miei genitori capiscano tutto, ma per la prima volta non torno indietro per proteggerli dal mio racconto."
@@ -606,10 +743,17 @@ label finale_fuga:
         "Il flacone è rimasto nella neve. Non torno indietro a riprenderlo."
     "Il treno parte prima dell'alba. Per qualche ora, la libertà ha il rumore dei binari."
     "Poi Sophie prende il telefono di Mila, lo spegne e dice che ora non serve più nessuno."
-    if fiducia_sophie >= 3:
+    if promessa_a_sophie:
+        "Mi torna in mente la promessa che le ho fatto sotto la quercia. Sophie parla come se fosse un patto, ma io comincio a capire che non mi aveva lasciato spazio per dire di no."
+    elif fiducia_sophie >= 3:
         "Voglio credere che lo faccia per proteggerci. Per qualche secondo, trasformo anche questo gesto in una prova d'amore."
     else:
         "Questa volta riconosco il gesto per quello che è: Sophie decide chi posso sentire e quando posso parlare."
+
+    if telefono_condiviso_kate and immagini_condivise_kate:
+        "Sophie non sa che Kate conserva delle copie. Mila è lontana, ma il suo isolamento non è totale come Sophie crede."
+    elif telefono_nascosto:
+        "Il telefono che Mila ha nascosto resta l'unico frammento non controllato da Sophie. Non è ancora sufficiente a fermarla, ma non è scomparso."
     "Mila guarda il vetro. Il suo riflesso sembra una bambola seduta accanto a una ragazza che non sbatte mai le palpebre."
     centered "{size=42}{color=#e6d4db}FINALE: LA FUGA ILLUSORIA{/color}{/size}"
     return
@@ -621,11 +765,21 @@ label finale_fascicolo:
     play sound audio.heartbeat
     stop music fadeout 2.0
     "La storia si spezza in rumori, sirene e pagine scritte con una grafia ordinata."
-    "Nei giorni successivi, gli adulti troveranno il quaderno e lo chiameranno confessione."
+    "Nei giorni successivi, gli adulti troveranno il quaderno."
+    if quaderno_manipolato:
+        "Le frasi suggerite da Sophie sembrano scritte con la voce di Mila. Senza il contesto, il quaderno diventa la falsa confessione che Sophie aveva previsto."
+    elif quaderno_fedele:
+        "Il quaderno contiene fatti concreti, ma non basta a spiegare da solo il piano. Sophie insiste che le annotazioni siano state scritte da una ragazza confusa e nessuno sa ancora come verificare ogni passaggio."
+    elif quaderno_vuoto:
+        "Il quaderno quasi vuoto non può essere usato come confessione, ma non offre nemmeno una ricostruzione alternativa. Sophie riempie quel silenzio con la propria versione."
+    else:
+        "Il quaderno non offre una sequenza chiara. Gli adulti vedono pagine incomplete e Sophie riesce a imporre la propria interpretazione."
     if fiducia_sophie >= 3:
         "Mila ha creduto così a lungo alla versione di Sophie che alcune frasi false le sembrano ancora ricordi propri."
     else:
         "Mila aveva già intravisto le crepe, ma non è riuscita a trasformare i sospetti in una prova condivisa prima che fosse troppo tardi."
+    if fotografia_distrutta and not fotografia_digitalizzata:
+        "La fotografia strappata lascia un vuoto nel fascicolo: Mila ricorda la frase, ma non può più mostrare l'originale."
     "Sophie sarà la superstite perfetta: spaventata, silenziosa, impossibile da accusare."
     "Da qualche parte, Kate rileggerà un messaggio rimasto senza risposta e capirà troppo tardi che Mila aveva provato a parlarle."
     centered "{size=42}{color=#e6d4db}FINALE: IL FASCICOLO{/color}{/size}"
