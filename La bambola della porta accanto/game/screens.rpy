@@ -454,6 +454,8 @@ screen navigation():
 
         textbutton _("Informazioni") action ShowMenu("about")
 
+        textbutton _("Crediti audio") action ShowMenu("audio_credits")
+
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## L'Aiuto non è necessario o rilevante sui dispositivi mobili.
