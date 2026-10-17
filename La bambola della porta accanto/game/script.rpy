@@ -67,7 +67,7 @@ label start:
 
     centered "{size=42}{color=#e6d4db}LA BAMBOLA\nDELLA PORTA ACCANTO{/color}{/size}\n\n{size=25}{color=#aa97a3}Thriller psicologico interattivo{/color}{/size}\n\n{size=19}Fino a che punto ti spingeresti per sentirti libera?{/size}"
 
-    scene bg mila room
+    scene bg mila room at bg_slow_push
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense as mila_sprite at sprite_stage_center, sprite_tremble
@@ -78,13 +78,16 @@ label start:
     play sound audio.lighter
     "Un clic secco. Poi il primo sospiro di fumo di mia madre. È quello il segnale: ho esattamente sei minuti prima che mi chiami."
     "Li ho cronometrati un anno fa: sei minuti e undici secondi. Da allora li conto ogni mattina."
+    show sprite_mila_tense as mila_sprite at sprite_stage_center, sprite_tremble with dissolve
     "Sei minuti per smettere di esistere come individuo e diventare una funzione della casa."
     "Mi alzo senza far rumore. La stanza è in ordine: libri allineati, letto teso, nessuna macchia. Non è disciplina, ma un modo per darle meno appigli."
+    # La voce improvvisa la fa irrigidire prima ancora che possa rispondere.
+    show sprite_mila_worried as mila_sprite at sprite_stage_center, sprite_flinch
     madre "Mila."
     "La voce attraversa la porta come un ago freddo. Mia madre non urla. Le grida sono per i dilettanti; lei usa la pressione atmosferica."
     "Esco con le spalle curve. In bagno copro il viola sotto gli occhi. Allo specchio, sotto lo zigomo destro, intravedo una cicatrice sottile."
     "Non ricordo sempre da dove venga. So che sfiorarla mi mette paura. In questa casa, anche la paura sembra una prova contro di me."
-    scene bg mila kitchen
+    scene bg mila kitchen at bg_tension_push
     with dissolve
     show sprite_padre_neutral as padre_sprite at sprite_stage_back, sprite_breathe
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
@@ -97,11 +100,15 @@ label start:
     "Appoggio la tazzina. Mamma guarda il caffè, poi me: ha gli occhi grigi e stanchi, come il posacenere davanti a lei."
     madre "Ti sei truccata?"
     mila "No, mamma. Solo un po' di correttore per le occhiaie."
+    show sprite_madre_cold as madre_sprite at sprite_stage_right, sprite_cold_still with dissolve
     madre "Cos'hai sotto gli occhi? Smetti di truccarti così. La gente guarda e sparla. Vuoi far credere ai vicini che qui non ti facciamo dormire?"
+    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_flinch
     "Mi si chiude la gola. Per mamma conta solo quello che penseranno i vicini e la facciata della famiglia perfetta."
     mila "Lo tolgo subito."
     madre "Brava. E stasera vai dai vicini. Hanno di nuovo bisogno di te per la ragazzina. Vedi di non fare la morta di sonno come al solito."
+    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_recoil
     "Non finisce la frase. Spinge lo yogurt verso il bordo; scatto per afferrarlo prima che cada. Una piccola umiliazione, appena sveglia."
+    show sprite_padre_neutral as padre_sprite at sprite_stage_back, sprite_page_shift
     "Papà gira pagina senza alzare gli occhi. Non c'è nessun testimone di ciò che credo accada qui."
     "Prima di alzarmi, guardo mio padre per un secondo di troppo."
     menu:
@@ -115,12 +122,13 @@ label start:
         "Abbasso gli occhi e mi sbrigo.":
             $ padre_evitato = True
             "È più facile non chiedere. Se non sento una risposta, posso continuare a immaginare che non ce ne sarebbe stata una."
-    scene bg school
+    scene bg school at bg_slow_push
     with dissolve
     show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-    show sprite_kate_neutral as kate_sprite at sprite_stage_right, sprite_breathe
+    show sprite_kate_neutral as kate_sprite at sprite_stage_right, sprite_breathe with moveinright
     play ambience audio.rain fadeout 1.0 fadein 1.5
     "Fuori l'aria sa di asfalto bagnato. A scuola sono la Mila modello: buoni voti, nessun disturbo, un sorriso calibrato per non attirare domande."
+    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_flinch
     "Kate mi raggiunge di corsa, rossa per il freddo. Mi circonda le spalle con un braccio; trattengo il sussulto. Per me, un tocco improvviso può ancora significare un colpo."
     kate "Mila, aspettami! Hai sempre quella faccia da funerale. Stasera c'è la festa da Leo: vieni, ci sarà anche il tipo che ti fissava in biblioteca."
     menu:
@@ -137,7 +145,7 @@ label start:
             mila "Non posso. Devo rendermi utile, tutto qui."
             kate "Non devi sempre fare tutto da sola."
             "Vorrei crederle. Ma l'idea che qualcuno possa davvero aiutarmi mi sembra più irreale di qualunque punizione."
-    scene bg oak houses
+    scene bg oak houses at bg_slow_push
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
@@ -147,7 +155,7 @@ label start:
     "Qui l'aria è diversa. Non è l'ossigeno pesante di casa mia: è un vuoto sterile, profumato di ammorbidente costoso."
     "I genitori di Sophie mi accolgono con la gentilezza distaccata riservata a chi svolge bene il proprio lavoro."
     "La madre si sistema il cappotto color cammello e mi rivolge un sorriso educato."
-    show sprite_madre_sophie as madre_sophie_sprite at sprite_stage_right, sprite_cold_still with dissolve
+    show sprite_madre_sophie as madre_sophie_sprite at sprite_stage_right, sprite_cold_still with moveinright
     madre_sophie "Sophie è di sopra. Ultimamente è stata difficile. Cerca di farla mangiare e niente schermi dopo le dieci, per favore."
     hide madre_sophie_sprite with dissolve
     hide mila_sprite with dissolve
@@ -156,7 +164,7 @@ label start:
     "La porta si chiude alle mie spalle. Il silenzio di lusso della casa mi avvolge. Salgo le scale fino alla porta coperta di adesivi di vecchi anime e scritte KEEP OUT."
     "Busso con il nostro ritmo segreto, inventato quando si sono trasferiti. È l'unica porta a cui busso senza temere di essere convocata."
     sophie "Entra, Mila. Lo sai che con me non devi bussare. Sei l'unica persona che non mi dà il mal di testa in questa casa."
-    scene bg sophie room
+    scene bg sophie room at bg_tension_push
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_right_mila, sprite_breathe
@@ -174,22 +182,26 @@ label start:
     sophie "Pensavo che tua madre ti avesse murata viva. Mi sei mancata, Mila. Eppure eccoti qui, a lasciarti consumare da tutti."
     mila "I miei non me lo permetterebbero."
     sophie "Permetterebbero. Che parola del cazzo."
+    show sprite_mila_worried as mila_sprite at sprite_stage_right_mila, sprite_flinch
     "Si alza e mi prende il mento tra due dita. Il pollice sfiora la cicatrice sotto lo zigomo. La sua mano è calda; la mia pelle, fredda."
     show sprite_sophie_tense as sophie_sprite at sprite_approach_mila with dissolve
+    show sprite_mila_worried as mila_sprite at sprite_stage_right_mila, sprite_anxious_breathe
     sophie "Ti trema persino la mascella. Solo io me ne accorgo. Solo io so di cosa hai bisogno per respirare."
     mila "Sophie, devo preparare la cena. I tuoi mi pagano per..."
     sophie "I miei non capiscono niente. E tu non sei qui per i loro soldi. Sei qui perché sono l'unica che ti vede davvero."
     "Il cuore accelera. Non è paura, mi dico. È qualcosa di più pericoloso: la sensazione di essere vista."
+    show sprite_sophie_tense as sophie_sprite at sprite_approach_mila, sprite_micro_tension
     sophie "Smetti di tremare quando ti tocco. Siamo rimaste noi due. I tuoi sono mostri, i miei manichini. Tu sei mia, Mila. Lascia che ti salvi."
+    show sprite_mila_worried as mila_sprite at sprite_stage_right_mila, sprite_recoil
     "Mi scosto. Lei ha quindici anni, io diciotto. Dovrei rassicurarla, prepararle la cena. Invece aspetto da lei il permesso di respirare."
     mila "Siamo qui per i compiti e la cena, Sophie. Non per questo."
     sophie "Questo cosa? Volerti bene?"
     "Torna sul letto e sorride. Gli occhi, però, restano freddi: sembrano già conoscere un finale che io non ho visto."
     sophie "Va bene. Prepariamo il pollo e facciamo finta di niente. Ma la tua rabbia resta lì, Mila. Un giorno la useremo contro di lei. Ora vai."
-    scene bg sophie kitchen
+    scene bg sophie kitchen at bg_slow_push
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
+        show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_anxious_breathe
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
     "Lavo le mani mentre l'acqua bolle. Sul tavolo c'è un disegno di Sophie: io rannicchiata, con fili ai polsi e alle caviglie che spariscono fuori dal foglio."
@@ -204,6 +216,10 @@ label start:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
+        show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_smile_lift with dissolve
+    else:
+        show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_smile_lift with dissolve
     "Sorrido debolmente. Mi sembra dolce che mi abbia ritratta, che abbia notato ogni dettaglio. Lei mi vuole bene davvero. Mi protegge."
     "Dalla finestra guardo casa mia. Per la prima volta, l'idea di tornarci non mi dà solo nausea. Mi fa tristezza."
     "Sophie ha ragione, penso. Chi non prova nulla è fortunato. Io invece sento ogni frequenza del dolore, e sta diventando troppo pesante da portare."
