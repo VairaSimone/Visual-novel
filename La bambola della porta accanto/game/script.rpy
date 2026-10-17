@@ -196,7 +196,7 @@ label start:
     mila "Sophie, devo preparare la cena. I tuoi mi pagano per..."
     sophie "I miei non capiscono niente. E tu non sei qui per i loro soldi. Sei qui perché sono l'unica che ti vede davvero."
     "Il cuore accelera. Non è paura, mi dico. È qualcosa di più pericoloso: la sensazione di essere vista."
-    show sprite_sophie_tense as sophie_sprite at sprite_approach_mila, sprite_micro_tension
+    show sprite_sophie_tense as sophie_sprite at sprite_approach_mila_tense
     sophie "Smetti di tremare quando ti tocco. Siamo rimaste noi due. I tuoi sono mostri, i miei manichini. Tu sei mia, Mila. Lascia che ti salvi."
     show sprite_mila_worried as mila_sprite at sprite_stage_right_mila, sprite_recoil
     "Mi scosto. Lei ha quindici anni, io diciotto. Dovrei rassicurarla, prepararle la cena. Invece aspetto da lei il permesso di respirare."
