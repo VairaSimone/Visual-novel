@@ -102,7 +102,7 @@ label start:
     mila "Lo tolgo subito."
     madre "Brava. E stasera vai dai vicini. Hanno di nuovo bisogno di te per la ragazzina. Vedi di non fare la morta di sonno come al solito."
     "Non finisce la frase. Spinge lo yogurt verso il bordo; scatto per afferrarlo prima che cada. Una piccola umiliazione, appena sveglia."
-    "Papà gira pagina senza alzare gli occhi. Non c'è nessun testimone di ciò che credo accada qui. O almeno, così me lo racconto."
+    "Papà gira pagina senza alzare gli occhi. Non c'è nessun testimone di ciò che credo accada qui."
     "Prima di alzarmi, guardo mio padre per un secondo di troppo."
     menu:
         "Quando papà incrocia il mio sguardo, cosa faccio?"
