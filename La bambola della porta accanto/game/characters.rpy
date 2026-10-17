@@ -21,6 +21,19 @@ transform sprite_approach_mila:
     zoom 0.64
     ease 0.65 xalign 0.49
 
+# Trasformazione unica per l'avvicinamento teso: mantiene una sola scala (0.64)
+# e aggiunge il tremore senza applicare un secondo zoom allo sprite.
+transform sprite_approach_mila_tense:
+    xalign 0.43
+    yalign 1.0
+    zoom 0.64
+    ease 0.65 xalign 0.49
+    block:
+        ease 0.85 xoffset -2
+        ease 0.90 xoffset 2
+        ease 0.85 xoffset 0
+        repeat
+
 # Disegno di Sophie su fondo bianco uniforme: le aree trasparenti del PNG
 # non devono mostrare la scacchiera di trasparenza ai lati. Il disegno resta intero,
 # centrato e proporzionato sul canvas 16:9 (1920x1080).
@@ -74,14 +87,6 @@ transform sprite_anxious_breathe:
     ease 0.65 yoffset 0
     repeat
 
-# Un leggero movimento involontario sul volto/posa quando Sophie si avvicina.
-transform sprite_micro_tension:
-    xoffset 0
-    ease 0.85 xoffset -2
-    ease 0.90 xoffset 2
-    ease 0.85 xoffset 0
-    repeat
-
 # Un sollevamento minimo della posa per accompagnare il sorriso forzato di Mila.
 transform sprite_smile_lift:
     yoffset 0
@@ -127,7 +132,7 @@ transform sprite_stage_right_halfbody:
 transform sprite_stage_back_halfbody:
     xalign 0.52
     yalign 1.0
-    zoom 0.48
+    zoom 0.70
     alpha 0.82
 
 # Movimento d'attesa delicato: evita che i personaggi sembrino completamente statici.
@@ -173,8 +178,8 @@ image sprite_kate_neutral = Transform("images/characters/kate_neutral.png", ysiz
 image sprite_kate_worried = Transform("images/characters/kate_worried.png", ysize=1185, fit="contain")
 
 # Padre di Mila: ritratto a mezzo busto, normalizzato come gli altri personaggi.
-image sprite_padre_neutral = Transform("images/characters/sprite_padre_mila.png", ysize=1185, fit="contain")
+image sprite_padre_neutral = Transform("images/characters/sprite_padre_mila.png", ysize=1350, fit="contain")
 
 # Famiglia di Sophie e personaggi secondari: ritratti a mezzo busto normalizzati.
-image sprite_madre_sophie = Transform("images/characters/sprite_madre_sophie.png", ysize=1185, fit="contain")
+image sprite_madre_sophie = Transform("images/characters/sprite_madre_sophie.png", ysize=1350, fit="contain")
 image sprite_chloe_neutral = Transform("images/characters/sprite_chloe_neutral.png", ysize=1185, fit="contain")
