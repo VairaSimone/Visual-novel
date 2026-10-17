@@ -91,7 +91,7 @@ label start:
     scene bg mila kitchen at bg_tension_push
     with dissolve
     show expression Solid("#15121b30") as prologue_tint
-    show sprite_padre_neutral as padre_sprite at sprite_stage_back, sprite_breathe
+    show sprite_padre_neutral as padre_sprite at sprite_stage_back_halfbody, sprite_breathe
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
         show sprite_madre_cold as madre_sprite at sprite_stage_right, sprite_cold_still
@@ -111,7 +111,7 @@ label start:
     show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_recoil
     "Non finisce la frase. Spinge lo yogurt verso il bordo; scatto per afferrarlo prima che cada. Una piccola umiliazione, appena sveglia."
     with hpunch
-    show sprite_padre_neutral as padre_sprite at sprite_stage_back, sprite_page_shift
+    show sprite_padre_neutral as padre_sprite at sprite_stage_back_halfbody, sprite_page_shift
     "Papà gira pagina senza alzare gli occhi. Non c'è nessun testimone di ciò che credo accada qui."
     "Prima di alzarmi, guardo mio padre per un secondo di troppo."
     menu:
@@ -129,7 +129,7 @@ label start:
     with dissolve
     show expression Solid("#18263a18") as prologue_tint
     show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-    show sprite_kate_neutral as kate_sprite at sprite_stage_right, sprite_breathe with moveinright
+    show sprite_kate_neutral as kate_sprite at sprite_stage_right_halfbody, sprite_breathe with moveinright
     play ambience audio.rain fadeout 1.0 fadein 1.5
     "Fuori l'aria sa di asfalto bagnato. A scuola sono la Mila modello: buoni voti, nessun disturbo, un sorriso calibrato per non attirare domande."
     show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_flinch
@@ -160,7 +160,7 @@ label start:
     "Qui l'aria è diversa. Non è l'ossigeno pesante di casa mia: è un vuoto sterile, profumato di ammorbidente costoso."
     "I genitori di Sophie mi accolgono con la gentilezza distaccata riservata a chi svolge bene il proprio lavoro."
     "La madre si sistema il cappotto color cammello e mi rivolge un sorriso educato."
-    show sprite_madre_sophie as madre_sophie_sprite at sprite_stage_right, sprite_cold_still with moveinright
+    show sprite_madre_sophie as madre_sophie_sprite at sprite_stage_right_halfbody, sprite_cold_still with moveinright
     madre_sophie "Sophie è di sopra. Ultimamente è stata difficile. Cerca di farla mangiare e niente schermi dopo le dieci, per favore."
     hide madre_sophie_sprite with dissolve
     hide mila_sprite with dissolve
@@ -343,7 +343,7 @@ label capitolo_2:
     scene bg school
     with dissolve
     show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-    show sprite_kate_neutral as kate_sprite at sprite_stage_right, sprite_breathe
+    show sprite_kate_neutral as kate_sprite at sprite_stage_right_halfbody, sprite_breathe
     "A scuola mi muovo come un guscio vuoto. Senza telefono sono isolata; ma è l'isolamento mentale a soffocarmi."
     "Kate mi intercetta vicino agli armadietti."
     kate "Mila, sei sparita da ieri. Ti ho scritto e ha risposto tua madre: ha detto che eri malata e di non cercarti. Ma sei qui. Che succede?"
@@ -1066,7 +1066,7 @@ label finale_verita:
     scene bg school
     with fade
     show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-    show sprite_kate_neutral as kate_sprite at sprite_stage_right, sprite_breathe
+    show sprite_kate_neutral as kate_sprite at sprite_stage_right_halfbody, sprite_breathe
     play music audio.ending fadeout 1.8 fadein 2.4
     play ambience audio.rain fadeout 1.0 fadein 1.4
     if genitori_salvati:
@@ -1242,10 +1242,10 @@ label finale_fascicolo:
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_sophie_cold as sophie_sprite at sprite_stage_left, sprite_cold_still
-        show sprite_chloe_neutral as chloe_sprite at sprite_stage_right, sprite_breathe
+        show sprite_chloe_neutral as chloe_sprite at sprite_stage_right_halfbody, sprite_breathe
     else:
         show sprite_sophie_neutral as sophie_sprite at sprite_stage_left, sprite_breathe
-        show sprite_chloe_neutral as chloe_sprite at sprite_stage_right, sprite_breathe
+        show sprite_chloe_neutral as chloe_sprite at sprite_stage_right_halfbody, sprite_breathe
     "Il sole illumina i capelli biondi di Sophie sul treno. Di fronte a lei siede la nuova famiglia affidataria: persone convinte che il mondo sia ancora sicuro."
     "Accanto a lei c'è Chloe, dodici anni, trecce ordinate e uno sguardo timido, quasi spaventato da quella nuova sorella così silenziosa."
     sophie "No, grazie, mamma. Sto benissimo."
