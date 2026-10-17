@@ -151,6 +151,8 @@ label start:
     madre_sophie "Sophie è di sopra. Ultimamente è stata difficile. Cerca di farla mangiare e niente schermi dopo le dieci, per favore."
     hide madre_sophie_sprite with dissolve
     hide mila_sprite with dissolve
+    # Stacco visivo: lasciamo il giardino prima della sequenza all'interno della casa.
+    scene black with fade
     "La porta si chiude alle mie spalle. Il silenzio di lusso della casa mi avvolge. Salgo le scale fino alla porta coperta di adesivi di vecchi anime e scritte KEEP OUT."
     "Busso con il nostro ritmo segreto, inventato quando si sono trasferiti. È l'unica porta a cui busso senza temere di essere convocata."
     sophie "Entra, Mila. Lo sai che con me non devi bussare. Sei l'unica persona che non mi dà il mal di testa in questa casa."
