@@ -2,6 +2,31 @@
 # Manteniamo i nomi immagine usati da script.rpy per non rompere le scene.
 
 # Posizionamento coerente per sprite a figura intera (canvas 16:9, 1920x1080).
+# Posizionamento dedicato alla scena iniziale nella camera di Sophie:
+# Sophie è leggermente più bassa e sta a sinistra; Mila si sposta a destra.
+transform sprite_stage_left_sophie:
+    xalign 0.34
+    yalign 1.0
+    zoom 0.64
+
+transform sprite_stage_right_mila:
+    xalign 0.72
+    yalign 1.0
+    zoom 0.70
+
+# Sophie si avvicina a Mila quando invade il suo spazio personale.
+transform sprite_approach_mila:
+    xalign 0.43
+    yalign 1.0
+    zoom 0.64
+    ease 0.65 xalign 0.49
+
+# Placeholder verticale da sostituire con il disegno definitivo.
+transform disegno_bambola_mostra:
+    zoom 0.48
+
+image disegno_bambola_placeholder = "images/disegno_bambola_placeholder.png"
+
 transform sprite_stage_left:
     xalign 0.31
     yalign 1.0
