@@ -25,7 +25,8 @@ transform sprite_approach_mila:
 transform disegno_bambola_mostra:
     zoom 0.48
 
-image disegno_bambola_placeholder = "images/disegno_bambola_placeholder.png"
+# Foglio bianco temporaneo: sostituire questa definizione con il PNG del disegno definitivo.
+image disegno_bambola_placeholder = Solid("#fff", xysize=(900, 1200))
 
 transform sprite_stage_left:
     xalign 0.31
