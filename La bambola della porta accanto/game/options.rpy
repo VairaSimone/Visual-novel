@@ -69,7 +69,7 @@ define config.has_voice = False
 ## durante il main menu. Continuerà a suonare fino a che non verrà interrotto o
 ## un altro file audio verrà suonato.
 
-define config.main_menu_music = "audio/music_memory.wav"
+define config.main_menu_music = None
 
 
 ## Transizioni #################################################################
@@ -131,8 +131,8 @@ define config.window_hide_transition = Dissolve(0.14)
 default preferences.text_cps = 0
 
 # Mix iniziale bilanciato: musica in sottofondo, effetti chiari ma non invadenti.
-default preferences.music_volume = 0.65
-default preferences.sound_volume = 0.78
+default preferences.volume.music = 0.65
+default preferences.volume.sfx = 0.78
 
 
 ## Il ritardo predefinito dell'avanzamento automatico. Numeri alti portano ad
