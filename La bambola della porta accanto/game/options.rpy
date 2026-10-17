@@ -53,6 +53,7 @@ define build.name = "Labamboladellaportaaccanto"
 ## a False, si nasconde il mixer appropriato.
 
 define config.has_sound = True
+define config.sound = True
 define config.has_music = True
 # Non esistono ancora battute doppiate: evita un mixer Voce vuoto nelle impostazioni.
 define config.has_voice = False
@@ -61,7 +62,7 @@ define config.has_voice = False
 ## Per consentire al giocatore di eseguire un test sonoro sui canali Suono o
 ## Voce, togli # dalla linea e usala per impostare un suono di esempio.
 
-# define config.sample_sound = "sample-sound.ogg"
+define config.sample_sound = "audio/sfx_window_knock.wav"
 # define config.sample_voice = "sample-voice.ogg"
 
 
@@ -70,6 +71,9 @@ define config.has_voice = False
 ## un altro file audio verrà suonato.
 
 define config.main_menu_music = None
+
+# I file audio convertiti sono a 48 kHz e il mixer SFX parte al volume pieno.
+define config.sound_sample_rate = 48000
 
 
 ## Transizioni #################################################################
@@ -132,7 +136,7 @@ default preferences.text_cps = 0
 
 # Mix iniziale bilanciato: musica in sottofondo, effetti chiari ma non invadenti.
 default preferences.volume.music = 0.65
-default preferences.volume.sfx = 0.78
+default preferences.volume.sfx = 1.0
 
 
 ## Il ritardo predefinito dell'avanzamento automatico. Numeri alti portano ad
