@@ -21,12 +21,16 @@ transform sprite_approach_mila:
     zoom 0.64
     ease 0.65 xalign 0.49
 
-# Placeholder verticale da sostituire con il disegno definitivo.
-transform disegno_bambola_mostra:
-    zoom 0.48
-
-# Foglio bianco temporaneo: sostituire questa definizione con il PNG del disegno definitivo.
-image disegno_bambola_placeholder = Solid("#fff", xysize=(900, 1200))
+# Disegno di Sophie: viene mostrato come scena esclusiva, senza sprite.
+# Il canvas coincide con la risoluzione del gioco; "contain" mantiene le proporzioni
+# del PNG e mostra l'intero foglio senza tagliarlo o deformarlo.
+image sophie_draw_fullscreen = Transform(
+    "images/backgrounds/sophie_draw.png",
+    xysize=(1920, 1080),
+    fit="contain",
+    xalign=0.5,
+    yalign=0.5
+)
 
 transform sprite_stage_left:
     xalign 0.31
