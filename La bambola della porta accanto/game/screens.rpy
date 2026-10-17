@@ -190,8 +190,9 @@ style namebox:
     xpos gui.name_xpos
     xanchor gui.name_xalign
     xsize gui.namebox_width
-    ypos gui.name_ypos
-    yminimum 58
+    # Il nome ha una fascia autonoma, ben separata dal testo del dialogo.
+    ypos gui.name_ypos - 66
+    yminimum 54
     padding (22, 9, 22, 9)
     background Solid("#302131")
 
