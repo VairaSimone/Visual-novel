@@ -177,6 +177,11 @@ image sprite_sophie_tense = Transform("images/characters/sophie_tense.png", ysiz
 image sprite_kate_neutral = Transform("images/characters/kate_neutral.png", ysize=1185, fit="contain")
 image sprite_kate_worried = Transform("images/characters/kate_worried.png", ysize=1185, fit="contain")
 
+# Madre di Mila: sprite aggiornati dalla coscia in su.
+# Usa lo stesso riferimento di altezza del padre, così non appare più piccola di Mila.
+image sprite_madre_neutral = Transform("images/characters/mamma_mila_neutral.png", ysize=1350, fit="contain")
+image sprite_madre_cold = Transform("images/characters/mamma_mila_cold.png", ysize=1350, fit="contain")
+
 # Padre di Mila: ritratto a mezzo busto, normalizzato come gli altri personaggi.
 image sprite_padre_neutral = Transform("images/characters/sprite_padre_mila.png", ysize=1350, fit="contain")
 
