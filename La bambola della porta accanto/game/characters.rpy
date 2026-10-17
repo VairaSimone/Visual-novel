@@ -17,6 +17,13 @@ transform sprite_stage_center:
     yalign 1.0
     zoom 0.46
 
+# Secondo piano: per il padre dietro il giornale, senza competere con i primi piani.
+transform sprite_stage_back:
+    xalign 0.5
+    yalign 1.0
+    zoom 0.38
+    alpha 0.88
+
 # Movimento d'attesa delicato: evita che i personaggi sembrino completamente statici.
 transform sprite_breathe:
     yoffset 0
