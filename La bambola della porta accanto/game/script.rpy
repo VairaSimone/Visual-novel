@@ -63,9 +63,9 @@ label start:
     play ambience audio.room fadein 1.5
     play music audio.memory fadein 2.4
 
-    centered "{size=32}{color=#e6d4db}AVVISO CONTENUTI{/color}{/size}\n\n{size=21}Thriller psicologico con manipolazione, gaslighting, abusi emotivi, autolesionismo e violenza. La storia affronta anche lutto e suicidio. Alcune scene sono intense.{/size}"
+    centered "{size=30}{color=#e6d4db}AVVISO CONTENUTI{/color}{/size}\n\n{size=20}Manipolazione psicologica, gaslighting, abuso emotivo, autolesionismo, violenza, lutto e suicidio. Alcune scene possono essere intense.{/size}"
 
-    centered "{size=54}{color=#e6d4db}LA BAMBOLA DELLA PORTA ACCANTO{/color}{/size}\n\n{size=26}{color=#aa97a3}Una visual novel thriller psicologica{/color}{/size}\n\n{size=20}Fino a che punto ti spingeresti per sentirti finalmente libera?{/size}"
+    centered "{size=42}{color=#e6d4db}LA BAMBOLA\nDELLA PORTA ACCANTO{/color}{/size}\n\n{size=25}{color=#aa97a3}Thriller psicologico interattivo{/color}{/size}\n\n{size=19}Fino a che punto ti spingeresti per sentirti libera?{/size}"
 
     scene bg mila room
     with dissolve
@@ -77,13 +77,13 @@ label start:
     "Il primo suono della giornata non è mai la sveglia. È lo scatto metallico dell'accendino nell'altra stanza."
     play sound audio.lighter
     "Un clic secco. Poi il primo sospiro di fumo di mia madre. È quello il segnale: ho esattamente sei minuti prima che mi chiami."
-    "Li ho contati una volta, un anno fa, con il cronometro del telefono. Sei minuti e undici secondi. Da allora li conto tutte le mattine, anche se nessuno me l'ha mai chiesto."
+    "Li ho cronometrati un anno fa: sei minuti e undici secondi. Da allora li conto ogni mattina."
     "Sei minuti per smettere di esistere come individuo e diventare una funzione della casa."
-    "Mi alzo senza far scricchiolare le doghe. È un'arte che ho perfezionato in anni di attenzione e paura. La mia stanza è un piccolo diorama di ciò che una brava figlia dovrebbe essere: libri allineati, letto teso, nessuna macchia. Non è pulizia. È una strategia di difesa. Meno angoli offro, meno appigli avrà lei."
+    "Mi alzo senza far scricchiolare le doghe. La stanza è in ordine perfetto: libri allineati, letto teso, nessuna macchia. Non è disciplina. È il modo che ho trovato per darle meno appigli."
     madre "Mila."
     "La voce attraversa la porta come un ago freddo. Mia madre non urla. Le grida sono per i dilettanti; lei usa la pressione atmosferica."
-    "Esco in corridoio abbassando le spalle, rendendomi piccola. In bagno provo a coprire il viola sotto gli occhi. Nello specchio, sotto lo zigomo destro, c'è una linea sottile, bianca, quasi invisibile se non sai dov'è."
-    "Una vecchia cicatrice. Non ricordo sempre da dove venga. So soltanto che, quando la sfioro, sento paura; e in questa casa la paura sembra sempre una prova a carico di qualcuno."
+    "Esco con le spalle curve. In bagno copro il viola sotto gli occhi. Allo specchio, sotto lo zigomo destro, intravedo una cicatrice sottile."
+    "Non ricordo sempre da dove venga. So che sfiorarla mi mette paura. In questa casa, anche la paura sembra una prova contro di me."
     scene bg mila kitchen
     with dissolve
     show sprite_padre_neutral as padre_sprite at sprite_stage_back, sprite_breathe
@@ -93,16 +93,16 @@ label start:
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
         show sprite_madre_neutral as madre_sprite at sprite_stage_right, sprite_breathe
-    "Mia madre è seduta al tavolo, avvolta in una vestaglia sbiadita. Mio padre è una sagoma indistinta dietro il giornale. La sua indifferenza è diventata, nella mia testa, il carburante della crudeltà di lei."
-    "Appoggio la tazzina sul legno chiaro. La ceramica sfiora il piano con un rumore minuscolo. Mamma osserva il caffè, poi alza gli occhi. Sono stanchi, grigi, del colore delle sigarette consumate nel posacenere."
+    "Mia madre siede al tavolo in vestaglia. Papà è nascosto dietro il giornale. Nella mia testa, il suo silenzio alimenta la crudeltà di lei."
+    "Appoggio la tazzina. Mamma guarda il caffè, poi me: ha gli occhi grigi e stanchi, come il posacenere davanti a lei."
     madre "Ti sei truccata?"
     mila "No, mamma. Solo un po' di correttore per le occhiaie."
-    madre "Cos'è quel fango sotto gli occhi, Mila? Smetti di truccarti come se avessi dieci anni in più. La gente guarda, la gente sparla. Vuoi far credere ai vicini che in questa casa non ti facciamo dormire?"
-    "Sento il sapore del ferro in gola. Per mia madre la realtà non sembra esistere: conta il giudizio degli altri, il terrore che qualcuno scalfisca la facciata della famiglia perfetta."
+    madre "Cos'hai sotto gli occhi? Smetti di truccarti così. La gente guarda e sparla. Vuoi far credere ai vicini che qui non ti facciamo dormire?"
+    "Mi si chiude la gola. Per mamma conta solo quello che penseranno i vicini e la facciata della famiglia perfetta."
     mila "Lo tolgo subito."
     madre "Brava. E stasera vai dai vicini. Hanno di nuovo bisogno di te per la ragazzina. Vedi di non fare la morta di sonno come al solito."
-    "Non finisce la frase. Non serve. Spinge verso il bordo del tavolo lo yogurt già aperto. Devo scattare per afferrarlo prima che cada. Una piccola umiliazione, appena prima di colazione."
-    "Mio padre gira pagina. Non alza gli occhi. Non c'è mai nessun testimone di quello che mi sembra succedere in questa casa. O almeno, è così che mi sono abituata a raccontarmelo."
+    "Non finisce la frase. Spinge lo yogurt verso il bordo; scatto per afferrarlo prima che cada. Una piccola umiliazione, appena sveglia."
+    "Papà gira pagina senza alzare gli occhi. Non c'è nessun testimone di ciò che credo accada qui. O almeno, così me lo racconto."
     "Prima di alzarmi, guardo mio padre per un secondo di troppo."
     menu:
         "Quando papà incrocia il mio sguardo, cosa faccio?"
@@ -120,9 +120,9 @@ label start:
     show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
     show sprite_kate_neutral as kate_sprite at sprite_stage_right, sprite_breathe
     play ambience audio.rain fadeout 1.0 fadein 1.5
-    "Fuori l'aria sa di asfalto umido e libertà vigilata. A scuola sono Mila la brava: quella che prende nove in matematica, non disturba e sorride quanto basta per non far nascere domande."
-    "Kate mi raggiunge correndo, le guance arrossate dal freddo. È l'incarnazione di un mondo di carta velina: brillante, rumoroso, ignaro. Mi circonda le spalle con un braccio; devo fare uno sforzo per non sussultare. Per me, un tocco improvviso annuncia ancora un colpo."
-    kate "Mila! Aspettami! Ancora quella faccia da funerale? Stasera c'è la festa da Leo. Devi venire. Ci sarà anche quel tipo del terzo anno che ti fissava in biblioteca."
+    "Fuori l'aria sa di asfalto bagnato. A scuola sono la Mila modello: buoni voti, nessun disturbo, un sorriso calibrato per non attirare domande."
+    "Kate mi raggiunge di corsa, rossa per il freddo. Mi circonda le spalle con un braccio; trattengo il sussulto. Per me, un tocco improvviso può ancora significare un colpo."
+    kate "Mila, aspettami! Hai sempre quella faccia da funerale. Stasera c'è la festa da Leo: vieni, ci sarà anche il tipo che ti fissava in biblioteca."
     menu:
         "Come le rispondo?"
         "Le spiego che devo lavorare dai vicini.":
@@ -144,13 +144,13 @@ label start:
         show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-    "Alle diciannove sono davanti alla casa dei vicini. La villetta è impeccabile, quasi gemella della nostra. Tra le due corre una striscia di prato rasato così corto da sembrare finto; al centro cresce una vecchia quercia che nessuno dei proprietari ha mai voluto abbattere."
+    "Alle sette sono davanti alla casa dei vicini. Le due villette si somigliano; tra i prati rasati cresce una vecchia quercia che nessuno ha voluto abbattere."
     "Qui l'aria è diversa. Non è l'ossigeno pesante di casa mia: è un vuoto sterile, profumato di ammorbidente costoso."
     "I genitori di Sophie mi accolgono con la gentilezza distaccata riservata a chi svolge bene il proprio lavoro."
     "La madre si sistema il cappotto color cammello e mi rivolge un sorriso educato."
     madre_sophie "Sophie è di sopra. Ultimamente è stata difficile. Cerca di farla mangiare e niente schermi dopo le dieci, per favore."
     "La porta si chiude alle mie spalle. Il silenzio di lusso della casa mi avvolge. Salgo le scale fino alla porta coperta di adesivi di vecchi anime e scritte KEEP OUT."
-    "Busso con il ritmo che ci siamo inventate tre anni prima, quando loro si sono trasferiti. Busso ogni volta: è l'unica porta al mondo su cui mi è concesso bussare invece di essere convocata."
+    "Busso con il nostro ritmo segreto, inventato quando si sono trasferiti. È l'unica porta a cui busso senza temere di essere convocata."
     sophie "Entra, Mila. Lo sai che con me non devi bussare. Sei l'unica persona che non mi dà il mal di testa in questa casa."
     scene bg sophie room
     with dissolve
@@ -160,25 +160,25 @@ label start:
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
         show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_breathe
-    "Sophie è sdraiata sul letto, le cuffie al collo, un joystick tra le mani. Ha quindici anni; è cresciuta in verticale, spigolosa e pallida, e sembra già troppo grande per la stanza che i suoi genitori le hanno preparato."
-    "Sulla carta sono lì per fare da tutor e darle una mano la sera. Chiamarlo babysitting per una quindicenne suona ridicolo, ma per i suoi genitori è il modo più comodo per non lasciarla sola e delegare a me il problema di una figlia difficile."
-    "Ogni volta che varco questa soglia, però, la mappa delle nostre età sembra cancellarsi. Sophie mi osserva come se avesse capito troppo presto che il mondo degli adulti è una recita mediocre. Di fronte a lei, sono io a sentirmi piccola."
+    "Sophie è sul letto, cuffie al collo e joystick in mano. Ha quindici anni: pallida, spigolosa, sembra troppo grande per la stanza preparata dai genitori."
+    "Ufficialmente sono lì per aiutarla con i compiti e la cena. I suoi genitori la chiamano babysitting, così possono lasciarla sola senza preoccuparsene."
+    "Qui le nostre età sembrano invertirsi. Sophie guarda gli adulti come se avesse già capito il loro gioco. Accanto a lei, sono io a sentirmi piccola."
     mila "Ciao, Sophie."
     "Spegne lo schermo e mi fissa. Il suo sguardo ha l'intensità di un bambino che trova un insetto raro e decide di chiuderlo in un barattolo per studiarlo da vicino."
-    sophie "Pensavo che tua madre ti avesse murata viva o che fossi scappata. Dio, Mila, mi sei mancata. Ma eccoti qua. Di nuovo a farti consumare da tutti."
+    sophie "Pensavo che tua madre ti avesse murata viva. Mi sei mancata, Mila. Eppure eccoti qui, a lasciarti consumare da tutti."
     mila "I miei non me lo permetterebbero."
     sophie "Permetterebbero. Che parola del cazzo."
-    "Si alza. È quasi alta quanto me. Mi prende il mento fra due dita e sfrega il pollice sullo zigomo destro, proprio sopra la cicatrice. La sua mano è calda; la mia pelle, come sempre, è fredda."
-    sophie "Hai ancora quella faccia spaventata. Ti trema persino la mascella. Solo io me ne accorgo. Solo io so cosa ti ci vorrebbe per respirare davvero."
+    "Si alza e mi prende il mento tra due dita. Il pollice sfiora la cicatrice sotto lo zigomo. La sua mano è calda; la mia pelle, fredda."
+    sophie "Ti trema persino la mascella. Solo io me ne accorgo. Solo io so di cosa hai bisogno per respirare."
     mila "Sophie, devo preparare la cena. I tuoi mi pagano per..."
     sophie "I miei non capiscono niente. E tu non sei qui per i loro soldi. Sei qui perché sono l'unica che ti vede davvero."
     "Il cuore accelera. Non è paura, mi dico. È qualcosa di più pericoloso: la sensazione di essere vista."
-    sophie "Voglio che tu smetta di tremare quando ti tocco. Siamo rimaste solo io e te, Mila. I tuoi sono mostri, i miei manichini. Tu sei mia. Io ti salverò da loro. Devi solo lasciarti aiutare."
-    "Mi scosto. Ha quindici anni, io diciotto. Dovrei essere io a rassicurarla, a prepararle la cena, a dirle che gli adulti a volte sono stanchi e basta. Invece sto in piedi davanti a una ragazzina con le calze a orsetti e aspetto il permesso di respirare."
+    sophie "Smetti di tremare quando ti tocco. Siamo rimaste noi due. I tuoi sono mostri, i miei manichini. Tu sei mia, Mila. Lascia che ti salvi."
+    "Mi scosto. Lei ha quindici anni, io diciotto. Dovrei rassicurarla, prepararle la cena. Invece aspetto da lei il permesso di respirare."
     mila "Siamo qui per i compiti e la cena, Sophie. Non per questo."
     sophie "Questo cosa? Volerti bene?"
-    "Torna a sedersi sul letto e mi regala un sorriso bellissimo che non le arriva agli occhi. Sono sbarrati e freddi, come se stesse già guardando il finale di una partita a scacchi che ha deciso di vincere anni fa."
-    sophie "Va bene. Prepariamo il pollo. Recitiamo la parte. Fai la brava ospite. Ma non sei brava a fingere, Mila. Accumula pure tutta questa rabbia. Un giorno la useremo insieme contro di lei. Ora vai."
+    "Torna sul letto e sorride. Gli occhi, però, restano freddi: sembrano già conoscere un finale che io non ho visto."
+    sophie "Va bene. Prepariamo il pollo e facciamo finta di niente. Ma la tua rabbia resta lì, Mila. Un giorno la useremo contro di lei. Ora vai."
     scene bg sophie kitchen
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
@@ -187,10 +187,10 @@ label start:
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
         show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_breathe
-    "Scendo in cucina e lavo le mani più a lungo del necessario. Mentre l'acqua bolle, noto un quaderno di schizzi aperto sul tavolo. Il disegno è dettagliatissimo: io, rannicchiata in un angolo, con fili sottili legati ai polsi e alle caviglie che scompaiono oltre il bordo del foglio."
+    "In cucina lavo le mani mentre l'acqua bolle. Sul tavolo c'è un disegno di Sophie: io, rannicchiata in un angolo, con fili legati ai polsi e alle caviglie che spariscono fuori dal foglio."
     "Sotto, con la grafia ordinata di Sophie, c'è scritto: La mia bambola preferita."
     "Sorrido debolmente. Mi sembra dolce che mi abbia ritratta, che abbia notato ogni dettaglio. Lei mi vuole bene davvero. Mi protegge."
-    "Guardo dalla finestra la sagoma scura di casa mia, a pochi metri. Per la prima volta l'idea di tornarci non mi provoca soltanto nausea. Mi provoca una tristezza sofferente."
+    "Dalla finestra guardo casa mia. Per la prima volta, l'idea di tornarci non mi dà solo nausea. Mi fa tristezza."
     "Sophie ha ragione, penso. Chi non prova nulla è fortunato. Io invece sento ogni frequenza del dolore, e sta diventando troppo pesante da portare."
     jump capitolo_1
 
@@ -200,21 +200,21 @@ label capitolo_1:
     with fade
     play ambience audio.room fadeout 1.0 fadein 1.2
     centered "{size=42}{color=#e6d4db}CAPITOLO 1{/color}{/size}\n\n{size=28}{color=#aa97a3}Come sanguina un robot{/color}{/size}"
-    "Preparo il pollo con movimenti automatici, quasi ipnotici. Taglio, soffriggo, mescolo: una coreografia che potrei eseguire bendata. Mia madre dice che sono efficiente. In realtà sono terrorizzata dall'errore."
+    "Preparo il pollo in automatico: taglio, soffriggo, mescolo. Mamma mi chiama efficiente. Io ho solo paura di sbagliare."
     "Sophie non è rimasta in camera. È seduta sull'isola della cucina, le gambe che dondolano nel vuoto, e osserva ogni movimento."
-    sophie "Sai, Mila, i miei dicono che sei un esempio. Guarda Mila: non risponde mai male, ha sempre la camicia stirata, non si lamenta."
+    sophie "Sai cosa dicono i miei? «Guarda Mila: non risponde, è sempre in ordine, non si lamenta»."
     mila "I tuoi sono gentili."
-    sophie "No. I miei sono pigri. Ti usano come standard per non ammettere che non hanno idea di chi io sia. Ma io ti guardo. Guarda come stringi quel coltello: hai le nocche bianche."
+    sophie "No. I miei sono pigri. Ti usano come esempio perché non sanno chi sono io. Ma ti guardo davvero: stringi quel coltello fino a sbiancarti le nocche."
     "Abbasso gli occhi. Ha ragione. Tengo il manico come se fosse l'unica cosa che mi impedisce di scivolare via dalla realtà. Rilasso le dita, una alla volta."
     mila "È solo stanchezza."
-    sophie "È rabbia. La rabbia di chi soffoca per non disturbare. Mi piace da morire. È l'unica cosa vera che hai. Scommetto che se ti ferissi chiederesti scusa al pavimento per averlo sporcato."
+    sophie "È rabbia. La tieni dentro per non disturbare. È l'unica cosa sincera che mostri. Scommetto che, ferendoti, chiederesti scusa al pavimento."
     "Mi volto bruscamente. Il calore dei fornelli mi scotta le guance, o forse è il rossore che mi tradisce."
     mila "Perché mi dici queste cose? Dovresti giocare ai videogiochi. Dovresti essere una ragazzina."
-    sophie "E tu dovresti essere viva, Mila. Guarda questo posto: una cella dorata. La tua, invece, è una cella di cemento. Voglio tirarti fuori prima che ti distruggano. Voglio vedere chi sei quando smetti di essere il loro robot."
+    sophie "E tu dovresti vivere, Mila. Qui sei in una cella dorata; a casa tua, in una di cemento. Voglio vedere chi diventi quando smetti di essere il loro robot."
     "Mi prende una mano. Aspetta una reazione, un grido, uno schiaffo. Io abbasso lo sguardo."
     mila "La cena è pronta."
-    "Mangiamo in silenzio. Il pollo ha il sapore del cartone bagnato. Sophie mangia svogliatamente e ogni tanto controlla l'orologio. La aiuto con latino; è brillante, ma si rifiuta di applicarsi per puro dispetto verso i professori del suo istituto, che chiama il reparto psichiatrico a pagamento."
-    "Verso le undici, i suoi genitori non sono ancora rientrati. Il panico comincia a strisciare sotto la mia pelle. Devo essere a casa alle undici e un quarto. Se arrivo tardi, mia madre troverà un nuovo motivo per farmi sentire colpevole."
+    "Ceniamo in silenzio. Il pollo sembra cartone bagnato. Poi la aiuto con latino: è brillante, ma si rifiuta di studiare per dispetto verso i professori."
+    "Sono quasi le undici e i suoi genitori non sono rientrati. Io devo essere a casa alle undici e un quarto. Se faccio tardi, mamma troverà un altro motivo per punirmi."
     mila "Devo andare, Sophie. I tuoi arriveranno a momenti."
     sophie "Resta qui. Dormi nel letto degli ospiti. Di' ai tuoi che devi aiutarmi."
     mila "Non posso mentire. Lei capisce sempre quando mento."
@@ -225,7 +225,7 @@ label capitolo_1:
     "Si avvicina, mi posa una mano sulla spalla e stringe un po' troppo."
     sophie "Mi si spezza il cuore a vederti così. Almeno qui sei umana. Con me puoi smettere di fingere."
     "Per un istante il mondo si restringe al profumo del suo shampoo e al calore del suo respiro. Penso che stia per baciarmi sulla guancia. Invece sussurra:"
-    sophie "Vai a casa, Mila. Corri dal tuo mostro. Fatti fare tutto quello che deve. Così capirai che l'unico posto sicuro è qui. Ricorda: la mia porta non è mai chiusa a chiave per te."
+    sophie "Vai a casa, allora. Corri dal tuo mostro. Lascia che ti faccia sentire inutile. Poi ricorderai dov'è l'unico posto in cui puoi tornare: qui. La mia porta resta aperta per te."
     scene bg oak houses
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
@@ -234,7 +234,7 @@ label capitolo_1:
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
     "Corro nella notte. L'aria fredda mi taglia i polmoni. Attraverso il prato e salgo i gradini. Sono le 23:18: tre minuti di ritardo."
-    "Infilo la chiave nella toppa. La porta si apre. E basta. Non è chiusa dall'interno. Mi fermo sulla soglia, con la chiave ancora in mano. Mi dico che è stata una dimenticanza, che sono fortunata, che la prossima volta sarà diverso."
+    "La chiave gira. La porta è aperta. Resto sulla soglia, cercando una spiegazione. Mi dico che è una dimenticanza e che la prossima volta andrà meglio."
     scene bg mila kitchen
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
@@ -249,12 +249,12 @@ label capitolo_1:
     "Mia madre lava una tazzina. Lentamente. Il rumore della spugna sulla ceramica è l'unico suono nella stanza."
     madre "Il lavoro è finito?"
     mila "Sì, mamma. Mi dispiace per il ritardo, io..."
-    madre "La madre di Sophie mi ha scritto. Dice che la ragazzina non si sente a suo agio con te. Non sai fare nemmeno l'unica cosa per cui ti pagano: stare zitta e non disturbare. Vai in una casa altrui e ci fai fare la figura dei miserabili."
+    madre "La madre di Sophie mi ha scritto: sua figlia non si sente a suo agio con te. Non sai fare nemmeno il lavoro per cui ti pagano: stare zitta e non creare problemi."
     "Si avvicina e mi afferra la mascella con tre dita, costringendomi a guardarla. Le sue unghie si piantano nella pelle; le dita odorano di detersivo e cenere spenta."
     madre "Che cosa vi siete dette? Hai raccontato le tue storielle da vittima per farti compatire?"
     mila "No. Abbiamo solo studiato."
-    madre "Non mentirmi. Pensi che sia stupida? Ti ho dato una casa, da mangiare, ti ho tirata su per essere normale. E tu ripaghi la mia pazienza facendoti guardare dai vicini come se fossi pazza da curare."
-    "Afferra uno strofinaccio umido e me lo strofina sulla guancia. Il tessuto ruvido gratta la pelle irritata. Nella mia testa non è più un tentativo di pulirmi: è un gesto deliberato per cancellarmi il viso, per punirmi per aver osato truccarmi."
+    madre "Non mentirmi. Ti ho dato una casa e da mangiare per farti crescere normale. E tu ci fai sembrare una famiglia da compatire."
+    "Mi strofina la guancia con uno strofinaccio umido. Il tessuto graffia la pelle. Io non lo sento come un tentativo di pulirmi: lo vivo come un'altra punizione."
     madre "Togliti questo schifo dalla faccia. Fai schifo quando cerchi di fare la grande."
     "Resto immobile, stringendo i pugni. Mio padre appare sulla soglia, guarda la scena con gli occhi vuoti di chi osserva un mobile da spostare, poi si gira e se ne va."
     "Mia madre mi spinge contro lo spigolo del tavolo."
@@ -265,10 +265,10 @@ label capitolo_1:
         show sprite_mila_tense as mila_sprite at sprite_stage_center, sprite_tremble
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_center, sprite_breathe
-    "Mi trascino in camera vestita. Non piango: le lacrime sono un lusso che non posso permettermi. Sotto il cuscino trovo un frammento di vetro raccolto in giardino. Lo stringo fino a sentire dolore e subito dopo vergogna per averlo fatto."
-    "Mi dico che questo dolore è onesto, che almeno non cerca di convincermi di essere per il mio bene. Non so più se sia una verità mia o una frase che qualcun altro mi ha insegnato."
+    "Resto a letto vestita. Non piango; non voglio concedermi nemmeno quello. Sotto il cuscino trovo il vetro raccolto in giardino e lo stringo finché il dolore non arriva. Subito dopo mi vergogno."
+    "Mi dico che almeno questo dolore non finge di essere per il mio bene. Non so più se il pensiero sia mio o se qualcuno me l'abbia insegnato."
     "Sento ancora il pollice di Sophie sotto lo zigomo. Voglio vedere chi sei quando smetti di essere il loro robot."
-    "Chiudo gli occhi. L'odio per i miei genitori e il desiderio di tornare nella villetta sterile si intrecciano in un nodo impossibile da sciogliere. Qualcosa dentro di me si è incrinato. La tempesta è appena iniziata."
+    "Chiudo gli occhi. L'odio per i miei genitori si mescola al bisogno di tornare da Sophie. Qualcosa in me si è incrinato."
     jump capitolo_2
 
 
@@ -278,28 +278,28 @@ label capitolo_2:
     play ambience audio.room fadeout 1.0 fadein 1.5
     play music audio.investigation fadeout 1.6 fadein 2.2
     centered "{size=42}{color=#e6d4db}CAPITOLO 2{/color}{/size}\n\n{size=28}{color=#aa97a3}La geometria del silenzio{/color}{/size}"
-    "Il taglio sulla mano brucia sotto l'acqua fredda. È un dolore netto, a differenza delle parole di mia madre, che cercano sempre di convincermi che ogni cosa sia per il mio bene."
+    "Il taglio brucia sotto l'acqua fredda. È un dolore netto; le parole di mamma, invece, si travestono sempre da premura."
     "Mi asciugo con cura, tamponando la pelle per non macchiare l'asciugamano bianco. In questa casa le macchie diventano prove, e ogni prova può trasformarsi in un'accusa."
-    "A colazione mio padre è già uscito. Mia madre è seduta al solito posto. Davanti a lei c'è il mio smartphone. Lo accarezza con la punta dell'indice, come un piccolo animale catturato di cui studia la resistenza."
+    "Papà è già uscito. Mamma siede al solito posto, con il mio telefono davanti. Lo accarezza come un animale catturato."
     madre "Seduta."
     "Obbedisco. Non guardo il telefono; tengo gli occhi sulle mani intrecciate in grembo."
-    madre "Stanotte non ho chiuso occhio. Mi chiedo dove ho sbagliato con te. Che cosa ti passa per la testa quando ti guardi intorno come un animale in gabbia? Vedo come ti assenti, come ti irrigidisci ogni volta che qualcuno ti parla."
+    madre "Stanotte non ho dormito. Dove ho sbagliato con te? Ti irrigidisci appena qualcuno ti parla. Che cosa ti succede, Mila?"
     mila "Mamma, stavamo solo..."
     madre "Silenzio. Non ti ho dato il permesso di inquinare l'aria con altre menzogne."
     "Copre il telefono con il palmo."
-    madre "Questo resterà a me. Non ne hai bisogno per andare a scuola. E dopo l'ultima ora tornerai dritta qui. Ho parlato di nuovo con la madre di Sophie. Le ho spiegato che stai attraversando un periodo difficile e che è meglio sospendere il lavoro per un po'."
+    madre "Il telefono resta a me. Dopo scuola torni subito qui; ho sospeso il tuo lavoro dai vicini. Ho già parlato con la madre di Sophie."
     "Il mondo mi crolla addosso, ma non faccio rumore. Le cose che devono apparire perfette non esplodono: implodono, collassando verso il proprio centro vuoto."
     mila "Ma lei ha bisogno di me."
     madre "Siamo noi ad avere bisogno che tu guarisca. È stata sua madre a tirare fuori l'argomento. Mi ha detto che Sophie ti trova strana. Che la metti a disagio."
-    "So che qualcosa è distorto. Sophie non direbbe mai una cosa simile. Eppure il dubbio si insinua: e se anche Sophie stesse recitando? Il dubbio non deve essere vero per fare danni; basta respirarlo."
+    "Qualcosa non torna. Sophie non direbbe mai una cosa simile. Eppure il dubbio arriva: e se anche lei stesse recitando? Non deve essere vero per ferirmi."
     scene bg school
     with dissolve
     show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
     show sprite_kate_neutral as kate_sprite at sprite_stage_right, sprite_breathe
     "A scuola mi muovo come un guscio vuoto. Senza telefono sono isolata; ma è l'isolamento mentale a soffocarmi."
     "Kate mi intercetta vicino agli armadietti."
-    kate "Mila! Da ieri sera sei sparita. Ti ho scritto un sacco di messaggi. Stamattina ha risposto tua madre, dicendomi che eri malata e di non cercarti. E invece sei qui. Che cosa succede?"
-    "Guardo la sua preoccupazione, sincera e pulita, e per la prima volta mi irrita. Lei può permettersi di preoccuparsi per gli altri. La sua casa profuma di torta e bucato, non di cenere e rancore."
+    kate "Mila, sei sparita da ieri. Ti ho scritto e ha risposto tua madre: ha detto che eri malata e di non cercarti. Ma sei qui. Che succede?"
+    "La preoccupazione di Kate è sincera. E mi irrita. Lei vive in una casa che sa di torta e bucato, non di cenere e rancore."
     menu:
         "Kate aspetta una risposta."
         "Le dico che ho solo bisogno di un po' di spazio.":
@@ -312,22 +312,22 @@ label capitolo_2:
             $ dubbi_di_mila += 1
             mila "Ho detto lasciami stare!"
             "Il mio urlo taglia il corridoio. Kate arretra, colpita come da uno schiaffo invisibile. Le tremano appena le labbra."
-            "Ho appena fatto saltare in aria un ponte con la normalità. La cosa più terrificante è che, per un istante, mi sento bene. Se devo affogare, perché lei dovrebbe restare all'asciutto?"
-    "Torno a casa alle 14:10. Mia madre è nell'ingresso e controlla l'orologio. La porta della camera deve restare aperta. Studio alla scrivania di spalle, dove lei può sorvegliare la mia postura, la mia presenza, il mio silenzio."
+            "Ho appena spezzato qualcosa tra noi. La cosa peggiore è che, per un istante, mi sento bene. Se devo affondare, perché lei dovrebbe restare a galla?"
+    "Alle 14:10 torno a casa. Mamma controlla l'orologio. Studio con la porta aperta, la schiena dritta e ogni movimento sotto sorveglianza."
     "Verso le cinque, mentre la luce si fa radente e grigia, un picchiettio leggerissimo colpisce il vetro della finestra sul retro."
     play sound audio.window_knock
     with hpunch
     "Toc. Toc-toc."
-    "Sposto gli occhi senza muovere la testa. Sul davanzale esterno c'è un piccolo bullone avvolto in un foglio colorato, legato a un filo da pesca trasparente che risale verso la quercia."
-    "Sento i passi di mia madre in corridoio. Premo la penna sul quaderno finché l'inchiostro non crea una macchia densa. Lei si ferma sulla soglia, controlla la mia schiena dritta, poi si allontana."
-    "Quando la televisione si accende in soggiorno, apro la finestra di pochi centimetri e afferro il foglio. La carta è strappata da un taccuino e profuma dello shampoo alla ciliegia di Sophie."
-    "{i}So che ti ha preso il telefono. So cosa ti ha detto. Mia madre ha provato a dirmi che sei strana, ma l'ho messa all'angolo finché non si è tirata indietro. Non crederle. Lei non ti vede. Io sì.{/i}"
-    "{i}Ti scrivo così perché di giorno tua madre guarda il vialetto dalla cucina e di notte non dorme. Ma la mattina, dalle sei alle sei e un quarto, è sotto la doccia. Sono gli unici quindici minuti in cui la tua porta esiste.{/i}"
+    "Senza muovere la testa, vedo un bullone avvolto in un foglio sul davanzale. Un filo da pesca lo collega alla quercia."
+    "Sento i passi di mamma. Premo la penna finché l'inchiostro macchia la pagina. Si ferma sulla soglia, controlla la mia postura e se ne va."
+    "Quando parte la televisione, apro appena la finestra e recupero il foglio. Sa dello shampoo alla ciliegia di Sophie."
+    "So che ti ha preso il telefono. Non crederle: io ti vedo, lei no. Ho costretto mia madre a smettere di metterti in dubbio."
+    "Ti scrivo perché tua madre controlla il vialetto. Ogni mattina, dalle sei alle sei e un quarto, è sotto la doccia. Guarda sotto il tappetino domani. Ti ho lasciato una chiave per il nostro mondo."
     "{i}Guarda sotto il tappetino domani prima di uscire. Ti ho lasciato un regalo. Una chiave per il nostro mondo.{/i}"
     "{i}Non farti spegnere. Mi servi accesa. — S.{/i}"
-    "Il cuore mi martella. Mi servi accesa. Non è un ti voglio bene, non è una frase da adolescenti: sembra un comando e una pretesa su un pezzo della mia anima. Sophie sta combattendo per me. O sta solo giocando a scacchi con mia madre usando il mio corpo come scacchiera. Non mi importa."
-    "Quella notte non dormo. Dalla porta aperta vedo il bagliore rosso della sigaretta di mia madre, che si accende e si spegne nel buio come un faro che nessuno guarda da anni."
-    "Poi un rumore metallico taglia il silenzio: mia madre sistema i coltelli nel ceppo di legno, uno alla volta. Clac. Clac. Clac. Una minaccia senza parole, almeno nella mia interpretazione."
+    "Il cuore martella. «Mi servi accesa.» Non suona come una dichiarazione d'affetto, ma come un ordine. Sophie mi sta aiutando o mi sta usando per colpire mia madre? Non voglio saperlo."
+    "Non dormo. Dalla porta aperta vedo la sigaretta di mamma accendersi e spegnersi in fondo al corridoio."
+    "Mamma rimette i coltelli nel ceppo, uno alla volta. Clac. Clac. Clac. Per me, ogni colpo suona come un avvertimento."
     "Domani prenderò quello che Sophie ha lasciato sotto il tappetino. Non so se sarà la salvezza o la rovina. A questo punto la differenza sembra aver smesso di importare."
     jump capitolo_3
 
@@ -337,23 +337,23 @@ label capitolo_3:
     with fade
     play ambience audio.room fadeout 1.0 fadein 1.5
     centered "{size=42}{color=#e6d4db}CAPITOLO 3{/color}{/size}\n\n{size=28}{color=#aa97a3}Frequenze d'ombra{/color}{/size}"
-    "La mattina ha un colore giallastro, come la bile. Mi sveglio con il sapore metallico della paura in gola, reduce da un sogno in cui cercavo di gridare ma dalla bocca uscivano cocci di vetro."
+    "Mi sveglio con la bocca amara. Ho sognato di gridare, ma dalla bocca uscivano soltanto cocci di vetro."
     "Il rituale della casa non cambia: il clic dell'accendino, il rumore delle pantofole di mio padre, il silenzio pressurizzato che precede la prima parola di mia madre."
     "Mamma è di spalle in cucina, immobile davanti alla finestra."
     madre "Le chiavi sono sul mobile dell'ingresso. Torna subito dopo l'ultima ora. Oggi pulirò a fondo la tua stanza. Ogni singolo angolo."
     "È una dichiarazione di guerra. Vuole dire che non avrò nascondigli, che persino i miei pensieri sono soggetti a ispezione."
-    "Prendo zaino e chiavi. Mi chino davanti al tappetino fingendo di allacciarmi una scarpa. Sotto c'è una busta di plastica nera, piatta, sigillata con nastro adesivo. La faccio scivolare nella manica."
-    "Non apro il pacchetto finché non sono chiusa nell'ultimo bagno del secondo piano a scuola, quello con lo scarico rotto e l'odore di umido. Dentro c'è un telefono vecchio, economico, lo schermo graffiato. La batteria è staccata; la SIM è già inserita."
+    "Prendo zaino e chiavi. Fingo di allacciarmi una scarpa e faccio scivolare nella manica una busta nera nascosta sotto il tappetino."
+    "Aspetto di essere nel bagno isolato al secondo piano. Dentro la busta c'è un vecchio telefono graffiato, con la batteria staccata e una SIM già inserita."
     "{i}Accendimi. Codice 0000. Non salvarmi tra i contatti. Nessuno può risalire a noi.{/i}"
     play sound audio.phone
     "Premo il tasto di accensione. La luce bluastra illumina il viso pallido nello specchio macchiato. C'è già un messaggio."
     "{i}S: Sapevo che l'avresti preso. Brava ragazza. Ora siamo connesse. Tua madre può chiudere la porta quanto vuole: io sono già dentro.{/i}"
-    "Brava ragazza. La frase di mia madre quando avevo sei anni e tornavo a casa con un quaderno pieno di stelline. Detta da Sophie suona come un invito al peccato piuttosto che alla virtù."
+    "«Brava ragazza»: le parole che mamma usava quando avevo sei anni. Da Sophie, suonano come una tentazione."
     mila "Perché lo fai? Mia madre dice che tua madre mi trova strana. Che le faccio paura."
     "La risposta arriva dopo tre secondi."
-    "{i}Mia madre ripete quello che le dice la tua. Le donne come loro si passano le paure come le ricette. È tua madre che ha paura, Mila. Ha paura che tu ti svegli e capisca quanto lei sia piccola, fragile, inutile. Io non ho paura di te. Ci vediamo stanotte, alle 02:00. Sotto la quercia. Non mancare.{/i}"
+    "Mia madre ripete quello che dice la tua. Hanno paura che tu ti svegli e le veda per ciò che sono. Io non ho paura di te. Stanotte, alle due, sotto la quercia. Non mancare."
     "{i}E scrivi. Tutto quello che ti fanno oggi, ogni parola. Ti servirà quando qualcuno finalmente ti chiederà com'era.{/i}"
-    "Scrivo da mesi, da quando Sophie me lo ha chiesto per la prima volta, in ottobre. Scrivi tutto, Mila. Altrimenti domani ti convinceranno che non è successo. Ho un quaderno nero nascosto sotto la rete del materasso, e dentro c'è la mia anima, o quello che ne hanno lasciato."
+    "Scrivo da ottobre, da quando Sophie me l'ha chiesto: annota tutto, o domani ti diranno che non è successo. Il quaderno nero è nascosto sotto il materasso. Ci ho messo dentro anche la mia voce."
     menu:
         "Il quaderno nero è aperto sulle mie ginocchia. Che cosa ci scrivo?"
         "Annotazioni precise: soltanto ciò che ho visto e sentito.":
@@ -364,12 +364,12 @@ label capitolo_3:
         "Scrivo quello che Sophie dice che è successo.":
             $ quaderno_manipolato = True
             $ fiducia_sophie += 2
-            "Sophie detta piano, senza guardarmi. Quando finisco, corregge una parola e mi chiede di riscrivere la frase. La sua grafia e la mia cominciano a sembrare la stessa voce."
+            "Sophie detta senza guardarmi. Quando finisco, corregge una parola e mi fa riscrivere la frase. La mia grafia comincia a somigliare alla sua voce."
         "Chiudo il quaderno e lascio le pagine vuote.":
             $ quaderno_vuoto = True
             $ dubbi_di_mila += 1
             "Non voglio scrivere qualcosa che domani potrebbe sembrare una prova. Chiudo la copertina, ma il quaderno resta sul letto come una domanda senza risposta."
-    "In quarta ora il professore di filosofia spiega il carcere perfetto: un luogo in cui i prigionieri non sanno mai quando la guardia li sta osservando e, nel dubbio, cominciano a sorvegliarsi da soli. Sento un sorriso amaro tirarmi le labbra. Mia madre, nella mia testa, applica questa tortura da diciotto anni senza aver mai letto il libro."
+    "A filosofia il professore parla di una prigione in cui i detenuti si sorvegliano da soli perché non sanno mai quando sono osservati. Penso a mamma: fa lo stesso da diciotto anni, senza conoscere il libro."
     "A pranzo Kate tenta di sedersi accanto a me sui gradini."
     kate "Se hai bisogno di un posto dove stare per qualche giorno, i miei sarebbero felici di ospitarti. Davvero."
     "Il suo maglione color pastello si muove quando tormenta l'orlo della manica. Le parole sono semplici, ma la mia testa ci costruisce una trappola."
@@ -383,7 +383,7 @@ label capitolo_3:
             $ legame_kate -= 1
             mila "Sto bene, Kate. Lasciami stare."
             "Kate si alza senza protestare. Il vassoio le trema appena tra le mani."
-    "Torno a casa alle due e dieci. Appena apro la camera, lo zaino mi scivola dalle spalle. Mia madre è davanti all'armadio: ha svuotato i ripiani, rovesciato i cassetti e ammucchiato i vestiti sul letto come cadaveri in una fossa comune."
+    "Alle 14:10 apro la camera e lascio cadere lo zaino. Mamma ha svuotato l'armadio: i vestiti sono ammucchiati sul letto."
     "In mano stringe il diario scolastico. Lo sfoglia con disprezzo, ma anche con una specie d'angoscia."
     madre "Cercavo la verità, Mila. Qui dentro ci sono soltanto compiti, date, orari. Sei davvero così vuota o sei diventata spaventosamente brava a nasconderti?"
     "Allunga le mani per perquisirmi. Prima che mi afferri, lascio scivolare il telefono segreto nel groviglio dei maglioni e lo seppellisco sotto la lana."
@@ -421,38 +421,38 @@ label capitolo_4:
     play ambience audio.rain fadeout 1.0 fadein 1.5
     play music audio.tension fadeout 1.0 fadein 1.4
     centered "{size=42}{color=#e6d4db}CAPITOLO 4{/color}{/size}\n\n{size=28}{color=#aa97a3}Radici di notte{/color}{/size}"
-    "La cena con i colleghi di mio padre si è trascinata per ore come un'estrazione a freddo eseguita con le buone maniere. Ho servito risotto ai funghi camminando sul filo invisibile che mia madre tesse con gli sguardi."
+    "La cena con i colleghi di papà è durata ore. Ho servito il risotto sotto lo sguardo di mamma, attenta a ogni mio gesto."
     "Davanti alla moglie del capufficio, mamma mi ha accarezzato la schiena."
     madre "Vedi come si è fatta carina, Mila? Anche se ultimamente è così pallida. Studia troppo, vero cara?"
     "La sua mano era calda, ma io ho sentito soltanto un artiglio pronto a stringersi se avessi sbagliato a posare la brocca."
-    "Ora sono le 01:47. Il silenzio non è vuoto: è un organismo vivo, fatto di scricchiolii del legno e del respiro pesante di mio padre dall'altra parte della parete. Mia madre non russa. Nella mia immaginazione giace nel buio come un ragno al centro della tela, in attesa di una vibrazione sbagliata."
-    "Mi sono vestita sotto le coperte, movimento dopo movimento, per non far frusciare la giacca. Sono in piedi con le scarpe in mano. Il corridoio è una gola nera. Devo passare davanti alla camera dei miei e raggiungere l'ingresso; il pavimento ha un punto vicino al tavolino del telefono fisso che geme se lo calpesto troppo forte. Lo chiamo il nervo scoperto."
-    "Avanzo millimetro dopo millimetro, distribuendo il peso come se camminassi su un lago ghiacciato. Passo davanti alla loro porta socchiusa. Per un istante giurerei che gli occhi di mia madre siano aperti, puntati sulla fessura, a contare le mie pulsazioni."
+    "È l'1:47. Dal muro arrivano il respiro di papà e gli scricchiolii del legno. Mamma non russa. Immagino i suoi occhi aperti, in attesa del minimo errore."
+    "Mi vesto sotto le coperte per non fare rumore. Con le scarpe in mano, attraverso il corridoio buio. Vicino al tavolino del telefono c'è una doga che geme: devo evitarla."
+    "Passo piano davanti alla porta socchiusa dei miei. Per un istante mi sembra che mamma mi stia guardando dalla fessura."
     play sound audio.door
     "La serratura scatta. Mi immobilizzo: uno, due, tre. Nessun rumore. Esco e richiudo con una lentezza millimetrica."
     "L'aria notturna mi schiaffeggia il viso. Sa di asfalto umido e libertà rubata. Per qualche secondo mi sento leggera, come se avessi perso dieci chili di catene."
-    "La vecchia quercia svetta tra le due villette. Le radici sollevano il bordo del vialetto come costole spinte sotto la pelle. Sophie è seduta su un ramo basso, le gambe che dondolano nel vuoto. Indossa una felpa nera troppo grande; dalle maniche spuntano le calze con gli orsetti e le sneakers slacciate. I capelli biondi sono gonfi di vento, le lentiggini le fanno ancora il viso di una bambina. Sta masticando un lecca-lecca alla ciliegia."
+    "La quercia divide i due giardini. Sophie è seduta su un ramo basso, con la felpa nera troppo grande, le calze con gli orsetti e le sneakers slacciate. Il vento le scompiglia i capelli biondi; mastica un lecca-lecca alla ciliegia."
     "Nel buio sembra una bambolina di porcellana smarrita nel bosco, non un predatore."
     sophie "Ce l'hai fatta, allora."
     mila "Ho rischiato di morire."
     sophie "Non si muore per un corridoio, Mila. Si muore perché non si ha il coraggio di attraversarlo."
     "Salta giù dal ramo e prende le mie mani. Le dita sono calde, lisce, incredibilmente morbide."
-    sophie "Guarda la tua casa. Sembra una tomba, vero? È lì che vogliono che tu stia: sepolta viva a servire il caffè e pulire i pavimenti finché diventerai identica a lei. Grigia. Spenta."
-    mila "Mia madre dice che sono strana. Forse ha ragione. Una persona normale non scapperebbe di casa alle due di notte per vedere una ragazzina sotto un albero."
+    sophie "Guarda casa tua. Ti vogliono lì, a servire il caffè e pulire finché diventerai grigia come lei."
+    mila "Mamma dice che sono strana. Forse ha ragione. Chi scappa alle due di notte per incontrare una quindicenne sotto un albero?"
     "Sophie ridacchia, una risata cristallina che finisce troppo in fretta."
-    sophie "Normale. Che parola disgustosa. È il paravento dietro cui i deboli nascondono la loro ipocrisia. Tua madre non ha paura che tu sia pazza: ha paura che tu sia sveglia. Ha paura che tu scelga me."
+    sophie "Normale. La parola dietro cui si nascondono. Tua madre non teme che tu sia pazza: teme che tu ti svegli e scelga me."
     "Sfila dalla tasca un accendino di metallo argentato e lo fa scattare. La fiamma illumina le sue guance. Per un secondo sembra un angelo che gioca con il fuoco."
     sophie "Voglio mostrarti un segreto che i manichini di casa mia non conoscono."
-    "Si tira su la manica sinistra. Sulla pelle bianca c'è una serie di piccole bruciature circolari, guarite e allineate. Non sembrano nate da un impulso singolo; la loro regolarità è quasi geometrica."
+    "Solleva la manica. Sull'avambraccio vedo piccole bruciature circolari, guarite e allineate con una precisione inquietante."
     mila "Chi ti ha fatto questo?"
-    sophie "Io. Ogni volta che mio padre sorrideva a tavola dopo aver urlato a mia madre finché lei piangeva in bagno. Ogni volta che lei copriva i lividi con il fondotinta e faceva finta di non vedere. Volevo sentire qualcosa di reale che non fosse la loro recita. Volevo un segno che nessun altro potesse truccare."
+    sophie "Io. Quando papà urlava e mamma piangeva in bagno. Quando lei copriva i lividi e faceva finta di niente. Volevo provare qualcosa di vero, lasciare un segno che non potessero nascondere."
     "Non so se crederle. So soltanto che la vista di quelle cicatrici mi fa venire voglia di proteggerla."
-    sophie "Siamo uguali, Mila. Tu cerchi di aggiustarti per piacere a loro. Io cerco di distruggermi per far vedere quanto sono mostri. Nessuna delle due strade ci porterà fuori."
+    sophie "Siamo uguali, Mila. Tu cerchi di piacere a loro; io provo a mostrare quanto siano mostri. Nessuna delle due può continuare così."
     "Mi mette una mano dietro la nuca, infilandosi tra i miei capelli. È un gesto dolce finché la presa non si fa troppo forte, quasi dolorosa."
     sophie "Vuoi scappare con me? Vuoi un posto senza genitori?"
     mila "Più di ogni altra cosa."
     sophie "Allora devi smettere di essere la brava Mila. Devi sporcarti le mani per davvero. Non si esce dall'inferno senza portarsi dietro un po' di fumo."
-    "Si china e mi bacia. Non c'è la tenerezza ingenua che ho letto nei libri. È un gesto che mi sorprende e mi invade; le dita tra i capelli stringono finché il dolore mi mozza il fiato. Quando si stacca, il buio torna tra noi come acqua gelida."
+    "Si china e mi bacia. Le dita mi stringono i capelli fino a farmi male. Quando si stacca, il buio tra noi sembra più freddo."
     sophie "Ora sei mia, Mila. Non di altri. Mia."
     if telefono_condiviso_kate:
         sophie "Hai mandato il messaggio a Kate, vero? Non importa. Una fotografia non racconta una storia intera."
@@ -463,10 +463,10 @@ label capitolo_4:
     elif telefono_risposto_sophie:
         sophie "Mi hai risposto. Sapevo che non mi avresti lasciata sola."
         "Il sollievo che provo sembra amore, ma so che ora Sophie può usare la mia promessa come una catena."
-    "Ho diciotto anni. L'ho vista arrivare con le valigie quando ne aveva dodici. Le ho tagliato le crostate e l'ho aiutata con le versioni di matematica. E ora, sotto un albero, ringrazio per essere stata scelta."
+    "Ho diciotto anni. L'ho vista arrivare con le valigie quando ne aveva dodici. E adesso, sotto la quercia, mi sento speciale perché mi ha scelta."
     sophie "Domani iniziamo il fondo per la fuga. Tuo padre tiene i contanti delle consulenze nel cassetto della scrivania. Devi prenderli."
     mila "Come fai a saperlo?"
-    sophie "Sono stata a casa tua. Tua madre mi ha invitata per il tè perché le facevo pena. Mi ha lasciata sola in corridoio per due minuti. Ho contato stanze, porte, serrature. Chi tiene le chiavi."
+    sophie "Sono stata a casa tua. Tua madre mi ha invitata per il tè e mi ha lasciata sola due minuti. Ho guardato stanze, porte e serrature."
     "Il modo in cui lo dice mi gela più dell'aria."
     menu:
         "Sophie mi aspetta, sicura della risposta."
@@ -489,7 +489,7 @@ label capitolo_4:
             sophie "Senza preparare niente? Senza essere sicure?"
             "Sophie sorride, ma i suoi occhi diventano immobili. Vuole una fuga che abbia deciso lei, non una decisione presa da me."
             jump finale_fuga
-    "Rientrare è un'asfissia. Ogni ombra nel corridoio sembra avere il corpo di mia madre. Mi infilo sotto le coperte vestita; le labbra bruciano ancora e il sapore dolciastro del lecca-lecca ha lasciato un retrogusto metallico."
+    "Rientrare è come smettere di respirare. Mi infilo sotto le coperte vestita. Sulle labbra resta il sapore dolce del lecca-lecca, con un retrogusto metallico."
     "Sophie mi ha promesso la salvezza. Ma mi ha chiesto di diventare una ladra."
     jump capitolo_5
 
@@ -500,8 +500,8 @@ label capitolo_5:
     play ambience audio.room fadeout 1.0 fadein 1.5
     play music audio.memory fadeout 1.5 fadein 2.2
     centered "{size=42}{color=#e6d4db}CAPITOLO 5{/color}{/size}\n\n{size=28}{color=#aa97a3}L'incisione profonda{/color}{/size}"
-    "La luce del mattino filtra dalle tapparelle come una serie di sbarre dorate. Mi sento sporca, schiacciata dal peso di un segreto che pulsa come piombo caldo nelle viscere."
-    "Mi alzo e vado allo specchio. Sfioro la cicatrice sotto lo zigomo, dove la notte prima Sophie ha premuto il pollice. Cerco un segno visibile del suo possesso, ma il riflesso mi restituisce la solita Mila: camicia stirata, colletto simmetrico, occhi spenti."
+    "La luce filtra dalle tapparelle come sbarre. Mi sento sporca, schiacciata dal segreto della notte."
+    "Sfioro la cicatrice sotto lo zigomo, dove Sophie ha premuto il pollice. Lo specchio mi restituisce la solita Mila: camicia stirata, colletto in ordine, occhi spenti."
     scene bg mila kitchen
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
@@ -510,15 +510,15 @@ label capitolo_5:
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
         show sprite_madre_neutral as madre_sprite at sprite_stage_right, sprite_breathe
-    "A colazione mio padre mangia cereali con movimenti lenti, fissando il vuoto oltre la scatola di cartone. Dietro la pesante scrivania di mogano custodisce l'unica cosa che, nella mia testa, può comprarmi una via d'uscita."
-    "I miei genitori escono alle dieci e trenta per la spesa e la lavanderia. Quando sento il motore allontanarsi, il silenzio della casa cambia frequenza: non è più protettivo, ma accusatorio. Ogni mobile sembra guardarmi."
+    "A colazione papà mangia cereali fissando il vuoto. Nel cassetto della sua scrivania, penso, ci sono i soldi che potrebbero permettermi di fuggire."
+    "I miei escono alle dieci e mezza. Quando l'auto si allontana, il silenzio cambia: ogni mobile sembra accusarmi di essere rimasta."
     scene bg mila room
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense as mila_sprite at sprite_stage_center, sprite_tremble
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_center, sprite_breathe
-    "Entro nello studio di papà. Odora di carta vecchia, legno trattato e tabacco spento. Il cassetto centrale è chiuso. La chiave d'ottone è dentro un finto libro rilegato in pelle sulla mensola più alta: un nascondiglio banale, quasi infantile."
+    "Entro nello studio. Odora di carta e tabacco spento. Il cassetto centrale è chiuso; la chiave è nascosta in un finto libro sulla mensola."
     "La serratura scatta. Il cassetto scorre senza rumore. Dentro ci sono mazzette fermate da elastici: banconote da cinquanta e cento. Cinque mazzette. Cinquemila euro."
     "Non è una fortuna. È il sangue di questa casa, il frutto di anni di straordinari, rinunce e cene consumate senza rivolgersi la parola."
     play sound audio.phone
@@ -549,10 +549,10 @@ label capitolo_5:
         play music audio.tension fadeout 1.2 fadein 2.0
     else:
         play music audio.memory fadeout 1.2 fadein 2.0
-    "Prima di richiudere il cassetto noto una busta azzurra, sgualcita, nascosta sotto vecchie fatture. Dentro c'è una fotografia di mia madre da giovane, con i capelli lunghi e liberi, mentre tiene in braccio una neonata avvolta in una copertina azzurra. Sorride, davvero. C'è una luce che non le vedo più da anni."
+    "Sotto le fatture trovo una busta azzurra. Dentro, mamma da giovane tiene in braccio una neonata. Sorride davvero; è un volto che non conosco."
     "Sul retro, con la grafia tremolante ma dolcissima, una data di diciotto anni prima e una frase: Perché tutto sia perfetto."
-    "Quella bambina sono io. È la prova che forse sono esistita prima di questa casa, e mio padre l'ha tenuta in fondo a un cassetto chiuso a chiave, sotto le bollette, come si conserva una cosa che fa troppo male da guardare."
-    "Per un momento provo una pietà atroce. Forse mia madre non è nata mostro. Forse ha cercato di costruirmi un guscio per non farmi del male e, nel farlo, ha finito per chiudermi dentro."
+    "Quella bambina sono io. Papà ha conservato la foto sotto le bollette, chiusa a chiave, come qualcosa che non riesce a guardare."
+    "Per un istante provo pena. Forse mamma voleva proteggermi e, senza accorgersene, mi ha chiusa nel suo guscio."
     menu:
         "La fotografia è fragile tra le dita."
         "La conservo senza rovinarla.":
@@ -562,7 +562,7 @@ label capitolo_5:
         "La fotografo con il telefono segreto.":
             $ fotografia_digitalizzata = True
             $ indizi_reali += 1
-            "Scatto una foto al fronte e al retro. La copia non spiega la frase, ma non può essere strappata nello stesso modo. Rimetto l'originale nella busta azzurra e la busta al suo posto."
+            "Fotografo fronte e retro. La copia non chiarisce la frase, ma almeno non può essere strappata come l'originale. Rimetto tutto a posto."
         "La strappo, poi mi pento e raccolgo i pezzi.":
             $ fotografia_distrutta = True
             $ fiducia_sophie += 1
@@ -591,9 +591,9 @@ label capitolo_5:
         "{i}M: Non li ho presi. Non riesco a farlo.{/i}"
         "{i}S: Non è il denaro che mi interessa, Mila. È sapere se farai quello che serve quando te lo chiederò.{/i}"
     if soldi_rubati:
-        "Fisso lo schermo. Scegliere noi. Sfilo le banconote dagli elastici: odorano di cassetti chiusi e di mani che hanno lavorato troppo. Per la prima volta l'orrore lascia spazio a un brivido di onnipotenza. Ho il loro futuro in mano."
+        "Fisso lo schermo: «Scegli noi». Le banconote odorano di carta chiusa e mani stanche. Per la prima volta sento il potere del tradimento."
     else:
-        "Fisso lo schermo. Non ho preso i soldi. Il messaggio di Sophie arriva dopo pochi secondi: una sola parola, Scegli. Non so se sto difendendo i miei genitori o soltanto rimandando il momento in cui dovrò affrontarla."
+        "Non prendo i soldi. Il messaggio di Sophie arriva subito: «Scegli». Non so se sto proteggendo i miei o rimandando il momento in cui dovrò affrontarla."
     "Non sono più soltanto la vittima. Sono una complice. E la cenere che ho ingoiato per diciott'anni comincia a trasformarsi in un incendio."
     jump capitolo_6
 
@@ -604,9 +604,9 @@ label capitolo_6:
     play ambience audio.rain fadeout 1.0 fadein 1.4
     play music audio.tension fadeout 1.0 fadein 1.5
     centered "{size=42}{color=#e6d4db}CAPITOLO 6{/color}{/size}\n\n{size=28}{color=#aa97a3}Il prezzo dell'argilla{/color}{/size}"
-    "È l'01:55. La mazzetta nascosta sotto il materasso emana un calore immaginario. Non è ricchezza; è il peso geometrico di un tradimento che mi ha resa un'estranea dentro casa mia."
-    "Esco di nuovo nella notte. Il corridoio non mi fa più paura: mi fa schifo. Passo davanti alla camera dei miei senza trattenere il respiro. Se si svegliassero, forse un confronto sarebbe preferibile a questa decomposizione lenta."
-    "Sotto la quercia, Sophie è in piedi nell'ombra del tronco, le braccia conserte e lo sguardo sulla finestra della mia camera. Sembra un piccolo generale davanti a una fortezza che ha già deciso di radere al suolo."
+    "È l'1:55. I soldi nascosti sotto il materasso pesano come un tradimento. Mi sento un'estranea nella mia stessa casa."
+    "Esco. Il corridoio non mi fa più paura: mi fa rabbia. Passo davanti alla camera dei miei senza trattenere il respiro."
+    "Sotto la quercia, Sophie aspetta con le braccia conserte e lo sguardo fisso alla finestra della mia camera. Sembra già sapere la mia risposta."
     sophie "Li hai?"
     "Non mi chiede come sto. Non mi tocca. È una transazione."
     if soldi_rubati and not soldi_parziali:
@@ -623,17 +623,17 @@ label capitolo_6:
     elif soldi_parziali:
         sophie "Una parte soltanto. È meno di quanto mi aspettassi, ma per cominciare può bastare."
     else:
-        sophie "Quindi hai disobbedito. Pensavi che ti avrei lasciata tornare a mani vuote? Il denaro era solo il primo passo, Mila. Non fingere che adesso tu sia fuori dal piano."
+        sophie "Quindi mi hai disobbedito. Pensavi che bastasse tornare a mani vuote? Il denaro era solo il primo passo."
     mila "Cominciare cosa? Possiamo prendere un autobus per la città, cambiare nome, sparire."
-    sophie "Sparire? Se scappiamo adesso ci trovano in dodici ore. Tuo padre chiama la polizia; tua madre sguinzaglia l'inferno intero pur di riaverti nella gabbia. Noi non vogliamo soltanto scappare. Vogliamo che loro non abbiano più il potere di cercarci."
+    sophie "Scappare ora significa farsi trovare in poche ore. Tuo padre chiamerà la polizia; tua madre ti cercherà ovunque. Non basta andarsene: dobbiamo impedirgli di riprenderci."
     "Si siede sulle radici e mi fa cenno di avvicinarmi. Mi siedo accanto a lei, improvvisamente piccolissima, un guscio pronto a essere riempito dalla sua volontà."
     sophie "La fase due riguarda l'assicurazione. Tuo padre non denuncerà mai questo furto."
     mila "Perché non dovrebbe? Sono i risparmi della famiglia."
     sophie "Perché ho questo."
-    "Sblocca lo schermo e me lo mette davanti soltanto per un istante. Documenti fotografati di traverso, pagine, colonne, intestazioni, timbri e firme. Scorre così velocemente che non riesco a leggere una riga intera."
-    sophie "Conti, transazioni, mail tra mio padre e il tuo. Guarda le cifre. Guarda i nomi delle società. Gusci vuoti per far sparire i soldi. E qui, e qui: la firma di tuo padre, sempre la stessa."
+    "Sblocca il telefono e me lo mostra per un attimo: documenti, colonne di cifre, timbri e firme. Scorre troppo in fretta perché io possa leggere."
+    sophie "Conti, transazioni, mail tra i nostri padri. Guarda le società, guarda la firma di tuo padre."
     "Vedo zeri, sigle e firme. Li vedo così poco da non poterli descrivere dopo; eppure, mentre Sophie parla, la mia mente li trasforma in una confessione."
-    sophie "Mio padre è un uomo d'affari sporco. Il tuo è il contabile fedele, il cagnolino che fa quadrare i bilanci. Se denunciano il furto, pubblico tutto e distruggo le loro vite. Mutua distruzione assicurata. Un equilibrio perfetto di terrore."
+    sophie "Mio padre è sporco. Il tuo gli tiene i conti. Se denunciano il furto, pubblico tutto e li distruggo entrambi. Così nessuno potrà farci del male."
     menu:
         "Le immagini sono passate davanti ai miei occhi troppo in fretta."
         "Le chiedo di mostrarmi i file originali, uno alla volta.":
@@ -655,8 +655,8 @@ label capitolo_6:
             "La sua risposta è più rapida del necessario. Kate riceve solo un'immagine prima che Sophie chiuda la cartella."
     mila "Quindi mi hai usata per arrivare ai soldi?"
     "Sophie mi afferra il mento, costringendomi a guardarla."
-    sophie "Ti ho liberata. Ti ho mostrato che i tuoi genitori sono fasulli. Ora non devi sentirti in colpa per aver rubato: hai preso la tua parte. Ma non basta."
-    sophie "Tua madre non si fermerà davanti a un ricatto. Troverà un modo di distruggerti dall'interno. C'è solo un modo per essere libere per sempre: dobbiamo farli dormire profondamente, abbastanza a lungo da prendere quello che resta e sparire."
+    sophie "Ti ho liberata: ora sai chi sono i tuoi genitori. Non devi sentirti in colpa per i soldi. Ma non basta."
+    sophie "Tua madre non si fermerà. Per essere libere per sempre, dobbiamo farli dormire abbastanza a lungo da prendere il resto e sparire."
     "La proposta è così fredda che per un momento smetto di sentire il rumore del vento tra le foglie."
     sophie "Tuo padre tiene le gocce per dormire sul comodino, dietro la sveglia. Le prende da mesi. Vedi che ti ascolto quando parli?"
     "Mi sfiora la guancia e torna a baciarmi. Non so più distinguere la paura dal bisogno di essere amata."
@@ -679,7 +679,7 @@ label capitolo_6:
     else:
         madre "La busta azzurra è sparita dal suo posto. Che cosa hai fatto, Mila?"
     "Si alza lentamente. Per un istante sembra più alta, un'ombra che occupa ogni centimetro della stanza."
-    madre "Pensavi di essere l'unica a saper giocare a nascondino? Io ho inventato questo gioco tra queste pareti. Ogni respiro che fai mi appartiene. Ogni centesimo che hai preso è stato pagato con la mia pazienza."
+    madre "Pensavi di essere l'unica a nascondere qualcosa? Questo gioco l'ho inventato io. Ogni respiro che fai mi appartiene. Anche quei soldi li hai presi grazie alla mia pazienza."
     if soldi_rubati:
         mila "Non li ho più."
     else:
@@ -689,15 +689,15 @@ label capitolo_6:
     "Il silenzio è assoluto. La furia scompare dal volto di mia madre, sostituita da una comprensione disperata."
     madre "Ah. La ragazzina ti ha dato una voce."
     "Si siede e si copre il viso per qualche secondo."
-    madre "Tuo padre fa il contabile per uno studio di geometri. Fattura ventiduemila euro l'anno. Se ci fossero società all'estero, credi che vivremmo qui, con questa cucina?"
+    madre "Tuo padre fa il contabile per uno studio di geometri. Ventiduemila euro l'anno. Davvero pensi che avrebbe società all'estero? Guarda questa cucina."
     "Ride, e la risata le si spezza."
     madre "Chiama Kate. Chiama la scuola. Chiedi a chiunque se, in diciotto anni, ha mai visto uno di noi torcerti un capello. Ti prego. Chiedi."
     mila "Diranno quello che vuoi tu."
     madre "Certo."
     "Mi accompagna alla finestra e mi obbliga a guardare la villetta vicina. Una sola luce è accesa nel sottotetto: la stanza di Sophie."
-    madre "Credi davvero che quella ragazzina ti voglia bene? Lei non cerca un'amica. Cerca un corpo vuoto da abitare. Ti ha convinta che questa casa sia un inferno così l'unica porta aperta resta la sua. Non ti sta salvando da noi. Ti sta togliendo tutto quello che non è lei."
+    madre "Credi che quella ragazzina ti voglia bene? Non cerca un'amica, ma qualcuno da controllare. Ti ha convinta che questa casa sia un inferno perché la sua sembri l'unica porta aperta."
     "Mi lascia andare. Crollo sul pavimento."
-    madre "Ho chiamato la dottoressa Ferrante. Venerdì alle undici. Ho preso un permesso. Tuo padre ha chiesto l'aspettativa. Andiamo a parlare con qualcuno, e poi andiamo via da qui per un po'. Tutti e tre."
+    madre "Ho chiamato la dottoressa Ferrante. Venerdì alle undici. Tuo padre ha preso un permesso: andiamo a parlare con lei, poi ci allontaniamo per un po'. Tutti e tre."
     "Venerdì alle undici: nella mia testa diventa subito la data della condanna."
     madre "Vai a letto, Mila. Ma ricordati: quando lei avrà finito di usarti, non ci sarà nessuna fotografia a ricordarti chi eri prima di tutto questo."
     "Spegne la luce. Tremo non solo per la paura delle sue parole, ma perché, per la prima volta, temo che abbia ragione."
@@ -714,11 +714,11 @@ label capitolo_7:
         play music audio.investigation fadeout 1.2 fadein 2.0
     centered "{size=42}{color=#e6d4db}CAPITOLO 7{/color}{/size}\n\n{size=28}{color=#aa97a3}Anatomia di un assedio{/color}{/size}"
     "L'aria in casa è densa, immobile, chimica. Mia madre ha smesso di urlare. È questa la sua nuova tortura, almeno così la interpreto: il silenzio assoluto."
-    "A colazione posa tre tazze sul tavolo con una precisione geometrica, poi fissa un punto pochi centimetri sopra la mia testa. Mio padre è diventato cenere fredda nella mia immaginazione. Interpreto ogni suo gesto come una prova che sa del ricatto."
+    "Mamma posa tre tazze sul tavolo e fissa un punto sopra la mia testa. Nella mia mente, papà è già colpevole: leggo ogni gesto come una prova."
     "Prima di andare a scuola, però, mi ferma in corridoio. Mi posa una mano sulla spalla e la ritira subito, come se si fosse scottato."
     padre "Mila."
     "Non dice altro per dieci secondi. Ha le unghie consumate, mangiate fino alla carne."
-    padre "Non so cosa ti abbiamo fatto. Ci ho pensato ogni notte e ho ripercorso tutto. Non trovo il punto. Ma se c'è, dimmelo e provo ad aggiustarlo. Dimmi solo dov'è il punto."
+    padre "Non so cosa ti abbiamo fatto, Mila. Ho ripensato a tutto e non trovo il momento in cui ti abbiamo ferita. Se c'è, dimmelo. Proverò a rimediare."
     "Lo guardo e vedo un criminale che cerca un patto. Non riesco ad ascoltare la domanda come una domanda."
     menu:
         "Papà aspetta una risposta. Per una volta, posso scegliere che cosa fare del suo silenzio."
@@ -744,26 +744,26 @@ label capitolo_7:
             "Gli chiedo se ha scritto quelle parole sul retro.":
                 $ testimonianza_padre = True
                 $ indizi_reali += 1
-                padre "Sì. L'ho scritta quando eri appena nata. Volevo che tutto fosse perfetto perché avevo paura di non saperti proteggere."
+                padre "Sì. L'ho scritta quando sei nata. Volevo che tutto fosse perfetto perché avevo paura di non saperti proteggere."
                 "La sua voce trema. La testimonianza non restituisce la fotografia, ma mi offre un riscontro che non viene da Sophie."
             "Non gli chiedo nulla.":
                 "Lascio la domanda dove si trova. Per ora, la fotografia è perduta e la frase esiste soltanto nella mia memoria."
-    "A scuola cerco Sophie sul telefono segreto. Non risponde. Durante la ricreazione mi rifugio nel vecchio bagno del secondo piano. Lo schermo è l'unica luce nel grigio della cabina."
+    "Cerco Sophie sul telefono segreto. Non risponde. Durante la ricreazione mi rifugio nel bagno vuoto; lo schermo è l'unica luce."
     sophie "Cercavi me, Mila?"
-    "Sussulto. Sophie è appoggiata allo stipite. Ha saltato le lezioni ed è arrivata fin qui. Indossa grandi occhiali scuri; quando li toglie, vedo un ematoma violaceo lungo la mandibola."
+    "Sussulto. Sophie è sulla soglia. Ha saltato le lezioni; quando toglie gli occhiali, vedo un livido lungo la mandibola."
     mila "Sophie! Che cosa è successo? È stato tuo padre?"
     "Faccio per avvicinarmi; lei si ritrae con un sorriso sottile."
-    sophie "Mio padre è un dilettante. Ha scoperto che frugavo nel suo computer. Ha provato a riprendersi il controllo nel solo modo che conosce."
+    sophie "Mio padre non sa nemmeno nascondere le proprie tracce. Mi ha scoperta a frugare nel computer e ha provato a riprendere il controllo."
     "Il profumo alla ciliegia è coperto da un odore di antisettico."
     sophie "La tregua è finita. Non possiamo più aspettare. Dobbiamo creare il vuoto intorno a noi."
-    mila "Mamma sa del ricatto. Ha detto che mi stai usando. Ha detto che papà non guadagna abbastanza per avere società all'estero. E che domani mi porteranno da una dottoressa."
+    mila "Mamma sa del ricatto. Dice che mi stai usando e che papà non potrebbe avere quei soldi. Domani vogliono portarmi da una dottoressa."
     "Sophie non batte ciglio."
-    sophie "Certo che ti sto usando, Mila. Proprio come tu usi me per non affogare in quella cucina perfetta. Siamo due parassiti che hanno trovato l'ospite ideale. È la forma più pura, brutale e onesta di legame che avrai."
+    sophie "Certo che ti uso, Mila. E tu usi me per non affogare in quella cucina. Siamo due parassite: è questo il nostro legame, nudo e brutale."
     "Infila una mano nella tasca e tira fuori un flacone di vetro scuro con un contagocce."
-    sophie "Sono gocce prese dalla casa di tuo padre, un po' alla volta. Non li uccideranno, tranquilla. Li faranno soltanto dormire profondamente. Abbastanza a lungo perché prendiamo quello che resta e spariamo prima che possano muovere un dito."
-    "Mi preme il flacone contro il palmo. Pesa come un pianeta intero. Il vetro è freddo e l'etichetta è stata staccata. Per la prima volta mi chiedo da quanto tempo Sophie abbia preparato questa scena."
+    sophie "Le ho prese da casa di tuo padre. Non li uccideranno, dormiranno soltanto. Avremo il tempo di prendere quello che resta e sparire."
+    "Mi mette il flacone in mano. È freddo, senza etichetta. Per la prima volta mi chiedo da quanto tempo stia preparando tutto."
     $ flacone_con_mila = True
-    sophie "Fallo stasera. Domani ti portano dalla dottoressa. È questione di ore. Sai cosa succede quando una madre come la tua porta una figlia come te da un medico? Ti fanno firmare un foglio, e quel foglio dice che non sei più una persona."
+    sophie "Fallo stasera. Domani ti portano dalla dottoressa. Una firma può trasformarti, agli occhi degli adulti, in una persona da rinchiudere. Non lasciare che decidano per te."
     "Si avvicina al mio orecchio."
     sophie "Quando torni, lascia la porta sul retro accostata. Io devo poter entrare."
     mila "Perché, se poi ci vediamo sotto la quercia?"
@@ -794,13 +794,13 @@ label capitolo_7:
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
         show sprite_madre_neutral as madre_sprite at sprite_stage_right, sprite_breathe
-    "Ma quando apro la porta, l'odore pesante di fumo e rancore è svanito. La casa profuma di lasagne al forno: il mio piatto preferito, quello che mamma preparava solo per i compleanni."
-    "Per un istante la mente vacilla. E se avessi sbagliato tutto? Potrei scusarmi, restituire i soldi, dire che è stato un errore. Potremmo sederci e provare a riparare le macchie del passato."
+    "Quando entro, l'odore di fumo è sparito. La casa profuma di lasagne: mamma le prepara solo per i compleanni."
+    "Esito. Potrei restituire i soldi e chiedere scusa. Forse potremmo ancora provare a riparare qualcosa."
     madre "Mila, porti tu i bicchieri? Sono sul bancone."
     "Il vino è già versato in tre calici. Papà piega il giornale in salotto. Il flacone mi scivola tra le dita sudate."
     "Attraverso il vetro della finestra immagino Sophie sulla quercia, immobile, in attesa del mio braccio."
-    "Apro il tappo. Il liquido è trasparente, inodore, limpido come acqua. La mano si blocca a mezz'aria. Cosa sto facendo? L'odore delle lasagne mi riempie i polmoni, caldo e disperatamente reale. Papà tossisce dietro il giornale: un suono familiare e inoffensivo."
-    "Vorrei svuotare il flacone nel lavandino, correre in salotto e chiedere aiuto. La superficie del mio delirio si incrina. Poi la luce del sottotetto si riflette nella finestra e la voce di Sophie torna a comandare: se ti fermi ora, ti spegni."
+    "Apro il flacone. Il liquido è trasparente, inodore. La mano si ferma. Papà tossisce dietro il giornale: un suono familiare, innocuo. Cosa sto facendo?"
+    "Vorrei versare tutto nel lavandino e chiedere aiuto. Poi vedo la luce di Sophie alla finestra. La sua voce ritorna: se ti fermi, tornerai a essere invisibile."
     menu:
         "I bicchieri sono davanti a me. Non posso fingere di non sapere che cosa sto decidendo."
         "Verso le gocce nei bicchieri dei miei genitori e anche nel mio.":
@@ -814,7 +814,7 @@ label capitolo_7:
             $ genitori_salvati = True
             $ prontezza_aiuto += 2
             $ fiducia_genitori += 2
-            "La mia voce si spezza. Non riesco a raccontare tutto, ma pronuncio la frase essenziale: Sophie mi ha chiesto di farvi dormire e io ho paura di quello che c'è nel flacone."
+            "La voce si spezza. Riesco a dire solo questo: Sophie mi ha chiesto di farvi dormire e ho paura di ciò che contiene il flacone."
             jump finale_rottura
         "Chiamo Kate dalla dispensa e le mando la posizione.":
             $ genitori_salvati = True
@@ -841,14 +841,14 @@ label capitolo_8:
     with hpunch
     play music audio.tension fadeout 0.8 fadein 1.4
     centered "{size=42}{color=#e6d4db}CAPITOLO 8{/color}{/size}\n\n{size=28}{color=#aa97a3}Natura morta con sedativi{/color}{/size}"
-    "Il risveglio è una lenta emersione da una vasca di catrame caldo. Non c'è un istante preciso in cui riapro gli occhi: c'è soltanto una transizione granulosa dal buio a un grigio opaco. La testa pesa un quintale; i pensieri si muovono nel fango. Sulla lingua resta un sapore chimico, metallico, amaro."
+    "Riemergo dal buio con la testa pesante e la bocca amara. La luce è grigia, i pensieri lenti. Non ricordo quando ho aperto gli occhi."
     "Sono ancora seduta sulla sedia di legno. Davanti a me la lasagna è diventata una massa compatta, con il grasso arancione rappreso dal passare delle ore."
     "Mio padre è seduto di fronte a me, la testa reclinata all'indietro, le labbra socchiuse in un silenzio innaturale. Non sento il suo respiro e il torace non si muove."
     mila "Papà?"
     "Gli tocco il braccio. La pelle è fredda, di un freddo denso che mi schiaccia il cuore."
     "Mi giro verso mia madre. È crollata in avanti sul tavolo, i capelli finiti nel sugo freddo. Le afferro le spalle e la scuoto."
     mila "Mamma! Mamma, svegliati!"
-    "La testa scivola di lato. Le pupille sono opache e fisse. Non c'è respiro, non c'è battito. Le parole di Sophie tornano nella mia testa: non li uccideranno, dormiranno soltanto."
+    "La testa le cade di lato. Gli occhi sono fissi. Non respira. Le parole di Sophie mi tornano addosso: dormiranno soltanto."
     "Un urlo mi sale dallo stomaco e si spezza in un rantolo. Ho ucciso i miei genitori."
     if flacone_indagato:
         "La domanda sulla provenienza delle gocce torna con una chiarezza crudele. Sophie non aveva risposto: avevo scambiato la sua evasione per una certezza."
@@ -856,28 +856,28 @@ label capitolo_8:
         "Non le avevo mai chiesto da dove venissero le gocce. Avevo preferito la sicurezza di Sophie alla possibilità di scoprire che non sapeva ciò che prometteva."
     play sound audio.door
     "La porta sul retro — quella che ho lasciato accostata — si apre. Passi leggeri attraversano il corridoio."
-    "Sophie entra in cucina con un impermeabile giallo trasparente e guanti azzurri in lattice. Guarda i corpi, poi me. Sorride come se stesse valutando un esperimento riuscito."
+    "Sophie entra con un impermeabile giallo e guanti azzurri. Guarda i corpi, poi sorride come se tutto fosse andato secondo i piani."
     sophie "Vedo che il farmaco ha fatto un ottimo lavoro."
     mila "Li hai uccisi!"
     "Mi scaglio contro di lei. La travolgo e la spingo contro la credenza; i piatti tintinnano nel mobile."
     mila "Cosa cazzo hai fatto? Mi avevi detto che avrebbero dormito! Mi hai mentito!"
-    "Per un istante il suo volto perde la maschera. Poi la sorpresa diventa fastidio, e il fastidio rabbia. Mi afferra per i capelli e mi blocca contro il bordo del tavolo. Una mano si stringe alla mia gola."
+    "La sorpresa sul suo volto diventa rabbia. Mi afferra per i capelli e mi spinge contro il tavolo, stringendomi la gola."
     sophie "Chiudi quella bocca, Mila."
     "Mi manca il fiato. Provo a colpirla, ma mi tiene schiacciata accanto al viso immobile di mia madre."
-    sophie "Guardali. Pensi che alla polizia importerà dei tuoi pianti? Le tue impronte sono sul flacone e sui bicchieri. C'è il tuo diario sotto il materasso, con mesi di odio scritto a mano. Io non ho toccato quel bicchiere, Mila. Sei stata tu."
+    sophie "Guardali. Le tue impronte sono sul flacone e sui bicchieri. Il diario è sotto il materasso. Io non ho toccato nulla, Mila. Sei stata tu."
     "Allenta la presa quanto basta a farmi respirare, ma non mi lascia andare."
-    sophie "Se fai la pazza, andrai in prigione o in un ospedale per il resto della tua vita. Io non esisto in questa storia. Nessuno sa niente di me."
+    sophie "Se provi a raccontarlo, finirai in prigione o in ospedale. In questa storia io non esisto. Nessuno sa di me."
     "La dolcezza della sua voce mi gela più della violenza."
-    sophie "Sei mia. Hai fatto quello che andava fatto. Li abbiamo cancellati. Ora siamo solo io e te. Ma se mi tocchi ancora, ti lascio qui con i cadaveri e chiamo io la polizia. Vuoi restare sola?"
+    sophie "Sei mia. Hai fatto quello che dovevi. Ma se mi tocchi ancora, ti lascio qui e chiamo la polizia. Vuoi restare sola?"
     "La resistenza crolla. Mi accascio sul pavimento, tremando, distrutta dalla morte dei miei genitori e dall'impossibilità di tornare indietro."
     "Sophie si ricompone, sistema l'impermeabile e si passa una mano sullo zigomo arrossato."
     sophie "Brava ragazza. Ora possiamo passare all'ultimo pezzo del puzzle. I miei. I manichini."
     mila "I tuoi?"
-    sophie "Pensi che ci lascerebbero andare? Mio padre userebbe ogni centesimo per darci la caccia. Mia madre piangerebbe sui giornali finché non ci trovano. Dobbiamo chiudere il cerchio. Entrambe le case devono tacere."
+    sophie "Non ci lascerebbero andare. Mio padre ci darebbe la caccia; mia madre piangerebbe sui giornali finché non ci trovano. Devono tacere entrambe le case."
     "Tira fuori un secondo flacone, quasi vuoto."
-    sophie "L'ho versato nel whisky prima di venire qui. A quest'ora dormono sul divano. Prendi il cuscino pesante dal divano dei tuoi e portalo tu, attraversando il prato."
+    sophie "Ho versato le gocce nel whisky prima di venire. Dormono sul divano. Prendi il cuscino pesante da casa tua e portalo qui, attraversando il prato."
     mila "Perché?"
-    sophie "Perché la storia deve scriversi da sola. La ragazza della porta accanto entra di notte nella villetta vicina portando un cuscino da casa propria. Premeditazione. Alzati. Fammi vedere quanto sei brava."
+    sophie "La storia deve sembrare vera: la ragazza della porta accanto entra con un cuscino preso da casa. Premeditazione. Alzati, Mila. Fammi vedere quanto sei brava."
     "Attraversiamo il prato alle 02:40. Il fango mi si attacca ai piedi nudi, ma non sento freddo. Il cuscino pesa come un neonato di pietra."
     scene bg sophie kitchen
     with dissolve
@@ -888,23 +888,23 @@ label capitolo_8:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
         show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_breathe
     "La porta sul retro è aperta. Dentro l'aria profuma di cera per mobili e lavanda, un odore sterile che mi dà la nausea."
-    "I suoi genitori sono sul divano. La televisione proietta bagliori bluastri sui loro volti addormentati. Un bicchiere di cristallo è rovesciato sul tappeto, una macchia scura si allarga lentamente."
+    "I genitori di Sophie sono sul divano, illuminati dalla TV. Un bicchiere è rovesciato sul tappeto; una macchia scura si allarga."
     sophie "Comincia con mia madre. È quella che fa più rumore. Finisci il rumore, Mila."
-    "La donna che mi accoglieva con un sorriso distante sembra soltanto fragile. Il cuscino di velluto mi pesa tra le dita. Quando lo avvicino al suo viso, le mie braccia tremano e il tessuto scivola di lato."
+    "La donna che mi salutava con distacco ora sembra fragile. Avvicino il cuscino al suo viso, ma le braccia tremano e il tessuto scivola."
     sophie "Premi!"
     "Mi blocco. Il mondo si restringe al peso del cuscino, al respiro di Sophie alle mie spalle e alla consapevolezza di stare per fare qualcosa che non potrò più disfare."
     menu:
         "Sophie mi spinge per le scapole. Il tempo si è fermato."
         "Obbedisco, incapace di oppormi alla sua pressione.":
             $ fiducia_sophie += 1
-            "Le ginocchia cedono. Sophie interviene alle mie spalle e usa il proprio peso per costringermi a proseguire. Il suono che la donna emette si spegne, e il salotto ricade in un silenzio definitivo."
+            "Le ginocchia cedono. Sophie mi afferra da dietro e mi costringe a continuare. Il salotto torna silenzioso."
         "Provo a ritrarmi e a fermarla.":
             $ dubbi_di_mila += 2
             "Mi ritiro, singhiozzando, ma Sophie mi blocca e mi spinge di nuovo verso il divano. La mia resistenza non basta a fermarla: vuole che la colpa abbia il mio nome."
-    "Non ho tempo per respirare. Sophie mi trascina verso l'uomo e ripete che non c'è ritorno. La mia mente si allontana dalla realtà, come se potesse salvarmi non sentendo più il corpo."
+    "Non riesco a respirare. Sophie mi trascina verso l'uomo. La mente si allontana, come se smettere di sentire potesse salvarmi."
     "Quando tutto finisce, crollo sul tappeto. Le mani tremano così forte che il velluto mi scivola dalle dita."
     sophie "Vedi com'è facile? Ora siamo davvero libere. Non abbiamo più passato, nessuno che possa dirci chi siamo."
-    "Guardo i guanti azzurri, ancora puliti, poi le mie mani sporche di fango e fibre. Il diorama non è andato distrutto: è stato ridisegnato. Io sono la bambola che si è sporcata le mani per mantenere pulite quelle della sua padrona."
+    "Guardo i guanti ancora puliti e le mie mani sporche. Il piano non è crollato: si è compiuto. Io mi sono sporcata per lasciare intatte le mani della mia padrona."
     jump capitolo_9
 
 
@@ -923,41 +923,41 @@ label capitolo_9:
     "L'aria nella villetta è troppo fredda. La nebbia del farmaco si dirada sotto una scarica di adrenalina gelida."
     "Sono seduta sul tappeto, le ginocchia al petto, a fissare i due corpi sul divano. Il silenzio non è più di lusso: è una palude che mi tira giù."
     "Sophie si toglie i guanti con uno schiocco secco. Si china, afferra un lembo del cuscino e comincia a strofinarmi le mani, con una forza brutale e metodica."
-    "La frizione del tessuto produce un lampo bianco dietro gli occhi. La memoria si aggancia a un gesto identico: lo strofinaccio umido con cui mia madre mi aveva sfregato la faccia."
-    "Non era un colpo. Era lo stesso movimento, disperato, ruvido, spaventato. L'odore del liquore sul tappeto si mescola alla ciliegia chimica dello shampoo di Sophie. D'un tratto quel profumo non sa più di salvezza. Sa di disinfettante e cappio."
+    "Il tessuto mi acceca per un istante. Ricordo lo strofinaccio umido con cui mamma cercava di pulirmi la guancia."
+    "Non era un colpo, ma un gesto brusco e spaventato. L'odore del liquore si mescola allo shampoo alla ciliegia di Sophie. Quel profumo non sa più di salvezza."
     mila "Cosa fai, Sophie?"
     "Si avvicina alla credenza, prende il flacone vuoto e mi costringe ad avvolgerci le dita attorno prima di lasciarlo cadere sul pavimento."
     sophie "Faccio in modo che tutto sia coerente. La polizia troverà quattro corpi e te. La babysitter psicotica."
     mila "Noi dovevamo scappare. I documenti di tuo padre..."
     "Sophie ride piano, poi sblocca il telefono e mi mostra le immagini con la luce accesa, questa volta senza fretta."
     sophie "Guarda bene, Mila."
-    "Sono fatture della lavanderia, ricevute delle spese condominiali, bollette del gas, un preventivo per potare la quercia. In fondo ai fogli c'è la firma di mio padre. Undici euro e cinquanta. Duecentotrenta. Sessantotto e quaranta. Nessuno zero in più, nessuna società fantasma."
-    sophie "Erano documenti scaricati da un archivio. Te li ho mostrati al buio, mentre ti dicevo cosa stavi guardando. Non hai letto niente. Hai ascoltato le mie parole e ci hai costruito dentro un'organizzazione criminale. È bastato sussurrarti che tuo padre era un mostro, e tu hai visto l'inferno in un pezzo di carta."
+    "Sono bollette, ricevute e un preventivo per potare la quercia. In fondo c'è la firma di papà. Undici euro e cinquanta. Duecentotrenta. Nessuna società fantasma."
+    sophie "Erano documenti d'archivio. Te li ho mostrati al buio e ti ho detto cosa vedevi. Non hai letto: hai creduto a me. È bastato chiamare tuo padre un mostro."
     "In quella risata, qualcosa crolla. I ricordi tornano a ondate violente, nitide come schegge."
-    "Tre anni fa la villetta era vuota. Poi arrivarono due persone gentili che non riuscivano ad avere figli e avevano adottato Sophie quando lei aveva dodici anni. Ricordo il trasloco: mia madre aveva preparato una torta e mio padre l'aveva aiutata a portarla di là."
-    "Erano persone normali, persino noiose. Parlavano dei gerani. Il padre di Sophie non aveva mai urlato in mia presenza; una volta aveva discusso con un operaio per la potatura della quercia e si era scusato anche mentre litigava."
+    "Tre anni fa la villetta era vuota. Poi i genitori di Sophie si trasferirono con lei, adottata a dodici anni. Mamma preparò una torta e papà li aiutò con il trasloco."
+    "Erano persone normali. Parlavano dei gerani. Il padre di Sophie non ha mai urlato davanti a me; una volta litigò con un giardiniere e poi si scusò."
     "I lividi che Sophie mi aveva raccontato? Il tutore al polso della madre, dopo una frattura giocando a tennis. Me l'aveva detto lei stessa, ridendo, mentre mi pagava."
     "I miei genitori non mi hanno mai picchiata. Mai."
     "La cicatrice sotto lo zigomo era il segno di una caduta dalla bicicletta a dodici anni. Mia madre era rimasta una notte intera sulla sedia dell'ospedale tenendomi la mano."
-    "Lo strofinaccio non era un abuso: nella verità che riaffiora, mia madre cercava di pulirmi una guancia sporca di correttore mentre io gridavo e la spingevo via. Ho gridato davvero. Mi sono raccontata il contrario perché il silenzio era il ruolo che mi ero assegnata."
-    "Mia madre non ha mai chiuso la porta dall'interno. I sei minuti li contavo io con il cronometro. La porta della camera restava aperta perché a dodici anni avevo paura del buio e glielo avevo chiesto."
+    "Mamma cercava di pulirmi il correttore dalla guancia. Io l'ho spinta e ho gridato. Mi sono raccontata che voleva cancellarmi, perché era più facile che ricordare la verità."
+    "Mamma non ha mai chiuso la porta a chiave. I sei minuti li cronometravo io; a dodici anni ero stata io a chiederle di lasciarla aperta per paura del buio."
     "Ogni sbarra della mia prigione l'ho costruita io, usando le sue mani."
     mila "Tu hai pianificato tutto fin dal primo giorno."
     sophie "Sei sempre stata facile da programmare. Tre anni per costruire i tasti. Sei mesi per premerli. Dieci giorni per finire."
-    "Fisso l'ematoma sulla sua mandibola. Capisco che se l'è fatto da sola. Il dolore che mi aveva mostrato come prova di un destino condiviso era un'altra scena preparata per spingermi oltre il precipizio."
-    sophie "Pensi che qualcuno si metterà a cercare un'anomalia? La polizia avrà il diario. Centoquaranta pagine di odio, date e descrizioni degli abusi che ti ho suggerito. La tua grafia. Le tue date. Nessuno ha puntato una pistola alla tua mano."
+    "Guardo il livido: se l'è fatto da sola. Anche quel dolore era una scena preparata per convincermi che eravamo uguali."
+    sophie "Chi cercherà un'anomalia? La polizia avrà il diario: date, odio e abusi che ti ho suggerito. La tua grafia. Nessuno ti ha costretto a scrivere."
     "Sophie si guarda intorno, soddisfatta come chi ha appena finito di apparecchiare."
-    sophie "Troveranno il diario, le tue impronte sul flacone, le tue dita sul cuscino. E troveranno una sopravvissuta di quindici anni nel ripostiglio, tremante, incapace di parlare. Sarà la cronaca nera dell'anno: la brava ragazza che diventa una serial killer."
+    sophie "Troveranno il diario, le tue impronte sul flacone e le tue dita sul cuscino. E una sopravvissuta di quindici anni nel ripostiglio. Sarà la storia perfetta: la brava ragazza diventata assassina."
     mila "E il telefono? I messaggi?"
-    sophie "Una SIM registrata con dati falsi. Per loro potrei essere una persona incontrata in un forum, oppure una voce che la tua mente ha inventato. Dipende da quale spiegazione è più comoda."
+    sophie "La SIM è falsa. Per loro sarò una persona conosciuta online, oppure una voce inventata dalla tua mente. Sceglieranno la spiegazione più comoda."
     "Mi porge il frammento di vetro raccolto in giardino."
     sophie "Chiudi il sipario, Mila. Fai vedere a tutti come sanguina un robot. Così il caso sarà chiuso e nessuno farà domande a una povera orfana."
-    "Guardo il frammento e i suoi occhi. La prigione non era la mia casa. La prigione è questa ragazzina bionda con le lentiggini e il lecca-lecca alla ciliegia. Ho ucciso le uniche due persone che avrebbero potuto salvarmi da lei."
+    "Guardo il vetro e lei. La prigione non era casa mia. Era Sophie, con le lentiggini e il lecca-lecca alla ciliegia. Ho distrutto le persone che potevano aiutarmi."
     "Ho diciotto anni. Lei ne ha quindici. Le ho tagliato la torta di compleanno tre volte."
     if quaderno_fedele:
-        "Nel quaderno ho scritto frasi esatte e gesti, non diagnosi. Non dimostra da solo ciò che è successo, ma potrebbe aiutarmi a separare i ricordi dalle parole che Sophie mi ha messo in bocca."
+        "Ho annotato frasi e gesti, non diagnosi. Il quaderno non prova tutto, ma può aiutarmi a separare ciò che ho visto da ciò che Sophie mi ha suggerito."
     elif quaderno_manipolato:
-        "Le frasi del quaderno tornano una dopo l'altra: alcune le ho scritte io, altre sono state corrette da Sophie finché non ho più saputo distinguere la mia memoria dalla sua versione."
+        "Rileggo il quaderno: alcune frasi sono mie, altre le ha corrette Sophie. Non so più dove finisce la mia memoria e comincia la sua versione."
     elif quaderno_vuoto:
         if telefono_condiviso_kate or immagini_condivise_kate:
             "Il quaderno è rimasto vuoto. Non ho una cronologia personale da consultare; restano però le copie che ho affidato a Kate."
@@ -999,7 +999,7 @@ label capitolo_9:
             "Le afferro il polso. Le unghie affondano nella pelle sotto le cicatrici e non lascio andare."
             "Per la prima volta il suo viso cambia. Non è paura: è fastidio, come una piega storta sul vestito."
             mila "Kate! Aiuto!"
-            "La voce mi esce spezzata ma reale. Se Kate conserva il messaggio, se mio padre ha provato ad ascoltarmi, se una sola persona può ricostruire un dettaglio senza le parole di Sophie, allora non tutto è ancora nelle sue mani."
+            "La voce è spezzata, ma è mia. Se Kate ha il messaggio, se papà ha provato ad ascoltarmi, forse Sophie non controlla ancora tutta la storia."
             jump finale_verita
         "Le dico che so la verità, ma non riesco a chiedere aiuto.":
             $ dubbi_di_mila += 1
@@ -1009,7 +1009,7 @@ label capitolo_9:
             jump finale_fascicolo
         "Chiudo gli occhi e lascio che Sophie decida il finale.":
             "Non prendo il vetro. Ma non riesco a muovermi, né a chiamare nessuno. Sophie mi chiude le dita intorno al frammento con la pazienza di chi veste una bambola."
-            "La colpa è un peso troppo grande per le mie giunture di metallo. Sotto la colpa c'è il ricordo di mia madre seduta accanto al letto d'ospedale per un'intera notte, e non riesco a guardarlo."
+            "La colpa mi schiaccia. Sotto, riaffiora il ricordo di mamma accanto al mio letto d'ospedale per tutta la notte. Non riesco a sostenerlo."
             "Sophie aspetta. Io non trovo una voce."
             jump finale_fascicolo
 
@@ -1024,36 +1024,36 @@ label finale_verita:
     if genitori_salvati:
         "Kate risponde quasi subito. Quando sente la mia voce, non mi chiede di raccontare tutto in ordine. Mi dice di restare dove sono e di raggiungere un adulto."
         "Arrivano aiuto e soccorsi prima che Sophie possa imporre un'altra versione. Il flacone viene messo al sicuro; nessuno deve decidere da solo cosa contenga."
-        "Mia madre non cerca di convincermi che il mio terrore è infondato. Mio padre resta accanto a me mentre provo a distinguere ciò che ho visto da ciò che Sophie mi ha insegnato a credere."
-        "Non è una riconciliazione perfetta. Ci sono parole da ricostruire, fiducia da rimettere in piedi, una visita dalla dottoressa che non deve più sembrare una condanna. Per la prima volta, nessuno mi chiede una confessione perfetta prima di aiutarmi."
+        "Mamma non minimizza la mia paura. Papà resta accanto a me mentre provo a distinguere ciò che ho visto da ciò che Sophie mi ha insegnato a credere."
+        "Non ci riconciliamo all'istante. Dovremo ricostruire fiducia e parole; la visita dalla dottoressa non deve più sembrare una condanna. Per la prima volta mi aiutano senza chiedermi una confessione perfetta."
         centered "{size=42}{color=#e6d4db}FINALE: LA PORTA APERTA{/color}{/size}"
         return
     if sophie_smascherata:
         "La mia voce raggiunge il corridoio. Sophie mi strappa il polso, ma il gesto ha lasciato segni che non può cancellare."
         if telefono_condiviso_kate and immagini_condivise_kate:
-            "Kate conserva sia il messaggio sia un'immagine. Le due tracce non provano ogni accusa, ma una parte del racconto può essere controllata fuori dalla memoria di Mila."
+            "Kate ha conservato il messaggio e un'immagine. Non provano ogni accusa, ma permettono di verificare una parte del racconto senza affidarsi soltanto alla memoria di Mila."
         elif telefono_condiviso_kate:
             "Kate conserva una copia del messaggio. Non ha ricevuto le immagini sospette, quindi l'identità del mittente e il significato dei documenti restano da verificare."
         elif immagini_condivise_kate:
             "Kate conserva un'immagine ricevuta da Sophie, ma non il messaggio anonimo. È una traccia indipendente, non una ricostruzione completa."
         else:
-            "Non ho affidato a Kate copie del telefono o delle immagini. La mia richiesta d'aiuto resta importante, ma non posso presentare come prova esterna ciò che nessuno ha conservato."
+            "Non ho dato a Kate copie del telefono né delle immagini. La richiesta d'aiuto conta, ma non posso fingere di avere prove esterne che non ho conservato."
         if quaderno_fedele:
-            "Gli appunti con date e frasi precise vengono esaminati come una traccia da confrontare. Non provano ogni accusa, ma possono aiutare a controllare la sequenza e individuare i punti in cui il racconto di Sophie cambia."
+            "Gli appunti vengono confrontati con le altre tracce. Non provano tutto, ma possono mostrare la sequenza degli eventi e le contraddizioni di Sophie."
         elif quaderno_manipolato:
-            "Il quaderno viene acquisito, ma dichiaro che Sophie mi ha dettato e corretto alcune frasi. Non lo presento come un diario neutrale: anche la sua apparente precisione dovrà essere verificata."
+            "Consegno il quaderno e spiego che Sophie mi ha dettato o corretto alcune frasi. Non è una testimonianza neutrale: anche la sua precisione va verificata."
         elif quaderno_vuoto:
             if telefono_condiviso_kate or immagini_condivise_kate:
                 "Non c'è un diario da consegnare. La ricostruzione dipende dalle copie esterne e dalle testimonianze; alcune lacune restano aperte."
             else:
                 "Non c'è un diario né una copia esterna da consegnare. Alcune lacune restano aperte e nessuno dovrebbe riempirle inventando ricordi."
-        "La polizia non ricostruisce tutto in una notte. Ci sono quattro morti e domande a cui nessuna spiegazione rapida può rispondere. Ma la versione di Sophie non è più l'unica."
+        "La polizia non risolve tutto in una notte. Ci sono quattro morti e troppe domande, ma la versione di Sophie non è più l'unica."
         "Per la prima volta le chiedono di ripetere la storia senza suggerirle le parole. Il suo sorriso resta fermo per qualche secondo, poi si incrina."
         if fiducia_genitori >= 2:
-            "Ricordo che, prima di tutto questo, avevo provato almeno una volta a parlare con papà. Quel gesto non cancella ciò che è successo, ma mi aiuta a non confondere il suo silenzio con una confessione."
+            "Ricordo di aver provato una volta a parlare con papà. Non cambia ciò che è successo, ma il suo silenzio non equivale a una confessione."
         else:
-            "Mi torna in mente quante volte ho evitato di rispondere a papà. Non potrò più chiedergli che cosa avrebbe detto, e questa domanda resta aperta accanto alle prove."
-        "Io non posso riportare indietro nessuno. Posso soltanto dire ciò che ricordo, ammettere ciò che ho fatto e smettere di riempire i vuoti con la voce di un'altra persona."
+            "Penso a quante volte ho evitato papà. Non potrò sapere che cosa avrebbe risposto. La domanda resta aperta."
+        "Non posso riportare indietro nessuno. Posso dire ciò che ricordo, assumermi la responsabilità delle mie azioni e smettere di riempire i vuoti con la voce di Sophie."
         centered "{size=42}{color=#e6d4db}FINALE: LA VERITÀ HA TESTIMONI{/color}{/size}"
         return
     "Kate esita quando sente la mia voce, ma resta in linea. Le do la posizione e le chiedo di conservare ciò che ha ricevuto."
@@ -1064,15 +1064,15 @@ label finale_verita:
     else:
         "Le prove sono frammentarie. Kate mi aiuta a conservarle e ad annotare ciò che so senza inventare quello che non so."
     if fotografia_distrutta and not fotografia_digitalizzata and testimonianza_padre:
-        "La fotografia non può essere aggiunta al fascicolo. Riferisco la frase che ricordo e la conferma di papà, precisando che una testimonianza non sostituisce l'originale."
+        "La fotografia non è più disponibile. Riferisco la frase che ricordo e ciò che papà mi ha confermato, senza fingere che la testimonianza sostituisca l'originale."
     elif fotografia_distrutta and not fotografia_digitalizzata:
         "La fotografia non può essere aggiunta al fascicolo. Riferisco la frase che ricordo e chiarisco che non ho più l'originale."
     elif fotografia_conservata or fotografia_digitalizzata:
         "La fotografia originale o la copia digitale viene conservata, senza attribuirle un significato che da sola non può dimostrare."
     if quaderno_fedele:
-        "Il quaderno contiene osservazioni datate e frasi dirette. Lo consegno come una traccia da confrontare, non come una prova che la mia interpretazione fosse sempre corretta."
+        "Consegno il quaderno come traccia: contiene date e frasi, non la prova che ogni mia interpretazione fosse corretta."
     elif quaderno_manipolato:
-        "Avverto Kate che alcune frasi del quaderno sono state dettate o corrette da Sophie: consegnarlo senza questa precisazione avrebbe potuto trasformare la manipolazione in una falsa conferma."
+        "Avverto Kate che Sophie ha dettato o corretto alcune frasi. Senza questa precisazione, il quaderno potrebbe trasformare la manipolazione in una falsa conferma."
     elif quaderno_vuoto:
         "Non ho un quaderno utile da consegnare. Kate annota le mie parole senza completare le parti che non ricordo."
     "Sophie continua a sorridere. Kate le pone una domanda semplice, poi aspetta. Nessuno riempie il silenzio al posto suo."
@@ -1104,7 +1104,7 @@ label finale_rottura:
         "Gli dico che il suo silenzio mi ha ferita. Non lo perdono in un istante, ma questa volta la conversazione non viene interrotta."
     else:
         "Le parole arrivano senza ordine. Non so se capiscono tutto, ma per la prima volta non ritiro il mio racconto per proteggerli."
-    "Il flacone viene affidato a chi può esaminarlo. La dottoressa Ferrante non diventa una sentenza: è una persona con cui posso provare a spiegare ciò che mi sta succedendo."
+    "Affidiamo il flacone a chi può analizzarlo. La dottoressa Ferrante non emette una sentenza: mi aiuta a raccontare quello che mi è successo."
     "Fuori, Sophie comprende che il suo copione non funzionerà. La sua voce diventa fredda, priva delle carezze."
     "Non è un lieto fine perfetto. È una porta che resta aperta."
     centered "{size=42}{color=#e6d4db}FINALE: LA PORTA APERTA{/color}{/size}"
@@ -1150,44 +1150,44 @@ label finale_fascicolo:
     stop ambience fadeout 1.5
     play music audio.tension fadeout 1.2 fadein 2.0
     play sound audio.heartbeat
-    "La storia si spezza in rumori, sirene e pagine scritte con una grafia ordinata. Il fascicolo verrà chiuso in undici settimane. La ricostruzione sarà definita, in conferenza stampa, di rara linearità."
-    "La versione ufficiale dirà che Mila B., diciottenne, ha sedato e ucciso i propri genitori, ha attraversato il giardino con un cuscino, ha ucciso i vicini e si è tolta la vita. Cinque corpi. Una sola colpevole."
+    "Sirene, rumori, pagine scritte in una grafia ordinata. Undici settimane dopo, il fascicolo viene chiuso con una ricostruzione definita «di rara linearità»."
+    "La versione ufficiale accusa Mila B., diciottenne: avrebbe sedato e ucciso i genitori, poi i vicini, e infine si sarebbe tolta la vita. Cinque corpi. Una sola colpevole."
     "Le fibre sul cuscino combaciano. Le impronte sul flacone combaciano."
     if quaderno_manipolato:
-        "Il quaderno recuperato sotto il materasso contiene centoquaranta pagine di calligrafia ordinatissima, con descrizioni degli abusi suggerite da Sophie. Viene allegato integralmente e il perito lo definisce un documento di eccezionale valore clinico: la manipolazione diventa, agli occhi degli investigatori, una falsa conferma."
+        "Il quaderno contiene centoquaranta pagine di abusi descritti con precisione, suggeriti da Sophie. Il perito lo considera credibile; le menzogne diventano così una falsa conferma."
     elif quaderno_fedele:
-        "Il quaderno contiene date, frasi e gesti osservati, ma non la confessione ordinata che il caso richiede. Alcune discrepanze vengono annotate e poi considerate dettagli secondari: senza copie esterne, nessuno ricostruisce la pressione esercitata da Sophie."
+        "Il quaderno annota date e gesti, ma non offre la confessione ordinata che il caso richiede. Le discrepanze vengono archiviate come dettagli secondari."
     elif quaderno_vuoto:
-        "Non esistono centoquaranta pagine da allegare. Il fascicolo si regge sulle impronte, sul flacone e sulla ricostruzione di una sopravvissuta traumatizzata; l'assenza del diario viene interpretata come un dettaglio, non come una ragione per riaprire il caso."
+        "Senza quel diario, il fascicolo si regge su impronte, flacone e racconto della sopravvissuta. L'assenza del documento non basta a far riaprire il caso."
     "Ci sono tre anomalie."
-    "La prima: il consulente medico-legale annota su un corpo un pattern di pressione compatibile con una forza superiore a quella esprimibile da Mila nelle sue condizioni. Resta una nota a piè di pagina. Nessuno costruisce un secondo colpevole quando il primo sembra aver confessato per centoquaranta pagine."
+    "Prima anomalia: il medico legale nota segni di pressione difficili da spiegare con la forza di Mila. La nota resta a margine. Con una confessione di centoquaranta pagine, nessuno cerca un secondo colpevole."
     if quaderno_manipolato:
-        "Anche la concentrazione di sedativi nel sangue di Mila viene liquidata rapidamente. La relazione finale parla di una finestra di latenza, una spiegazione accomodante per i minuti che non tornano. Di fronte a un diario pieno di rabbia e a un corpo che stringe ancora un frammento di vetro, nessuno cerca discrepanze."
+        "Anche i sedativi nel sangue di Mila vengono liquidati. La relazione parla di una finestra di latenza e ignora i minuti che non tornano. Nessuno confronta il diario con il corpo."
     else:
-        "Anche la concentrazione di sedativi nel sangue di Mila viene liquidata rapidamente. La relazione finale parla di una finestra di latenza, una spiegazione accomodante per i minuti che non tornano. Gli investigatori hanno già scelto una ricostruzione e trattano le incongruenze come dettagli secondari."
-    "La seconda anomalia sono i tabulati. Nella tasca dei jeans viene trovato un vecchio cellulare con decine di SMS scambiati con un'utenza anonima, firmati soltanto S. L'analisi dei dispositivi ufficiali della villetta vicina non trova contatti tra Sophie e la vittima. La SIM è una prepagata estera con dati falsi."
+        "Anche i sedativi nel sangue di Mila vengono liquidati come un dettaglio. Gli investigatori hanno già scelto una versione e trattano ogni incongruenza come rumore."
+    "Seconda anomalia: in tasca trovano un vecchio telefono con decine di SMS firmati S. I dispositivi ufficiali dei vicini non mostrano contatti con Mila; la SIM usa dati falsi."
     "La Procura conclude che S. sia una figura conosciuta da Mila su un forum, un interlocutore mai identificato, oppure una personificazione nata dal suo stato dissociativo."
-    "La terza: sotto le unghie di Mila viene isolato materiale epiteliale non suo. Il profilo corrisponde alla superstite di quindici anni, rinvenuta dodici ore dopo in un ripostiglio, disidratata e incapace di formulare frasi complete."
+    "Terza anomalia: sotto le unghie di Mila c'è materiale compatibile con la superstite, ritrovata dodici ore dopo in un ripostiglio, disidratata e incapace di parlare."
     if ipotesi_genitori_sospetto:
-        "Nei suoi appunti Mila aveva continuato a chiamare i genitori colpevoli, anche quando non disponeva di un riscontro indipendente. Nel fascicolo, quel sospetto viene letto come prova di un rancore premeditato."
-    "La spiegazione si scrive da sola, e la scrivono gli adulti per lei: la bambina ha tentato di fermare Mila, si è divincolata, è scappata a nascondersi. Nel verbale, le tracce sono compatibili con una colluttazione difensiva."
+        "Mila continua a chiamare colpevoli i genitori senza prove indipendenti. Gli investigatori leggono quei sospetti come rancore premeditato."
+    "Il verbale racconta che la bambina ha cercato di fermare Mila, poi è fuggita. Le tracce vengono classificate come segni di una colluttazione difensiva."
     "È, in un certo senso, la firma più bella che Sophie abbia mai messo in fondo a un documento: qualcun altro l'ha scritta per lei."
-    "I quotidiani parlano del Massacro della Porta Accanto per settimane. Il sabato pubblicano la fotografia della villetta con la quercia recintata dal nastro giallo. La domenica un editoriale molto letto parla dell'inconoscibilità dei figli."
+    "Il «Massacro della Porta Accanto» occupa i giornali per settimane. La villetta finisce in copertina, recintata dal nastro giallo. Gli editoriali discutono di quanto siano inconoscibili i figli."
     if telefono_condiviso_kate or immagini_condivise_kate:
         "Una sola voce stona. Kate consegna alla Procura le copie che Mila le aveva affidato."
         if telefono_condiviso_kate and immagini_condivise_kate:
-            "Il fascicolo contiene sia il messaggio anonimo sia un'immagine mostrata da Sophie. Nessuna delle due prove identifica da sola Sophie, ma insieme fissano due tracce esterne che il rapporto ufficiale non riesce a spiegare."
+            "Il fascicolo contiene il messaggio anonimo e l'immagine mostrata da Sophie. Nessuno dei due identifica da solo la colpevole, ma insieme lasciano una contraddizione irrisolta."
         elif telefono_condiviso_kate:
             "Il fascicolo contiene una copia del messaggio anonimo, ma non l'immagine mostrata da Sophie. Il mittente resta da identificare."
         else:
             "Il fascicolo contiene un'immagine mostrata da Sophie, ma non il messaggio anonimo. Il contesto e l'origine del file restano da verificare."
-        "La lettera di Kate viene protocollata e archiviata. Il cronista non la cita: non c'è spazio, e comunque non aggiunge nulla. K. compare in sei parole: Non era lei. Non era lei."
+        "La lettera di Kate viene protocollata e archiviata. Il cronista non la cita. Nel fascicolo restano sei parole: «Non era lei. Non era lei»."
     elif legame_kate >= 2:
-        "Una sola voce stona. Kate, che aveva provato a offrire ospitalità a Mila, rilascia due dichiarazioni e scrive una lettera di quattro pagine alla Procura. Dice che Mila era cambiata e che i genitori l'avevano chiamata tre volte in primavera per chiedere aiuto."
-        "La lettera viene protocollata e archiviata. Il cronista non la cita: non c'è spazio, e comunque non aggiunge nulla. K. compare in sei parole: Non era lei. Non era lei."
+        "Una voce dissente: Kate racconta che Mila era cambiata e che i genitori avevano chiesto aiuto tre volte in primavera. Scrive quattro pagine alla Procura."
+        "La lettera viene protocollata e archiviata. Il cronista non la cita. Nel fascicolo restano sei parole: «Non era lei. Non era lei»."
     else:
-        "Nessuno porta alla Procura una copia indipendente dei messaggi. Kate ricorda che Mila era cambiata, ma non riesce a dimostrare quanto Sophie fosse presente nella sua vita; la sua preoccupazione resta una testimonianza fragile, archiviata insieme alle altre anomalie."
-    "Il pubblico ministero rilegge la lettera. Poi guarda la fotografia della superstite: una bambina bionda con le lentiggini, un braccio segnato da cicatrici allineate, e gli occhi di chi ha visto qualcosa di troppo grande."
+        "Senza copie indipendenti dei messaggi, Kate non riesce a dimostrare quanto Sophie fosse presente nella vita di Mila. La sua preoccupazione finisce tra le anomalie."
+    "Il pubblico ministero rilegge la lettera e guarda la foto della superstite: una ragazza bionda, lentiggini, cicatrici allineate e lo sguardo di chi ha visto troppo."
     "Firma."
     "Tre mesi dopo, un treno attraversa la campagna."
     scene bg oak houses
@@ -1198,18 +1198,18 @@ label finale_fascicolo:
     else:
         show sprite_sophie_neutral as sophie_sprite at sprite_stage_left, sprite_breathe
         show sprite_chloe_neutral as chloe_sprite at sprite_stage_right, sprite_breathe
-    "La luce del sole filtra dal finestrino, illuminando i capelli biondi di Sophie. È seduta di fronte alla sua nuova famiglia affidataria: persone benestanti, con il volto di chi crede ancora che il mondo sia un posto sicuro."
+    "Il sole illumina i capelli biondi di Sophie sul treno. Di fronte a lei siede la nuova famiglia affidataria: persone convinte che il mondo sia ancora sicuro."
     "Accanto a lei c'è Chloe, dodici anni, trecce ordinate e uno sguardo timido, quasi spaventato da quella nuova sorella così silenziosa."
     sophie "No, grazie, mamma. Sto benissimo."
     "Sophie allunga una mano e accarezza la spalla di Chloe. La bambina sussulta, ma non si scosta. Guarda Sophie con un misto di timore e ammirazione."
     "Sophie sorride, un sorriso bellissimo che non le arriva agli occhi. Si china verso l'orecchio della bambina."
-    sophie "Non devi tremare quando ti tocco, Chloe. Siamo rimaste solo io e te. Ti aiuterò a essere perfetta. Ti salverò da loro."
+    sophie "Non tremare quando ti tocco, Chloe. Ora siamo solo noi due. Ti aiuterò a essere perfetta. Ti salverò da loro."
     "Poi si tira su la manica di pochi centimetri e mostra quattro cicatrici bianche, allineate sull'avambraccio."
     sophie "Vedi? Me l'ha fatto una bambola che non mi voleva bene. Non voleva fare la brava. Un giorno ti racconto."
     "Chloe annuisce piano. Nei suoi occhi c'è già la cosa che Sophie aspettava: pietà."
     "Il treno fende la campagna. Negli occhi freddi di Sophie si riflette il disegno del prossimo, impeccabile diorama."
     "E in un archivio ci sono quattro pagine scritte a mano da una ragazza di nome Kate, che nessuno ha voluto leggere fino in fondo."
-    centered "{size=38}{color=#e6d4db}EPILOGO — LA BAMBOLA NUOVA{/color}{/size}\n\n{size=22}Non ci si accorge mai di essere diventati una bambola. Lo si scopre soltanto quando si prova a fare un passo da soli.{/size}"
+    centered "{size=34}{color=#e6d4db}EPILOGO — LA BAMBOLA NUOVA{/color}{/size}\n\n{size=20}Non ti accorgi di essere diventata una bambola finché non provi a fare un passo da sola.{/size}"
     "La Bambola della Porta Accanto."
     return
 
@@ -1224,25 +1224,25 @@ Nota della Procura: il seguente materiale è estratto dal quaderno a righe con c
 
 Sei minuti e undici secondi. Li ho contati anche stamattina.
 
-Il rumore dell’accendino di mia madre nell’altra stanza è come uno sparo silenzioso. Ogni volta che lo sento, mi si stringe lo stomaco in un nodo così stretto che stento a respirare. Questa casa non è un posto dove si vive, è un posto dove si trattiene il fiato sperando che nessuno si accorga che occupi dello spazio.
+Il clic dell’accendino di mamma mi stringe lo stomaco. In questa casa trattengo il fiato e cerco di occupare meno spazio possibile.
 
-Mia madre mi ha guardata mentre le posavo il caffè. Non ha detto niente per due minuti interi. Mi ha solo fissata con quegli occhi grigi, stanchi, cercandomi addosso una colpa che non ho ancora commesso. Mi sento sporca solo a stare sotto il suo sguardo. Mio padre era dietro il suo giornale, come sempre. Una sagoma di cartone. Se io sparissi adesso, se diventassi invisibile, lui girerebbe la pagina lo stesso.
+Mamma mi ha fissata mentre le posavo il caffè, cercando una colpa che non avevo ancora commesso. Papà era dietro il giornale. Se sparissi, forse girerebbe pagina senza accorgersene.
 
-Li odio. Li odio così tanto che a volte la gola mi brucia come se avessi ingoiato del vetro. Sono due mostri che mi divorano un pezzo alla volta, con le buone maniere e le tazze di ceramica pulite.
+Li odio. A volte mi sembra di avere vetro in gola. Qui la crudeltà arriva con le buone maniere e le tazze pulite.
 
-Vorrei solo che succedesse qualcosa. Un terremoto, un incendio. Qualsiasi cosa che spacchi questa prigione e mi porti via.
+Vorrei che succedesse qualcosa. Qualsiasi cosa pur di uscire da questa casa.
 
 2 Novembre 2025
 
 Stasera S. mi ha detto una cosa che non riesco a togliermi dalla testa.
 
-Ero al buio e tremavo — non so nemmeno perché tremavo, forse per il modo in cui mia madre mi aveva urlato dietro prima che uscissi solo perché ho fatto cadere uno strofinaccio. S. mi ha preso le mani. Erano così calde.
+Ero al buio e tremavo ancora per la lite con mamma. S. mi ha preso le mani: erano calde.
 
 «Devi scrivere tutto, Mila,» mi ha detto. «Ogni singola cosa che ti fanno. Altrimenti un giorno ti convinceranno che te lo sei inventato. Ti convinceranno che la pazza sei tu.»
 
-Ho preso questo quaderno per custodire la verità. È il nostro segreto.
+Ho preso questo quaderno per non dimenticare. S. dice che è il nostro segreto.
 
-Per la prima volta dopo anni, stasera quando sono tornata a casa e ho visto la luce gialla del corridoio, non ho avuto soltanto paura. Ho pensato a S. Ho pensato che c’è qualcuno nel mondo che sa cosa provo, qualcuno che vede attraverso la maschera da brava figlia che devo indossare ogni giorno. L'unica presenza reale in mezzo a un mondo di fantocci.
+Quando sono tornata a casa, la luce gialla del corridoio non mi ha fatto paura soltanto. Ho pensato a S.: dice di vedermi oltre la maschera da brava figlia. È l'unica a cui credo.
 
 18 Dicembre 2025
 
@@ -1252,15 +1252,15 @@ Era buio e c'era la neve fresca sul prato. Eravamo sotto la quercia, vicinissime
 
 «Niente genitori, Mila. Niente regole. Solo noi due.»
 
-A volte mi chiedo se sono abbastanza forte per farlo.
+A volte temo di non essere abbastanza forte.
 
-Non devo scriverlo. Devo essere forte.
+Non devo scriverlo, mi dico. Devo farcela.
 
 Quando sono con S., l'aria di casa mia sembra meno velenosa. Mi sembra quasi di poter resistere fino al giorno in cui ce ne andremo. S. dice che sono la sua persona preferita al mondo. Nessuno me l'aveva mai detto. Mia madre mi dice solo che sono un impegno. S. invece mi guarda come se io fossi preziosa.
 
 3 Gennaio 2026
 
-Oggi mia madre mi ha fatto pulire lo specchio del bagno tre volte perché diceva che ci si vedevano le ditate. Mi tremavano le dita. Ho pensato di prendere una forbice e... no. Non devo pensarci.
+Mamma mi ha fatto pulire lo specchio tre volte per alcune impronte. Mi tremavano le mani. Ho pensato a una forbice, poi ho lasciato perdere.
 
 Sono corsa via appena possibile. Ho raccontato tutto a S. Lei non mi ha detto «passerà» come fa Kate a scuola. Kate non capisce niente, Kate vive nel mondo di ovatta. S. mi ha stretto il mento, fortissimo, finché non ho smesso di piangere.
 
@@ -1288,21 +1288,21 @@ Ha ragione. Devo fidarmi. Devo smettere di avere paura e iniziare a preparare il
 
 28 Aprile 2026
 
-Mia madre continua a ripetermi che sono paranoica, che mi invento le cose nella testa, che ho degli sguardi strani. Cerca di farmi credere che la malata sono io, ma io so qual è la verità.
+Mamma dice che sono paranoica e che mi invento tutto. Vuole convincermi che il problema sono io. Non posso crederle.
 
 Ieri mio padre è entrato in cucina con quella sua camminata lenta, da ombra, e mi ha fissata senza dire una parola. Hanno paura di me perché sanno che ho capito chi sono veramente. Sotto le loro maschere da famiglia perfetta c'è solo marciume.
 
-Quando ne parlo con S., la sua voce è l'unica cosa che mi tiene ancorata alla realtà. Mi ricorda che loro sono finzioni, marionette scricchiolanti, e che noi siamo le uniche persone vive. Manca poco. Sento che il momento si sta avvicinando.
+Quando ne parlo con S., lei dice che i miei genitori sono marionette e che solo noi siamo vere. Manca poco, continua a ripetermi.
 
 5 Maggio 2026
 
-Non sto dormendo più. Il veleno di questa casa mi sta soffocando. Ogni stanza puzza di trappola. Mia madre mi guarda come se stesse decidendo dove riporre il mio cadavere.
+Non dormo più. Ogni stanza mi sembra una trappola e mamma mi guarda come se stesse decidendo cosa fare di me.
 
 Ieri ho guardato S. negli occhi e ho visto la stessa determinazione che sento bruciare dentro di me. Nessun dubbio, nessuna esitazione.
 
 «Niente più catene, Mila. Presto sarà tutto finito.»
 
-Mi viene da piangere se penso a quanto sono stata vicina a crollare, ma S. non mi ha mai lasciata cadere. Voglio solo che andiamo via. Vorrei che fosse già domani. Vorrei non dover più respirare la stessa aria di questi due mostri.
+Mi viene da piangere. S. dice che non mi lascerà cadere. Voglio andarmene con lei e non respirare più quest'aria.
 
 7 Maggio 2026
 
@@ -1326,15 +1326,15 @@ Nota: sono tuttora nascosti in un luogo che solo Mila conosceva e che nessuno ha
 
 14 Novembre
 
-Mamma oggi mi ha guardato per dieci minuti interi mentre mi allacciavo le scarpe. Non ha detto una parola. Poi ha fatto un sospiro lungo, pesante, e si è avvicinata per sistemarmi il colletto della camicia. Lo ha fatto con una ruvidezza strana, ma senza farmi male.
+Mamma mi ha guardata mentre mi allacciavo le scarpe. Poi mi ha sistemato il colletto, con un gesto brusco ma senza farmi male.
 
-Sophie dice che quando mamma fa così sta cercando di soffocarmi, che vuole cancellare ogni segno della mia personalità per farmi diventare come lei. E io le ho creduto. L'ho scritto anche nella pagina prima, come voleva Sophie.
+Sophie dice che mamma vuole cancellarmi. Le ho creduto e l'ho scritto anche ieri, come voleva lei.
 
-Ma stasera, mentre ero a letto al buio, mi è tornato in mente un ricordo di quando avevo sette anni. Avevo la polmonite, la febbre non scendeva. Mamma è rimasta seduta sul bordo del mio letto per tre notti di fila. Mi metteva le pezze bagnate sulla fronte e piangeva piano, in silenzio, convinta che dormissi. Continuava a sussurrare nel buio:
+A letto mi è tornato in mente quando, a sette anni, avevo la polmonite. Mamma è rimasta tre notti accanto a me, cambiandomi le pezze sulla fronte. Credeva che dormissi, ma la sentivo piangere e sussurrare:
 
 «Prendi me, Dio. Fai stare male me, ma lascia respirare lei.»
 
-Perché adesso quel ricordo mi sembra un delitto? Perché quando sono con Sophie la voce di mia madre diventa fredda nella mia testa? A volte vorrei solo appoggiare la testa sul suo grembo e chiederle scusa per come la guardo. Ma se lo facessi, Sophie direbbe che sono debole. Che sono ancora un robot.
+Perché quel ricordo adesso mi sembra una colpa? Con Sophie, la voce di mamma diventa fredda. Vorrei chiederle scusa, ma ho paura che Sophie mi chiami debole.
 
 E io ho così tanta paura che Sophie smetta di guardarmi.
 
@@ -1344,15 +1344,15 @@ Sophie mi ha baciato stasera sotto la quercia. Aveva le labbra fredde, che sapev
 
 «Sei la mia bambola preferita, Mila.»
 
-Quando lo dice lei, per un secondo mi sento viva. Mi sento vista, scelta, importante.
+Quando lo dice, mi sento vista. Per un attimo, mi basta.
 
-Ma poi torno a casa e trovo mia madre seduta al buio con la sigaretta accesa, e capisco cosa sto diventando. Non sono più la figlia di nessuno. Sono un'ombra. Sophie vuole che io odi questa casa con tutta me stessa. Io ci provo. Mi sforzo di vedere il veleno in ogni loro gesto.
+Poi torno a casa e trovo mamma al buio, con la sigaretta accesa. Mi sento un'ombra. Provo a vedere veleno in ogni loro gesto, come mi ha insegnato Sophie.
 
-Eppure stasera ho trovato un mio vecchio disegno delle elementari nascosto dietro la porta della dispensa. C'eravamo noi tre, disegnati con i pennarelli spuntati, con una casa gialla e un sole enorme. Mamma lo ha plastificato con il nastro adesivo per non farlo rovinare dall'umidità. Lo tiene lì da dieci anni.
+Dietro la dispensa ho trovato un vecchio disegno: noi tre, una casa gialla e un sole enorme. Mamma lo ha protetto con nastro adesivo e lo conserva da dieci anni.
 
 Se mi odiano così tanto come dice Sophie... perché mamma conserva ancora il disegno di quando la amavo?
 
-Forse la casa non è una prigione. Forse sono io che sono rotta dentro.
+Forse la casa non è una prigione. Forse sono io a non riuscire più a vederla com'era.
 
 7 Maggio
 
@@ -1362,7 +1362,7 @@ Mamma era così giovane. Aveva un sorriso lungo, bellissimo, che non le ho mai v
 
 «Perché tutto sia perfetto.»
 
-Non era l'ossessione per il giudizio dei vicini. Era amore. Un amore terrorizzato, maldestro, incapace di trovare le parole giuste, ma purissimo. Mamma voleva che la mia vita fosse perfetta perché la sua era stata troppo dura. Voleva costruirmi un guscio per non farmi del male.
+Forse non era solo ossessione per il giudizio. Forse era amore, goffo e impaurito. Mamma voleva proteggermi e ha finito per chiudermi in un guscio.
 
 E io l'ho scambiata per una prigione.
 
@@ -1378,7 +1378,7 @@ Ma mi sono girata verso la finestra e ho visto la luce di Sophie. È lì, nel so
 
 Se non lo faccio, Sophie mi abbandonerà. Se non lo faccio, tornerò a essere invisibile nel buio. Sono così stanca. Sono così spaventata. Ho diciotto anni e mi sento morta da sempre.
 
-Mamma... papà... se sto per fare quello che penso... vi prego, non credete a quello che troveranno scritto. Vi prego, sappiate che non ero io.
+Mamma... papà... se farò quello che temo, non credete a quello che troveranno scritto. Vi prego: non ero io.
 
 Era la bambola.
 
@@ -1386,7 +1386,7 @@ Senza Data
 
 A chiunque trovi questo foglio.
 
-Non credete al quaderno sotto il materasso. Le parole scritte lì dentro non sono le mie. Le ha dettate Sophie, mese dopo mese, frase dopo frase. Me le faceva ripetere finché non le scrivevo esatte. Voleva costruire una storia. Voleva che odiassi le uniche due persone che mi abbiano mai voluto bene davvero.
+Non credete al quaderno sotto il materasso. Sophie mi dettava le frasi e me le faceva riscrivere finché non erano esatte. Voleva costruire una storia e farmi odiare le uniche due persone che mi hanno voluto bene.
 
 I miei genitori non mi hanno mai abusata. Mio padre era un uomo buono e silenzioso. Mia madre piangeva la notte perché vedeva che mi stavo spegnendo e non sapeva come salvarmi da se stessa e dal mondo.
 
