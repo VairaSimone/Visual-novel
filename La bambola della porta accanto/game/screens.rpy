@@ -115,7 +115,7 @@ screen say(who, what):
                 style "namebox"
                 text who id "who" style "say_label"
 
-        text what id "what" style "say_dialogue"
+        text what id "what" style "say_dialogue" size adaptive_dialogue_size(what)
 
     # Le side image restano abilitate su desktop per non rompere eventuali sprite futuri.
     if not renpy.variant("small"):
@@ -123,6 +123,37 @@ screen say(who, what):
 
 
 init python:
+    import re
+
+    def adaptive_dialogue_size(value):
+        # Stima il testo visibile senza contare le tag di formattazione Ren'Py.
+        plain = re.sub(r"\\{[^{}]*\\}", "", str(value))
+        plain = plain.replace("\\n", "\n")
+        length = len(plain.strip())
+
+        # Le varianti piccole hanno più altezza per la finestra dialoghi,
+        # ma i paragrafi lunghi si riducono comunque per evitare sovrapposizioni.
+        if renpy.variant("small"):
+            if length > 410:
+                return 28
+            elif length > 330:
+                return 30
+            elif length > 250:
+                return 32
+            elif length > 190:
+                return 34
+            return 36
+
+        if length > 410:
+            return 25
+        elif length > 330:
+            return 27
+        elif length > 250:
+            return 29
+        elif length > 190:
+            return 30
+        return 32
+
     if 'namebox' not in config.character_id_prefixes:
         config.character_id_prefixes.append('namebox')
 
@@ -251,11 +282,11 @@ screen choice(items):
     frame:
         style "choice_panel"
         xalign 0.5
-        yalign 0.52
+        yalign 0.46
 
         vbox:
             xfill True
-            spacing 14
+            spacing 10
 
             hbox:
                 spacing 12
@@ -279,9 +310,9 @@ screen choice(items):
 
 
 style choice_panel is frame:
-    xsize 1360
-    padding (42, 36, 42, 40)
-    background Solid("#17111bf2")
+    xsize 1460
+    padding (34, 28, 34, 30)
+    background Solid("#17111bf5")
 
 style choice_kicker is default:
     size 18
@@ -293,17 +324,17 @@ style choice_kicker_tense is choice_kicker:
     color "#df7185"
 
 style choice_prompt is default:
-    size 30
+    size 27
     bold True
     color "#f4e9ef"
-    xmaximum 1260
-    line_spacing 5
-    bottom_margin 8
+    xmaximum 1370
+    line_spacing 4
+    bottom_margin 5
 
 style choice_button is button:
     xfill True
-    yminimum 68
-    padding (24, 17, 24, 17)
+    yminimum 62
+    padding (22, 12, 22, 12)
     background Solid("#251b29ed")
     hover_background Solid("#533448")
     selected_background Solid("#3c283b")
@@ -311,14 +342,14 @@ style choice_button is button:
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
-    size 27
+    size 24
     color "#e8dbe3"
     hover_color "#fff6fa"
     selected_color "#ffffff"
     xalign 0.0
     yalign 0.5
     text_align 0.0
-    line_spacing 4
+    line_spacing 3
 
 style choice_button_tense is choice_button:
     background Solid("#2b171fee")
@@ -332,34 +363,34 @@ style choice_button_tense_text is choice_button_text:
 style choice_panel:
     variant "small"
     xsize 1840
-    padding (26, 26, 26, 30)
+    padding (24, 20, 24, 22)
 
 style choice_prompt:
     variant "small"
-    size 38
+    size 31
 
 style choice_kicker:
     variant "small"
-    size 23
+    size 20
 
 style choice_button:
     variant "small"
-    yminimum 82
-    padding (24, 22, 24, 22)
+    yminimum 66
+    padding (18, 13, 18, 13)
 
 style choice_button_text:
     variant "small"
-    size 35
-    line_spacing 7
+    size 28
+    line_spacing 4
 
 style choice_kicker_tense:
     variant "small"
-    size 23
+    size 20
 
 style choice_button_tense_text:
     variant "small"
-    size 35
-    line_spacing 7
+    size 28
+    line_spacing 4
 
 
 
@@ -422,49 +453,53 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
-        style_prefix "navigation"
+    if main_menu:
 
-        xpos gui.navigation_xpos
-        yalign 0.5
-
-        spacing gui.navigation_spacing
-
-        if main_menu:
+        # Home dedicata: pulsanti allineati sotto il titolo, senza sovrapporvisi.
+        vbox:
+            style_prefix "home_navigation"
+            xpos 72
+            ypos 372
+            spacing 4
 
             textbutton _("Inizia") action Start()
+            textbutton _("Carica") action ShowMenu("load")
+            textbutton _("Opzioni") action ShowMenu("preferences")
+            textbutton _("Informazioni") action ShowMenu("about")
+            textbutton _("Crediti audio") action ShowMenu("audio_credits")
 
-        else:
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+                textbutton _("Aiuto") action ShowMenu("help")
+
+            if renpy.variant("pc"):
+                textbutton _("Esci") action Quit(confirm=True)
+
+    else:
+
+        vbox:
+            style_prefix "navigation"
+            xpos gui.navigation_xpos
+            yalign 0.5
+            spacing gui.navigation_spacing
 
             textbutton _("Cronologia") action ShowMenu("history")
-
             textbutton _("Salva") action ShowMenu("save")
+            textbutton _("Carica") action ShowMenu("load")
+            textbutton _("Opzioni") action ShowMenu("preferences")
 
-        textbutton _("Carica") action ShowMenu("load")
+            if _in_replay:
+                textbutton _("Fine Replay") action EndReplay(confirm=True)
+            else:
+                textbutton _("Menu Principale") action MainMenu()
 
-        textbutton _("Opzioni") action ShowMenu("preferences")
+            textbutton _("Informazioni") action ShowMenu("about")
+            textbutton _("Crediti audio") action ShowMenu("audio_credits")
 
-        if _in_replay:
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+                textbutton _("Aiuto") action ShowMenu("help")
 
-            textbutton _("Fine Replay") action EndReplay(confirm=True)
-
-        elif not main_menu:
-
-            textbutton _("Menu Principale") action MainMenu()
-
-        textbutton _("Informazioni") action ShowMenu("about")
-
-        textbutton _("Crediti audio") action ShowMenu("audio_credits")
-
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## L'Aiuto non è necessario o rilevante sui dispositivi mobili.
-            textbutton _("Aiuto") action ShowMenu("help")
-
-        if renpy.variant("pc"):
-
-            ## Il pulsante esci è vietato su iOS e inutile su Android e sul Web.
-            textbutton _("Esci") action Quit(confirm=not main_menu)
+            if renpy.variant("pc"):
+                textbutton _("Esci") action Quit(confirm=True)
 
 
 style navigation_button is gui_button
@@ -478,7 +513,21 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
-    size 31
+    size 28
+
+style home_navigation_button is navigation_button:
+    xsize 520
+    yminimum 43
+    padding (16, 7, 16, 7)
+    background Solid("#00000000")
+    hover_background Solid("#533344dd")
+
+style home_navigation_button_text is navigation_button_text:
+    size 25
+    color "#d8c8d0"
+    hover_color "#fff4f8"
+    xalign 0.0
+    outlines [(1, "#09060caa", 0, 1)]
 
 
 ## Schermata del menu principale ###############################################
@@ -489,46 +538,100 @@ style navigation_button_text:
 
 screen main_menu():
 
-    ## Questo assicura che ogni altro menu sia rimpiazzato.
     tag menu
 
     add "bg title night"
+    add Solid("#07050a55")
 
+    # Pannello laterale opaco per separare il menu dalla scena sullo sfondo.
     frame:
-        background Solid("#1b141a")
-        xsize 700
+        background Solid("#130d16ed")
+        xpos 0
+        xsize 760
         yfill True
-        xalign 0.0
 
-    text "LA BAMBOLA\nDELLA PORTA ACCANTO":
-        xalign 0.05
-        ypos 115
-        size 67
-        color "#f1dce4"
+    add Solid("#c65a72") xpos 72 ypos 58 xsize 42 ysize 3
+
+    text "UN THRILLER PSICOLOGICO":
+        xpos 128
+        ypos 48
+        size 16
+        color "#c7a8b5"
+        bold True
+        outlines [(1, "#09060caa", 0, 1)]
+
+    # Titolo su tre righe: leggibile anche quando la finestra è più stretta.
+    text "LA BAMBOLA":
+        xpos 72
+        ypos 105
+        size 50
+        color "#f4e6ec"
         font gui.interface_text_font
+        bold True
+        outlines [(2, "#09060cdd", 0, 2)]
 
-    text "THRILLER PSICOLOGICO":
-        xalign 0.055
-        ypos 300
-        size 22
-        color "#b99aa7"
+    text "DELLA PORTA":
+        xpos 72
+        ypos 160
+        size 50
+        color "#f4e6ec"
+        font gui.interface_text_font
+        bold True
+        outlines [(2, "#09060cdd", 0, 2)]
 
-    text "Ogni casa custodisce una storia.\nNon tutte vogliono essere raccontate.":
-        xalign 0.055
-        ypos 760
-        size 25
-        color "#cbbcc2"
+    text "ACCANTO":
+        xpos 72
+        ypos 215
+        size 50
+        color "#f4e6ec"
+        font gui.interface_text_font
+        bold True
+        outlines [(2, "#09060cdd", 0, 2)]
+
+    add Solid("#b78396") xpos 72 ypos 285 xsize 88 ysize 3
+
+    text "UNA STORIA DI CONTROLLO, FIDUCIA E VERITÀ":
+        xpos 72
+        ypos 304
+        xmaximum 610
+        size 17
+        color "#cbb8c2"
+        line_spacing 3
 
     use navigation
 
-    if gui.show_name:
+    text "OGNI CASA CUSTODISCE UNA STORIA.":
+        xpos 72
+        ypos 856
+        size 18
+        color "#e2d2da"
+        bold True
+        outlines [(1, "#09060cbb", 0, 1)]
 
+    text "NON TUTTE VOGLIONO ESSERE RACCONTATE.":
+        xpos 72
+        ypos 884
+        xmaximum 600
+        size 17
+        color "#bbaab4"
+        outlines [(1, "#09060cbb", 0, 1)]
+
+    # Frase di tono sul lato visivo, separata dai comandi di navigazione.
+    text "IL RICORDO È UNA STANZA\\nDOVE QUALCUNO HA GIÀ SPOSTATO I MOBILI.":
+        xalign 0.96
+        ypos 875
+        xmaximum 900
+        text_align 1.0
+        size 21
+        color "#f0e4e9"
+        line_spacing 7
+        outlines [(2, "#09060cdd", 0, 2)]
+
+    if gui.show_name:
         vbox:
             style "main_menu_vbox"
-
             text "[config.name!t]":
                 style "main_menu_title"
-
             text "[config.version]":
                 style "main_menu_version"
 
