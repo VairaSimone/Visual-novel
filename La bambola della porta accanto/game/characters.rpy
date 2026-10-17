@@ -48,23 +48,28 @@ transform sprite_cold_still:
     ease 0.35 yoffset 0
     repeat
 
+# MILA — PNG sorgente più bassi degli altri personaggi: normalizzati a 1185 px di altezza
+# prima dei trasformatori di scena, così mantengono dimensioni coerenti anche al centro.
 # MILA — neutra, preoccupata e tesa.
-image sprite_mila_neutral = "images/characters/mila_neutral.png"
-image sprite_mila_worried = "images/characters/mila_worried.png"
-image sprite_mila_tense = "images/characters/mila_tense.png"
+image sprite_mila_neutral = Transform("images/characters/mila_neutral.png", ysize=1185, fit="contain")
+image sprite_mila_worried = Transform("images/characters/mila_worried.png", ysize=1185, fit="contain")
+image sprite_mila_tense = Transform("images/characters/mila_tense.png", ysize=1185, fit="contain")
 
+# SOPHIE — anche questi PNG hanno un'altezza sorgente ridotta: stessa altezza visiva di riferimento.
 # SOPHIE — la calma apparente lascia spazio a freddezza e tensione.
-image sprite_sophie_neutral = "images/characters/sophie_neutral.png"
-image sprite_sophie_cold = "images/characters/sophie_cold.png"
-image sprite_sophie_tense = "images/characters/sophie_tense.png"
+image sprite_sophie_neutral = Transform("images/characters/sophie_neutral.png", ysize=1185, fit="contain")
+image sprite_sophie_cold = Transform("images/characters/sophie_cold.png", ysize=1185, fit="contain")
+image sprite_sophie_tense = Transform("images/characters/sophie_tense.png", ysize=1185, fit="contain")
 
 # KATE — espressioni aperte e preoccupate.
 image sprite_kate_neutral = "images/characters/kate_neutral.png"
 image sprite_kate_worried = "images/characters/kate_worried.png"
 
+# La madre di Mila viene normalizzata insieme a Mila e Sophie; gli altri sprite più grandi
+# restano invariati, così non aumentano accidentalmente di dimensione.
 # Famiglia di Mila.
-image sprite_madre_neutral = "images/characters/mamma_mila_neutral.png"
-image sprite_madre_cold = "images/characters/mamma_mila_cold.png"
+image sprite_madre_neutral = Transform("images/characters/mamma_mila_neutral.png", ysize=1185, fit="contain")
+image sprite_madre_cold = Transform("images/characters/mamma_mila_cold.png", ysize=1185, fit="contain")
 image sprite_padre_neutral = "images/characters/sprite_padre_mila.png"
 
 # Famiglia di Sophie e personaggi secondari.
