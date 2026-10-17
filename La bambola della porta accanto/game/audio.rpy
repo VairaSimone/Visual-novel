@@ -6,6 +6,7 @@
 init python:
     # Condivide il mixer Effetti con i suoni, ma non interrompe il canale Musica.
     renpy.music.register_channel("ambience", mixer="sfx", loop=True, tight=True)
+    renpy.music.set_volume(0.42, delay=0, channel="ambience")
 
 define audio.rain = "audio/ambience_rain.wav"
 define audio.room = "audio/ambience_room.wav"

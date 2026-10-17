@@ -70,9 +70,9 @@ label start:
     scene bg mila room
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
+        show sprite_mila_tense as mila_sprite at sprite_stage_center, sprite_tremble
     else:
-        show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
+        show sprite_mila_neutral as mila_sprite at sprite_stage_center, sprite_breathe
 
     "Il primo suono della giornata non è mai la sveglia. È lo scatto metallico dell'accendino nell'altra stanza."
     play sound audio.lighter
@@ -262,9 +262,9 @@ label capitolo_1:
     scene bg mila room
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
+        show sprite_mila_tense as mila_sprite at sprite_stage_center, sprite_tremble
     else:
-        show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
+        show sprite_mila_neutral as mila_sprite at sprite_stage_center, sprite_breathe
     "Mi trascino in camera vestita. Non piango: le lacrime sono un lusso che non posso permettermi. Sotto il cuscino trovo un frammento di vetro raccolto in giardino. Lo stringo fino a sentire dolore e subito dopo vergogna per averlo fatto."
     "Mi dico che questo dolore è onesto, che almeno non cerca di convincermi di essere per il mio bene. Non so più se sia una verità mia o una frase che qualcun altro mi ha insegnato."
     "Sento ancora il pollice di Sophie sotto lo zigomo. Voglio vedere chi sei quando smetti di essere il loro robot."
@@ -515,9 +515,9 @@ label capitolo_5:
     scene bg mila room
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
+        show sprite_mila_tense as mila_sprite at sprite_stage_center, sprite_tremble
     else:
-        show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
+        show sprite_mila_neutral as mila_sprite at sprite_stage_center, sprite_breathe
     "Entro nello studio di papà. Odora di carta vecchia, legno trattato e tabacco spento. Il cassetto centrale è chiuso. La chiave d'ottone è dentro un finto libro rilegato in pelle sulla mensola più alta: un nascondiglio banale, quasi infantile."
     "La serratura scatta. Il cassetto scorre senza rumore. Dentro ci sono mazzette fermate da elastici: banconote da cinquanta e cento. Cinque mazzette. Cinquemila euro."
     "Non è una fortuna. È il sangue di questa casa, il frutto di anni di straordinari, rinunce e cene consumate senza rivolgersi la parola."

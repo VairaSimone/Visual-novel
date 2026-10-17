@@ -3,26 +3,26 @@
 
 # Posizionamento coerente per sprite a figura intera (canvas 16:9, 1920x1080).
 transform sprite_stage_left:
-    xalign 0.08
+    xalign 0.31
     yalign 1.0
-    zoom 0.54
+    zoom 0.70
 
 transform sprite_stage_right:
-    xalign 0.92
+    xalign 0.69
     yalign 1.0
-    zoom 0.54
+    zoom 0.70
 
 transform sprite_stage_center:
     xalign 0.5
     yalign 1.0
-    zoom 0.46
+    zoom 0.72
 
 # Secondo piano: per il padre dietro il giornale, senza competere con i primi piani.
 transform sprite_stage_back:
-    xalign 0.5
+    xalign 0.52
     yalign 1.0
-    zoom 0.38
-    alpha 0.88
+    zoom 0.48
+    alpha 0.82
 
 # Movimento d'attesa delicato: evita che i personaggi sembrino completamente statici.
 transform sprite_breathe:
