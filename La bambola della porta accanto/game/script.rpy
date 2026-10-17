@@ -139,7 +139,6 @@ label start:
             "Vorrei crederle. Ma l'idea che qualcuno possa davvero aiutarmi mi sembra più irreale di qualunque punizione."
     scene bg oak houses
     with dissolve
-    show sprite_madre_sophie as madre_sophie_sprite at sprite_stage_right, sprite_cold_still
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
     else:
@@ -148,27 +147,33 @@ label start:
     "Qui l'aria è diversa. Non è l'ossigeno pesante di casa mia: è un vuoto sterile, profumato di ammorbidente costoso."
     "I genitori di Sophie mi accolgono con la gentilezza distaccata riservata a chi svolge bene il proprio lavoro."
     "La madre si sistema il cappotto color cammello e mi rivolge un sorriso educato."
+    show sprite_madre_sophie as madre_sophie_sprite at sprite_stage_right, sprite_cold_still with dissolve
     madre_sophie "Sophie è di sopra. Ultimamente è stata difficile. Cerca di farla mangiare e niente schermi dopo le dieci, per favore."
+    hide madre_sophie_sprite with dissolve
+    hide mila_sprite with dissolve
     "La porta si chiude alle mie spalle. Il silenzio di lusso della casa mi avvolge. Salgo le scale fino alla porta coperta di adesivi di vecchi anime e scritte KEEP OUT."
     "Busso con il nostro ritmo segreto, inventato quando si sono trasferiti. È l'unica porta a cui busso senza temere di essere convocata."
     sophie "Entra, Mila. Lo sai che con me non devi bussare. Sei l'unica persona che non mi dà il mal di testa in questa casa."
     scene bg sophie room
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_sophie_tense as sophie_sprite at sprite_stage_right, sprite_tremble
+        show sprite_mila_worried as mila_sprite at sprite_stage_right_mila, sprite_breathe
     else:
-        show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_breathe
+        show sprite_mila_neutral as mila_sprite at sprite_stage_right_mila, sprite_breathe
     "Sophie è sul letto, cuffie al collo e joystick in mano. Ha quindici anni: pallida, spigolosa, sembra troppo grande per la stanza preparata dai genitori."
     "Ufficialmente sono lì per aiutarla con i compiti e la cena. I suoi genitori la chiamano babysitting, così possono lasciarla sola senza preoccuparsene."
     "Qui le nostre età sembrano invertirsi. Sophie guarda gli adulti come se avesse già capito il loro gioco. Accanto a lei, sono io a sentirmi piccola."
     mila "Ciao, Sophie."
     "Spegne lo schermo e mi fissa. Il suo sguardo ha l'intensità di un bambino che trova un insetto raro e decide di chiuderlo in un barattolo per studiarlo da vicino."
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
+        show sprite_sophie_tense as sophie_sprite at sprite_stage_left_sophie, sprite_breathe with moveinleft
+    else:
+        show sprite_sophie_neutral as sophie_sprite at sprite_stage_left_sophie, sprite_breathe with moveinleft
     sophie "Pensavo che tua madre ti avesse murata viva. Mi sei mancata, Mila. Eppure eccoti qui, a lasciarti consumare da tutti."
     mila "I miei non me lo permetterebbero."
     sophie "Permetterebbero. Che parola del cazzo."
     "Si alza e mi prende il mento tra due dita. Il pollice sfiora la cicatrice sotto lo zigomo. La sua mano è calda; la mia pelle, fredda."
+    show sprite_sophie_tense as sophie_sprite at sprite_approach_mila with dissolve
     sophie "Ti trema persino la mascella. Solo io me ne accorgo. Solo io so di cosa hai bisogno per respirare."
     mila "Sophie, devo preparare la cena. I tuoi mi pagano per..."
     sophie "I miei non capiscono niente. E tu non sei qui per i loro soldi. Sei qui perché sono l'unica che ti vede davvero."
@@ -188,7 +193,9 @@ label start:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
         show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_breathe
     "Lavo le mani mentre l'acqua bolle. Sul tavolo c'è un disegno di Sophie: io rannicchiata, con fili ai polsi e alle caviglie che spariscono fuori dal foglio."
+    show disegno_bambola_placeholder at truecenter, disegno_bambola_mostra with dissolve
     "Sotto, con la grafia ordinata di Sophie, c'è scritto: La mia bambola preferita."
+    hide disegno_bambola_placeholder with dissolve
     "Sorrido debolmente. Mi sembra dolce che mi abbia ritratta, che abbia notato ogni dettaglio. Lei mi vuole bene davvero. Mi protegge."
     "Dalla finestra guardo casa mia. Per la prima volta, l'idea di tornarci non mi dà solo nausea. Mi fa tristezza."
     "Sophie ha ragione, penso. Chi non prova nulla è fortunato. Io invece sento ogni frequenza del dolore, e sta diventando troppo pesante da portare."
