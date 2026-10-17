@@ -69,6 +69,7 @@ label start:
 
     scene bg mila room at bg_slow_push
     with dissolve
+    show expression Solid("#17131d20") as prologue_tint
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense as mila_sprite at sprite_stage_center, sprite_tremble
     else:
@@ -89,6 +90,7 @@ label start:
     "Non ricordo sempre da dove venga. So che sfiorarla mi mette paura. In questa casa, anche la paura sembra una prova contro di me."
     scene bg mila kitchen at bg_tension_push
     with dissolve
+    show expression Solid("#15121b30") as prologue_tint
     show sprite_padre_neutral as padre_sprite at sprite_stage_back, sprite_breathe
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
@@ -108,6 +110,7 @@ label start:
     madre "Brava. E stasera vai dai vicini. Hanno di nuovo bisogno di te per la ragazzina. Vedi di non fare la morta di sonno come al solito."
     show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_recoil
     "Non finisce la frase. Spinge lo yogurt verso il bordo; scatto per afferrarlo prima che cada. Una piccola umiliazione, appena sveglia."
+    with hpunch
     show sprite_padre_neutral as padre_sprite at sprite_stage_back, sprite_page_shift
     "Papà gira pagina senza alzare gli occhi. Non c'è nessun testimone di ciò che credo accada qui."
     "Prima di alzarmi, guardo mio padre per un secondo di troppo."
@@ -124,6 +127,7 @@ label start:
             "È più facile non chiedere. Se non sento una risposta, posso continuare a immaginare che non ce ne sarebbe stata una."
     scene bg school at bg_slow_push
     with dissolve
+    show expression Solid("#18263a18") as prologue_tint
     show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
     show sprite_kate_neutral as kate_sprite at sprite_stage_right, sprite_breathe with moveinright
     play ambience audio.rain fadeout 1.0 fadein 1.5
@@ -147,6 +151,7 @@ label start:
             "Vorrei crederle. Ma l'idea che qualcuno possa davvero aiutarmi mi sembra più irreale di qualunque punizione."
     scene bg oak houses at bg_slow_push
     with dissolve
+    show expression Solid("#25192320") as prologue_tint
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
     else:
@@ -166,6 +171,7 @@ label start:
     sophie "Entra, Mila. Lo sai che con me non devi bussare. Sei l'unica persona che non mi dà il mal di testa in questa casa."
     scene bg sophie room at bg_tension_push
     with dissolve
+    show expression Solid("#30172224") as prologue_tint
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_right_mila, sprite_breathe
     else:
@@ -200,6 +206,7 @@ label start:
     sophie "Va bene. Prepariamo il pollo e facciamo finta di niente. Ma la tua rabbia resta lì, Mila. Un giorno la useremo contro di lei. Ora vai."
     scene bg sophie kitchen at bg_slow_push
     with dissolve
+    show expression Solid("#2b1e2410") as prologue_tint
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_anxious_breathe
     else:
@@ -212,6 +219,7 @@ label start:
     # Ripristina la cucina dopo il primo piano: nel prologo è presente soltanto Mila.
     scene bg sophie kitchen
     with dissolve
+    show expression Solid("#2b1e2410") as prologue_tint
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
     else:
