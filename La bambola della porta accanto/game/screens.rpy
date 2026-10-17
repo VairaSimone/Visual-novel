@@ -190,8 +190,7 @@ style namebox:
     xpos gui.name_xpos
     xanchor gui.name_xalign
     xsize gui.namebox_width
-    # Il nome ha una fascia autonoma, ben separata dal testo del dialogo.
-    ypos gui.name_ypos - 66
+    ypos gui.name_ypos
     yminimum 54
     padding (22, 9, 22, 9)
     background Solid("#302131")
@@ -210,7 +209,8 @@ style say_dialogue:
     properties gui.text_properties("dialogue")
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
-    ypos gui.dialogue_ypos
+    # Lascia spazio sotto la targhetta del nome: il testo non le si appiccica.
+    ypos gui.dialogue_ypos + 24
     size 32
     color "#f3e9ef"
     line_spacing 5
