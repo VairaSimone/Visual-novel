@@ -86,6 +86,7 @@ label start:
     "Una vecchia cicatrice. Non ricordo sempre da dove venga. So soltanto che, quando la sfioro, sento paura; e in questa casa la paura sembra sempre una prova a carico di qualcuno."
     scene bg mila kitchen
     with dissolve
+    show sprite_padre_neutral as padre_sprite at sprite_stage_back, sprite_breathe
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
         show sprite_madre_cold as madre_sprite at sprite_stage_right, sprite_cold_still
@@ -138,9 +139,9 @@ label start:
             "Vorrei crederle. Ma l'idea che qualcuno possa davvero aiutarmi mi sembra più irreale di qualunque punizione."
     scene bg oak houses
     with dissolve
+    show sprite_madre_sophie as madre_sophie_sprite at sprite_stage_right, sprite_cold_still
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
-        show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
     "Alle diciannove sono davanti alla casa dei vicini. La villetta è impeccabile, quasi gemella della nostra. Tra le due corre una striscia di prato rasato così corto da sembrare finto; al centro cresce una vecchia quercia che nessuno dei proprietari ha mai voluto abbattere."
@@ -1192,10 +1193,11 @@ label finale_fascicolo:
     scene bg oak houses
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
-        show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_cold_still
+        show sprite_sophie_cold as sophie_sprite at sprite_stage_left, sprite_cold_still
+        show sprite_chloe_neutral as chloe_sprite at sprite_stage_right, sprite_breathe
     else:
-        show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
+        show sprite_sophie_neutral as sophie_sprite at sprite_stage_left, sprite_breathe
+        show sprite_chloe_neutral as chloe_sprite at sprite_stage_right, sprite_breathe
     "La luce del sole filtra dal finestrino, illuminando i capelli biondi di Sophie. È seduta di fronte alla sua nuova famiglia affidataria: persone benestanti, con il volto di chi crede ancora che il mondo sia un posto sicuro."
     "Accanto a lei c'è Chloe, dodici anni, trecce ordinate e uno sguardo timido, quasi spaventato da quella nuova sorella così silenziosa."
     sophie "No, grazie, mamma. Sto benissimo."
