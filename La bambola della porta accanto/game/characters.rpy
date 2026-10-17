@@ -36,6 +36,59 @@ image sophie_draw_fullscreen = Composite(
     )
 )
 
+# Movimento d'inquadratura: piccoli push-in cinematografici, senza tagli bruschi.
+transform bg_slow_push:
+    xalign 0.5
+    yalign 0.5
+    zoom 1.0
+    ease 18.0 zoom 1.035
+
+transform bg_tension_push:
+    xalign 0.5
+    yalign 0.5
+    zoom 1.0
+    ease 8.0 zoom 1.045
+
+# Reazioni fisiche brevi, sincronizzate con le frasi che fanno scattare la paura.
+transform sprite_flinch:
+    xoffset 0
+    ease 0.08 xoffset -5
+    ease 0.14 xoffset 3
+    ease 0.22 xoffset 0
+
+transform sprite_recoil:
+    xoffset 0
+    ease 0.12 xoffset 11
+    ease 0.35 xoffset 0
+
+transform sprite_page_shift:
+    xoffset 0
+    ease 0.22 xoffset -2
+    ease 0.32 xoffset 0
+
+# Respiro più irregolare nei momenti di ansia: visibile, ma non caricaturale.
+transform sprite_anxious_breathe:
+    yoffset 0
+    ease 0.75 yoffset -5
+    ease 1.05 yoffset 1
+    ease 0.65 yoffset 0
+    repeat
+
+# Un leggero movimento involontario sul volto/posa quando Sophie si avvicina.
+transform sprite_micro_tension:
+    xoffset 0
+    ease 0.85 xoffset -2
+    ease 0.90 xoffset 2
+    ease 0.85 xoffset 0
+    repeat
+
+# Un sollevamento minimo della posa per accompagnare il sorriso forzato di Mila.
+transform sprite_smile_lift:
+    yoffset 0
+    ease 0.75 yoffset -5
+    pause 0.3
+    ease 0.7 yoffset 0
+
 transform sprite_stage_left:
     xalign 0.31
     yalign 1.0
