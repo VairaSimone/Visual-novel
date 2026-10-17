@@ -94,15 +94,15 @@ label start:
     show sprite_padre_neutral as padre_sprite at sprite_stage_back_halfbody, sprite_breathe
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_cold as madre_sprite at sprite_stage_right, sprite_cold_still
+        show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_neutral as madre_sprite at sprite_stage_right, sprite_breathe
+        show sprite_madre_neutral as madre_sprite at sprite_stage_right_halfbody, sprite_breathe
     "Mia madre siede al tavolo in vestaglia. Papà è nascosto dietro il giornale. Nella mia testa, il suo silenzio alimenta la crudeltà di lei."
     "Appoggio la tazzina. Mamma guarda il caffè, poi me: ha gli occhi grigi e stanchi, come il posacenere davanti a lei."
     madre "Ti sei truccata?"
     mila "No, mamma. Solo un po' di correttore per le occhiaie."
-    show sprite_madre_cold as madre_sprite at sprite_stage_right, sprite_cold_still with dissolve
+    show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still with dissolve
     madre "Cos'hai sotto gli occhi? Smetti di truccarti così. La gente guarda e sparla. Vuoi far credere ai vicini che qui non ti facciamo dormire?"
     show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_flinch
     "Mi si chiude la gola. Per mamma conta solo quello che penseranno i vicini e la facciata della famiglia perfetta."
@@ -287,10 +287,10 @@ label capitolo_1:
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_cold as madre_sprite at sprite_stage_right, sprite_cold_still
+        show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_neutral as madre_sprite at sprite_stage_right, sprite_breathe
+        show sprite_madre_neutral as madre_sprite at sprite_stage_right_halfbody, sprite_breathe
     "La luce della cucina taglia il corridoio buio. Mio padre è seduto in poltrona, con la TV spenta."
     padre "È in cucina."
     "Non è un avvertimento. È una constatazione."
@@ -554,10 +554,10 @@ label capitolo_5:
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_cold as madre_sprite at sprite_stage_right, sprite_cold_still
+        show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_neutral as madre_sprite at sprite_stage_right, sprite_breathe
+        show sprite_madre_neutral as madre_sprite at sprite_stage_right_halfbody, sprite_breathe
     "A colazione papà mangia cereali fissando il vuoto. Nel cassetto della sua scrivania, penso, ci sono i soldi che potrebbero permettermi di fuggire."
     "I miei escono alle dieci e mezza. Quando l'auto si allontana, il silenzio cambia: ogni mobile sembra accusarmi di essere rimasta."
     scene bg mila room
@@ -619,10 +619,10 @@ label capitolo_5:
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_cold as madre_sprite at sprite_stage_right, sprite_cold_still
+        show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_neutral as madre_sprite at sprite_stage_right, sprite_breathe
+        show sprite_madre_neutral as madre_sprite at sprite_stage_right_halfbody, sprite_breathe
     "Alle 11:12 l'auto rientra. Sono in cucina, con le mani immerse nell'acqua saponata. Il getto copre il tremito del respiro."
     madre "Brava, Mila. Vedi che quando ti impegni sai essere la figlia che meritiamo? Senza tutte quelle stranezze in testa."
     "Mi accarezza i capelli, un gesto insolito. Il tocco mi brucia come acido. Lo zaino abbandonato in camera sembra urlare la verità attraverso i muri."
@@ -838,10 +838,10 @@ label capitolo_7:
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_cold as madre_sprite at sprite_stage_right, sprite_cold_still
+        show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_neutral as madre_sprite at sprite_stage_right, sprite_breathe
+        show sprite_madre_neutral as madre_sprite at sprite_stage_right_halfbody, sprite_breathe
     "Quando entro, l'odore di fumo è sparito. La casa profuma di lasagne: mamma le prepara solo per i compleanni."
     "Esito. Potrei restituire i soldi e chiedere scusa. Forse potremmo ancora provare a riparare qualcosa."
     madre "Mila, porti tu i bicchieri? Sono sul bancone."
@@ -880,10 +880,10 @@ label capitolo_8:
     with fade
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_cold as madre_sprite at sprite_stage_right, sprite_cold_still
+        show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_neutral as madre_sprite at sprite_stage_right, sprite_breathe
+        show sprite_madre_neutral as madre_sprite at sprite_stage_right_halfbody, sprite_breathe
     play ambience audio.room fadeout 1.0 fadein 1.3
     play sound audio.heartbeat
     with hpunch
@@ -1134,10 +1134,10 @@ label finale_rottura:
     with fade
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_cold as madre_sprite at sprite_stage_right, sprite_cold_still
+        show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_madre_neutral as madre_sprite at sprite_stage_right, sprite_breathe
+        show sprite_madre_neutral as madre_sprite at sprite_stage_right_halfbody, sprite_breathe
     play music audio.memory fadeout 1.8 fadein 2.4
     play ambience audio.room fadeout 1.0 fadein 1.3
     "Poso il flacone sul tavolo. Le parole mi escono a pezzi, senza la forma ordinata che Sophie mi ha insegnato a dare al dolore."
