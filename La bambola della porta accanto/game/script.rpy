@@ -70,9 +70,9 @@ label start:
     scene bg mila room
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_tense at sprite_stage_left
+        show sprite_mila_tense at sprite_stage_left, sprite_tremble
     else:
-        show sprite_mila_neutral at sprite_stage_left
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
 
     "Il primo suono della giornata non è mai la sveglia. È lo scatto metallico dell'accendino nell'altra stanza."
     play sound audio.lighter
@@ -87,11 +87,11 @@ label start:
     scene bg mila kitchen
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_madre_cold at sprite_stage_right
+        show sprite_mila_worried at sprite_stage_left, sprite_breathe
+        show sprite_madre_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_madre_neutral at sprite_stage_right
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+        show sprite_madre_neutral at sprite_stage_right, sprite_breathe
     "Mia madre è seduta al tavolo, avvolta in una vestaglia sbiadita. Mio padre è una sagoma indistinta dietro il giornale. La sua indifferenza è diventata, nella mia testa, il carburante della crudeltà di lei."
     "Appoggio la tazzina sul legno chiaro. La ceramica sfiora il piano con un rumore minuscolo. Mamma osserva il caffè, poi alza gli occhi. Sono stanchi, grigi, del colore delle sigarette consumate nel posacenere."
     madre "Ti sei truccata?"
@@ -116,8 +116,8 @@ label start:
             "È più facile non chiedere. Se non sento una risposta, posso continuare a immaginare che non ce ne sarebbe stata una."
     scene bg school
     with dissolve
-    show sprite_mila_neutral at sprite_stage_left
-    show sprite_kate_neutral at sprite_stage_right
+    show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+    show sprite_kate_neutral at sprite_stage_right, sprite_breathe
     play ambience audio.rain fadeout 1.0 fadein 1.5
     "Fuori l'aria sa di asfalto umido e libertà vigilata. A scuola sono Mila la brava: quella che prende nove in matematica, non disturba e sorride quanto basta per non far nascere domande."
     "Kate mi raggiunge correndo, le guance arrossate dal freddo. È l'incarnazione di un mondo di carta velina: brillante, rumoroso, ignaro. Mi circonda le spalle con un braccio; devo fare uno sforzo per non sussultare. Per me, un tocco improvviso annuncia ancora un colpo."
@@ -139,10 +139,10 @@ label start:
     scene bg oak houses
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_tense at sprite_stage_left
-        show sprite_sophie_cold at sprite_stage_right
+        show sprite_mila_tense at sprite_stage_left, sprite_tremble
+        show sprite_sophie_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
     "Alle diciannove sono davanti alla casa dei vicini. La villetta è impeccabile, quasi gemella della nostra. Tra le due corre una striscia di prato rasato così corto da sembrare finto; al centro cresce una vecchia quercia che nessuno dei proprietari ha mai voluto abbattere."
     "Qui l'aria è diversa. Non è l'ossigeno pesante di casa mia: è un vuoto sterile, profumato di ammorbidente costoso."
     "I genitori di Sophie mi accolgono con la gentilezza distaccata riservata a chi svolge bene il proprio lavoro."
@@ -154,11 +154,11 @@ label start:
     scene bg sophie room
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_sophie_tense at sprite_stage_right
+        show sprite_mila_worried at sprite_stage_left, sprite_breathe
+        show sprite_sophie_tense at sprite_stage_right, sprite_tremble
     else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_sophie_neutral at sprite_stage_right
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+        show sprite_sophie_neutral at sprite_stage_right, sprite_breathe
     "Sophie è sdraiata sul letto, le cuffie al collo, un joystick tra le mani. Ha quindici anni; è cresciuta in verticale, spigolosa e pallida, e sembra già troppo grande per la stanza che i suoi genitori le hanno preparato."
     "Sulla carta sono lì per fare da tutor e darle una mano la sera. Chiamarlo babysitting per una quindicenne suona ridicolo, ma per i suoi genitori è il modo più comodo per non lasciarla sola e delegare a me il problema di una figlia difficile."
     "Ogni volta che varco questa soglia, però, la mappa delle nostre età sembra cancellarsi. Sophie mi osserva come se avesse capito troppo presto che il mondo degli adulti è una recita mediocre. Di fronte a lei, sono io a sentirmi piccola."
@@ -181,11 +181,11 @@ label start:
     scene bg sophie kitchen
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_sophie_cold at sprite_stage_right
+        show sprite_mila_worried at sprite_stage_left, sprite_breathe
+        show sprite_sophie_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_sophie_neutral at sprite_stage_right
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+        show sprite_sophie_neutral at sprite_stage_right, sprite_breathe
     "Scendo in cucina e lavo le mani più a lungo del necessario. Mentre l'acqua bolle, noto un quaderno di schizzi aperto sul tavolo. Il disegno è dettagliatissimo: io, rannicchiata in un angolo, con fili sottili legati ai polsi e alle caviglie che scompaiono oltre il bordo del foglio."
     "Sotto, con la grafia ordinata di Sophie, c'è scritto: La mia bambola preferita."
     "Sorrido debolmente. Mi sembra dolce che mi abbia ritratta, che abbia notato ogni dettaglio. Lei mi vuole bene davvero. Mi protegge."
@@ -228,20 +228,20 @@ label capitolo_1:
     scene bg oak houses
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_tense at sprite_stage_left
-        show sprite_sophie_cold at sprite_stage_right
+        show sprite_mila_tense at sprite_stage_left, sprite_tremble
+        show sprite_sophie_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
     "Corro nella notte. L'aria fredda mi taglia i polmoni. Attraverso il prato e salgo i gradini. Sono le 23:18: tre minuti di ritardo."
     "Infilo la chiave nella toppa. La porta si apre. E basta. Non è chiusa dall'interno. Mi fermo sulla soglia, con la chiave ancora in mano. Mi dico che è stata una dimenticanza, che sono fortunata, che la prossima volta sarà diverso."
     scene bg mila kitchen
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_madre_cold at sprite_stage_right
+        show sprite_mila_worried at sprite_stage_left, sprite_breathe
+        show sprite_madre_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_madre_neutral at sprite_stage_right
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+        show sprite_madre_neutral at sprite_stage_right, sprite_breathe
     "La luce della cucina taglia il corridoio buio. Mio padre è seduto in poltrona, con la TV spenta."
     padre "È in cucina."
     "Non è un avvertimento. È una constatazione."
@@ -261,9 +261,9 @@ label capitolo_1:
     scene bg mila room
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_tense at sprite_stage_left
+        show sprite_mila_tense at sprite_stage_left, sprite_tremble
     else:
-        show sprite_mila_neutral at sprite_stage_left
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
     "Mi trascino in camera vestita. Non piango: le lacrime sono un lusso che non posso permettermi. Sotto il cuscino trovo un frammento di vetro raccolto in giardino. Lo stringo fino a sentire dolore e subito dopo vergogna per averlo fatto."
     "Mi dico che questo dolore è onesto, che almeno non cerca di convincermi di essere per il mio bene. Non so più se sia una verità mia o una frase che qualcun altro mi ha insegnato."
     "Sento ancora il pollice di Sophie sotto lo zigomo. Voglio vedere chi sei quando smetti di essere il loro robot."
@@ -293,8 +293,8 @@ label capitolo_2:
     "So che qualcosa è distorto. Sophie non direbbe mai una cosa simile. Eppure il dubbio si insinua: e se anche Sophie stesse recitando? Il dubbio non deve essere vero per fare danni; basta respirarlo."
     scene bg school
     with dissolve
-    show sprite_mila_neutral at sprite_stage_left
-    show sprite_kate_neutral at sprite_stage_right
+    show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+    show sprite_kate_neutral at sprite_stage_right, sprite_breathe
     "A scuola mi muovo come un guscio vuoto. Senza telefono sono isolata; ma è l'isolamento mentale a soffocarmi."
     "Kate mi intercetta vicino agli armadietti."
     kate "Mila! Da ieri sera sei sparita. Ti ho scritto un sacco di messaggi. Stamattina ha risposto tua madre, dicendomi che eri malata e di non cercarti. E invece sei qui. Che cosa succede?"
@@ -315,6 +315,7 @@ label capitolo_2:
     "Torno a casa alle 14:10. Mia madre è nell'ingresso e controlla l'orologio. La porta della camera deve restare aperta. Studio alla scrivania di spalle, dove lei può sorvegliare la mia postura, la mia presenza, il mio silenzio."
     "Verso le cinque, mentre la luce si fa radente e grigia, un picchiettio leggerissimo colpisce il vetro della finestra sul retro."
     play sound audio.window_knock
+    with hpunch
     "Toc. Toc-toc."
     "Sposto gli occhi senza muovere la testa. Sul davanzale esterno c'è un piccolo bullone avvolto in un foglio colorato, legato a un filo da pesca trasparente che risale verso la quercia."
     "Sento i passi di mia madre in corridoio. Premo la penna sul quaderno finché l'inchiostro non crea una macchia densa. Lei si ferma sulla soglia, controlla la mia schiena dritta, poi si allontana."
@@ -503,19 +504,19 @@ label capitolo_5:
     scene bg mila kitchen
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_madre_cold at sprite_stage_right
+        show sprite_mila_worried at sprite_stage_left, sprite_breathe
+        show sprite_madre_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_madre_neutral at sprite_stage_right
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+        show sprite_madre_neutral at sprite_stage_right, sprite_breathe
     "A colazione mio padre mangia cereali con movimenti lenti, fissando il vuoto oltre la scatola di cartone. Dietro la pesante scrivania di mogano custodisce l'unica cosa che, nella mia testa, può comprarmi una via d'uscita."
     "I miei genitori escono alle dieci e trenta per la spesa e la lavanderia. Quando sento il motore allontanarsi, il silenzio della casa cambia frequenza: non è più protettivo, ma accusatorio. Ogni mobile sembra guardarmi."
     scene bg mila room
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_tense at sprite_stage_left
+        show sprite_mila_tense at sprite_stage_left, sprite_tremble
     else:
-        show sprite_mila_neutral at sprite_stage_left
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
     "Entro nello studio di papà. Odora di carta vecchia, legno trattato e tabacco spento. Il cassetto centrale è chiuso. La chiave d'ottone è dentro un finto libro rilegato in pelle sulla mensola più alta: un nascondiglio banale, quasi infantile."
     "La serratura scatta. Il cassetto scorre senza rumore. Dentro ci sono mazzette fermate da elastici: banconote da cinquanta e cento. Cinque mazzette. Cinquemila euro."
     "Non è una fortuna. È il sangue di questa casa, il frutto di anni di straordinari, rinunce e cene consumate senza rivolgersi la parola."
@@ -568,11 +569,11 @@ label capitolo_5:
     scene bg mila kitchen
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_madre_cold at sprite_stage_right
+        show sprite_mila_worried at sprite_stage_left, sprite_breathe
+        show sprite_madre_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_madre_neutral at sprite_stage_right
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+        show sprite_madre_neutral at sprite_stage_right, sprite_breathe
     "Alle 11:12 l'auto rientra. Sono in cucina, con le mani immerse nell'acqua saponata. Il getto copre il tremito del respiro."
     madre "Brava, Mila. Vedi che quando ti impegni sai essere la figlia che meritiamo? Senza tutte quelle stranezze in testa."
     "Mi accarezza i capelli, un gesto insolito. Il tocco mi brucia come acido. Lo zaino abbandonato in camera sembra urlare la verità attraverso i muri."
@@ -787,11 +788,11 @@ label capitolo_7:
     scene bg mila kitchen
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_madre_cold at sprite_stage_right
+        show sprite_mila_worried at sprite_stage_left, sprite_breathe
+        show sprite_madre_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_madre_neutral at sprite_stage_right
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+        show sprite_madre_neutral at sprite_stage_right, sprite_breathe
     "Ma quando apro la porta, l'odore pesante di fumo e rancore è svanito. La casa profuma di lasagne al forno: il mio piatto preferito, quello che mamma preparava solo per i compleanni."
     "Per un istante la mente vacilla. E se avessi sbagliato tutto? Potrei scusarmi, restituire i soldi, dire che è stato un errore. Potremmo sederci e provare a riparare le macchie del passato."
     madre "Mila, porti tu i bicchieri? Sono sul bancone."
@@ -829,13 +830,14 @@ label capitolo_8:
     scene bg mila kitchen
     with fade
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_madre_cold at sprite_stage_right
+        show sprite_mila_worried at sprite_stage_left, sprite_breathe
+        show sprite_madre_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_madre_neutral at sprite_stage_right
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+        show sprite_madre_neutral at sprite_stage_right, sprite_breathe
     play ambience audio.room fadeout 1.0 fadein 1.3
     play sound audio.heartbeat
+    with hpunch
     play music audio.tension fadeout 0.8 fadein 1.4
     centered "{size=42}{color=#e6d4db}CAPITOLO 8{/color}{/size}\n\n{size=28}{color=#aa97a3}Natura morta con sedativi{/color}{/size}"
     "Il risveglio è una lenta emersione da una vasca di catrame caldo. Non c'è un istante preciso in cui riapro gli occhi: c'è soltanto una transizione granulosa dal buio a un grigio opaco. La testa pesa un quintale; i pensieri si muovono nel fango. Sulla lingua resta un sapore chimico, metallico, amaro."
@@ -879,11 +881,11 @@ label capitolo_8:
     scene bg sophie kitchen
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_sophie_cold at sprite_stage_right
+        show sprite_mila_worried at sprite_stage_left, sprite_breathe
+        show sprite_sophie_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_sophie_neutral at sprite_stage_right
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+        show sprite_sophie_neutral at sprite_stage_right, sprite_breathe
     "La porta sul retro è aperta. Dentro l'aria profuma di cera per mobili e lavanda, un odore sterile che mi dà la nausea."
     "I suoi genitori sono sul divano. La televisione proietta bagliori bluastri sui loro volti addormentati. Un bicchiere di cristallo è rovesciato sul tappeto, una macchia scura si allarga lentamente."
     sophie "Comincia con mia madre. È quella che fa più rumore. Finisci il rumore, Mila."
@@ -909,11 +911,11 @@ label capitolo_9:
     scene bg sophie kitchen
     with fade
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_sophie_cold at sprite_stage_right
+        show sprite_mila_worried at sprite_stage_left, sprite_breathe
+        show sprite_sophie_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_sophie_neutral at sprite_stage_right
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+        show sprite_sophie_neutral at sprite_stage_right, sprite_breathe
     play ambience audio.room fadeout 1.0 fadein 1.2
     play music audio.investigation fadeout 1.0 fadein 1.5
     centered "{size=42}{color=#e6d4db}CAPITOLO 9{/color}{/size}\n\n{size=28}{color=#aa97a3}Il diorama di porcellana{/color}{/size}"
@@ -1014,8 +1016,8 @@ label capitolo_9:
 label finale_verita:
     scene bg school
     with fade
-    show sprite_mila_neutral at sprite_stage_left
-    show sprite_kate_neutral at sprite_stage_right
+    show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+    show sprite_kate_neutral at sprite_stage_right, sprite_breathe
     play music audio.ending fadeout 1.8 fadein 2.4
     play ambience audio.rain fadeout 1.0 fadein 1.4
     if genitori_salvati:
@@ -1082,11 +1084,11 @@ label finale_rottura:
     scene bg mila kitchen
     with fade
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_worried at sprite_stage_left
-        show sprite_madre_cold at sprite_stage_right
+        show sprite_mila_worried at sprite_stage_left, sprite_breathe
+        show sprite_madre_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
-        show sprite_madre_neutral at sprite_stage_right
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
+        show sprite_madre_neutral at sprite_stage_right, sprite_breathe
     play music audio.memory fadeout 1.8 fadein 2.4
     play ambience audio.room fadeout 1.0 fadein 1.3
     "Poso il flacone sul tavolo. Le parole mi escono a pezzi, senza la forma ordinata che Sophie mi ha insegnato a dare al dolore."
@@ -1112,10 +1114,10 @@ label finale_fuga:
     scene bg oak houses
     with fade
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_tense at sprite_stage_left
-        show sprite_sophie_cold at sprite_stage_right
+        show sprite_mila_tense at sprite_stage_left, sprite_tremble
+        show sprite_sophie_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
     play ambience audio.rain fadeout 1.0 fadein 1.5
     play music audio.tension fadeout 1.4 fadein 2.2
     "Mila corre verso la quercia. Sophie l'aspetta con uno zaino troppo piccolo per una vita nuova."
@@ -1190,10 +1192,10 @@ label finale_fascicolo:
     scene bg oak houses
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_mila_tense at sprite_stage_left
-        show sprite_sophie_cold at sprite_stage_right
+        show sprite_mila_tense at sprite_stage_left, sprite_tremble
+        show sprite_sophie_cold at sprite_stage_right, sprite_cold_still
     else:
-        show sprite_mila_neutral at sprite_stage_left
+        show sprite_mila_neutral at sprite_stage_left, sprite_breathe
     "La luce del sole filtra dal finestrino, illuminando i capelli biondi di Sophie. È seduta di fronte alla sua nuova famiglia affidataria: persone benestanti, con il volto di chi crede ancora che il mondo sia un posto sicuro."
     "Accanto a lei c'è Chloe, dodici anni, trecce ordinate e uno sguardo timido, quasi spaventato da quella nuova sorella così silenziosa."
     sophie "No, grazie, mamma. Sto benissimo."
