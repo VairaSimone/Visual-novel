@@ -21,15 +21,19 @@ transform sprite_approach_mila:
     zoom 0.64
     ease 0.65 xalign 0.49
 
-# Disegno di Sophie: viene mostrato come scena esclusiva, senza sprite.
-# Il canvas coincide con la risoluzione del gioco; "contain" mantiene le proporzioni
-# del PNG e mostra l'intero foglio senza tagliarlo o deformarlo.
-image sophie_draw_fullscreen = Transform(
-    "images/backgrounds/sophie_draw.png",
-    xysize=(1920, 1080),
-    fit="contain",
-    xalign=0.5,
-    yalign=0.5
+# Disegno di Sophie su fondo bianco uniforme: le aree trasparenti del PNG
+# non devono mostrare la scacchiera di trasparenza ai lati. Il disegno resta intero,
+# centrato e proporzionato sul canvas 16:9 (1920x1080).
+image sophie_draw_fullscreen = Composite(
+    (1920, 1080),
+    (0, 0), Solid("#ffffff", xysize=(1920, 1080)),
+    (0, 0), Transform(
+        "images/backgrounds/sophie_draw.png",
+        xysize=(1920, 1080),
+        fit="contain",
+        xalign=0.5,
+        yalign=0.5
+    )
 )
 
 transform sprite_stage_left:
