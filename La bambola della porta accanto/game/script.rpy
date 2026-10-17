@@ -79,7 +79,7 @@ label start:
     "Un clic secco. Poi il primo sospiro di fumo di mia madre. È quello il segnale: ho esattamente sei minuti prima che mi chiami."
     "Li ho cronometrati un anno fa: sei minuti e undici secondi. Da allora li conto ogni mattina."
     "Sei minuti per smettere di esistere come individuo e diventare una funzione della casa."
-    "Mi alzo senza far scricchiolare le doghe. La stanza è in ordine perfetto: libri allineati, letto teso, nessuna macchia. Non è disciplina. È il modo che ho trovato per darle meno appigli."
+    "Mi alzo senza far rumore. La stanza è in ordine: libri allineati, letto teso, nessuna macchia. Non è disciplina, ma un modo per darle meno appigli."
     madre "Mila."
     "La voce attraversa la porta come un ago freddo. Mia madre non urla. Le grida sono per i dilettanti; lei usa la pressione atmosferica."
     "Esco con le spalle curve. In bagno copro il viola sotto gli occhi. Allo specchio, sotto lo zigomo destro, intravedo una cicatrice sottile."
@@ -187,7 +187,7 @@ label start:
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
         show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_breathe
-    "In cucina lavo le mani mentre l'acqua bolle. Sul tavolo c'è un disegno di Sophie: io, rannicchiata in un angolo, con fili legati ai polsi e alle caviglie che spariscono fuori dal foglio."
+    "Lavo le mani mentre l'acqua bolle. Sul tavolo c'è un disegno di Sophie: io rannicchiata, con fili ai polsi e alle caviglie che spariscono fuori dal foglio."
     "Sotto, con la grafia ordinata di Sophie, c'è scritto: La mia bambola preferita."
     "Sorrido debolmente. Mi sembra dolce che mi abbia ritratta, che abbia notato ogni dettaglio. Lei mi vuole bene davvero. Mi protegge."
     "Dalla finestra guardo casa mia. Per la prima volta, l'idea di tornarci non mi dà solo nausea. Mi fa tristezza."
@@ -225,7 +225,7 @@ label capitolo_1:
     "Si avvicina, mi posa una mano sulla spalla e stringe un po' troppo."
     sophie "Mi si spezza il cuore a vederti così. Almeno qui sei umana. Con me puoi smettere di fingere."
     "Per un istante il mondo si restringe al profumo del suo shampoo e al calore del suo respiro. Penso che stia per baciarmi sulla guancia. Invece sussurra:"
-    sophie "Vai a casa, allora. Corri dal tuo mostro. Lascia che ti faccia sentire inutile. Poi ricorderai dov'è l'unico posto in cui puoi tornare: qui. La mia porta resta aperta per te."
+    sophie "Vai a casa, corri dal tuo mostro. Lascia che ti faccia sentire inutile. Poi ricorderai dov'è l'unico posto sicuro: qui. La mia porta resta aperta."
     scene bg oak houses
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
@@ -325,7 +325,7 @@ label capitolo_2:
     "{i}Tua madre controlla il vialetto. Ogni mattina fa la doccia dalle sei alle sei e un quarto. Domani guarda sotto il tappetino: ti ho lasciato una chiave per il nostro mondo.{/i}"
     "{i}Guarda sotto il tappetino domani prima di uscire. Ti ho lasciato un regalo. Una chiave per il nostro mondo.{/i}"
     "{i}Non farti spegnere. Mi servi accesa. — S.{/i}"
-    "Il cuore martella. «Mi servi accesa.» Non suona come una dichiarazione d'affetto, ma come un ordine. Sophie mi sta aiutando o mi sta usando per colpire mia madre? Non voglio saperlo."
+    "Il cuore martella. «Mi servi accesa.» Non è affetto, suona come un ordine. Sophie mi aiuta o mi usa per colpire mia madre? Non voglio saperlo."
     "Non dormo. Dalla porta aperta vedo la sigaretta di mamma accendersi e spegnersi in fondo al corridoio."
     "Mamma rimette i coltelli nel ceppo, uno alla volta. Clac. Clac. Clac. Per me, ogni colpo suona come un avvertimento."
     "Domani prenderò quello che Sophie ha lasciato sotto il tappetino. Non so se sarà la salvezza o la rovina. A questo punto la differenza sembra aver smesso di importare."
@@ -695,7 +695,7 @@ label capitolo_6:
     mila "Diranno quello che vuoi tu."
     madre "Certo."
     "Mi accompagna alla finestra e mi obbliga a guardare la villetta vicina. Una sola luce è accesa nel sottotetto: la stanza di Sophie."
-    madre "Credi che quella ragazzina ti voglia bene? Non cerca un'amica, ma qualcuno da controllare. Ti ha convinta che questa casa sia un inferno perché la sua sembri l'unica porta aperta."
+    madre "Credi che quella ragazzina ti voglia bene? Vuole controllarti. Ti ha convinta che questa casa sia un inferno, così la sua sembra l'unica porta aperta."
     "Mi lascia andare. Crollo sul pavimento."
     madre "Ho chiamato la dottoressa Ferrante. Venerdì alle undici. Tuo padre ha preso un permesso: andiamo a parlare con lei, poi ci allontaniamo per un po'. Tutti e tre."
     "Venerdì alle undici: nella mia testa diventa subito la data della condanna."
@@ -947,7 +947,7 @@ label capitolo_9:
     "Guardo il livido: se l'è fatto da sola. Anche quel dolore era una scena preparata per convincermi che eravamo uguali."
     sophie "Chi cercherà un'anomalia? La polizia avrà il diario: date, odio e abusi che ti ho suggerito. La tua grafia. Nessuno ti ha costretto a scrivere."
     "Sophie si guarda intorno, soddisfatta come chi ha appena finito di apparecchiare."
-    sophie "Troveranno il diario, le tue impronte sul flacone e sul cuscino. E una quindicenne nel ripostiglio. La cronaca avrà già il suo titolo: la brava ragazza diventata assassina."
+    sophie "Troveranno il diario, le tue impronte sul flacone e sul cuscino. E una quindicenne nel ripostiglio. La cronaca avrà già un titolo: la brava ragazza diventata assassina."
     mila "E il telefono? I messaggi?"
     sophie "La SIM è falsa. Per loro sarò una persona conosciuta online, oppure una voce inventata dalla tua mente. Sceglieranno la spiegazione più comoda."
     "Mi porge il frammento di vetro raccolto in giardino."
@@ -1025,7 +1025,7 @@ label finale_verita:
         "Kate risponde quasi subito. Quando sente la mia voce, non mi chiede di raccontare tutto in ordine. Mi dice di restare dove sono e di raggiungere un adulto."
         "Arrivano aiuto e soccorsi prima che Sophie possa imporre un'altra versione. Il flacone viene messo al sicuro; nessuno deve decidere da solo cosa contenga."
         "Mamma non minimizza la mia paura. Papà resta accanto a me mentre provo a distinguere ciò che ho visto da ciò che Sophie mi ha insegnato a credere."
-        "Non ci riconciliamo subito. Dovremo ricostruire la fiducia. La visita dalla dottoressa non sarà una condanna. Per la prima volta mi aiutano senza chiedermi una confessione perfetta."
+        "Non ci riconciliamo subito. Dovremo ricostruire la fiducia. La visita dalla dottoressa non sarà una condanna. Per la prima volta mi aiutano senza pretendere una confessione perfetta."
         centered "{size=42}{color=#e6d4db}FINALE: LA PORTA APERTA{/color}{/size}"
         return
     if sophie_smascherata:
@@ -1172,7 +1172,7 @@ label finale_fascicolo:
         "Mila continua a chiamare colpevoli i genitori senza prove indipendenti. Gli investigatori leggono quei sospetti come rancore premeditato."
     "Il verbale racconta che la bambina ha cercato di fermare Mila, poi è fuggita. Le tracce vengono classificate come segni di una colluttazione difensiva."
     "È, in un certo senso, la firma più bella che Sophie abbia mai messo in fondo a un documento: qualcun altro l'ha scritta per lei."
-    "Il «Massacro della Porta Accanto» riempie i giornali per settimane. La villetta compare in copertina, dietro il nastro giallo. Gli editoriali parlano di figli impossibili da conoscere."
+    "Il «Massacro della Porta Accanto» riempie i giornali. La foto della villetta appare in copertina, dietro il nastro giallo. Gli editoriali discutono di quanto sia difficile conoscere i figli."
     if telefono_condiviso_kate or immagini_condivise_kate:
         "Una sola voce stona. Kate consegna alla Procura le copie che Mila le aveva affidato."
         if telefono_condiviso_kate and immagini_condivise_kate:
