@@ -190,24 +190,20 @@ label start:
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_breathe
     "Lavo le mani mentre l'acqua bolle. Sul tavolo c'è un disegno di Sophie: io rannicchiata, con fili ai polsi e alle caviglie che spariscono fuori dal foglio."
     # Primo piano esclusivo del disegno: scene rimuove lo sfondo della cucina e tutti gli sprite.
     scene sophie_draw_fullscreen
     with dissolve
     "Sotto, con la grafia ordinata di Sophie, c'è scritto: La mia bambola preferita."
-    # Ripristina la cucina e i personaggi dopo aver mostrato il disegno da solo.
+    # Ripristina la cucina dopo il primo piano: nel prologo è presente soltanto Mila.
     scene bg sophie kitchen
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_breathe
     "Sorrido debolmente. Mi sembra dolce che mi abbia ritratta, che abbia notato ogni dettaglio. Lei mi vuole bene davvero. Mi protegge."
     "Dalla finestra guardo casa mia. Per la prima volta, l'idea di tornarci non mi dà solo nausea. Mi fa tristezza."
     "Sophie ha ragione, penso. Chi non prova nulla è fortunato. Io invece sento ogni frequenza del dolore, e sta diventando troppo pesante da portare."
@@ -219,7 +215,16 @@ label capitolo_1:
     with fade
     play ambience audio.room fadeout 1.0 fadein 1.2
     centered "{size=42}{color=#e6d4db}CAPITOLO 1{/color}{/size}\n\n{size=28}{color=#aa97a3}Come sanguina un robot{/color}{/size}"
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
+        show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
+    else:
+        show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
     "Preparo il pollo in automatico: taglio, soffriggo, mescolo. Mamma mi chiama efficiente. Io ho solo paura di sbagliare."
+    # Sophie entra visivamente in scena soltanto quando Mila la descrive in cucina.
+    if dubbi_di_mila >= 2 or indizi_reali >= 2:
+        show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_cold_still with dissolve
+    else:
+        show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_cold_still with dissolve
     "Sophie non è rimasta in camera. È seduta sull'isola della cucina, le gambe che dondolano nel vuoto, e osserva ogni movimento."
     sophie "Sai cosa dicono i miei? «Guarda Mila: non risponde, è sempre in ordine, non si lamenta»."
     mila "I tuoi sono gentili."
