@@ -127,7 +127,7 @@ init python:
 
     def adaptive_dialogue_size(value):
         # Stima il testo visibile senza contare le tag di formattazione Ren'Py.
-        plain = re.sub(r"\\{[^{}]*\\}", "", str(value))
+        plain = re.sub(r"\{[^{}]*\}", "", str(value))
         plain = plain.replace("\\n", "\n")
         length = len(plain.strip())
 
@@ -617,7 +617,7 @@ screen main_menu():
         outlines [(1, "#09060cbb", 0, 1)]
 
     # Frase di tono sul lato visivo, separata dai comandi di navigazione.
-    text "IL RICORDO È UNA STANZA\\nDOVE QUALCUNO HA GIÀ SPOSTATO I MOBILI.":
+    text "IL RICORDO È UNA STANZA\nDOVE QUALCUNO HA GIÀ SPOSTATO I MOBILI.":
         xalign 0.96
         ypos 875
         xmaximum 900
