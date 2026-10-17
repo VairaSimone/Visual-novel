@@ -1025,7 +1025,7 @@ label finale_verita:
         "Kate risponde quasi subito. Quando sente la mia voce, non mi chiede di raccontare tutto in ordine. Mi dice di restare dove sono e di raggiungere un adulto."
         "Arrivano aiuto e soccorsi prima che Sophie possa imporre un'altra versione. Il flacone viene messo al sicuro; nessuno deve decidere da solo cosa contenga."
         "Mamma non minimizza la mia paura. Papà resta accanto a me mentre provo a distinguere ciò che ho visto da ciò che Sophie mi ha insegnato a credere."
-        "Non ci riconciliamo subito. Dovremo ricostruire la fiducia. La visita dalla dottoressa non sarà una condanna. Per la prima volta mi aiutano senza pretendere una confessione perfetta."
+        "Non ci riconciliamo subito. Dovremo ricostruire la fiducia. La visita dalla dottoressa non è una condanna. Per la prima volta mi aiutano senza pretendere una confessione perfetta."
         centered "{size=42}{color=#e6d4db}FINALE: LA PORTA APERTA{/color}{/size}"
         return
     if sophie_smascherata:
@@ -1172,7 +1172,7 @@ label finale_fascicolo:
         "Mila continua a chiamare colpevoli i genitori senza prove indipendenti. Gli investigatori leggono quei sospetti come rancore premeditato."
     "Il verbale racconta che la bambina ha cercato di fermare Mila, poi è fuggita. Le tracce vengono classificate come segni di una colluttazione difensiva."
     "È, in un certo senso, la firma più bella che Sophie abbia mai messo in fondo a un documento: qualcun altro l'ha scritta per lei."
-    "Il «Massacro della Porta Accanto» riempie i giornali. La foto della villetta appare in copertina, dietro il nastro giallo. Gli editoriali discutono di quanto sia difficile conoscere i figli."
+    "Il «Massacro della Porta Accanto» riempie i giornali. La villetta appare in copertina, dietro il nastro giallo. Gli editoriali discutono di quanto si possa conoscere i figli."
     if telefono_condiviso_kate or immagini_condivise_kate:
         "Una sola voce stona. Kate consegna alla Procura le copie che Mila le aveva affidato."
         if telefono_condiviso_kate and immagini_condivise_kate:
