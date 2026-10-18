@@ -21,6 +21,13 @@ transform sprite_approach_mila:
     zoom 0.64
     ease 0.65 xalign 0.49
 
+# La madre avanza appena verso Mila durante la presa alla mascella.
+transform sprite_mother_approach:
+    xalign 0.69
+    yalign 1.0
+    zoom 0.70
+    ease 0.55 xalign 0.63
+
 # Trasformazione unica per l'avvicinamento teso: mantiene una sola scala (0.64)
 # e aggiunge il tremore senza applicare un secondo zoom allo sprite.
 transform sprite_approach_mila_tense:
