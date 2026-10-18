@@ -316,7 +316,7 @@ label capitolo_1:
     madre "Il lavoro è finito?"
     mila "Sì, mamma. Mi dispiace per il ritardo, io..."
     madre "La madre di Sophie mi ha scritto: sua figlia non si sente a suo agio con te. Non sai fare nemmeno il lavoro per cui ti pagano: stare zitta e non creare problemi."
-    show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_approach_mila
+    show sprite_madre_cold as madre_sprite at sprite_mother_approach
     show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_recoil
     "Si avvicina e mi afferra la mascella con tre dita, costringendomi a guardarla. Le sue unghie si piantano nella pelle; le dita odorano di detersivo e cenere spenta."
     madre "Che cosa vi siete dette? Hai raccontato le tue storielle da vittima per farti compatire?"
