@@ -235,8 +235,9 @@ label start:
 
 
 label capitolo_1:
-    scene bg sophie kitchen
+    scene bg sophie kitchen at bg_slow_push
     with fade
+    show expression Solid("#2b1e2410") as chapter1_tint
     play ambience audio.room fadeout 1.0 fadein 1.2
     centered "{size=42}{color=#e6d4db}CAPITOLO 1{/color}{/size}\n\n{size=28}{color=#aa97a3}Come sanguina un robot{/color}{/size}"
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
@@ -250,15 +251,21 @@ label capitolo_1:
     else:
         show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_cold_still with dissolve
     "Sophie non è rimasta in camera. È seduta sull'isola della cucina, le gambe che dondolano nel vuoto, e osserva ogni movimento."
+    show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_micro_tension
     sophie "Sai cosa dicono i miei? «Guarda Mila: non risponde, è sempre in ordine, non si lamenta»."
     mila "I tuoi sono gentili."
+    show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_cold_still
     sophie "No. I miei sono pigri. Ti usano come esempio perché non sanno chi sono io. Ma ti guardo davvero: stringi quel coltello fino a sbiancarti le nocche."
+    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_anxious_breathe
     "Abbasso gli occhi. Ha ragione. Tengo il manico come se fosse l'unica cosa che mi impedisce di scivolare via dalla realtà. Rilasso le dita, una alla volta."
     mila "È solo stanchezza."
     sophie "È rabbia. La tieni dentro per non disturbare. È l'unica cosa sincera che mostri. Scommetto che, ferendoti, chiederesti scusa al pavimento."
+    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_flinch
     "Mi volto bruscamente. Il calore dei fornelli mi scotta le guance, o forse è il rossore che mi tradisce."
     mila "Perché mi dici queste cose? Dovresti giocare ai videogiochi. Dovresti essere una ragazzina."
     sophie "E tu dovresti vivere, Mila. Qui sei in una cella dorata; a casa tua, in una di cemento. Voglio vedere chi diventi quando smetti di essere il loro robot."
+    show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_approach_mila with dissolve
+    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_recoil
     "Mi prende una mano. Aspetta una reazione, un grido, uno schiaffo. Io abbasso lo sguardo."
     mila "La cena è pronta."
     "Ceniamo in silenzio. Il pollo sembra cartone bagnato. Poi la aiuto con latino: è brillante, ma si rifiuta di studiare per dispetto verso i professori."
@@ -270,21 +277,29 @@ label capitolo_1:
     "Mi blocco davanti alla porta. Le parole risuonano come una condanna."
     mila "Non è così semplice."
     sophie "È semplicissimo. Ma tu hai paura della libertà quanto hai paura di lei."
+    show sprite_sophie_tense as sophie_sprite at sprite_approach_mila, sprite_micro_tension
+    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_flinch
     "Si avvicina, mi posa una mano sulla spalla e stringe un po' troppo."
     sophie "Mi si spezza il cuore a vederti così. Almeno qui sei umana. Con me puoi smettere di fingere."
+    show sprite_sophie_tense as sophie_sprite at sprite_approach_mila, sprite_micro_tension
+    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_anxious_breathe
     "Per un istante il mondo si restringe al profumo del suo shampoo e al calore del suo respiro. Penso che stia per baciarmi sulla guancia. Invece sussurra:"
     sophie "Vai a casa, corri dal tuo mostro. Lascia che ti faccia sentire inutile. Poi ricorderai dov'è l'unico posto sicuro: qui. La mia porta resta aperta."
-    scene bg oak houses
+    scene bg oak houses at bg_tension_push
     with dissolve
+    show expression Solid("#25192324") as chapter1_tint
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
         show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
+    with hpunch
+    show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
     "Corro nella notte. L'aria fredda mi taglia i polmoni. Attraverso il prato e salgo i gradini. Sono le 23:18: tre minuti di ritardo."
     "La chiave gira. La porta è aperta. Resto sulla soglia, cercando una spiegazione. Mi dico che è una dimenticanza e che la prossima volta andrà meglio."
-    scene bg mila kitchen
+    scene bg mila kitchen at bg_tension_push
     with dissolve
+    show expression Solid("#15121b30") as chapter1_tint
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
         show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still
@@ -294,10 +309,15 @@ label capitolo_1:
     "La luce della cucina taglia il corridoio buio. Mio padre è seduto in poltrona, con la TV spenta."
     padre "È in cucina."
     "Non è un avvertimento. È una constatazione."
+    show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still
+    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_anxious_breathe
     "Mia madre lava una tazzina. Lentamente. Il rumore della spugna sulla ceramica è l'unico suono nella stanza."
+    show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_micro_tension
     madre "Il lavoro è finito?"
     mila "Sì, mamma. Mi dispiace per il ritardo, io..."
     madre "La madre di Sophie mi ha scritto: sua figlia non si sente a suo agio con te. Non sai fare nemmeno il lavoro per cui ti pagano: stare zitta e non creare problemi."
+    show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_approach_mila
+    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_recoil
     "Si avvicina e mi afferra la mascella con tre dita, costringendomi a guardarla. Le sue unghie si piantano nella pelle; le dita odorano di detersivo e cenere spenta."
     madre "Che cosa vi siete dette? Hai raccontato le tue storielle da vittima per farti compatire?"
     mila "No. Abbiamo solo studiato."
@@ -305,14 +325,18 @@ label capitolo_1:
     "Mi strofina la guancia con uno strofinaccio umido. Il tessuto graffia la pelle. Io non lo sento come un tentativo di pulirmi: lo vivo come un'altra punizione."
     madre "Togliti questo schifo dalla faccia. Fai schifo quando cerchi di fare la grande."
     "Resto immobile, stringendo i pugni. Mio padre appare sulla soglia, guarda la scena con gli occhi vuoti di chi osserva un mobile da spostare, poi si gira e se ne va."
+    show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_recoil
+    with hpunch
     "Mia madre mi spinge contro lo spigolo del tavolo."
     madre "Sparisci dalla mia vista. Vai in camera tua e non uscire prima di domattina."
-    scene bg mila room
+    scene bg mila room at bg_slow_push
     with dissolve
+    show expression Solid("#17131d28") as chapter1_tint
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense as mila_sprite at sprite_stage_center, sprite_tremble
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_center, sprite_breathe
+    show sprite_mila_tense as mila_sprite at sprite_stage_center, sprite_anxious_breathe
     "Resto a letto vestita. Non piango. Sotto il cuscino trovo il vetro raccolto in giardino e lo stringo finché fa male. Subito dopo mi vergogno."
     "Mi dico che almeno questo dolore non finge di essere per il mio bene. Non so più se il pensiero sia mio o se qualcuno me l'abbia insegnato."
     "Sento ancora il pollice di Sophie sotto lo zigomo. Voglio vedere chi sei quando smetti di essere il loro robot."
