@@ -101,6 +101,15 @@ transform sprite_smile_lift:
     pause 0.3
     ease 0.7 yoffset 0
 
+# Micro-tensione di Sophie: un'oscillazione laterale minima durante le frasi possessive.
+# È separata dal posizionamento dello sprite, così può essere combinata con sprite_stage_right.
+transform sprite_micro_tension:
+    xoffset 0
+    ease 0.85 xoffset -2
+    ease 0.90 xoffset 2
+    ease 0.85 xoffset 0
+    repeat
+
 transform sprite_stage_left:
     xalign 0.31
     yalign 1.0
