@@ -9,6 +9,12 @@ transform sprite_stage_left_sophie:
     yalign 1.0
     zoom 0.64
 
+# Sophie resta leggermente più bassa di Mila anche sul lato destro, nel capitolo 1.
+transform sprite_stage_right_sophie:
+    xalign 0.69
+    yalign 1.0
+    zoom 0.64
+
 transform sprite_stage_right_mila:
     xalign 0.72
     yalign 1.0
@@ -27,6 +33,14 @@ transform sprite_mother_approach:
     yalign 1.0
     zoom 0.70
     ease 0.55 xalign 0.63
+
+# Il padre appare appena sulla soglia: piccolo, spostato a destra e semi-trasparente.
+transform sprite_father_threshold_hidden:
+    xalign 0.91
+    yalign 1.0
+    zoom 0.54
+    alpha 0.42
+    ease 0.9 xalign 0.88 alpha 0.48
 
 # Trasformazione unica per l'avvicinamento teso: mantiene una sola scala (0.64)
 # e aggiunge il tremore senza applicare un secondo zoom allo sprite.
