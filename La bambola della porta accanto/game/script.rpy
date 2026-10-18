@@ -327,7 +327,7 @@ label capitolo_1:
     madre "Che cosa vi siete dette? Hai raccontato le tue storielle da vittima per farti compatire?"
     mila "No. Abbiamo solo studiato."
     madre "Non mentirmi. Ti ho dato una casa e da mangiare per farti crescere normale. E tu ci fai sembrare una famiglia da compatire."
-    "Mi strofina la guancia con uno strofinaccio umido. Il tessuto graffia la pelle. Io non lo sento come un tentativo di pulirmi: lo vivo come un'altra punizione."
+    "Mi strofina la guancia con uno strofinaccio umido nel tentativo di pulirmi dal trucco che indossavo. Il tessuto graffia la pelle. Io lo vivo come un'altra punizione."
     madre "Togliti questo schifo dalla faccia. Fai schifo quando cerchi di fare la grande."
     show sprite_padre_neutral as padre_sprite at sprite_father_threshold_hidden with dissolve
     "Resto immobile, stringendo i pugni. Mio padre appare sulla soglia, guarda la scena con gli occhi vuoti di chi osserva un mobile da spostare, poi si gira e se ne va."
