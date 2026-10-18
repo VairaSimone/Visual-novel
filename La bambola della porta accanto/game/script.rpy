@@ -281,7 +281,7 @@ label capitolo_1:
     show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_flinch
     "Si avvicina, mi posa una mano sulla spalla e stringe un po' troppo."
     sophie "Mi si spezza il cuore a vederti così. Almeno qui sei umana. Con me puoi smettere di fingere."
-    show sprite_sophie_tense as sophie_sprite at sprite_approach_mila, sprite_micro_tension
+    show sprite_sophie_tense as sophie_sprite at sprite_approach_mila_tense
     show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_anxious_breathe
     "Per un istante il mondo si restringe al profumo del suo shampoo e al calore del suo respiro. Penso che stia per baciarmi sulla guancia. Invece sussurra:"
     sophie "Vai a casa, corri dal tuo mostro. Lascia che ti faccia sentire inutile. Poi ricorderai dov'è l'unico posto sicuro: qui. La mia porta resta aperta."
