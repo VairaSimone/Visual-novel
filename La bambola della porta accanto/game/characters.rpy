@@ -38,7 +38,7 @@ transform sprite_mother_approach:
 transform sprite_father_threshold_hidden:
     xalign 0.89
     yalign 1.0
-    zoom 0.76
+    zoom 0.68
     alpha 0.60
     ease 0.9 xalign 0.86 alpha 0.66
 
@@ -219,7 +219,7 @@ image sprite_kate_fear = Transform("images/characters/kate_fear.png", ysize=1185
 image sprite_madre_neutral = Transform("images/characters/sprite_madre_neutral.png", ysize=1350, fit="contain")
 image sprite_madre_cold = Transform("images/characters/sprite_madre_cold_accappatoio.png", ysize=1350, fit="contain")
 image sprite_madre_neutral_accappatoio = Transform("images/characters/sprite_madre_neutral_accappatoio.png", ysize=1350, fit="contain")
-image sprite_madre_neutral_2 = Transform("images/characters/sprite_madre_neutral_2.png", ysize=1650, fit="contain")
+image sprite_madre_neutral_2 = Transform("images/characters/sprite_madre_neutral_2.png", ysize=1350, fit="contain")
 image sprite_madre_fury = Transform("images/characters/sprite_madre_fury.png", ysize=1650, fit="contain")
 
 # Padre di Mila: ritratto a mezzo busto, normalizzato come gli altri personaggi.
