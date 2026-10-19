@@ -86,8 +86,21 @@ label start:
     show sprite_mila_fear as mila_sprite at sprite_stage_center, sprite_flinch
     madre "Mila."
     "La voce attraversa la porta come un ago freddo. Mia madre non urla. Le grida sono per i dilettanti; lei usa la pressione atmosferica."
+    # Nessun nuovo fondale: riutilizziamo la camera di Mila come base, raffreddando la luce e stringendo l'inquadratura per isolare il momento allo specchio.
+    scene bg mila room at bg_tension_push
+    with dissolve
+    show expression Solid("#a8b9d8") as bathroom_cold_light:
+        alpha 0.14
+    show expression Solid("#d9e0eb") as bathroom_mirror:
+        xalign 0.82
+        yalign 0.42
+        xysize (360, 610)
+        alpha 0.16
+    show sprite_mila_fear as mila_sprite at sprite_stage_center, sprite_anxious_breathe with dissolve
     "Esco con le spalle curve. In bagno copro il viola sotto gli occhi. Allo specchio, sotto lo zigomo destro, intravedo una cicatrice sottile."
     "Non ricordo sempre da dove venga. So che sfiorarla mi mette paura. In questa casa, anche la paura sembra una prova contro di me."
+    hide bathroom_mirror
+    hide bathroom_cold_light
     scene bg mila kitchen at bg_tension_push
     with dissolve
     show expression Solid("#15121b30") as prologue_tint
@@ -313,17 +326,17 @@ label capitolo_1:
     show expression Solid("#10101d30") as chapter1_tint
     # La madre entra visivamente soltanto dopo la battuta del padre.
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still with moveinright
+        show sprite_madre_neutral_2 as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still with moveinright
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_anxious_breathe
     else:
         show sprite_madre_neutral_2 as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still with moveinright
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
     "Mia madre lava una tazzina. Lentamente. Il rumore della spugna sulla ceramica è l'unico suono nella stanza."
-    show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_micro_tension
+    show sprite_madre_neutral_2 as madre_sprite at sprite_stage_right_halfbody, sprite_micro_tension
     madre "Il lavoro è finito?"
     mila "Sì, mamma. Mi dispiace per il ritardo, io..."
     madre "La madre di Sophie mi ha scritto: sua figlia non si sente a suo agio con te. Non sai fare nemmeno il lavoro per cui ti pagano: stare zitta e non creare problemi."
-    show sprite_madre_cold as madre_sprite at sprite_mother_approach
+    show sprite_madre_neutral_2 as madre_sprite at sprite_mother_approach
     show sprite_mila_fear as mila_sprite at sprite_stage_left, sprite_recoil
     "Si avvicina e mi afferra la mascella con tre dita, costringendomi a guardarla. Le sue unghie si piantano nella pelle; le dita odorano di detersivo e cenere spenta."
     madre "Che cosa vi siete dette? Hai raccontato le tue storielle da vittima per farti compatire?"
