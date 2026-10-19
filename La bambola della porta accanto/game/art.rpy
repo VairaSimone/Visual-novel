@@ -8,3 +8,7 @@ image bg school = Transform("images/backgrounds/school.jpg", xysize=(1920, 1080)
 image bg oak houses = Transform("images/backgrounds/oak_houses.jpg", xysize=(1920, 1080), fit="cover")
 image bg sophie kitchen = Transform("images/backgrounds/sophie_kitchen.jpg", xysize=(1920, 1080), fit="cover")
 image bg sophie room = Transform("images/backgrounds/sophie_room.jpg", xysize=(1920, 1080), fit="cover")
+
+# Nuovi fondali illustrati: corridoio notturno e scena del vetro in camera di Mila.
+image bg corridoio notte = Transform("images/backgrounds/corridoio_notte.png", xysize=(1920, 1080), fit="cover")
+image bg scena notte vetro = Transform("images/backgrounds/scena_notte_vetro.png", xysize=(1920, 1080), fit="cover")
