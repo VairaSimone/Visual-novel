@@ -36,11 +36,11 @@ transform sprite_mother_approach:
 
 # Il padre appare appena sulla soglia: piccolo, spostato a destra e semi-trasparente.
 transform sprite_father_threshold_hidden:
-    xalign 0.91
+    xalign 0.89
     yalign 1.0
-    zoom 0.54
-    alpha 0.42
-    ease 0.9 xalign 0.88 alpha 0.48
+    zoom 0.76
+    alpha 0.60
+    ease 0.9 xalign 0.86 alpha 0.66
 
 # Trasformazione unica per l'avvicinamento teso: mantiene una sola scala (0.64)
 # e aggiunge il tremore senza applicare un secondo zoom allo sprite.
@@ -219,8 +219,8 @@ image sprite_kate_fear = Transform("images/characters/kate_fear.png", ysize=1185
 image sprite_madre_neutral = Transform("images/characters/sprite_madre_neutral.png", ysize=1350, fit="contain")
 image sprite_madre_cold = Transform("images/characters/sprite_madre_cold_accappatoio.png", ysize=1350, fit="contain")
 image sprite_madre_neutral_accappatoio = Transform("images/characters/sprite_madre_neutral_accappatoio.png", ysize=1350, fit="contain")
-image sprite_madre_neutral_2 = Transform("images/characters/sprite_madre_neutral_2.png", ysize=1350, fit="contain")
-image sprite_madre_fury = Transform("images/characters/sprite_madre_fury.png", ysize=1350, fit="contain")
+image sprite_madre_neutral_2 = Transform("images/characters/sprite_madre_neutral_2.png", ysize=1650, fit="contain")
+image sprite_madre_fury = Transform("images/characters/sprite_madre_fury.png", ysize=1650, fit="contain")
 
 # Padre di Mila: ritratto a mezzo busto, normalizzato come gli altri personaggi.
 image sprite_padre_neutral = Transform("images/characters/sprite_padre_mila.png", ysize=1350, fit="contain")
