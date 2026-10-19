@@ -291,7 +291,6 @@ label capitolo_1:
     show expression Solid("#080d1f78") as chapter1_tint
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
-        show sprite_sophie_cold as sophie_sprite at sprite_stage_right_sophie, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
     with hpunch
@@ -317,7 +316,7 @@ label capitolo_1:
         show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still with moveinright
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_anxious_breathe
     else:
-        show sprite_madre_neutral_accappatoio as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still with moveinright
+        show sprite_madre_neutral_2 as madre_sprite at sprite_stage_right_halfbody, sprite_cold_still with moveinright
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
     "Mia madre lava una tazzina. Lentamente. Il rumore della spugna sulla ceramica è l'unico suono nella stanza."
     show sprite_madre_cold as madre_sprite at sprite_stage_right_halfbody, sprite_micro_tension
@@ -325,7 +324,7 @@ label capitolo_1:
     mila "Sì, mamma. Mi dispiace per il ritardo, io..."
     madre "La madre di Sophie mi ha scritto: sua figlia non si sente a suo agio con te. Non sai fare nemmeno il lavoro per cui ti pagano: stare zitta e non creare problemi."
     show sprite_madre_cold as madre_sprite at sprite_mother_approach
-    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_recoil
+    show sprite_mila_fear as mila_sprite at sprite_stage_left, sprite_recoil
     "Si avvicina e mi afferra la mascella con tre dita, costringendomi a guardarla. Le sue unghie si piantano nella pelle; le dita odorano di detersivo e cenere spenta."
     madre "Che cosa vi siete dette? Hai raccontato le tue storielle da vittima per farti compatire?"
     mila "No. Abbiamo solo studiato."
