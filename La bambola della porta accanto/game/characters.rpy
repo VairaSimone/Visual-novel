@@ -195,22 +195,32 @@ transform sprite_cold_still:
 image sprite_mila_neutral = Transform("images/characters/mila_neutral.png", ysize=1185, fit="contain")
 image sprite_mila_worried = Transform("images/characters/mila_worried.png", ysize=1185, fit="contain")
 image sprite_mila_tense = Transform("images/characters/mila_tense.png", ysize=1185, fit="contain")
+image sprite_mila_fear = Transform("images/characters/mila_fear.png", ysize=1185, fit="contain")
+image sprite_mila_smile = Transform("images/characters/mila_smile.png", ysize=1185, fit="contain")
 
 # SOPHIE — anche questi PNG hanno un'altezza sorgente ridotta: stessa altezza visiva di riferimento.
 # SOPHIE — la calma apparente lascia spazio a freddezza e tensione.
 image sprite_sophie_neutral = Transform("images/characters/sophie_neutral.png", ysize=1185, fit="contain")
 image sprite_sophie_cold = Transform("images/characters/sophie_cold.png", ysize=1185, fit="contain")
 image sprite_sophie_tense = Transform("images/characters/sophie_tense.png", ysize=1185, fit="contain")
+image sprite_sophie_sweet = Transform("images/characters/sophie_sweet.png", ysize=1185, fit="contain")
+image sprite_sophie_anger = Transform("images/characters/sophie_anger.png", ysize=1185, fit="contain")
+image sprite_sophie_fury = Transform("images/characters/sophie_fury.png", ysize=1185, fit="contain")
 
 # KATE — sprites aggiornati a mezzo busto (dalla coscia in su).
 # Normalizziamo l'altezza della tela, così le espressioni restano coerenti tra loro.
 image sprite_kate_neutral = Transform("images/characters/kate_neutral.png", ysize=1185, fit="contain")
 image sprite_kate_worried = Transform("images/characters/kate_worried.png", ysize=1185, fit="contain")
+image sprite_kate_smile = Transform("images/characters/kate_smile.png", ysize=1185, fit="contain")
+image sprite_kate_fear = Transform("images/characters/kate_fear.png", ysize=1185, fit="contain")
 
 # Madre di Mila: sprite aggiornati dalla coscia in su.
 # Usa lo stesso riferimento di altezza del padre, così non appare più piccola di Mila.
 image sprite_madre_neutral = Transform("images/characters/sprite_madre_neutral.png", ysize=1350, fit="contain")
-image sprite_madre_cold = Transform("images/characters/sprite_madre_cold.png", ysize=1350, fit="contain")
+image sprite_madre_cold = Transform("images/characters/sprite_madre_cold_accappatoio.png", ysize=1350, fit="contain")
+image sprite_madre_neutral_accappatoio = Transform("images/characters/sprite_madre_neutral_accappatoio.png", ysize=1350, fit="contain")
+image sprite_madre_neutral_2 = Transform("images/characters/sprite_madre_neutral_2.png", ysize=1350, fit="contain")
+image sprite_madre_fury = Transform("images/characters/sprite_madre_fury.png", ysize=1350, fit="contain")
 
 # Padre di Mila: ritratto a mezzo busto, normalizzato come gli altri personaggi.
 image sprite_padre_neutral = Transform("images/characters/sprite_padre_mila.png", ysize=1350, fit="contain")
