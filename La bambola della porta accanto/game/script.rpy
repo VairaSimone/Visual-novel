@@ -183,12 +183,12 @@ label start:
     with dissolve
     show expression Solid("#30172224") as prologue_tint
     show sprite_mila_worried as mila_sprite at sprite_stage_right_mila, sprite_breathe
+    show sprite_sophie_neutral as sophie_sprite at sprite_stage_left_sophie, sprite_breathe with dissolve
     "Sophie è sul letto, cuffie al collo e joystick in mano. Ha quindici anni: pallida, spigolosa, sembra troppo grande per la stanza preparata dai genitori."
     "Ufficialmente sono lì per aiutarla con i compiti e la cena. I suoi genitori la chiamano babysitting, così possono lasciarla sola senza preoccuparsene."
     "Mi accorgo di avere ancora la borsa sulla spalla. Sophie spinge via un cuscino con il piede, lasciandomi spazio sul letto senza chiedermi se voglio sedermi."
     mila "Ciao, Sophie."
     "Spegne lo schermo, ma non posa il joystick. Lo gira fra le dita mentre mi guarda, come se cercasse di capire da che umore sono entrata."
-    show sprite_sophie_neutral as sophie_sprite at sprite_stage_left_sophie, sprite_breathe with dissolve
     sophie "Pensavo che non saresti riuscita a venire."
     show sprite_sophie_sweet as sophie_sprite at sprite_stage_left_sophie, sprite_breathe with dissolve
     sophie "Mi sei mancata, Mila."
@@ -202,7 +202,7 @@ label start:
     show sprite_mila_worried as mila_sprite at sprite_stage_right_mila, sprite_anxious_breathe
     sophie "Fa ancora male?"
     mila "Sophie, devo preparare la cena. I tuoi mi pagano per..."
-    show sprite_sophie_sweet as sophie_sprite at sprite_stage_near_mila_left, sprite_breathe with dissolve
+    show sprite_sophie_neutral as sophie_sprite at sprite_stage_near_mila_left, sprite_breathe with dissolve
     sophie "I miei parlano di me come se fossi una cosa da sistemare. Tu almeno mi chiedi cosa voglio mangiare."
     "Non rispondo. Sophie smette di far girare il joystick fra le dita e guarda le proprie mani, come se solo allora si rendesse conto di avermi messa alle strette."
     show sprite_sophie_tense as sophie_sprite at sprite_stage_near_mila_left, sprite_micro_tension with dissolve
