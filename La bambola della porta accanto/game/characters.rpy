@@ -15,13 +15,13 @@ transform sprite_mila_bed_left:
 transform sprite_stage_left_sophie:
     xalign 0.34
     yalign 1.0
-    zoom 0.68
+    zoom 0.66
 
 # Sophie resta leggermente più bassa di Mila anche sul lato destro, nel capitolo 1.
 transform sprite_stage_right_sophie:
     xalign 0.69
     yalign 1.0
-    zoom 0.68
+    zoom 0.66
 
 transform sprite_stage_right_mila:
     xalign 0.72
@@ -35,24 +35,24 @@ transform sprite_approach_mila:
     # Sophie parte dalla sua posizione a sinistra e si avvicina a Mila.
     xalign 0.34
     yalign 1.0
-    zoom 0.70
+    zoom 0.66
     ease 0.65 xalign 0.49
 
 transform sprite_stage_near_mila_left:
     xalign 0.49
     yalign 1.0
-    zoom 0.70
+    zoom 0.66
 
 transform sprite_approach_mila_from_right:
     xalign 0.69
     yalign 1.0
-    zoom 0.70
+    zoom 0.66
     ease 0.65 xalign 0.53
 
 transform sprite_stage_near_mila_from_right:
     xalign 0.53
     yalign 1.0
-    zoom 0.70
+    zoom 0.66
 
 # I genitori di Mila usano una scala coerente con quella della protagonista.
 # Il padre resta arretrato ma non deve apparire più basso per un transform troppo piccolo.
@@ -88,12 +88,12 @@ transform sprite_father_threshold_hidden:
     alpha 0.60
     ease 0.9 xalign 0.86 alpha 0.66
 
-# Trasformazione unica per l'avvicinamento teso: mantiene una sola scala (0.64)
+# Avvicinamento teso di Sophie: usa la stessa scala standard (0.66)
 # e aggiunge il tremore senza applicare un secondo zoom allo sprite.
 transform sprite_approach_mila_tense:
     xalign 0.43
     yalign 1.0
-    zoom 0.64
+    zoom 0.66
     ease 0.65 xalign 0.49
     block:
         ease 0.85 xoffset -2
@@ -248,9 +248,8 @@ image sprite_mila_smile = Transform("images/characters/mila_smile.png", ysize=11
 image sprite_sophie_neutral = Transform("images/characters/sophie_neutral.png", ysize=1185, fit="contain")
 image sprite_sophie_cold = Transform("images/characters/sophie_cold.png", ysize=1185, fit="contain")
 image sprite_sophie_tense = Transform("images/characters/sophie_tense.png", ysize=1185, fit="contain")
-# Il disegno di questa posa ha più margine trasparente: compensiamo la scala apparente
-# affinché Sophie non sembri rimpicciolirsi quando passa all'espressione dolce.
-image sprite_sophie_sweet = Transform("images/characters/sophie_sweet.png", ysize=1285, fit="contain")
+# La posa dolce usa la stessa altezza di tutte le altre espressioni di Sophie.
+image sprite_sophie_sweet = Transform("images/characters/sophie_sweet.png", ysize=1185, fit="contain")
 image sprite_sophie_anger = Transform("images/characters/sophie_anger.png", ysize=1185, fit="contain")
 image sprite_sophie_fury = Transform("images/characters/sophie_fury.png", ysize=1185, fit="contain")
 
