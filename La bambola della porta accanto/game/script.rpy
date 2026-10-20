@@ -285,7 +285,9 @@ label capitolo_1:
     show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_anxious_breathe
     "Abbasso gli occhi. Le nocche sono bianche attorno al manico. Allento la presa un dito alla volta; il metallo resta freddo nel palmo."
     mila "È solo stanchezza."
-    sophie "Forse è stanchezza. O forse sei arrabbiata e non sai dove metterla." Guarda il coltello, poi me. "Non volevo fare la saputella."
+    sophie "Forse è stanchezza. O forse sei arrabbiata e non sai dove metterla."
+    "Guarda il coltello, poi me."
+    sophie "Non volevo fare la saputella."
     show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_flinch
     "Mi volto troppo in fretta. Il vapore appanna per un attimo il vetro sopra il lavello."
     mila "Perché mi dici queste cose? Dovresti giocare ai videogiochi. Dovresti essere una ragazzina."
@@ -331,7 +333,6 @@ label capitolo_1:
     show sprite_padre_neutral as padre_sprite at sprite_stage_back_halfbody, sprite_cold_still with dissolve
     "La luce della cucina taglia il corridoio buio. Mio padre è seduto in poltrona, con la TV spenta."
     padre "È in cucina."
-    ""
     hide padre_sprite with dissolve
     scene bg mila kitchen at bg_tension_push
     with dissolve
@@ -377,7 +378,7 @@ label capitolo_1:
     "Resto a letto vestita. Sotto il cuscino trovo il pezzo di vetro che avevo raccolto in giardino. Lo tengo nel palmo chiuso; il bordo punge e la mano si tende da sola."
     "Apro la mano. Sul palmo è rimasta una linea rossa, sottile come quella sotto lo zigomo. La fisso finché il contorno si sfoca."
     "Mi torna in mente il pollice di Sophie vicino alla cicatrice — e il momento in cui ha ritirato la mano. Non so quale delle due cose mi sia rimasta più impressa."
-    "Dal corridoio non arriva più niente. Stringo il vetro finché mi accorgo che sto trattenendo il respiro. Poi lo lascio sotto il cuscino e resto a fissare il soffitto."
+    "Dal corridoio non arriva più niente. Mi accorgo che sto trattenendo il respiro. Poi lascio il vetro sotto il cuscino e resto a fissare il soffitto."
     jump capitolo_2
 
 
