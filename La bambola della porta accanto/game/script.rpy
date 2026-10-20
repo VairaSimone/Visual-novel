@@ -115,7 +115,7 @@ label start:
     madre "Ti sei truccata?"
     mila "No, mamma. Solo un po' di correttore per le occhiaie."
     show sprite_madre_cold as madre_sprite at sprite_madre_stage_right, sprite_cold_still with dissolve
-    madre "Cos'hai sotto gli occhi? Smetti di truccarti così. La gente guarda e sparla. Vuoi far credere ai vicini che qui non ti facciamo dormire?"
+    madre "Smettila di truccarti così. La gente guarda e sparla. Vuoi far credere ai vicini che qui non ti facciamo dormire?"
     show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_flinch
     "Sposto la tazzina di qualche centimetro. La parola vicini resta sul tavolo anche quando lei riprende a bere."
     mila "Va bene, mamma."
@@ -255,16 +255,6 @@ label capitolo_1:
     play ambience audio.room fadeout 1.0 fadein 1.2
     centered "{size=42}{color=#e6d4db}CAPITOLO 1{/color}{/size}\n\n{size=28}{color=#aa97a3}Come sanguina un robot{/color}{/size}"
 
-    # Le decisioni del prologo restano riconoscibili anche senza aprire grandi diramazioni.
-    if padre_ascoltato:
-        "Prima di venire qui, avevo chiesto a papà se stesse bene. Mi aveva risposto senza guardarmi. La sua voce mi torna in mente più della risposta."
-    elif padre_evitato:
-        "Prima di venire qui, avevo lasciato che papà si nascondesse dietro il giornale. Non so se mi avrebbe detto qualcosa di diverso."
-
-    if legame_kate >= 1:
-        "Kate mi aveva ascoltata senza provare a convincermi. Non so perché questo mi sia rimasto in mente più della festa."
-    else:
-        "Kate aveva aperto la bocca per dire qualcos'altro, ma la campanella ci aveva separate. Non so se fosse sollievo o delusione."
     show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
     "Preparo il pollo: taglio, soffriggo, mescolo. Quando la lama tocca il tagliere, conto i colpi senza volerlo."
     # Sophie entra visivamente in scena soltanto quando Mila la descrive in cucina.
