@@ -99,7 +99,8 @@ screen say(who, what):
 
     window:
         id "window"
-        style "say_window"
+        # Nella scena del vetro il pannello passa in alto, lasciando visibile il centro dell'illustrazione.
+        style ("say_window_top" if dialogo_sopra_vetro else "say_window")
 
         # Bordo d'accento, più acceso nelle scene tese.
         if tensione_scena:
@@ -183,6 +184,12 @@ style say_window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
     padding (0, 0, 0, 0)
+    background Solid("#130e18ed")
+
+# Variante temporanea: la finestra in alto lascia libera la parte centrale/bassa
+# del fondale nella scena in cui Mila tiene il vetro.
+style say_window_top is say_window:
+    yalign 0.0
     background Solid("#130e18ed")
 
 
