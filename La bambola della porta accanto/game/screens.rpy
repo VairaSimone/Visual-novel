@@ -115,7 +115,7 @@ screen say(who, what):
                 style "namebox"
                 text who id "who" style "say_label"
 
-        text what id "what" style "say_dialogue" size adaptive_dialogue_size(what)
+        text what id "what" style "say_dialogue" size adaptive_dialogue_size(what) xpos max(28, int(config.screen_width * 0.15625)) xsize max(100, config.screen_width - 2 * max(28, int(config.screen_width * 0.15625)))
 
     # Le side image restano abilitate su desktop per non rompere eventuali sprite futuri.
     if not renpy.variant("small"):
@@ -275,6 +275,9 @@ screen choice(items):
     modal True
     zorder 200
 
+    # La scala mantiene proporzioni coerenti se cambia la risoluzione logica.
+    $ choice_scale = min(config.screen_width / 1920.0, config.screen_height / 1080.0)
+
     # Scura lo sfondo per dare priorità al testo e alle opzioni.
     add Solid("#06040a88")
     if tensione_scena:
@@ -284,30 +287,43 @@ screen choice(items):
         style "choice_panel"
         xalign 0.5
         yalign 0.46
+        xsize max(320, min(int(1460 * choice_scale), config.screen_width - int(48 * choice_scale)))
+        ymaximum max(280, config.screen_height - int(48 * choice_scale))
+        padding (int(34 * choice_scale), int(28 * choice_scale), int(34 * choice_scale), int(30 * choice_scale))
 
         vbox:
             xfill True
-            spacing 10
+            spacing max(5, int(10 * choice_scale))
 
             hbox:
-                spacing 12
+                spacing max(6, int(12 * choice_scale))
                 yalign 0.5
                 if tensione_scena:
-                    add Solid("#c65a72") xsize 30 ysize 4 yalign 0.5
-                    text "SCELTA CRITICA" style "choice_kicker_tense"
+                    add Solid("#c65a72") xsize max(18, int(30 * choice_scale)) ysize max(3, int(4 * choice_scale)) yalign 0.5
+                    text "SCELTA CRITICA" style "choice_kicker_tense" size max(14, int(18 * choice_scale))
                 else:
-                    add Solid("#b78396") xsize 30 ysize 3 yalign 0.5
-                    text "DECISIONE" style "choice_kicker"
+                    add Solid("#b78396") xsize max(18, int(30 * choice_scale)) ysize max(2, int(3 * choice_scale)) yalign 0.5
+                    text "DECISIONE" style "choice_kicker" size max(14, int(18 * choice_scale))
 
-            null height 2
+            null height max(1, int(2 * choice_scale))
 
             for i in items:
                 if i.action is None:
-                    text i.caption style "choice_prompt"
+                    text i.caption style "choice_prompt" size max(18, int(27 * choice_scale))
                 elif tensione_scena:
-                    textbutton i.caption action i.action style "choice_button_tense"
+                    textbutton i.caption:
+                        action i.action
+                        style "choice_button_tense"
+                        text_size max(16, int(24 * choice_scale))
+                        yminimum max(44, int(62 * choice_scale))
+                        padding (int(22 * choice_scale), int(12 * choice_scale), int(22 * choice_scale), int(12 * choice_scale))
                 else:
-                    textbutton i.caption action i.action style "choice_button"
+                    textbutton i.caption:
+                        action i.action
+                        style "choice_button"
+                        text_size max(16, int(24 * choice_scale))
+                        yminimum max(44, int(62 * choice_scale))
+                        padding (int(22 * choice_scale), int(12 * choice_scale), int(22 * choice_scale), int(12 * choice_scale))
 
 
 style choice_panel is frame:
@@ -456,24 +472,53 @@ screen navigation():
 
     if main_menu:
 
-        # Home dedicata: pulsanti allineati sotto il titolo, senza sovrapporvisi.
+        # Home dedicata: posizione e dimensioni scalano con la risoluzione logica.
+        $ home_scale = min(config.screen_width / 1920.0, config.screen_height / 1080.0)
         vbox:
             style_prefix "home_navigation"
-            xpos 72
-            ypos 372
-            spacing 4
+            xpos int(72 * home_scale)
+            ypos int(372 * home_scale)
+            spacing max(2, int(4 * home_scale))
 
-            textbutton _("Inizia") action Start()
-            textbutton _("Carica") action ShowMenu("load")
-            textbutton _("Opzioni") action ShowMenu("preferences")
-            textbutton _("Informazioni") action ShowMenu("about")
-            textbutton _("Crediti audio") action ShowMenu("audio_credits")
+            textbutton _("Inizia"):
+                action Start()
+                xsize int(520 * home_scale)
+                yminimum max(32, int(43 * home_scale))
+                text_size max(15, int(25 * home_scale))
+            textbutton _("Carica"):
+                action ShowMenu("load")
+                xsize int(520 * home_scale)
+                yminimum max(32, int(43 * home_scale))
+                text_size max(15, int(25 * home_scale))
+            textbutton _("Opzioni"):
+                action ShowMenu("preferences")
+                xsize int(520 * home_scale)
+                yminimum max(32, int(43 * home_scale))
+                text_size max(15, int(25 * home_scale))
+            textbutton _("Informazioni"):
+                action ShowMenu("about")
+                xsize int(520 * home_scale)
+                yminimum max(32, int(43 * home_scale))
+                text_size max(15, int(25 * home_scale))
+            textbutton _("Crediti audio"):
+                action ShowMenu("audio_credits")
+                xsize int(520 * home_scale)
+                yminimum max(32, int(43 * home_scale))
+                text_size max(15, int(25 * home_scale))
 
             if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-                textbutton _("Aiuto") action ShowMenu("help")
+                textbutton _("Aiuto"):
+                    action ShowMenu("help")
+                    xsize int(520 * home_scale)
+                    yminimum max(32, int(43 * home_scale))
+                    text_size max(15, int(25 * home_scale))
 
             if renpy.variant("pc"):
-                textbutton _("Esci") action Quit(confirm=True)
+                textbutton _("Esci"):
+                    action Quit(confirm=True)
+                    xsize int(520 * home_scale)
+                    yminimum max(32, int(43 * home_scale))
+                    text_size max(15, int(25 * home_scale))
 
     else:
 
@@ -541,89 +586,91 @@ screen main_menu():
 
     tag menu
 
-    add "bg title night"
+    $ menu_scale = min(config.screen_width / 1920.0, config.screen_height / 1080.0)
+
+    add Transform("bg title night", xysize=(config.screen_width, config.screen_height), fit="cover")
     add Solid("#07050a55")
 
     # Pannello laterale opaco per separare il menu dalla scena sullo sfondo.
     frame:
         background Solid("#130d16ed")
         xpos 0
-        xsize 760
+        xsize int(760 * menu_scale)
         yfill True
 
-    add Solid("#c65a72") xpos 72 ypos 58 xsize 42 ysize 3
+    add Solid("#c65a72") xpos int(72 * menu_scale) ypos int(58 * menu_scale) xsize max(2, int(42 * menu_scale)) ysize max(2, int(3 * menu_scale))
 
     text "UN THRILLER PSICOLOGICO":
-        xpos 128
-        ypos 48
-        size 16
+        xpos int(128 * menu_scale)
+        ypos int(48 * menu_scale)
+        size max(12, int(16 * menu_scale))
         color "#c7a8b5"
         bold True
         outlines [(1, "#09060caa", 0, 1)]
 
     # Titolo su tre righe: leggibile anche quando la finestra è più stretta.
     text "LA BAMBOLA":
-        xpos 72
-        ypos 105
-        size 50
+        xpos int(72 * menu_scale)
+        ypos int(105 * menu_scale)
+        size max(24, int(50 * menu_scale))
         color "#f4e6ec"
         font gui.interface_text_font
         bold True
         outlines [(2, "#09060cdd", 0, 2)]
 
     text "DELLA PORTA":
-        xpos 72
-        ypos 160
-        size 50
+        xpos int(72 * menu_scale)
+        ypos int(160 * menu_scale)
+        size max(24, int(50 * menu_scale))
         color "#f4e6ec"
         font gui.interface_text_font
         bold True
         outlines [(2, "#09060cdd", 0, 2)]
 
     text "ACCANTO":
-        xpos 72
-        ypos 215
-        size 50
+        xpos int(72 * menu_scale)
+        ypos int(215 * menu_scale)
+        size max(24, int(50 * menu_scale))
         color "#f4e6ec"
         font gui.interface_text_font
         bold True
         outlines [(2, "#09060cdd", 0, 2)]
 
-    add Solid("#b78396") xpos 72 ypos 285 xsize 88 ysize 3
+    add Solid("#b78396") xpos int(72 * menu_scale) ypos int(285 * menu_scale) xsize max(2, int(88 * menu_scale)) ysize max(2, int(3 * menu_scale))
 
     text "UNA STORIA DI CONTROLLO, FIDUCIA E VERITÀ":
-        xpos 72
-        ypos 304
-        xmaximum 610
-        size 17
+        xpos int(72 * menu_scale)
+        ypos int(304 * menu_scale)
+        xmaximum int(610 * menu_scale)
+        size max(12, int(17 * menu_scale))
         color "#cbb8c2"
         line_spacing 3
 
     use navigation
 
     text "OGNI CASA CUSTODISCE UNA STORIA.":
-        xpos 72
-        ypos 856
-        size 18
+        xpos int(72 * menu_scale)
+        ypos int(856 * menu_scale)
+        size max(12, int(18 * menu_scale))
         color "#e2d2da"
         bold True
         outlines [(1, "#09060cbb", 0, 1)]
 
     text "NON TUTTE VOGLIONO ESSERE RACCONTATE.":
-        xpos 72
-        ypos 884
-        xmaximum 600
-        size 17
+        xpos int(72 * menu_scale)
+        ypos int(884 * menu_scale)
+        xmaximum int(600 * menu_scale)
+        size max(12, int(17 * menu_scale))
         color "#bbaab4"
         outlines [(1, "#09060cbb", 0, 1)]
 
     # Frase di tono sul lato visivo, separata dai comandi di navigazione.
     text "IL RICORDO È UNA STANZA\nDOVE QUALCUNO HA GIÀ SPOSTATO I MOBILI.":
         xalign 0.96
-        ypos 875
-        xmaximum 900
+        ypos int(875 * menu_scale)
+        xmaximum int(900 * menu_scale)
         text_align 1.0
-        size 21
+        size max(14, int(21 * menu_scale))
         color "#f0e4e9"
         line_spacing 7
         outlines [(2, "#09060cdd", 0, 2)]
