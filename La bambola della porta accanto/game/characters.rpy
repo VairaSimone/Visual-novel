@@ -1,7 +1,9 @@
 # Sprite definitivi — collegamento agli asset in images/characters.
-# Manteniamo i nomi immagine usati da script.rpy per non rompere le scene.
+# Le immagini hanno ora tutte la stessa tela: le normalizziamo con un'unica altezza
+# visiva (1185 px). La scala finale dipende solo dal transform della scena, non dalla
+# singola espressione: i cambi di volto non devono far ingrandire o rimpicciolire il personaggio.
 
-# Posizionamento coerente per sprite a figura intera (canvas 16:9, 1920x1080).
+# Posizionamento coerente per sprite con tela uniforme (canvas 16:9, 1920x1080).
 # Posizionamento dedicato alla scena iniziale nella camera di Sophie:
 # Sophie è leggermente più bassa e sta a sinistra; Mila si sposta a destra.
 transform sprite_stage_left_sophie:
@@ -34,11 +36,11 @@ transform sprite_mother_approach:
     zoom 0.70
     ease 0.55 xalign 0.63
 
-# Il padre appare appena sulla soglia: piccolo, spostato a destra e semi-trasparente.
+# Il padre appare appena sulla soglia: più arretrato, spostato a destra e semi-trasparente.
 transform sprite_father_threshold_hidden:
     xalign 0.89
     yalign 1.0
-    zoom 0.68
+    zoom 0.60
     alpha 0.60
     ease 0.9 xalign 0.86 alpha 0.66
 
@@ -146,9 +148,9 @@ transform sprite_stage_back:
     zoom 0.48
     alpha 0.82
 
-# Inquadrature dedicate ai PNG tagliati dalla coscia in su.
-# Il bordo inferiore resta dietro la finestra di dialogo, per evitare l'effetto
-# di un personaggio "appoggiato" a terra senza gambe visibili.
+# Alias di posizionamento mantenuti per non cambiare i riferimenti nelle scene.
+# Poiché le tele sono uniformi, questi alias non applicano più una scala diversa
+# rispetto agli sprite laterali standard.
 transform sprite_stage_left_halfbody:
     xalign 0.31
     yalign 1.0
@@ -162,7 +164,7 @@ transform sprite_stage_right_halfbody:
 transform sprite_stage_back_halfbody:
     xalign 0.52
     yalign 1.0
-    zoom 0.70
+    zoom 0.58
     alpha 0.82
 
 # Movimento d'attesa delicato: evita che i personaggi sembrino completamente statici.
@@ -189,16 +191,15 @@ transform sprite_cold_still:
     ease 0.35 yoffset 0
     repeat
 
-# MILA — PNG sorgente più bassi degli altri personaggi: normalizzati a 1185 px di altezza
-# prima dei trasformatori di scena, così mantengono dimensioni coerenti anche al centro.
-# MILA — neutra, preoccupata e tesa.
+# Tutte le espressioni sono normalizzate alla stessa altezza. Non usare valori diversi
+# per neutral/worried/tense/fury: cambiare espressione non deve alterare la sagoma.
+# MILA
 image sprite_mila_neutral = Transform("images/characters/mila_neutral.png", ysize=1185, fit="contain")
 image sprite_mila_worried = Transform("images/characters/mila_worried.png", ysize=1185, fit="contain")
 image sprite_mila_tense = Transform("images/characters/mila_tense.png", ysize=1185, fit="contain")
 image sprite_mila_fear = Transform("images/characters/mila_fear.png", ysize=1185, fit="contain")
 image sprite_mila_smile = Transform("images/characters/mila_smile.png", ysize=1185, fit="contain")
 
-# SOPHIE — anche questi PNG hanno un'altezza sorgente ridotta: stessa altezza visiva di riferimento.
 # SOPHIE — la calma apparente lascia spazio a freddezza e tensione.
 image sprite_sophie_neutral = Transform("images/characters/sophie_neutral.png", ysize=1185, fit="contain")
 image sprite_sophie_cold = Transform("images/characters/sophie_cold.png", ysize=1185, fit="contain")
@@ -207,24 +208,22 @@ image sprite_sophie_sweet = Transform("images/characters/sophie_sweet.png", ysiz
 image sprite_sophie_anger = Transform("images/characters/sophie_anger.png", ysize=1185, fit="contain")
 image sprite_sophie_fury = Transform("images/characters/sophie_fury.png", ysize=1185, fit="contain")
 
-# KATE — sprites aggiornati a mezzo busto (dalla coscia in su).
-# Normalizziamo l'altezza della tela, così le espressioni restano coerenti tra loro.
+# KATE — tutte le espressioni condividono la stessa altezza di tela.
 image sprite_kate_neutral = Transform("images/characters/kate_neutral.png", ysize=1185, fit="contain")
 image sprite_kate_worried = Transform("images/characters/kate_worried.png", ysize=1185, fit="contain")
 image sprite_kate_smile = Transform("images/characters/kate_smile.png", ysize=1185, fit="contain")
 image sprite_kate_fear = Transform("images/characters/kate_fear.png", ysize=1185, fit="contain")
 
-# Madre di Mila: sprite aggiornati dalla coscia in su.
-# Usa lo stesso riferimento di altezza del padre, così non appare più piccola di Mila.
-image sprite_madre_neutral = Transform("images/characters/sprite_madre_neutral.png", ysize=1350, fit="contain")
-image sprite_madre_cold = Transform("images/characters/sprite_madre_cold_accappatoio.png", ysize=1350, fit="contain")
-image sprite_madre_neutral_accappatoio = Transform("images/characters/sprite_madre_neutral_accappatoio.png", ysize=1350, fit="contain")
-image sprite_madre_neutral_2 = Transform("images/characters/sprite_madre_neutral_2.png", ysize=1350, fit="contain")
-image sprite_madre_fury = Transform("images/characters/sprite_madre_fury.png", ysize=1650, fit="contain")
+# Madre di Mila: tutte le varianti, compresa la rabbia, hanno la stessa altezza di tela.
+image sprite_madre_neutral = Transform("images/characters/sprite_madre_neutral.png", ysize=1185, fit="contain")
+image sprite_madre_cold = Transform("images/characters/sprite_madre_cold_accappatoio.png", ysize=1185, fit="contain")
+image sprite_madre_neutral_accappatoio = Transform("images/characters/sprite_madre_neutral_accappatoio.png", ysize=1185, fit="contain")
+image sprite_madre_neutral_2 = Transform("images/characters/sprite_madre_neutral_2.png", ysize=1185, fit="contain")
+image sprite_madre_fury = Transform("images/characters/sprite_madre_fury.png", ysize=1185, fit="contain")
 
-# Padre di Mila: ritratto a mezzo busto, normalizzato come gli altri personaggi.
-image sprite_padre_neutral = Transform("images/characters/sprite_padre_mila.png", ysize=1350, fit="contain")
+# Padre di Mila: normalizzato come gli altri personaggi.
+image sprite_padre_neutral = Transform("images/characters/sprite_padre_mila.png", ysize=1185, fit="contain")
 
-# Famiglia di Sophie e personaggi secondari: ritratti a mezzo busto normalizzati.
-image sprite_madre_sophie = Transform("images/characters/sprite_madre_sophie.png", ysize=1350, fit="contain")
+# Famiglia di Sophie e personaggi secondari: stessa normalizzazione delle immagini principali.
+image sprite_madre_sophie = Transform("images/characters/sprite_madre_sophie.png", ysize=1185, fit="contain")
 image sprite_chloe_neutral = Transform("images/characters/sprite_chloe_neutral.png", ysize=1185, fit="contain")
