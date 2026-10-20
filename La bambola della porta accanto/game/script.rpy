@@ -182,8 +182,8 @@ label start:
     # Stacco visivo: lasciamo il giardino prima della sequenza all'interno della casa.
     scene black with fade
     "La porta si chiude piano alle mie spalle. Dal piano di sopra arriva il ticchettio di un controller. Salgo le scale fino alla porta coperta di adesivi di vecchi anime e scritte KEEP OUT."
-    "Busso con il nostro ritmo segreto: tre colpi, una pausa, poi altri due. Aspetto con le nocche appoggiate al legno."
     play sound audio.window_knock
+    "Busso con il nostro ritmo segreto: tre colpi, una pausa, poi altri due. Aspetto con le nocche appoggiate al legno."
     sophie "Entra, Mila. Pensavo non saresti venuta."
     scene bg sophie room at bg_tension_push
     with dissolve
