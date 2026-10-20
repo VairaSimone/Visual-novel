@@ -26,7 +26,8 @@ transform sprite_stage_right_mila:
 # da cui arriva il personaggio. Le varianti "near" servono ai cambi d'espressione
 # dopo che il movimento è terminato, così lo sprite non riparte da lontano.
 transform sprite_approach_mila:
-    xalign 0.43
+    # Sophie parte dalla sua posizione a sinistra e si avvicina a Mila.
+    xalign 0.34
     yalign 1.0
     zoom 0.64
     ease 0.65 xalign 0.49
