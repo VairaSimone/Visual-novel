@@ -248,8 +248,9 @@ image sprite_mila_smile = Transform("images/characters/mila_smile.png", ysize=11
 image sprite_sophie_neutral = Transform("images/characters/sophie_neutral.png", ysize=1185, fit="contain")
 image sprite_sophie_cold = Transform("images/characters/sophie_cold.png", ysize=1185, fit="contain")
 image sprite_sophie_tense = Transform("images/characters/sophie_tense.png", ysize=1185, fit="contain")
-# La posa dolce usa la stessa altezza di tutte le altre espressioni di Sophie.
-image sprite_sophie_sweet = Transform("images/characters/sophie_sweet.png", ysize=1185, fit="contain")
+# Questa posa ha più margine trasparente: compensazione interna per mantenere la stessa altezza VISIVA
+# delle altre espressioni. Tutti i transform di scena di Sophie restano alla scala comune 0.66.
+image sprite_sophie_sweet = Transform("images/characters/sophie_sweet.png", ysize=1285, fit="contain")
 image sprite_sophie_anger = Transform("images/characters/sophie_anger.png", ysize=1185, fit="contain")
 image sprite_sophie_fury = Transform("images/characters/sophie_fury.png", ysize=1185, fit="contain")
 
