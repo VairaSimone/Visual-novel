@@ -22,12 +22,30 @@ transform sprite_stage_right_mila:
     yalign 1.0
     zoom 0.70
 
-# Sophie si avvicina a Mila quando invade il suo spazio personale.
+# Posizioni statiche e di avvicinamento: usare la variante coerente con il lato
+# da cui arriva il personaggio. Le varianti "near" servono ai cambi d'espressione
+# dopo che il movimento è terminato, così lo sprite non riparte da lontano.
 transform sprite_approach_mila:
     xalign 0.43
     yalign 1.0
     zoom 0.64
     ease 0.65 xalign 0.49
+
+transform sprite_stage_near_mila_left:
+    xalign 0.49
+    yalign 1.0
+    zoom 0.64
+
+transform sprite_approach_mila_from_right:
+    xalign 0.69
+    yalign 1.0
+    zoom 0.64
+    ease 0.65 xalign 0.53
+
+transform sprite_stage_near_mila_from_right:
+    xalign 0.53
+    yalign 1.0
+    zoom 0.64
 
 # La madre avanza appena verso Mila durante la presa alla mascella.
 transform sprite_mother_approach:
@@ -35,6 +53,13 @@ transform sprite_mother_approach:
     yalign 1.0
     zoom 0.70
     ease 0.55 xalign 0.63
+
+# Posizione stabile ravvicinata: evitare che un cambio d'espressione faccia
+# ripartire da capo l'animazione di avvicinamento.
+transform sprite_mother_close:
+    xalign 0.63
+    yalign 1.0
+    zoom 0.70
 
 # Il padre appare appena sulla soglia: più arretrato, spostato a destra e semi-trasparente.
 transform sprite_father_threshold_hidden:
