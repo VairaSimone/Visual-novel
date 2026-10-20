@@ -26,6 +26,8 @@ default tensione_scena = False
 
 # Sposta temporaneamente la finestra dei dialoghi in alto quando lo sfondo
 # contiene il vetro al centro, lasciando libera la parte dell'immagine da vedere.
+# Deve esistere già al primo dialogo: la schermata say lo legge all'avvio.
+default dialogo_sopra_vetro = False
 
 # Ipotesi formulate nell'archivio: interpretazioni da confrontare, non fatti.
 default ipotesi_attiva = ""
