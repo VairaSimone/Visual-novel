@@ -1,6 +1,6 @@
 # Revisione narrativa e coerenza — stato statico
 
-Questa nota accompagna la revisione del 15 ottobre 2026. È una verifica del testo sorgente e dei collegamenti nel codice, non sostituisce una partita completa né Ren'Py Lint.
+Questa nota accompagna la revisione del 20 ottobre 2026. È una verifica del testo sorgente e dei collegamenti nel codice, non sostituisce una partita completa né Ren'Py Lint.
 
 ## Esito rapido
 
@@ -64,7 +64,7 @@ Questa passata aggiorna l'archivio, introduce una conseguenza narrativa per una 
 
 ## Audit delle conseguenze delle variabili — 15 ottobre 2026
 
-La revisione è stata concentrata sulle variabili già esistenti. Non sono stati aggiunti nuovi flag narrativi; sono stati riutilizzati stati esistenti e rimossi tre flag che non producevano effetti osservabili (`tensione_scena`, `scelta_finale`, `telefonata_registrata`). La tensione visiva dipende ora dai dubbi e dagli indizi già accumulati, anziché da un booleano che non diventava mai vero.
+La revisione è stata concentrata sulle variabili già esistenti. Non sono stati aggiunti nuovi flag narrativi. `scelta_finale` e `telefonata_registrata` restano rimossi perché non producevano effetti osservabili. `tensione_scena`, invece, è mantenuta come stato di presentazione: viene azzerata all'inizio del capitolo 1, attivata durante il confronto in cucina e riportata a `False` quando la scena termina; viene inoltre attivata per la scelta critica sul flacone e resettata in ciascun ramo in uscita. Non è un punteggio di sospetto, ma modifica il bordo dei dialoghi e la resa visiva delle scelte.
 
 ### Conseguenze collegate
 
@@ -78,17 +78,21 @@ La revisione è stata concentrata sulle variabili già esistenti. Non sono stati
 | `telefono_condiviso_kate`, `immagini_condivise_kate`, `legame_kate` | Il finale del fascicolo distingue tra copie esterne conservate da Kate, una relazione che le permette di testimoniare e una preoccupazione che resta più fragile. |
 | `ipotesi_genitori_sospetto` | Nel finale del fascicolo, il sospetto non verificato di Mila può essere reinterpretato dagli investigatori come prova di rancore, rendendo visibile il rischio di confondere convinzioni e fatti. |
 
-### Flag rimossi
+### Flag rimossi e flag mantenuti
 
-- `tensione_scena`: era inizializzata a `False` e non veniva mai impostata a `True`. Le condizioni di presentazione sono state semplificate usando `dubbi_di_mila` e `indizi_reali`, che già esprimono lo stato narrativo.
-- `scelta_finale`: veniva assegnata in vari punti ma non veniva mai letta per determinare una scena o un finale.
+- `scelta_finale`: era assegnata in vari punti ma non veniva mai letta per determinare una scena o un finale.
 - `telefonata_registrata`: era dichiarata ma non veniva né impostata né letta.
+- `tensione_scena`: è mantenuta e ora viene impostata esplicitamente nei momenti di svolta descritti sopra. Il reset è presente nei rami della scelta sul flacone per evitare che lo stile critico si trascini nella scena successiva.
 
-Dopo questa pulizia, lo script dichiara 33 variabili `default` invece delle 36 precedenti. L'obiettivo non è ridurre il sistema a un unico punteggio: i flag di oggetti e fonti restano distinti perché descrivono stati narrativi irreversibili diversi.
+Lo script corrente dichiara 34 variabili `default`. L'obiettivo non è ridurre il sistema a un unico punteggio: i flag di oggetti e fonti restano distinti perché descrivono stati narrativi irreversibili diversi.
 
 ### Verifiche statiche dopo la modifica
 
 - I label dei nove capitoli e dei quattro finali sono ancora presenti.
 - I salti `jump` del file continuano a puntare a label esistenti nel controllo statico.
 - Le nuove conseguenze si appoggiano a flag già presenti; non sono stati aggiunti nuovi `default`.
-- La revisione non è ancora un collaudo runtime: **Ren'Py Lint e il playtest di ogni combinazione restano da eseguire**. In particolare, verificare i rami del finale del fascicolo con quaderno fedele/manipolato/vuoto e con/senza copie condivise con Kate.
+- `tensione_scena` viene attivata nel confronto in cucina del capitolo 1 e resettata entrando nella scena notturna conclusiva; la scelta sul flacone la attiva e la resetta in ogni ramo.
+- Nel finale della fuga, sia il ramo con dubbi/indizi alti sia quello predefinito mostrano Mila e Sophie.
+- Le scelte iniziali su padre e Kate vengono richiamate nel capitolo 1 e condizionano il primo sprite di Mila, senza aggiungere nuovi flag.
+- Archivio e documenti usano dimensioni limitate alla risoluzione logica e viewport che riempiono lo spazio verticale disponibile; il menu principale e il pannello scelte scalano con la risoluzione logica.
+- La revisione non è ancora un collaudo runtime: **Ren'Py Lint e il playtest di ogni combinazione restano da eseguire**. Testare in particolare le schermate a 1920×1080, 1366×768 e 1280×720, tutti i rami della scelta sul flacone e tutti i finali.
