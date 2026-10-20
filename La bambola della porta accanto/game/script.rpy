@@ -989,10 +989,10 @@ label capitolo_8:
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_cold_still
+        show sprite_sophie_cold as sophie_sprite at sprite_stage_right_sophie, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_breathe
+        show sprite_sophie_neutral as sophie_sprite at sprite_stage_right_sophie, sprite_breathe
     "La porta sul retro è aperta. Dentro l'aria profuma di cera per mobili e lavanda, un odore sterile che mi dà la nausea."
     "I genitori di Sophie sono sul divano, illuminati dalla TV. Un bicchiere è rovesciato sul tappeto; una macchia scura si allarga."
     sophie "Comincia con mia madre. È quella che fa più rumore. Finisci il rumore, Mila."
@@ -1019,10 +1019,10 @@ label capitolo_9:
     with fade
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_cold_still
+        show sprite_sophie_cold as sophie_sprite at sprite_stage_right_sophie, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_breathe
+        show sprite_sophie_neutral as sophie_sprite at sprite_stage_right_sophie, sprite_breathe
     play ambience audio.room fadeout 1.0 fadein 1.2
     play music audio.investigation fadeout 1.0 fadein 1.5
     centered "{size=42}{color=#e6d4db}CAPITOLO 9{/color}{/size}\n\n{size=28}{color=#aa97a3}Il diorama di porcellana{/color}{/size}"
@@ -1222,10 +1222,10 @@ label finale_fuga:
     with fade
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
         show sprite_mila_tense as mila_sprite at sprite_stage_left, sprite_tremble
-        show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_cold_still
+        show sprite_sophie_cold as sophie_sprite at sprite_stage_right_sophie, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
-        show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_breathe
+        show sprite_sophie_neutral as sophie_sprite at sprite_stage_right_sophie, sprite_breathe
     play ambience audio.rain fadeout 1.0 fadein 1.5
     play music audio.tension fadeout 1.4 fadein 2.2
     "Mila corre verso la quercia. Sophie l'aspetta con uno zaino troppo piccolo per una vita nuova."
@@ -1300,10 +1300,10 @@ label finale_fascicolo:
     scene bg oak houses
     with dissolve
     if dubbi_di_mila >= 2 or indizi_reali >= 2:
-        show sprite_sophie_cold as sophie_sprite at sprite_stage_left, sprite_cold_still
+        show sprite_sophie_cold as sophie_sprite at sprite_stage_left_sophie, sprite_cold_still
         show sprite_chloe_neutral as chloe_sprite at sprite_stage_right_halfbody, sprite_breathe
     else:
-        show sprite_sophie_neutral as sophie_sprite at sprite_stage_left, sprite_breathe
+        show sprite_sophie_neutral as sophie_sprite at sprite_stage_left_sophie, sprite_breathe
         show sprite_chloe_neutral as chloe_sprite at sprite_stage_right_halfbody, sprite_breathe
     "Il sole illumina i capelli biondi di Sophie sul treno. Di fronte a lei siede la nuova famiglia affidataria: persone convinte che il mondo sia ancora sicuro."
     "Accanto a lei c'è Chloe, dodici anni, trecce ordinate e uno sguardo timido, quasi spaventato da quella nuova sorella così silenziosa."
