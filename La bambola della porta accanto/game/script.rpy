@@ -144,9 +144,9 @@ label start:
     show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
     show sprite_kate_smile as kate_sprite at sprite_stage_right_halfbody, sprite_breathe with moveinright
     play ambience audio.rain fadeout 1.0 fadein 1.5
-    "Fuori l'aria sa di asfalto bagnato. A scuola sono la Mila modello: buoni voti, nessun disturbo, un sorriso calibrato per non attirare domande."
     show sprite_mila_smile as mila_sprite at sprite_stage_left, sprite_smile_lift with dissolve
-    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_flinch
+    "Fuori l'aria sa di asfalto bagnato. A scuola sono la Mila modello: buoni voti, nessun disturbo, un sorriso calibrato per non attirare domande."
+    show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_flinch with dissolve
     "Kate mi raggiunge di corsa, rossa per il freddo. Mi circonda le spalle con un braccio; trattengo il sussulto. Per me, un tocco improvviso può ancora significare un colpo."
     kate "Mila, aspettami! Hai sempre quella faccia da funerale. Stasera c'è la festa da Leo: vieni, ci sarà anche il tipo che ti fissava in biblioteca."
     menu:
