@@ -197,7 +197,7 @@ label start:
     "Mi accorgo di avere ancora la borsa sulla spalla. Sophie spinge via un cuscino con il piede, lasciandomi spazio sul letto senza chiedermi se voglio sedermi."
     mila "Ciao, Sophie."
     "Spegne lo schermo, ma non posa il joystick. Lo gira fra le dita mentre mi guarda, come se cercasse di capire da che umore sono entrata."
-    sophie "Pensavo che tua madre ti avrebbe tenuta a casa, dopo stamattina."
+    sophie "Pensavo che tua madre ti avrebbe tenuta a casa."
     mila "Mi ha detto di venire. Non mi ha chiesto se volevo."
     show sprite_sophie_neutral as sophie_sprite at sprite_stage_left_sophie, sprite_breathe with dissolve
     sophie "E se te lo avesse chiesto?"
