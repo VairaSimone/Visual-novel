@@ -247,12 +247,25 @@ label start:
 
 
 label capitolo_1:
+    # Il capitolo parte sempre da uno stato neutro; i momenti tesi lo attivano esplicitamente.
+    $ tensione_scena = False
     scene bg sophie kitchen at bg_slow_push
     with fade
     show expression Solid("#2b1e2410") as chapter1_tint
     play ambience audio.room fadeout 1.0 fadein 1.2
     centered "{size=42}{color=#e6d4db}CAPITOLO 1{/color}{/size}\n\n{size=28}{color=#aa97a3}Come sanguina un robot{/color}{/size}"
-    if dubbi_di_mila >= 2 or indizi_reali >= 2:
+
+    # Le decisioni del prologo restano riconoscibili anche senza aprire grandi diramazioni.
+    if padre_ascoltato:
+        "Prima di venire qui, avevo chiesto a papà se stesse bene. Mi aveva detto che era stanco. Non era una risposta sufficiente, ma almeno avevo provato a parlargli."
+    elif padre_evitato:
+        "Prima di venire qui, avevo evitato lo sguardo di papà. È più facile lasciare intatta una domanda che rischiare di sentire una risposta."
+
+    if legame_kate >= 1:
+        "Ripenso a Kate, che mi aveva detto di non dover fare tutto da sola. Non le ho chiesto aiuto, ma almeno le ho spiegato perché non potevo fermarmi."
+    else:
+        "Kate aveva provato a raggiungermi prima che venissi qui, ma avevo tagliato corto. La sua preoccupazione mi è rimasta addosso come una domanda che non voglio sentire."
+    if dubbi_di_mila >= 2 or indizi_reali >= 2 or padre_evitato or legame_kate <= 0:
         show sprite_mila_worried as mila_sprite at sprite_stage_left, sprite_breathe
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
@@ -322,6 +335,7 @@ label capitolo_1:
     hide padre_sprite with dissolve
     scene bg mila kitchen at bg_tension_push
     with dissolve
+    $ tensione_scena = True
     # La cucina resta più calda del corridoio, ma la scena è ormai notturna.
     show expression Solid("#10101d30") as chapter1_tint
     # La madre entra visivamente soltanto dopo la battuta del padre.
@@ -354,6 +368,7 @@ label capitolo_1:
     madre "Sparisci dalla mia vista. Vai in camera tua e non uscire prima di domattina."
     scene bg scena notte vetro at bg_slow_push
     with dissolve
+    $ tensione_scena = False
     # Il fondale mostra già Mila a letto con il vetro: evitiamo di sovrapporre un secondo sprite.
     show expression Solid("#090d1d25") as chapter1_tint
     "Resto a letto vestita. Non piango. Sotto il cuscino trovo il vetro raccolto in giardino e lo stringo finché fa male. Subito dopo mi vergogno."
@@ -892,6 +907,7 @@ label capitolo_7:
     "Attraverso il vetro della finestra immagino Sophie sulla quercia, immobile, in attesa del mio braccio."
     "Apro il flacone. Il liquido è trasparente, inodore. La mano si ferma. Papà tossisce dietro il giornale: un suono familiare, innocuo. Cosa sto facendo?"
     "Vorrei versare tutto nel lavandino e chiedere aiuto. Poi vedo la luce di Sophie alla finestra. La sua voce ritorna: se ti fermi, tornerai a essere invisibile."
+    $ tensione_scena = True
     menu:
         "I bicchieri sono davanti a me. Non posso fingere di non sapere che cosa sto decidendo."
         "Verso le gocce nei bicchieri dei miei genitori e anche nel mio.":
@@ -900,12 +916,14 @@ label capitolo_7:
             $ promessa_a_sophie = True
             "Le dita tremano come se appartenessero a chi tira i fili dal sottotetto. Verso il liquido nei tre calici: una firma sul mio stesso decreto di sottomissione."
             "Porto il vassoio a tavola."
+            $ tensione_scena = False
             jump capitolo_8
         "Poso il flacone sul tavolo e dico a mia madre che ho bisogno di aiuto.":
             $ genitori_salvati = True
             $ prontezza_aiuto += 2
             $ fiducia_genitori += 2
             "La voce si spezza. Riesco a dire solo questo: Sophie mi ha chiesto di farvi dormire e ho paura di ciò che contiene il flacone."
+            $ tensione_scena = False
             jump finale_rottura
         "Chiamo Kate dalla dispensa e le mando la posizione.":
             $ genitori_salvati = True
@@ -913,8 +931,10 @@ label capitolo_7:
             $ legame_kate += 2
             $ indizi_reali += 1
             "Mi chiudo nella dispensa e mando un messaggio breve, con le mani gelate: Ho bisogno di aiuto. Vieni con un adulto. Non entrare da sola."
+            $ tensione_scena = False
             jump finale_verita
     "La scelta è stata fatta. Non so ancora quanto tempo mi resterà per capirne il prezzo."
+    $ tensione_scena = False
     jump capitolo_8
 
 
@@ -1210,6 +1230,7 @@ label finale_fuga:
         show sprite_sophie_cold as sophie_sprite at sprite_stage_right, sprite_cold_still
     else:
         show sprite_mila_neutral as mila_sprite at sprite_stage_left, sprite_breathe
+        show sprite_sophie_neutral as sophie_sprite at sprite_stage_right, sprite_breathe
     play ambience audio.rain fadeout 1.0 fadein 1.5
     play music audio.tension fadeout 1.4 fadein 2.2
     "Mila corre verso la quercia. Sophie l'aspetta con uno zaino troppo piccolo per una vita nuova."
@@ -1519,8 +1540,8 @@ screen archivio_indizi():
     frame:
         xalign 0.5
         yalign 0.5
-        xsize 1120
-        ysize 820
+        xsize min(1120, config.screen_width - 64)
+        ysize min(820, config.screen_height - 64)
         background Solid("#211a25")
         padding (26, 20)
         vbox:
@@ -1546,7 +1567,7 @@ screen archivio_indizi():
                     text "OSSERVATO = ciò che Mila ha visto o fatto. RISCONTRO = una fonte confrontabile. IPOTESI = spiegazione ancora da verificare." size 14
             viewport:
                 xfill True
-                ysize 675
+                yfill True
                 mousewheel True
                 draggable True
                 scrollbars "vertical"
@@ -1675,8 +1696,8 @@ screen documenti_mila():
     frame:
         xalign 0.5
         yalign 0.5
-        xsize 1160
-        ysize 780
+        xsize min(1160, config.screen_width - 64)
+        ysize min(780, config.screen_height - 64)
         background Solid("#211a25")
         padding (26, 22)
         vbox:
@@ -1689,7 +1710,7 @@ screen documenti_mila():
             text "Il quaderno ufficiale e i frammenti nascosti non raccontano la stessa storia." size 17 color "#c2b4c5"
             viewport:
                 xfill True
-                ysize 690
+                yfill True
                 mousewheel True
                 draggable True
                 scrollbars "vertical"
