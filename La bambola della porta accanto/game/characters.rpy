@@ -6,16 +6,22 @@
 # Posizionamento coerente per sprite con tela uniforme (canvas 16:9, 1920x1080).
 # Posizionamento dedicato alla scena iniziale nella camera di Sophie:
 # Sophie è leggermente più bassa e sta a sinistra; Mila si sposta a destra.
+transform sprite_mila_bed_left:
+    # In apertura Mila è ancora sul letto, collocato a sinistra nel fondale.
+    xalign 0.27
+    yalign 1.0
+    zoom 0.70
+
 transform sprite_stage_left_sophie:
     xalign 0.34
     yalign 1.0
-    zoom 0.64
+    zoom 0.68
 
 # Sophie resta leggermente più bassa di Mila anche sul lato destro, nel capitolo 1.
 transform sprite_stage_right_sophie:
     xalign 0.69
     yalign 1.0
-    zoom 0.64
+    zoom 0.68
 
 transform sprite_stage_right_mila:
     xalign 0.72
@@ -29,38 +35,50 @@ transform sprite_approach_mila:
     # Sophie parte dalla sua posizione a sinistra e si avvicina a Mila.
     xalign 0.34
     yalign 1.0
-    zoom 0.64
+    zoom 0.70
     ease 0.65 xalign 0.49
 
 transform sprite_stage_near_mila_left:
     xalign 0.49
     yalign 1.0
-    zoom 0.64
+    zoom 0.70
 
 transform sprite_approach_mila_from_right:
     xalign 0.69
     yalign 1.0
-    zoom 0.64
+    zoom 0.70
     ease 0.65 xalign 0.53
 
 transform sprite_stage_near_mila_from_right:
     xalign 0.53
     yalign 1.0
-    zoom 0.64
+    zoom 0.70
+
+# I genitori di Mila usano una scala coerente con quella della protagonista.
+# Il padre resta arretrato ma non deve apparire più basso per un transform troppo piccolo.
+transform sprite_padre_kitchen:
+    xalign 0.52
+    yalign 1.0
+    zoom 0.70
+    alpha 0.86
+
+transform sprite_madre_stage_right:
+    xalign 0.73
+    yalign 1.0
+    zoom 0.80
 
 # La madre avanza appena verso Mila durante la presa alla mascella.
 transform sprite_mother_approach:
-    xalign 0.69
+    xalign 0.73
     yalign 1.0
-    zoom 0.70
-    ease 0.55 xalign 0.63
+    zoom 0.80
+    ease 0.55 xalign 0.67
 
-# Posizione stabile ravvicinata: evitare che un cambio d'espressione faccia
-# ripartire da capo l'animazione di avvicinamento.
+# Posizione stabile ravvicinata: i cambi d'espressione non devono alterare la scala.
 transform sprite_mother_close:
-    xalign 0.63
+    xalign 0.67
     yalign 1.0
-    zoom 0.70
+    zoom 0.80
 
 # Il padre appare appena sulla soglia: più arretrato, spostato a destra e semi-trasparente.
 transform sprite_father_threshold_hidden:
@@ -230,7 +248,9 @@ image sprite_mila_smile = Transform("images/characters/mila_smile.png", ysize=11
 image sprite_sophie_neutral = Transform("images/characters/sophie_neutral.png", ysize=1185, fit="contain")
 image sprite_sophie_cold = Transform("images/characters/sophie_cold.png", ysize=1185, fit="contain")
 image sprite_sophie_tense = Transform("images/characters/sophie_tense.png", ysize=1185, fit="contain")
-image sprite_sophie_sweet = Transform("images/characters/sophie_sweet.png", ysize=1185, fit="contain")
+# Il disegno di questa posa ha più margine trasparente: compensiamo la scala apparente
+# affinché Sophie non sembri rimpicciolirsi quando passa all'espressione dolce.
+image sprite_sophie_sweet = Transform("images/characters/sophie_sweet.png", ysize=1285, fit="contain")
 image sprite_sophie_anger = Transform("images/characters/sophie_anger.png", ysize=1185, fit="contain")
 image sprite_sophie_fury = Transform("images/characters/sophie_fury.png", ysize=1185, fit="contain")
 
@@ -245,7 +265,9 @@ image sprite_madre_neutral = Transform("images/characters/sprite_madre_neutral.p
 image sprite_madre_cold = Transform("images/characters/sprite_madre_cold_accappatoio.png", ysize=1185, fit="contain")
 image sprite_madre_neutral_accappatoio = Transform("images/characters/sprite_madre_neutral_accappatoio.png", ysize=1185, fit="contain")
 image sprite_madre_neutral_2 = Transform("images/characters/sprite_madre_neutral_2.png", ysize=1185, fit="contain")
-image sprite_madre_fury = Transform("images/characters/sprite_madre_fury.png", ysize=1185, fit="contain")
+# La posa furiosa ha una sagoma visiva più piccola nelle stesse dimensioni di tela.
+# La lieve compensazione evita il salto di scala al cambio d'espressione.
+image sprite_madre_fury = Transform("images/characters/sprite_madre_fury.png", ysize=1285, fit="contain")
 
 # Padre di Mila: normalizzato come gli altri personaggi.
 image sprite_padre_neutral = Transform("images/characters/sprite_padre_mila.png", ysize=1185, fit="contain")
